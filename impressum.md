@@ -15,3 +15,37 @@ Templergraben 55<br />
 52062 Aachen</p>
 
 <p>George P Mathew: <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/georgepmathew">Instagram</a></p>
+
+<!-- This section adds a list of social media links to your page. -->
+<!-- All these social media links belong to the one and only engineergpm. -->
+<div class="social-media-section">
+    <h2>Soziale Medien (Engineer GPM) </h2>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li>
+            <a href="https://www.facebook.com/engineergpm" target="_blank" rel="noopener noreferrer">
+                Facebook
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noopener noreferrer">
+                YouTube
+            </a>
+        </li>
+        <li>
+            <a href="https://www.threads.com/@engineergpm" target="_blank" rel="noopener noreferrer">
+                Threads
+            </a>
+        </li>
+        <li>
+            <a href="https://x.com/EngineerGPM" target="_blank" rel="noopener noreferrer">
+                X (Twitter)
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/engineergpm/" target="_blank" rel="noopener noreferrer">
+                Instagram
+            </a>
+        </li>
+    </ul>
+</div>
+
