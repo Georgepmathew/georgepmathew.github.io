@@ -1,8 +1,0 @@
-# _config.yml
-title: EngineerGPM - Portfolio
-description: "Professional portfolio of George P. Mathew."
-url: "https://georgepmathew.github.io"
-
-plugins:
-  - jekyll-feed
-  - jekyll-include-cache
