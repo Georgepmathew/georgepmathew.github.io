@@ -1,4 +1,11 @@
-<h1>Impressum</h1>
+<!DOCTYPE html>
+<html lang="en" style="background-color: #111827; color: #d1d5db;">
+<head>
+    <meta charset="UTF-8">
+      
+</head>
+<body>
+    <h1>Impressum</h1>
 
 <p>George P Mathew<br />
 KERALA, INDIA<br />
@@ -49,3 +56,6 @@ Templergraben 55<br />
     </ul>
 </div>
 
+
+</body>
+</html>
