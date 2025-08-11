@@ -1,3 +1,9 @@
+---
+title: "My Projects"
+permalink: /projects/
+---
+
+*(...your existing project content should be below this...)
 # Projects
 
 Here are selected projects that demonstrate my technical skills and problem-solving approach.
