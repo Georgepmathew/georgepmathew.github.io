@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George P Mathew | Civil & Materials Engineer</title>
+    <meta name="description" content="The professional portfolio of George P Mathew, a Civil Engineer specializing in Materials Science, pursuing an M.Sc. at RWTH Aachen University.">
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#111827', // Off-black
+                        'brand-light-dark': '#1F2937', // Darker gray for cards
+                        'brand-accent': '#10B981', // Emerald green
+                        'brand-accent-hover': '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Add a subtle animation for sections fading in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-gray-300 font-sans antialiased">
+
+    <!-- Container -->
+    <div class="container mx-auto max-w-5xl px-6 py-12 md:py-20">
+
+        <!-- ===== HERO SECTION ===== -->
+        <header id="hero" class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-24 md:mb-32">
+            <!-- Your Photo -->
+            <div class="w-40 h-40 md:w-48 md:h-48 flex-shrink-0">
+                <img src="path/to/your/photo.jpg" alt="George P Mathew" class="rounded-full w-full h-full object-cover border-4 border-brand-light-dark shadow-lg">
+                <!-- IMPORTANT: Replace "path/to/your/photo.jpg" with the actual path to your uploaded photo -->
+            </div>
+            <!-- Hero Content -->
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">George P Mathew</h1>
+                <h2 class="text-2xl md:text-3xl font-medium text-brand-accent mb-4">Civil Engineer & Materials Science Specialist</h2>
+                <p class="text-lg text-gray-400 mb-6">
+                    Bridging the gap between large-scale structural design and advanced material innovation. Currently pursuing an M.Sc. in Materials Engineering at RWTH Aachen University.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#work" class="bg-brand-accent text-white font-semibold py-2 px-6 rounded-lg hover:bg-brand-accent-hover transition-colors duration-300">View My Work</a>
+                    <a href="mailto:georgepmathew424@gmail.com" class="bg-brand-light-dark text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">Contact Me</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- ===== NARRATIVE SECTION ===== -->
+            <section id="about" class="mb-24 md:mb-32 fade-in-section">
+                <h3 class="text-3xl font-bold text-white mb-8 text-center">From Foundation to Specialization</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-brand-light-dark p-6 rounded-lg">
+                        <div class="text-brand-accent text-4xl mb-3"><i class="fas fa-building"></i></div>
+                        <h4 class="text-xl font-semibold text-white mb-2">The Foundation</h4>
+                        <p class="text-gray-400">Mastered macro-level structural principles through my B.E. in Civil Engineering and hands-on site experience.</p>
+                    </div>
+                    <div class="bg-brand-light-dark p-6 rounded-lg">
+                        <div class="text-brand-accent text-4xl mb-3"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="text-xl font-semibold text-white mb-2">The Strategic Insight</h4>
+                        <p class="text-gray-400">Real-world projects revealed that the future of engineering innovation lies within the fundamental materials themselves.</p>
+                    </div>
+                    <div class="bg-brand-light-dark p-6 rounded-lg">
+                        <div class="text-brand-accent text-4xl mb-3"><i class="fas fa-rocket"></i></div>
+                        <h4 class="text-xl font-semibold text-white mb-2">The Specialization</h4>
+                        <p class="text-gray-400">Now pursuing deep expertise in Materials Science at the world-renowned RWTH Aachen to become a specialist.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ===== WORK EXPERIENCE SECTION ===== -->
+            <section id="work" class="mb-24 md:mb-32 fade-in-section">
+                <h3 class="text-3xl font-bold text-white mb-12 text-center">Professional Experience</h3>
+                <!-- Timeline Container -->
+                <div class="relative border-l-2 border-gray-700 pl-8 space-y-16">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 bg-brand-light-dark w-6 h-6 rounded-full border-4 border-brand-dark"></div>
+                        <p class="text-sm text-brand-accent font-semibold mb-1">12/2023 – Current</p>
+                        <h4 class="text-xl font-bold text-white">Business Assistant @ Best Trading</h4>
+                        <p class="text-gray-400 mt-2">Developed commercial acumen by providing technical guidance to customers and managing billing operations, complementing my engineering background with valuable client-facing skills.</p>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 bg-brand-light-dark w-6 h-6 rounded-full border-4 border-brand-dark"></div>
+                        <p class="text-sm text-brand-accent font-semibold mb-1">07/2023 – 11/2023</p>
+                        <h4 class="text-xl font-bold text-white">Junior Engineer @ SG Construction Company</h4>
+                        <p class="text-gray-400 mt-2">Ensured project milestones for pile foundation and finishing work were met through rigorous daily supervision and effective coordination with contractors and suppliers.</p>
+                    </div>
+                     <!-- Timeline Item 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-10 bg-brand-light-dark w-6 h-6 rounded-full border-4 border-brand-dark"></div>
+                        <p class="text-sm text-brand-accent font-semibold mb-1">10/2021 – 09/2022</p>
+                        <h4 class="text-xl font-bold text-white">Graduate Engineer Trainee @ Excel Precast Solutions</h4>
+                        <p class="text-gray-400 mt-2">Managed the full lifecycle of precast components, from wall panel erection to final quality checks, collaborating with teams to guarantee timely and accurate task completion.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SKILLS & EDUCATION SECTION ===== -->
+            <section id="skills" class="mb-24 md:mb-32 fade-in-section">
+                <h3 class="text-3xl font-bold text-white mb-12 text-center">Skills & Education</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Skills Column -->
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-6">Technical Skills</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-semibold">Engineering & Design</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Civil Engineering</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Project Management</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Quality Control</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Software Proficiency</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">AutoCAD</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">SketchUp</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Adobe Suite</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">MS Office</span>
+                                </div>
+                            </div>
+                             <div>
+                                <p class="font-semibold">Languages</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">English (C1)</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Malayalam (Native)</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Tamil</span>
+                                    <span class="bg-brand-light-dark px-3 py-1 text-sm rounded-full">Hindi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Education Column -->
+                    <div>
+                        <h4 class="text-2xl font-semibold text-white mb-6">Education</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <p class="text-sm text-brand-accent">Expected Winter 2025</p>
+                                <h5 class="font-bold text-white">M.Sc. in Materials Engineering</h5>
+                                <p class="text-gray-400">RWTH Aachen University, Aachen, Germany</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-brand-accent">2017 - 2021</p>
+                                <h5 class="font-bold text-white">B.E. in Civil Engineering</h5>
+                                <p class="text-gray-400">Mar Ephraem College of Engineering, Anna University</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center text-gray-500 border-t border-gray-800 pt-8">
+            <div class="flex justify-center gap-6 mb-4">
+                <!-- Add social links here if you want -->
+                <a href="mailto:georgepmathew424@gmail.com" class="hover:text-brand-accent transition-colors"><i class="fas fa-envelope fa-lg"></i></a>
+                <!-- Example: <a href="#" class="hover:text-brand-accent"><i class="fab fa-linkedin fa-lg"></i></a> -->
+            </div>
+            <p>&copy; 2024 George P Mathew. Built with passion and code.</p>
+            <p class="mt-2"><a href="impressum.html" class="text-sm hover:underline">Impressum (Legal Disclosure)</a></p>
+        </footer>
+
+    </div>
+
+    <!-- Simple JS for fade-in effect on scroll -->
+    <script>
+        const sections = document.querySelectorAll('.fade-in-section');
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, options);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
