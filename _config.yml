@@ -1,42 +1,8 @@
 # _config.yml
-#
-# Welcome to the Minimal Mistakes theme!
-# https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+title: EngineerGPM - Portfolio
+description: "Professional portfolio of George P. Mathew."
+url: "https://georgepmathew.github.io"
 
-# --- Basic Site Settings ---
-title: George P. Mathew
-subtitle: Materials Engineer
-description: "Professional portfolio of George P. Mathew, an aspiring Materials Engineer pursuing a Master's at RWTH Aachen."
-url: "https://georgepmathew.github.io" # your site's full URL
-
-# --- Theme Settings ---
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
-
-# --- Author Information (Appears in Sidebar) ---
-author:
-  name: "George P. Mathew"
-  avatar: "/assets/images/profile-pic.jpg" # You will upload this picture later
-  bio: "Civil Engineer specializing in Materials. M.Sc. candidate at RWTH Aachen."
-  location: "Aachen, Germany"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:[your.email@example.com]"
-    # - label: "LinkedIn"
-    #   icon: "fab fa-fw fa-linkedin"
-    #   url: "https://linkedin.com/in/..." # Add this when you have one
-    # - label: "GitHub"
-    #   icon: "fab fa-fw fa-github"
-    #   url: "https://github.com/Georgepmathew"
-
-# --- Site Navigation (Appears in top bar) ---
-main:
-  - title: "About Me"
-    url: /about/
-  - title: "Projects"
-    url: /projects/
-  - title: "Impressum"
-    url: /impressum/
