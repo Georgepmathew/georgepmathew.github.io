@@ -1,182 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George P Mathew - Civil Engineer | Future Materials Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>George P. Mathew — The Engineer's Folio</title>
+  <meta name="description" content="George P. Mathew — Civil Engineer & M.Sc. Materials Engineering student. Portfolio, experience, skills and contact." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="hero">
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo">George P Mathew</h1>
-                <ul class="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="hero-content">
-            <h1>Civil Engineer transitioning to Materials Engineering</h1>
-            <p>Experienced in construction project management | Incoming Master's student at RWTH Aachen University</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn primary">Get in Touch</a>
-                <a href="resume.pdf" class="btn secondary" target="_blank">Download CV</a>
-            </div>
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <button class="brand" id="homeBtn" aria-label="Home">
+        <div class="logo">GM</div>
+        <div class="brand-text">
+          <div class="name">George P. Mathew</div>
+          <div class="sub">The Engineer's Folio</div>
         </div>
-    </header>
+      </button>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a Civil Engineer with 2+ years of hands-on experience in construction project management and supervision. My technical background spans from foundation work to precast component quality control, giving me a comprehensive understanding of materials behavior in real-world applications.</p>
-                    
-                    <p>Currently preparing to begin my Master's in Materials Engineering at RWTH Aachen University, I'm passionate about bridging the gap between traditional civil engineering practices and advanced materials science. My goal is to contribute to sustainable construction technologies and innovative material solutions.</p>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Technical Skills</h4>
-                            <ul>
-                                <li>AutoCAD (2006/2017)</li>
-                                <li>SketchUp</li>
-                                <li>Microsoft Office Suite</li>
-                                <li>Adobe Creative Suite</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Languages</h4>
-                            <ul>
-                                <li>English (Proficient - C1)</li>
-                                <li>Malayalam (Native)</li>
-                                <li>Tamil (Conversational)</li>
-                                <li>Hindi (Conversational)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="nav-links" role="navigation" aria-label="Primary">
+        <button class="nav-link" data-target="about">About</button>
+        <button class="nav-link" data-target="experience">Experience</button>
+        <button class="nav-link" data-target="skills">Skills</button>
+        <button class="nav-link" data-target="education">Education</button>
+        <button class="nav-link" data-target="contact">Contact</button>
+        <a class="cv-btn" href="assets/resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌓</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO / ABOUT -->
+    <section id="about" class="container hero">
+      <div class="hero-left">
+        <p class="eyebrow">The Engineer's Folio</p>
+        <h1 class="hero-title">George P. Mathew</h1>
+        <h2 class="hero-sub">Civil Engineer &amp; Materials Science Student</h2>
+        <p class="hero-desc">
+          I am a Civil Engineer with hands-on construction experience, now pursuing an M.Sc. in Materials Engineering at RWTH Aachen University. I bridge site-level problem solving with materials research for safer, sustainable structures.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn primary" data-target="experience">View Experience</button>
+          <a class="btn ghost" href="assets/resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
         </div>
+
+        <div class="hero-meta">
+          <div><strong>Current status:</strong> Pursuing M.Sc. Materials Engineering at RWTH Aachen University</div>
+          <div class="chips">
+            <span class="chip">Aachen, Germany</span>
+            <span class="chip">Seeking: Internships / Werkstudent</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="image-card" role="img" aria-label="Graduate illustration">
+          <img src="assets/header.png" alt="Graduate illustration" />
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Dec 2023 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Business Assistant</h3>
-                        <h4>Best Trading, Pathanapuram</h4>
-                        <ul>
-                            <li>Provided technical guidance and personalized service to customers, improving sales performance</li>
-                            <li>Managed billing operations and contributed to local marketing initiatives</li>
-                            <li>Developed customer relationship management skills essential for engineering consulting</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Feb 2023 - Nov 2023</div>
-                    <div class="timeline-content">
-                        <h3>Junior Engineer</h3>
-                        <h4>SG Construction Company, Mumbai</h4>
-                        <ul>
-                            <li>Supervised pile foundation work and building finishing operations</li>
-                            <li>Coordinated cross-functional teams to ensure project milestone delivery</li>
-                            <li>Resolved on-site technical issues while maintaining quality standards</li>
-                            <li>Maintained effective communication channels with contractors and suppliers</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2021 - Sep 2022</div>
-                    <div class="timeline-content">
-                        <h3>Graduate Engineer Trainee</h3>
-                        <h4>Excel Precast Solutions Pvt Ltd, Bangalore</h4>
-                        <ul>
-                            <li>Managed erection of precast wall panels, beams, and structural slabs</li>
-                            <li>Conducted grouting and repair work on precast components</li>
-                            <li>Performed quality control inspections of precast concrete elements</li>
-                            <li>Collaborated with multidisciplinary teams to ensure timely project completion</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="container section">
+      <h3>Professional Experience</h3>
+
+      <div class="cards">
+        <article class="card">
+          <header class="card-head">
+            <div>
+              <h4>Junior Engineer</h4>
+              <div class="muted">SG Construction Company, Mumbai</div>
             </div>
-        </div>
+            <div class="muted">07/2023 — 11/2023</div>
+          </header>
+          <ul class="card-list">
+            <li>Supervised pile foundation and finishing work, ensuring project milestones were met.</li>
+            <li>Resolved on-site technical issues, maintaining quality and schedules.</li>
+            <li>Coordinated contractors and ensured adherence to safety standards.</li>
+          </ul>
+          <div class="tags"><span>Project Management</span><span>Quality Control</span><span>AutoCAD</span></div>
+        </article>
+
+        <article class="card">
+          <header class="card-head">
+            <div>
+              <h4>Graduate Engineer Trainee</h4>
+              <div class="muted">Excel Precast Solutions Pvt Ltd, Bangalore</div>
+            </div>
+            <div class="muted">10/2021 — 09/2022</div>
+          </header>
+          <ul class="card-list">
+            <li>Managed erection of wall panels, beams and slabs; completed grouting and repairs.</li>
+            <li>Assisted in precast component quality checks and coordination.</li>
+          </ul>
+          <div class="tags"><span>Precast Erection</span><span>QA/QC</span><span>Site Supervision</span></div>
+        </article>
+
+        <article class="card">
+          <header class="card-head">
+            <div>
+              <h4>Business Assistant</h4>
+              <div class="muted">Best Trading, Pathanapuram</div>
+            </div>
+            <div class="muted">12/2023 — Current</div>
+          </header>
+          <ul class="card-list">
+            <li>Customer service and billing management.</li>
+            <li>Contributed to local marketing and inventory tasks.</li>
+          </ul>
+          <div class="tags"><span>Customer Relations</span><span>Sales</span></div>
+        </article>
+      </div>
     </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Academic & Professional Focus</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Master's Thesis Preparation</h3>
-                    <p>Preparing research proposal focusing on sustainable construction materials and their lifecycle analysis. Particularly interested in the intersection of traditional construction methods with advanced material science.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Materials Science</span>
-                        <span class="tech-tag">Sustainability</span>
-                        <span class="tech-tag">Research</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Construction Project Management</h3>
-                    <p>Led multiple construction projects from foundation to completion, gaining hands-on experience with material behavior, quality control, and project coordination in real-world scenarios.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Project Management</span>
-                        <span class="tech-tag">Quality Control</span>
-                        <span class="tech-tag">Team Leadership</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Technical Documentation</h3>
-                    <p>Created comprehensive technical documentation and reports for construction projects, ensuring compliance with engineering standards and facilitating knowledge transfer.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Technical Writing</span>
-                        <span class="tech-tag">AutoCAD</span>
-                        <span class="tech-tag">Documentation</span>
-                    </div>
-                </div>
-            </div>
+    <!-- SKILLS -->
+    <section id="skills" class="container section">
+      <h3>Skills & Tools</h3>
+      <div class="grid-3">
+        <div class="tile">
+          <h4>Engineering & Management</h4>
+          <ul>
+            <li>Construction Management</li>
+            <li>Quality Assurance</li>
+            <li>Structural Analysis</li>
+            <li>Project Supervision</li>
+          </ul>
         </div>
+
+        <div class="tile">
+          <h4>Technical Software</h4>
+          <ul>
+            <li>Autodesk AutoCAD</li>
+            <li>SketchUp</li>
+            <li>Microsoft Office Suite</li>
+            <li>Adobe Illustrator / Photoshop</li>
+          </ul>
+        </div>
+
+        <div class="tile">
+          <h4>Languages</h4>
+          <ul>
+            <li>English (Professional)</li>
+            <li>Malayalam (Native)</li>
+            <li>Tamil</li>
+            <li>Hindi</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-content">
-                <p>I'm always interested in discussing opportunities in materials engineering, construction technology, and sustainable building practices. Feel free to reach out!</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:georgepmathew424@gmail.com">georgepmathew424@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/georgepmathew" target="_blank">github.com/georgepmathew</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Preparing for relocation to Aachen, Germany</span>
-                    </div>
-                </div>
-            </div>
+    <!-- EDUCATION -->
+    <section id="education" class="container section">
+      <h3>Education</h3>
+      <div class="edu-list">
+        <div class="edu-card">
+          <div><strong>Master of Science</strong></div>
+          <div class="muted">M.Sc. Materials Engineering — RWTH Aachen University</div>
+          <div class="muted small">Current — Focus: materials characterization, microstructure, durability</div>
         </div>
+
+        <div class="edu-card">
+          <div><strong>Bachelor of Engineering</strong></div>
+          <div class="muted">B.E. Civil Engineering — Mar Ephraem College Of Engineering And Technology</div>
+          <div class="muted small">2017 — 2021</div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 George P Mathew. Built with passion for engineering excellence.</p>
-        </div>
-    </footer>
+    <!-- CONTACT -->
+    <section id="contact" class="container section contact-section">
+      <div class="contact-card">
+        <h3>Get In Touch</h3>
+        <p>I am actively seeking internships and Werkstudent opportunities in the Aachen area. If my background in civil engineering and focus on materials science align with your needs, I'd be delighted to connect.</p>
+        <a class="btn primary" href="mailto:georgepmathew424@gmail.com">Email George — georgepmathew424@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small">George P. Mathew &nbsp;&nbsp; • &nbsp;&nbsp; Theme: <button id="themeToggleFooter" class="link-like">Toggle</button></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
