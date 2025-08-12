@@ -4,184 +4,71 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>George P. Mathew — The Engineer's Folio</title>
-  <meta name="description" content="George P. Mathew — Civil Engineer & M.Sc. Materials Engineering student. Portfolio, experience, skills and contact." />
+  <meta name="description" content="George P. Mathew — Civil Engineer & M.Sc. Materials Engineering student." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAV -->
-  <header class="nav-wrap">
-    <nav class="nav container">
-      <button class="brand" id="homeBtn" aria-label="Home">
+  <!-- Header / NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
         <div class="logo">GM</div>
         <div class="brand-text">
-          <div class="name">George P. Mathew</div>
-          <div class="sub">The Engineer's Folio</div>
+          <div class="brand-name">George P. Mathew</div>
+          <div class="brand-sub">The Engineer's Folio</div>
         </div>
-      </button>
+      </a>
 
-      <div class="nav-links" role="navigation" aria-label="Primary">
-        <button class="nav-link" data-target="about">About</button>
-        <button class="nav-link" data-target="experience">Experience</button>
-        <button class="nav-link" data-target="skills">Skills</button>
-        <button class="nav-link" data-target="education">Education</button>
-        <button class="nav-link" data-target="contact">Contact</button>
-        <a class="cv-btn" href="assets/resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
-        <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌓</button>
-      </div>
-    </nav>
+      <nav class="nav">
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="experience.html">Experience</a>
+        <a class="nav-link" href="skills.html">Skills</a>
+        <a class="nav-link" href="education.html">Education</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="cv small-btn" href="assets/resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        <button id="themeToggle" class="theme-btn" aria-pressed="false" title="Toggle theme">🌓</button>
+      </nav>
+    </div>
   </header>
 
+  <!-- HERO -->
   <main>
-    <!-- HERO / ABOUT -->
-    <section id="about" class="container hero">
+    <section class="hero container">
       <div class="hero-left">
         <p class="eyebrow">The Engineer's Folio</p>
         <h1 class="hero-title">George P. Mathew</h1>
         <h2 class="hero-sub">Civil Engineer &amp; Materials Science Student</h2>
         <p class="hero-desc">
-          I am a Civil Engineer with hands-on construction experience, now pursuing an M.Sc. in Materials Engineering at RWTH Aachen University. I bridge site-level problem solving with materials research for safer, sustainable structures.
+          I am a Civil Engineer with hands-on construction experience, now pursuing an M.Sc. in Materials Engineering at RWTH Aachen University. I combine practical site experience with materials research to deliver safer, more sustainable structures.
         </p>
 
         <div class="hero-actions">
-          <button class="btn primary" data-target="experience">View Experience</button>
+          <a class="btn primary" href="experience.html">View Experience</a>
           <a class="btn ghost" href="assets/resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
         </div>
 
-        <div class="hero-meta">
-          <div><strong>Current status:</strong> Pursuing M.Sc. Materials Engineering at RWTH Aachen University</div>
+        <div class="meta-row">
+          <div><strong>Current:</strong> Pursuing M.Sc., Materials Engineering — RWTH Aachen University</div>
           <div class="chips">
             <span class="chip">Aachen, Germany</span>
-            <span class="chip">Seeking: Internships / Werkstudent</span>
+            <span class="chip">Looking: Internships / Werkstudent</span>
           </div>
         </div>
       </div>
 
       <div class="hero-right">
-        <div class="image-card" role="img" aria-label="Graduate illustration">
-          <img src="assets/header.png" alt="Graduate illustration" />
+        <div class="card image-card" aria-hidden="false">
+          <img src="assets/header.png" alt="Graduate illustration — George P. Mathew" />
         </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="container section">
-      <h3>Professional Experience</h3>
-
-      <div class="cards">
-        <article class="card">
-          <header class="card-head">
-            <div>
-              <h4>Junior Engineer</h4>
-              <div class="muted">SG Construction Company, Mumbai</div>
-            </div>
-            <div class="muted">07/2023 — 11/2023</div>
-          </header>
-          <ul class="card-list">
-            <li>Supervised pile foundation and finishing work, ensuring project milestones were met.</li>
-            <li>Resolved on-site technical issues, maintaining quality and schedules.</li>
-            <li>Coordinated contractors and ensured adherence to safety standards.</li>
-          </ul>
-          <div class="tags"><span>Project Management</span><span>Quality Control</span><span>AutoCAD</span></div>
-        </article>
-
-        <article class="card">
-          <header class="card-head">
-            <div>
-              <h4>Graduate Engineer Trainee</h4>
-              <div class="muted">Excel Precast Solutions Pvt Ltd, Bangalore</div>
-            </div>
-            <div class="muted">10/2021 — 09/2022</div>
-          </header>
-          <ul class="card-list">
-            <li>Managed erection of wall panels, beams and slabs; completed grouting and repairs.</li>
-            <li>Assisted in precast component quality checks and coordination.</li>
-          </ul>
-          <div class="tags"><span>Precast Erection</span><span>QA/QC</span><span>Site Supervision</span></div>
-        </article>
-
-        <article class="card">
-          <header class="card-head">
-            <div>
-              <h4>Business Assistant</h4>
-              <div class="muted">Best Trading, Pathanapuram</div>
-            </div>
-            <div class="muted">12/2023 — Current</div>
-          </header>
-          <ul class="card-list">
-            <li>Customer service and billing management.</li>
-            <li>Contributed to local marketing and inventory tasks.</li>
-          </ul>
-          <div class="tags"><span>Customer Relations</span><span>Sales</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="container section">
-      <h3>Skills & Tools</h3>
-      <div class="grid-3">
-        <div class="tile">
-          <h4>Engineering & Management</h4>
-          <ul>
-            <li>Construction Management</li>
-            <li>Quality Assurance</li>
-            <li>Structural Analysis</li>
-            <li>Project Supervision</li>
-          </ul>
-        </div>
-
-        <div class="tile">
-          <h4>Technical Software</h4>
-          <ul>
-            <li>Autodesk AutoCAD</li>
-            <li>SketchUp</li>
-            <li>Microsoft Office Suite</li>
-            <li>Adobe Illustrator / Photoshop</li>
-          </ul>
-        </div>
-
-        <div class="tile">
-          <h4>Languages</h4>
-          <ul>
-            <li>English (Professional)</li>
-            <li>Malayalam (Native)</li>
-            <li>Tamil</li>
-            <li>Hindi</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="container section">
-      <h3>Education</h3>
-      <div class="edu-list">
-        <div class="edu-card">
-          <div><strong>Master of Science</strong></div>
-          <div class="muted">M.Sc. Materials Engineering — RWTH Aachen University</div>
-          <div class="muted small">Current — Focus: materials characterization, microstructure, durability</div>
-        </div>
-
-        <div class="edu-card">
-          <div><strong>Bachelor of Engineering</strong></div>
-          <div class="muted">B.E. Civil Engineering — Mar Ephraem College Of Engineering And Technology</div>
-          <div class="muted small">2017 — 2021</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="container section contact-section">
-      <div class="contact-card">
-        <h3>Get In Touch</h3>
-        <p>I am actively seeking internships and Werkstudent opportunities in the Aachen area. If my background in civil engineering and focus on materials science align with your needs, I'd be delighted to connect.</p>
-        <a class="btn primary" href="mailto:georgepmathew424@gmail.com">Email George — georgepmathew424@gmail.com</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container small">George P. Mathew &nbsp;&nbsp; • &nbsp;&nbsp; Theme: <button id="themeToggleFooter" class="link-like">Toggle</button></div>
+  <footer class="footer container">
+    <div>George P. Mathew — The Engineer's Folio</div>
+    <div class="footer-actions">
+      <button id="themeToggleFooter" class="link-like">Toggle theme</button>
+    </div>
   </footer>
 
   <script src="script.js"></script>
