@@ -1,106 +1,365 @@
-/* style.css */
+/* style.css — Full stylesheet for Engineer GPM site
+   - Responsive hero (left image / right content)
+   - Desktop nav, two-line mobile nav with icons (~14px)
+   - Themes: default (gold), german (forest), dark (for mobile)
+   - All images & icons auto-fit: max-width / height rules included
+*/
 
+/* -------------------------
+   Variables & themes
+   ------------------------- */
 :root {
-  --color-bg: #FCFCF7;
-  --color-primary: #BF932A;
-  --color-secondary: #DFC57B;
-  --color-accent: #9E6200;
-  --color-text: #000;
+  --bg: #FCFCF7;              /* brand white core */
+  --surface: #FFFFFF;
+  --text: #052042;            /* deep navy */
+  --muted: #667085;
+  --accent: #BF932A;          /* gold */
+  --accent-2: #9E6200;
+  --radius: 12px;
+  --shadow-strong: 0 20px 50px rgba(5,32,66,0.08);
+  --shadow-soft: 0 8px 24px rgba(5,32,66,0.06);
+  --maxw: 1200px;
+  --glass: rgba(255,255,255,0.85);
+
+  --nav-font-size: 16px;
+  --mobile-nav-font-size: 14px;
+  --nav-icon-size: 18px;
+  --mobile-nav-icon-size: 14px;
 }
 
-/* German theme */
-[data-theme="german"] {
-  --color-bg: #F5F5F5;
-  --color-primary: #006400;
-  --color-secondary: #228B22;
-  --color-accent: #FFD700;
-  --color-text: #000;
+/* German / Forest theme */
+html[data-theme="german"] {
+  --bg: #EAF3E9;
+  --surface: #FBFFFB;
+  --text: #0B2F23;
+  --muted: #4B6B58;
+  --accent: #12372A;
+  --accent-2: #436850;
+  --glass: rgba(250,255,250,0.9);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Dark theme (optional) */
+html[data-theme="dark"] {
+  --bg: #0b0b0d;
+  --surface: #0f1113;
+  --text: #eaf2ff;
+  --muted: #9aa7b7;
+  --accent: #f5c36a;
+  --accent-2: #e29b2f;
+  --glass: rgba(255,255,255,0.03);
 }
 
+/* -------------------------
+   Base
+   ------------------------- */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
 }
 
-header {
-  padding: 1rem;
-  background: var(--color-primary);
-  color: white;
+/* Container */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utilities */
+.muted { color: var(--muted); }
+.center { display: flex; align-items: center; justify-content: center; }
+
+/* Links / buttons */
+a { color: inherit; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px; text-decoration: none;
+  font-weight: 800; cursor: pointer;
+}
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white; box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.btn.outline {
+  background: transparent; border: 2px solid rgba(5,32,66,0.06);
+  color: var(--text);
+}
+
+/* -------------------------
+   Header / nav
+   ------------------------- */
+.topbar {
+  position: sticky;
+  top: 12px;
+  z-index: 120;
+  padding: 10px 0;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, var(--glass), transparent);
+}
+
+.topbar-inner {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.brand-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0,0,0,0.04);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-weight: 800; }
+.brand-sub { font-size: 12px; color: var(--muted); }
+
+/* Desktop nav */
+.mainnav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.mainnav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: var(--nav-font-size);
+  border-radius: 8px;
+}
+.mainnav .nav-link:hover,
+.mainnav .nav-link.active { color: var(--accent); }
+
+/* nav icons (desktop) */
+.nav-icon {
+  width: var(--nav-icon-size);
+  height: var(--nav-icon-size);
+  display: inline-block;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* header actions (lang, theme) */
+.header-actions { display: flex; gap: 8px; align-items: center; }
+
+/* Mobile two-line nav (keeps DOM always present) */
+.mobile-nav {
+  display: none; /* shown via media queries on small screens */
+  padding: 8px 0 12px;
+  gap: 8px;
+}
+.mobile-nav .nav-line {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-nav .nav-line a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 8px 6px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  font-size: var(--mobile-nav-font-size);
+  flex: 1 1 0;
+  text-align: center;
+}
+.mobile-nav .nav-line a .nav-icon {
+  width: var(--mobile-nav-icon-size);
+  height: var(--mobile-nav-icon-size);
+}
+
+/* -------------------------
+   Hero
+   ------------------------- */
+.page-root { padding-top: 18px; padding-bottom: 48px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 28px 0;
+}
+
+/* left image card */
+.image-card {
+  background: var(--surface);
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* right content */
+.hero-right .eyebrow { color: var(--accent); font-weight: 800; margin: 0 0 8px; }
+.hero-right .title { font-size: 48px; margin: 0 0 10px; font-weight: 900; line-height: 1; }
+.hero-right .subtitle { margin: 0 0 12px; font-size: 18px; color: var(--muted); font-weight:700; }
+.hero-right .lead { color: var(--muted); margin-bottom: 14px; max-width: 760px; }
+
+.what-id h4 { margin: 12px 0 6px; font-weight: 800; }
+.what-id ul { padding-left: 18px; color: var(--muted); }
+.what-id li { margin: 6px 0; }
+
+/* CTA row */
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+
+/* Social icons in hero */
+.hero-socials { display: flex; gap: 10px; margin-top: 16px; align-items: center; }
+.hero-social-icon {
+  width: clamp(24px, 4vw, 36px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform .18s ease;
+  border-radius: 6px;
+}
+.hero-social-icon:hover { transform: translateY(-3px); }
+
+/* -------------------------
+   Cards, sections
+   ------------------------- */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(5,32,66,0.03);
+}
+
+/* footer */
+.footer {
+  padding: 22px 0;
+  color: var(--muted);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+/* -------------------------
+   Responsive / Mobile rules
+   ------------------------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 22px; padding: 18px 0; }
+  .image-card { padding: 10px; border-radius: 12px; }
+  .hero-right .title { font-size: 28px; color: var(--text); }
+  .hero-right .subtitle { color: var(--muted); }
+  .hero-right .lead { color: var(--muted); }
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+/* Two-line navigation + icon sizing for phones/tablets */
+@media (max-width: 767px) {
+  .mainnav { display: none !important; }    /* hide desktop nav on small screens */
+  .mobile-nav { display: flex; flex-direction: column; gap: 8px; }
+  .topbar-inner { padding: 8px; }
+  .brand-avatar { width: 40px; height: 40px; }
+
+  /* Shrink nav icons + font */
+  :root { --nav-font-size: 14px; --nav-icon-size: 16px; --mobile-nav-icon-size: 14px; --mobile-nav-font-size: 14px; }
+
+  .mobile-nav .nav-line a { font-size: var(--mobile-nav-font-size); padding: 8px 6px; }
+  .mobile-nav .nav-line a .nav-icon { width: var(--mobile-nav-icon-size); height: var(--mobile-nav-icon-size); }
+
+  /* hero stacking — dark mobile card look (optional) */
+  body:not([data-theme="german"]):not([data-theme="dark"]) {
+    background: #0b0b0d;
+    color: #eef2f6;
+  }
+  .image-card { background: linear-gradient(180deg,#0f1113,#0b0b0d); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 14px 36px rgba(0,0,0,0.6); }
+  .card { background: linear-gradient(180deg,#0f1113,#0b0b0d); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 14px 36px rgba(0,0,0,0.6); }
+  .hero-right .title { color: #fff; }
+  .hero-right .subtitle, .hero-right .lead { color: #c8cfda; }
+  .btn.outline { border: 1px solid rgba(255,255,255,0.06); color: #fff; }
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* Extra small screens */
+@media (max-width: 420px) {
+  .brand-avatar { width: 34px; height: 34px; }
+  .hero-right .title { font-size: 22px; }
+  .nav-icon { width: 14px; height: 14px; }
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  gap: 2rem;
+/* -------------------------
+   Accessibility focus states
+   ------------------------- */
+a:focus, button:focus, .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(191,147,42,0.14);
 }
 
-.hero img {
-  width: 300px;
+/* -------------------------
+   Image & icon auto-fit safety
+   ------------------------- */
+img {
   max-width: 100%;
-  border-radius: 1rem;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
-.hero-content {
-  max-width: 500px;
-}
+/* -------------------------
+   Small helpers for pages that used different structures
+   ------------------------- */
+.experience-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+.experience-card { background: var(--surface); padding: 14px; border-radius: 12px; box-shadow: var(--shadow-soft); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; }
+.skill-card { padding: 14px; border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-soft); text-align: center; }
+.timeline { display: grid; gap: 12px; }
+.timeline-item { display: flex; gap: 12px; align-items: flex-start; }
+.timeline-icon { font-size: 22px; margin-top: 4px; }
 
-.social-row {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+/* Social grid fallback */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px; }
+.social-card { display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 12px; text-decoration: none; color: inherit; background: var(--surface); box-shadow: var(--shadow-soft); }
+.social-icon { width: 48px; height: 48px; object-fit: contain; }
 
-.social-row a img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.2s ease;
-}
+/* Contact form */
+.contact-form { max-width: 720px; margin-top: 12px; display: grid; gap: 10px; }
+.form-group { display: grid; gap: 6px; }
+input[type="text"], input[type="email"], textarea { padding: 10px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); font-size: 15px; width: 100%; }
+button.btn-primary { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: white; border: none; padding: 12px 18px; border-radius: 10px; cursor: pointer; }
 
-.social-row a:hover img {
-  transform: scale(1.1);
-}
+/* ensure icons inside header-actions remain small */
+.header-actions .icon-btn { width: 40px; height: 40px; border-radius: 8px; display: inline-grid; place-items: center; background: transparent; border: none; }
+.header-actions .icon-btn img { width: 20px; height: 20px; object-fit: contain; }
 
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    flex-direction: row;
-    justify-content: center;
-    font-size: 0.85rem;
-  }
-}
+/* -------------------------
+   End of stylesheet
+   ------------------------- */
