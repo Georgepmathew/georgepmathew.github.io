@@ -369,3 +369,78 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
     display: inline-block;
   }
 }
+
+/* -------------------------
+   Experience Page Styles
+   ------------------------- */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  /* Applying the blueprint motif to the experience cards for consistency */
+  background-color: var(--surface);
+  background-image: var(--blueprint-bg);
+  background-size: var(--blueprint-size);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.experience-role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.experience-date {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+
+.experience-details {
+  padding-left: 20px;
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+.experience-details li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background-color: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border-color);
+}
