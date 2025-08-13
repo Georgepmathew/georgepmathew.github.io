@@ -1,84 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Experience — George P. Mathew</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-gold">
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/profile.jpg" alt="George P Mathew" class="brand-img">
-        <span class="brand-name" data-i18n="brand">Engineer GPM</span>
-      </a>
-      <nav class="site-nav" id="main-nav">
-        <ul class="nav-desktop">
-          <li data-i18n="nav_home"><a href="index.html">Home</a></li>
-          <li data-i18n="nav_about"><a href="about.html">About</a></li>
-          <li data-i18n="nav_exp"><a href="experience.html">Experience</a></li>
-          <li data-i18n="nav_skills"><a href="skills.html">Skills</a></li>
-          <li data-i18n="nav_edu"><a href="education.html">Education</a></li>
-          <li data-i18n="nav_contact"><a href="contact.html">Contact</a></li>
-          <li data-i18n="nav_social"><a href="social.html">Social</a></li>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container page-root section">
+    <h1 data-i18n="nav_experience">Professional Experience</h1>
+
+    <div class="experience-grid">
+      <!-- RWTH Aachen University -->
+      <article class="experience-card">
+        <h2>Research Assistant — RWTH Aachen University</h2>
+        <p class="muted">Present</p>
+        <ul>
+          <li>Working on advanced materials engineering projects.</li>
+          <li>Collaborating with international research teams.</li>
         </ul>
+        <div class="tags">Research · Materials Engineering · Collaboration</div>
+      </article>
 
-        <div class="nav-mobile">
-          <div class="nav-line">
-            <a href="index.html" data-i18n="nav_home">Home</a>
-            <a href="about.html" data-i18n="nav_about">About</a>
-            <a href="experience.html" data-i18n="nav_exp">Experience</a>
-          </div>
-          <div class="nav-line">
-            <a href="skills.html" data-i18n="nav_skills">Skills</a>
-            <a href="education.html" data-i18n="nav_edu">Education</a>
-            <a href="contact.html" data-i18n="nav_contact">Contact</a>
-            <a href="social.html" data-i18n="nav_social">Social</a>
-          </div>
-        </div>
-      </nav>
+      <!-- Excel Precast Solutions Pvt Ltd -->
+      <article class="experience-card">
+        <h2>Graduate Engineer Trainee — Excel Precast Solutions Pvt Ltd, Bangalore</h2>
+        <p class="muted">01/10/2021 – 30/09/2022</p>
+        <ul>
+          <li>Managed erection of wall panels, beams, slabs; completed grouting & repairs.</li>
+          <li>Assisted in precast component quality checks.</li>
+        </ul>
+        <div class="tags">Precast Erection · QA/QC · Site Supervision</div>
+      </article>
 
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language"><img src="assets/icons/globe.svg" alt="" /></button>
-        <button id="theme-toggle" class="icon-btn" title="Toggle theme"><img src="assets/icons/sun.svg" alt="" /></button>
-        <button id="nav-toggle" class="mobile-toggle" aria-label="Menu">☰</button>
-      </div>
+      <!-- Internships / Other roles -->
+      <article class="experience-card">
+        <h2>Civil Engineering Internships & Projects</h2>
+        <ul>
+          <li>Worked on structural design and site supervision.</li>
+          <li>Engaged in quality assurance processes for civil projects.</li>
+        </ul>
+        <div class="tags">Structural Design · Site Management · QA/QC</div>
+      </article>
     </div>
-  </header>
-
-  <main class="container">
-    <h1 data-i18n="exp_title">Professional Experience</h1>
-
-    <div class="exp-card">
-      <h3>Graduate Engineer Trainee — Excel Precast Solutions Pvt Ltd, Bangalore</h3>
-      <p class="muted">01/10/2021 – 30/09/2022</p>
-      <ul>
-        <li>Managed erection of wall panels, beams, slabs; completed grouting & repairs.</li>
-        <li>Assisted in precast component quality checks.</li>
-      </ul>
-      <span class="tags">Precast Erection · QA/QC · Site Supervision</span>
-    </div>
-
-    <!-- Add other experience cards here as needed -->
-    <div class="exp-card">
-      <h3>Internship / Other Role — Company Name</h3>
-      <p class="muted">Date range</p>
-      <ul>
-        <li>Key responsibility 1</li>
-        <li>Key responsibility 2</li>
-      </ul>
-    </div>
-
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="assets/resume.pdf" download class="download-cv" data-i18n="download_cv">Download CV</a>
-      <small class="muted">© George P Mathew</small>
-    </div>
-  </footer>
-
+  <div id="site-footer"></div>
   <script src="script.js"></script>
 </body>
 </html>
