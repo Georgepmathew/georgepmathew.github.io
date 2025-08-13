@@ -1,7 +1,7 @@
 /* style.css — Full stylesheet for Engineer GPM site
    - Core styles, responsive design, and themes
    - Signature "blueprint" motif included
-   - FINAL VERSION
+   - FINAL VERSION w/ Mobile Nav Redesign & Scroll Animation
 */
 
 /* -------------------------
@@ -55,7 +55,7 @@ html[data-theme="dark"] {
    Base & Layout
    ------------------------- */
 * { box-sizing: border-box; }
-html, body { min-height: 100%; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -115,21 +115,51 @@ img {
 .header-actions .icon-btn {
   display: inline-grid;
   place-items: center;
-  min-width: 48px; /* Larger button */
+  min-width: 48px;
   height: 40px;
   padding: 0 12px;
   border-radius: 8px;
   background: transparent;
-  border: 2px solid var(--border-color); /* Thicker border */
+  border: 2px solid var(--border-color);
   color: var(--text);
-  font-size: 14px; /* Larger font */
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
 }
 .header-actions .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-.mobile-nav { display: none; }
+/* OLD MOBILE NAV - HIDE IT */
+.mobile-nav { display: none !important; }
+
+/* NEW MOBILE SCROLLING NAV */
+.mobile-nav-scroll {
+  display: none; /* Hidden by default, shown on mobile */
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+/* Hide scrollbar */
+.mobile-nav-scroll::-webkit-scrollbar { display: none; }
+.mobile-nav-scroll { scrollbar-width: none; }
+
+.mobile-nav-scroll .nav-link {
+  display: inline-block;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.mobile-nav-scroll .nav-link.active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 9px;
+}
+
 
 /* -------------------------
    Hero Section
@@ -192,7 +222,18 @@ img {
    ------------------------- */
 .about-content { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: flex-start; max-width: 1000px; margin: 48px auto 0; }
 .about-text { order: 1; }
-.about-image-wrapper { order: 2; position: sticky; top: 120px; }
+.about-image-wrapper { 
+  order: 2; 
+  position: sticky; 
+  top: 100px; /* Adjust based on your header height */
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Animation */
+}
+.about-image-wrapper.is-hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+}
+
 .about-site-pic { width: 100%; border-radius: var(--radius); border: 4px solid var(--surface); box-shadow: var(--shadow-strong); }
 .about-text p { font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-bottom: 24px; }
 .about-text h3 { font-size: 1.5rem; font-weight: 700; margin-top: 40px; margin-bottom: 16px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; }
@@ -237,13 +278,14 @@ img {
 /* -------------------------
    Contact Page
    ------------------------- */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto; }
 .contact-card-wrapper h3 { text-align: center; font-size: 1.2rem; margin-bottom: 12px; }
-.contact-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: inherit; padding: 32px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
+.contact-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: inherit; padding: 32px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); height: 100%; }
 .contact-card-icon { margin-bottom: 16px; }
 .contact-card-icon img { width: 48px; height: 48px; color: var(--accent); }
+.contact-card-text { display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
 .contact-card-text p { color: var(--text); margin: 0 0 24px; font-weight: 700; word-break: break-all; }
-.contact-card-link { display: inline-block; padding: 8px 16px; border-radius: 999px; background-color: var(--accent); color: white; font-weight: 700; font-size: 0.9rem; transition: background-color 0.2s; }
+.contact-card-link { display: inline-block; padding: 8px 16px; border-radius: 999px; background-color: var(--accent); color: white; font-weight: 700; font-size: 0.9rem; transition: background-color 0.2s; margin-top: auto;}
 .contact-card:hover .contact-card-link { background-color: var(--accent-2); }
 
 /* -------------------------
@@ -276,10 +318,7 @@ img {
 
 @media (max-width: 767px) {
   .mainnav { display: none; }
-  .mobile-nav { display: flex; flex-direction: column; gap: 8px; padding-top: 8px; border-top: 1px solid var(--border-color); margin-top: 8px; }
-  .mobile-nav .nav-line { display: flex; gap: 8px; justify-content: space-around; }
-  .mobile-nav .nav-link { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 8px 4px; font-size: 12px; }
-  .mobile-nav .nav-icon { margin-bottom: 4px; }
+  .mobile-nav-scroll { display: block; }
   .topbar { top: 0; border-radius: 0; }
   .brand-sub { display: none; }
 
