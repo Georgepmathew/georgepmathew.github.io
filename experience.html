@@ -2,52 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Experience — George P. Mathew</title>
+  <meta name="description" content="Professional experience in Civil Engineering, including site supervision, project coordination, and precast erection." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="site-header"></div>
 
-  <main class="container page-root section">
-    <h1 data-i18n="nav_experience">Professional Experience</h1>
+  <!-- ================= Header (Copied from index.html) ================= -->
+  <header class="topbar" role="banner" aria-label="Site header">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/profile.jpg" alt="George P. Mathew" class="brand-avatar" />
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </nav>
+
+      <!-- Language Toggle -->
+      <div class="header-actions">
+        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
+      </div>
+    </div>
+
+    <!-- Mobile two-line nav -->
+    <div class="container mobile-nav" aria-label="Mobile navigation">
+      <div class="nav-line">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+      </div>
+      <div class="nav-line">
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Content ================= -->
+  <main class="container page-root section" role="main">
+    <h1 data-i18n="experience_heading">Professional Experience</h1>
 
     <div class="experience-grid">
-      <!-- RWTH Aachen University -->
-      <article class="experience-card">
-        <h2>Research Assistant — RWTH Aachen University</h2>
-        <p class="muted">Present</p>
-        <ul>
-          <li>Working on advanced materials engineering projects.</li>
-          <li>Collaborating with international research teams.</li>
+      <!-- Role 1: Best Trading -->
+      <article class="experience-card card">
+        <div class="experience-header">
+          <h2 class="experience-role" data-i18n="exp1_role">Business Assistant</h2>
+          <div class="experience-date" data-i18n="exp1_date">12/2023 – Present</div>
+        </div>
+        <p class="experience-company" data-i18n="exp1_company">Best Trading, Pathanapuram, India</p>
+        <ul class="experience-details">
+          <li data-i18n="exp1_li1">Assisted customers with product inquiries, improving sales through personalized service and technical guidance.</li>
+          <li data-i18n="exp1_li2">Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.</li>
         </ul>
-        <div class="tags">Research · Materials Engineering · Collaboration</div>
+        <div class="tags">
+          <span class="tag" data-i18n="tag_cs">Customer Service</span>
+          <span class="tag" data-i18n="tag_sales">Sales</span>
+          <span class="tag" data-i18n="tag_marketing">Marketing</span>
+        </div>
       </article>
 
-      <!-- Excel Precast Solutions Pvt Ltd -->
-      <article class="experience-card">
-        <h2>Graduate Engineer Trainee — Excel Precast Solutions Pvt Ltd, Bangalore</h2>
-        <p class="muted">01/10/2021 – 30/09/2022</p>
-        <ul>
-          <li>Managed erection of wall panels, beams, slabs; completed grouting & repairs.</li>
-          <li>Assisted in precast component quality checks.</li>
+      <!-- Role 2: SG Construction Company -->
+      <article class="experience-card card">
+        <div class="experience-header">
+          <h2 class="experience-role" data-i18n="exp2_role">Junior Engineer</h2>
+          <div class="experience-date" data-i18n="exp2_date">07/02/2023 – 30/11/2023</div>
+        </div>
+        <p class="experience-company" data-i18n="exp2_company">SG Construction Company, Mumbai, India</p>
+        <ul class="experience-details">
+          <li data-i18n="exp2_li1">Supervised pile foundation work and finishing stages of the building project.</li>
+          <li data-i18n="exp2_li2">Coordinated with various teams to ensure project milestones were met on schedule.</li>
+          <li data-i18n="exp2_li3">Resolved on-site issues to maintain project quality and maintained communication with contractors.</li>
         </ul>
-        <div class="tags">Precast Erection · QA/QC · Site Supervision</div>
+        <div class="tags">
+          <span class="tag" data-i18n="tag_supervision">Site Supervision</span>
+          <span class="tag" data-i18n="tag_coordination">Project Coordination</span>
+          <span class="tag" data-i18n="tag_qa">Quality Assurance</span>
+        </div>
       </article>
 
-      <!-- Internships / Other roles -->
-      <article class="experience-card">
-        <h2>Civil Engineering Internships & Projects</h2>
-        <ul>
-          <li>Worked on structural design and site supervision.</li>
-          <li>Engaged in quality assurance processes for civil projects.</li>
+      <!-- Role 3: Excel Precast Solutions -->
+      <article class="experience-card card">
+        <div class="experience-header">
+          <h2 class="experience-role" data-i18n="exp3_role">Graduate Engineer Trainee</h2>
+          <div class="experience-date" data-i18n="exp3_date">01/10/2021 – 30/09/2022</div>
+        </div>
+        <p class="experience-company" data-i18n="exp3_company">Excel Precast Solutions Pvt Ltd, Bangalore, India</p>
+        <ul class="experience-details">
+          <li data-i18n="exp3_li1">Managed the erection of precast components including wall panels, beams, and slabs.</li>
+          <li data-i18n="exp3_li2">Conducted grouting, repair work, and assisted in quality checks for precast components.</li>
+          <li data-i18n="exp3_li3">Collaborated with the team to ensure timely completion of construction tasks.</li>
         </ul>
-        <div class="tags">Structural Design · Site Management · QA/QC</div>
+        <div class="tags">
+          <span class="tag" data-i18n="tag_precast">Precast Erection</span>
+          <span class="tag" data-i18n="tag_civil">Civil Engineering</span>
+        </div>
       </article>
     </div>
   </main>
 
-  <div id="site-footer"></div>
+  <!-- ================= Footer (Copied from index.html) ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div class="footer-text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality. <a href="about.html">Learn more.</a></div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
