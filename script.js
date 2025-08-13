@@ -298,7 +298,6 @@
 
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    // This now targets nav links in BOTH desktop and mobile navs
     document.querySelectorAll('.mainnav .nav-link, .mobile-nav-scroll .nav-link').forEach(link => {
       const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
       if (currentPage === linkPage) {
@@ -347,19 +346,37 @@
 
   function initAboutImageScroll() {
     const imageWrapper = document.querySelector('.about-image-wrapper');
-    if (!imageWrapper) return; // Only run on the about page
+    if (!imageWrapper) return; // Only run on pages with this element
 
     let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down
-        imageWrapper.classList.add('is-hidden');
+    const handleScroll = () => {
+      // We check window width to only apply the effect on desktop
+      if (window.innerWidth > 900) { 
+        if (window.scrollY > lastScrollY && window.scrollY > 150) {
+          // Scrolling down, hide image
+          imageWrapper.classList.add('is-hidden');
+        } else {
+          // Scrolling up, show image
+          imageWrapper.classList.remove('is-hidden');
+        }
       } else {
-        // Scrolling up
+        // On mobile, ensure image is always visible
         imageWrapper.classList.remove('is-hidden');
       }
       lastScrollY = window.scrollY;
+    };
+
+    // Use a throttled scroll listener for performance
+    let isThrottled = false;
+    window.addEventListener('scroll', () => {
+      if (!isThrottled) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          isThrottled = false;
+        });
+        isThrottled = true;
+      }
     });
   }
 
@@ -368,15 +385,13 @@
      Initialization
      ========================= */
   function init() {
-    // Apply visual themes and translations first
     applyTheme(getSavedTheme());
     applyTranslations(getSavedLang());
     
-    // Then, set up UI states and event listeners
     markActiveNav();
     initLangToggle();
     initThemeShortcuts();
-    initAboutImageScroll(); // Initialize the new scroll animation
+    initAboutImageScroll();
   }
 
   if (document.readyState === 'loading') {
