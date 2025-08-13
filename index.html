@@ -1,122 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home — George P. Mathew</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Responsive container */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    /* Image container */
-    .hero-image {
-      flex: 1 1 300px;
-      display: flex;
-      justify-content: center;
-      max-width: 500px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      object-fit: contain;
-    }
-
-    /* Text container */
-    .hero-text {
-      flex: 1 1 300px;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .hero-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Social icons */
-    .social-links {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #f5f5f5;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-5px);
-      background: #e0e0e0;
-    }
-
-    .social-links img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-      }
-
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-
-      .social-links a {
-        width: 40px;
-        height: 40px;
-      }
-
-      .social-links img {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>George P. Mathew — The Engineer's Folio</title>
+  <meta name="description" content="George P. Mathew — Civil Engineer | M.Sc. Materials Engineering student. Construction, materials testing, AI & LLM expertise." />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header id="site-header"></header>
 
-  <main class="hero">
-    <div class="hero-image">
-      <img src="assets/header.png" alt="George P. Mathew">
-    </div>
-    <div class="hero-text">
-      <h1>George P. Mathew</h1>
-      <p>Engineer | AI Enthusiast | LLM & Prompting Expert</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/georgepmathew/" target="_blank">
-          <img src="assets/icons/instagram.svg" alt="Instagram">
-        </a>
-        <a href="https://www.youtube.com/@EngineerGPM" target="_blank">
-          <img src="assets/icons/youtube.svg" alt="YouTube">
-        </a>
+  <!-- ================= Header (desktop + mobile DOM) ================= -->
+  <header class="topbar" role="banner" aria-label="Site header">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/profile.jpg" alt="George P. Mathew" class="brand-avatar" />
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt="" aria-hidden="true"><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt="" aria-hidden="true"><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt="" aria-hidden="true"><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt="" aria-hidden="true"><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt="" aria-hidden="true"><span data-i18n="nav_education">Education</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt="" aria-hidden="true"><span data-i18n="nav_contact">Contact</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt="" aria-hidden="true"><span data-i18n="nav_social">Social</span></a>
+      </nav>
+
+      <!-- Visible language toggle (header) - script will wire translations -->
+      <div class="header-actions" aria-hidden="false">
+        <button id="lang-toggle" class="icon-btn" title="Toggle language" aria-pressed="false" aria-label="Toggle language">EN</button>
       </div>
     </div>
+
+    <!-- Mobile two-line nav (DOM present so searchable / crawlable) -->
+    <div class="container mobile-nav" aria-label="Mobile navigation">
+      <div class="nav-line">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_experience">Experience</span></a>
+      </div>
+      <div class="nav-line">
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_education">Education</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_contact">Contact</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_social">Social</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main / Hero ================= -->
+  <main class="page-root container" role="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <!-- LEFT: Illustration (keeps left-facing image on desktop) -->
+      <div class="hero-left">
+        <div class="image-card">
+          <!-- The image will auto-fit: CSS + script set max-width:100%, height:auto, object-fit:contain -->
+          <img src="assets/header.png" alt="Illustration of George P. Mathew facing left" class="hero-image" />
+        </div>
+      </div>
+
+      <!-- RIGHT: Content -->
+      <div class="hero-right">
+        <p class="eyebrow" id="hero-eyebrow" data-i18n="hero_eyebrow">The Engineer's Folio</p>
+        <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
+        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Materials Science Student</p>
+
+        <p class="lead" data-i18n="hero_lead">
+          I combine hands-on construction supervision and precast experience with materials research at RWTH Aachen. I also use AI & LLMs to speed up analysis, reporting and prototyping.
+        </p>
+
+        <div class="what-id" aria-labelledby="what-title">
+          <h4 id="what-title" data-i18n="what_title">What I do</h4>
+          <ul>
+            <li data-i18n="what_1">Construction supervision & site coordination (foundations, precast erection, finishing)</li>
+            <li data-i18n="what_2">Materials testing and characterization (concrete durability)</li>
+            <li data-i18n="what_3">Quality assurance, documentation, technical problem solving</li>
+            <li data-i18n="what_4"><strong>AI & LLMs:</strong> strong prompt engineering, practical LLM workflows for engineering tasks</li>
+          </ul>
+        </div>
+
+        <div class="hero-cta" aria-hidden="false">
+          <a class="btn primary" href="experience.html" data-i18n="btn_experience">View Experience</a>
+          <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noreferrer" data-i18n="btn_cv">Download CV</a>
+        </div>
+
+        <div class="hero-socials" aria-label="Social links">
+          <a class="small-icon" href="https://www.instagram.com/georgepmathew/" target="_blank" rel="noreferrer" title="Instagram">
+            <img src="assets/icons/instagram.svg" alt="Instagram" class="hero-social-icon">
+          </a>
+          <a class="small-icon" href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noreferrer" title="YouTube">
+            <img src="assets/icons/youtube.svg" alt="YouTube" class="hero-social-icon">
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer id="site-footer"></footer>
+  <!-- ================= Footer ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div><strong>George P. Mathew</strong></div>
+    <div class="muted">Built with care • M.Sc. Materials Engineering</div>
+  </footer>
+
+  <!-- Script (wires language, theme, and responsive behavior; ensures images/icons auto-fit) -->
   <script src="script.js"></script>
 </body>
 </html>
