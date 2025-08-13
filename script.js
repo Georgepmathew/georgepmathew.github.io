@@ -1,6 +1,7 @@
 /* script.js — Engineer GPM Folio
-   - Handles EN/DE translations, theme persistence, and active navigation.
-   - FINAL VERSION
+   - Handles EN/DE translations, theme persistence, active navigation,
+   - and scroll animations.
+   - FINAL POLISHED VERSION
 */
 
 (function () {
@@ -111,14 +112,14 @@
       social_brand_heading: "My Brand Channels (Engineer GPM)",
       social_youtube_title: "YouTube",
       social_youtube_desc: "Engineering videos & tutorials",
+      social_brand_insta_title: "Instagram (Brand)",
+      social_brand_insta_desc: "Content & updates for Engineer GPM",
       social_x_title: "X (Twitter)",
       social_x_desc: "Short updates & tech insights",
-      social_threads_title: "Threads",
-      social_threads_desc: "Community posts & discussions",
       social_personal_heading: "Connect with Me Personally",
       social_linkedin_title: "LinkedIn",
       social_linkedin_desc: "For professional networking",
-      social_insta_title: "Instagram",
+      social_insta_title: "Instagram (Personal)",
       social_insta_desc: "Personal updates & photography",
       social_fb_title: "Facebook",
       social_fb_desc: "Connect with friends & family",
@@ -127,13 +128,12 @@
       contact_heading: "Get In Touch",
       contact_intro_simple: "I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.",
       contact_email_title: "Email",
-      contact_email_desc: "The most direct way to contact me.",
-      contact_email_cta: "Send an Email",
       contact_linkedin_title: "LinkedIn",
-      contact_linkedin_desc: "For professional networking and career-related inquiries.",
+      contact_linkedin_desc: "Professional Networking",
+      contact_email_cta: "Send an Email",
       contact_linkedin_cta: "View My Profile",
 
-      // Education Page (assuming this page exists)
+      // Education Page
       education_heading: "Education",
       edu1_degree: "M.Sc. Materials Engineering",
       edu1_school: "RWTH Aachen University, Germany",
@@ -146,13 +146,10 @@
       edu3_date: "2015 – 2017",
     },
     de: {
-      // General
       brand_name: "George P. Mathew",
       brand_sub: "Engineer GPM",
       footer_text: "Entwickelt von George P. Mathew",
       footer_subtext: "KI nutzen, um Vision und Realität zu verbinden.",
-      
-      // Navigation
       nav_home: "Start",
       nav_experience: "Erfahrung",
       nav_skills: "Fähigkeiten",
@@ -160,23 +157,17 @@
       nav_about: "Über mich",
       nav_social: "Soziales",
       nav_contact: "Kontakt",
-      
-      // Homepage
       hero_name: "George P. Mathew",
       hero_role: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
       hero_lead_1: "Meine Praxiserfahrung mit Fundamenten und Fertigteilen hat mir gezeigt, dass die größten Herausforderungen im Bau oft Materialprobleme sind. Diese Erkenntnis treibt meinen Wechsel nach Deutschland an, um einen M.Sc. in Werkstofftechnik an der RWTH Aachen zu absolvieren.",
       hero_lead_2: "Ich löse Probleme mit einer einzigartigen Denkweise. Ohne Programmierkenntnisse habe ich KI genutzt, um dieses Portfolio von Grund auf zu entwickeln. So gehe ich jede Herausforderung an: mit Einfallsreichtum, Neugier und dem Antrieb, die beste Lösung zu finden.",
       btn_story: "Meine Geschichte",
       btn_germany: "Mein Plan für Deutschland",
-      
-      // About Page
       about_heading: "Meine Geschichte",
       about_p1: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete und Fundamentarbeiten überwachte. Das war nicht nur ein Job; es war ein Labor in der realen Welt, in dem ich die entscheidende Verbindung zwischen Materialqualität und Projekterfolg erlebte. Die Herausforderungen durch Materialfehler aus erster Hand zu sehen, weckte meine Leidenschaft, das 'Warum' hinter den von uns verwendeten Materialien zu verstehen.",
       about_p2: "Diese Erfahrung vor Ort führte mich zu einer klaren Schlussfolgerung: Um bessere, langlebigere Strukturen zu bauen, müssen wir zuerst die Materialien selbst innovieren. Diese Erkenntnis ist die treibende Kraft hinter meiner Entscheidung, einen Master in Werkstofftechnik an der weltberühmten RWTH Aachen zu absolvieren und mich an die Spitze der Bauinnovation zu setzen.",
       about_subtitle: "Meine Denkweise: Die Geschichte dieser Website",
       about_p3: "Ich definiere mich durch meinen Einfallsreichtum. Diese Website ist mein Beweis. Ohne vorherige Programmiererfahrung behandelte ich ihre Erstellung wie ein Ingenieurproblem. Mein Werkzeug war kein CAD-Programm; es war Künstliche Intelligenz. Durch iteratives Prompting und logisches Debugging leitete ich die KI an, den Code zu generieren, das Design zu strukturieren und die Funktionen zu erstellen, die Sie jetzt sehen. Das ist die zukunftsorientierte, werkzeugunabhängige Denkweise, die ich bei jeder Herausforderung anwende.",
-      
-      // Experience Page
       experience_heading: "Berufserfahrung",
       exp1_role: "Business Assistant",
       exp1_date: "12/2023 – Heute",
@@ -203,8 +194,6 @@
       tag_qa: "Qualitätssicherung",
       tag_precast: "Fertigteilmontage",
       tag_civil: "Bauingenieurwesen",
-
-      // Skills Page
       skills_heading: "Meine Fähigkeiten",
       skill1_title: "Ingenieurwissen",
       skill1_desc: "Bauüberwachung, Fertigteilmontage, Qualitätssicherung und Projektkoordination.",
@@ -219,8 +208,6 @@
       lang2_level: "Muttersprache",
       lang3_name: "Deutsch",
       lang3_level: "Wird aktiv gelernt",
-
-      // Germany Page
       germany_heading: "Mein Engagement für das Ingenieurwesen in Deutschland",
       germany_intro: "Meine Erfahrung vor Ort hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung und nachhaltiger Technologie. Dies ist nicht nur ein Ziel, sondern das Epizentrum der Zukunft, die ich mitgestalten möchte.",
       germany_col1_title: "Warum Deutschland?",
@@ -239,35 +226,29 @@
       germany_item6_desc: "Diese Wahl positioniert mich an der einzigartigen Schnittstelle von Bauwissen, moderner Werkstoffkunde, deutscher Ingenieurkunst und einer internationalen Perspektive.",
       germany_bigger_picture_title: "Das große Ganze",
       germany_bigger_picture_desc: "Hier geht es nicht nur um einen Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Ausbildung bin ich positioniert, um die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe. Mein Ziel ist es, die Art, wie wir bauen, zu revolutionieren – eine Materialinnovation nach der anderen.",
-
-      // Social Page
       social_heading: "Meine Kanäle & Soziales",
       social_intro: "Folgen Sie meiner Reise, sehen Sie sich meine Projekte an und vernetzen Sie sich mit mir auf Ihrer Lieblingsplattform.",
       social_brand_heading: "Meine Markenkanäle (Engineer GPM)",
       social_youtube_title: "YouTube",
       social_youtube_desc: "Ingenieurvideos & Tutorials",
+      social_brand_insta_title: "Instagram (Marke)",
+      social_brand_insta_desc: "Inhalte & Updates für Engineer GPM",
       social_x_title: "X (Twitter)",
       social_x_desc: "Kurze Updates & technische Einblicke",
-      social_threads_title: "Threads",
-      social_threads_desc: "Community-Beiträge & Diskussionen",
       social_personal_heading: "Vernetzen Sie sich persönlich mit mir",
       social_linkedin_title: "LinkedIn",
       social_linkedin_desc: "Für berufliches Networking",
-      social_insta_title: "Instagram",
+      social_insta_title: "Instagram (Persönlich)",
       social_insta_desc: "Persönliche Updates & Fotografie",
       social_fb_title: "Facebook",
       social_fb_desc: "Vernetzen mit Freunden & Familie",
-      
-      // Contact Page
       contact_heading: "Kontakt aufnehmen",
       contact_intro_simple: "Ich bin immer offen für die Diskussion neuer Projekte, kreativer Ideen oder Möglichkeiten. Die besten Wege, mich zu erreichen, sind unten aufgeführt.",
       contact_email_title: "E-Mail",
-      contact_email_cta: "E-Mail senden",
       contact_linkedin_title: "LinkedIn",
-      contact_linkedin_desc: "Für berufliches Networking und karrierebezogene Anfragen.",
+      contact_linkedin_desc: "Für berufliches Networking",
+      contact_email_cta: "E-Mail senden",
       contact_linkedin_cta: "Profil ansehen",
-
-      // Education Page
       education_heading: "Bildung",
       edu1_degree: "M.Sc. Werkstofftechnik",
       edu1_school: "RWTH Aachen University, Deutschland",
@@ -300,7 +281,7 @@
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
-        el.innerHTML = dict[key]; // Use innerHTML for potential links in footer etc.
+        el.innerHTML = dict[key];
       }
     });
     document.documentElement.setAttribute('lang', code);
@@ -317,7 +298,8 @@
 
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // This now targets nav links in BOTH desktop and mobile navs
+    document.querySelectorAll('.mainnav .nav-link, .mobile-nav-scroll .nav-link').forEach(link => {
       const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
       if (currentPage === linkPage) {
         link.classList.add('active');
@@ -330,7 +312,7 @@
   }
 
   /* =========================
-     UI Event Listeners
+     UI Event Listeners & Animations
      ========================= */
   function initLangToggle() {
     const btn = document.getElementById('lang-toggle');
@@ -363,16 +345,38 @@
     });
   }
 
+  function initAboutImageScroll() {
+    const imageWrapper = document.querySelector('.about-image-wrapper');
+    if (!imageWrapper) return; // Only run on the about page
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        // Scrolling down
+        imageWrapper.classList.add('is-hidden');
+      } else {
+        // Scrolling up
+        imageWrapper.classList.remove('is-hidden');
+      }
+      lastScrollY = window.scrollY;
+    });
+  }
+
+
   /* =========================
      Initialization
      ========================= */
   function init() {
+    // Apply visual themes and translations first
     applyTheme(getSavedTheme());
     applyTranslations(getSavedLang());
-    markActiveNav();
     
+    // Then, set up UI states and event listeners
+    markActiveNav();
     initLangToggle();
     initThemeShortcuts();
+    initAboutImageScroll(); // Initialize the new scroll animation
   }
 
   if (document.readyState === 'loading') {
