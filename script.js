@@ -1,110 +1,187 @@
-/* ------------------------------------------------------
-   Interactions: theme, language, nav, auto-hide toggle
-   ------------------------------------------------------ */
-const qs = (s, r=document) => r.querySelector(s);
-const qsa = (s, r=document) => [...r.querySelectorAll(s)];
+/* script.js — header/footer injection, EN/DE translations, floating control,
+   theme selection and mobile About toggle. Persists settings to localStorage. */
 
-// Persisted state
-const STORE = {
-  theme: localStorage.getItem('theme') || 'theme-gold',
-  lang: localStorage.getItem('lang') || 'en'
-};
+(function(){
+  // ---------- HTML fragments (header + footer) ----------
+  const header = `
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <div class="logo"><img src="assets/profile.jpg" alt="Profile"></div>
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+        </div>
+      </a>
 
-document.documentElement.classList.add(STORE.theme);
+      <nav class="mainnav" role="navigation" aria-label="Primary">
+        <a class="nav-link" href="index.html" data-i18n="nav_home">Home</a>
+        <a class="nav-link" href="about.html" data-i18n="nav_about">About</a>
+        <a class="nav-link" href="experience.html" data-i18n="nav_experience">Experience</a>
+        <a class="nav-link" href="skills.html" data-i18n="nav_skills">Skills</a>
+        <a class="nav-link" href="education.html" data-i18n="nav_education">Education</a>
+        <a class="nav-link" href="social.html" data-i18n="nav_social">Social</a>
+        <a class="nav-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+    </div>
+  </header>`;
 
-// Translation map
-const I18N = {
-  en: {
-    brand: 'Engineer GPM',
-    nav_home: 'Home', nav_about: 'About', nav_exp: 'Experience', nav_skills: 'Skills', nav_edu: 'Education', nav_contact: 'Contact', nav_social: 'Social',
-    hero_title: 'George P Mathew',
-    hero_sub: 'Civil Engineer & Materials Science Student',
-    hero_line: 'Pursuing M.Sc. Materials Engineering at RWTH Aachen University',
-    hero_do: 'What I Do',
-    hero_do_text: 'I bridge civil engineering fundamentals with modern materials science and practical AI. I prototype, analyze, and optimize — using LLMs and strong prompting skills to work faster and smarter.',
-    view_exp: 'View Experience',
-    download_cv: 'Download CV',
-    about_title: 'About',
-    about_text: 'Skilled Civil Engineer now specializing in Materials Engineering. I enjoy solving messy, real-world problems and communicating the results clearly.',
-    exp_title: 'Professional Experience',
-    skills_title: 'Skills',
-    edu_title: 'Education',
-    contact_title: 'Get In Touch',
-    contact_text: 'Actively seeking internships and Werkstudent roles in the Aachen area. If my background fits your needs, I’d love to connect.',
-    email_cta: 'Email Me',
-    nav_social: 'My Channels & Socials'
-  },
-  de: {
-    brand: 'Engineer GPM',
-    nav_home: 'Startseite', nav_about: 'Über mich', nav_exp: 'Erfahrung', nav_skills: 'Fähigkeiten', nav_edu: 'Bildung', nav_contact: 'Kontakt', nav_social: 'Social',
-    hero_title: 'George P Mathew',
-    hero_sub: 'Bauingenieur & Student der Werkstofftechnik',
-    hero_line: 'Studiert M.Sc. Werkstofftechnik an der RWTH Aachen University',
-    hero_do: 'Was ich mache',
-    hero_do_text: 'Ich verbinde Bauingenieurwesen mit moderner Werkstofftechnik und praktischer KI. Mit LLMs und starken Prompting-Fähigkeiten prototypisiere, analysiere und optimiere ich schneller und smarter.',
-    view_exp: 'Erfahrung ansehen',
-    download_cv: 'Lebenslauf herunterladen',
-    about_title: 'Über mich',
-    about_text: 'Erfahrener Bauingenieur mit Spezialisierung in Werkstofftechnik. Ich löse reale Probleme und kommuniziere die Ergebnisse klar.',
-    exp_title: 'Berufserfahrung',
-    skills_title: 'Fähigkeiten',
-    edu_title: 'Bildung',
-    contact_title: 'Kontakt aufnehmen',
-    contact_text: 'Ich suche aktiv Praktika und Werkstudentenstellen im Raum Aachen. Wenn mein Profil passt, freue ich mich auf Ihre Nachricht.',
-    email_cta: 'E-Mail senden',
-    nav_social: 'Meine Kanäle & Socials'
+  const footer = `
+  <footer class="footer container">
+    <div><strong data-i18n="brand_name">George P. Mathew</strong></div>
+    <div class="muted">Built with care • M.Sc. Materials Engineering</div>
+  </footer>`;
+
+  // Insert header/footer into placeholders
+  document.getElementById('site-header')?.insertAdjacentHTML('afterbegin', header);
+  document.getElementById('site-footer')?.insertAdjacentHTML('afterbegin', footer);
+
+  // ---------- translations (EN/DE) ----------
+  const dict = {
+    en: {
+      brand_name: "George P. Mathew",
+      brand_sub: "The Engineer's Folio",
+      nav_home: "Home", nav_about: "About", nav_experience: "Experience", nav_skills: "Skills", nav_education: "Education", nav_contact: "Contact", nav_social: "Social",
+      hero_eyebrow: "The Engineer's Folio",
+      hero_name: "George P. Mathew",
+      hero_role: "Civil Engineer & Materials Science Student",
+      hero_lead: "I combine hands-on construction supervision and precast experience with advanced materials research at RWTH Aachen University. I leverage AI & LLMs for faster analysis, reporting and prototyping.",
+      what_title: "What I do",
+      what_1: "Construction supervision & site coordination (foundations, precast erection, finishing)",
+      what_2: "Materials testing and characterization (concrete durability)",
+      what_3: "Quality assurance, technical problem solving",
+      what_4: "AI & LLMs: prompt engineering and practical LLM workflows for engineering tasks",
+      btn_experience: "View Experience",
+      btn_cv: "Download CV",
+      contact_title: "Get In Touch",
+      contact_desc: "I am actively seeking internships and Werkstudent opportunities in the Aachen area."
+    },
+    de: {
+      brand_name: "George P. Mathew",
+      brand_sub: "Das Ingenieur-Portfolio",
+      nav_home: "Start", nav_about: "Über", nav_experience: "Erfahrung", nav_skills: "Fähigkeiten", nav_education: "Ausbildung", nav_contact: "Kontakt", nav_social: "Sozial",
+      hero_eyebrow: "Das Ingenieur-Portfolio",
+      hero_name: "George P. Mathew",
+      hero_role: "Bauingenieur & Materialwissenschafts-Student",
+      hero_lead: "Ich vereine praktische Bauüberwachung und Fertigteil-Erfahrung mit Materialforschung an der RWTH Aachen. Ich nutze KI & LLMs zur beschleunigten Analyse, Berichterstellung und Prototyping.",
+      what_title: "Was ich tue",
+      what_1: "Bauüberwachung & Baustellenkoordination (Fundamente, Fertigteilmontage, Ausbau)",
+      what_2: "Materialprüfungen und Charakterisierung (Beton, Dauerhaftigkeit)",
+      what_3: "Qualitätssicherung, technische Problemlösung",
+      what_4: "KI & LLMs: Prompt-Engineering und praktische LLM-Workflows für Ingenieuraufgaben",
+      btn_experience: "Erfahrung ansehen",
+      btn_cv: "Lebenslauf herunterladen",
+      contact_title: "Kontakt aufnehmen",
+      contact_desc: "Ich suche aktiv Praktika und Werkstudentenstellen im Raum Aachen."
+    }
+  };
+
+  const LANG_KEY = 'ef_lang';
+  const THEME_KEY = 'ef_theme';
+
+  function currentLang(){ return localStorage.getItem(LANG_KEY) || 'en'; }
+  function setLang(code){ localStorage.setItem(LANG_KEY, code); applyTranslations(code); setLangButtonText(); }
+
+  function applyTranslations(code){
+    const t = dict[code] || dict.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key && t[key] !== undefined) el.textContent = t[key];
+    });
   }
-};
 
-function applyLang(lang){
-  const dict = I18N[lang] || I18N.en;
-  qsa('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (key && dict[key]) el.textContent = dict[key];
+  // initial translate
+  applyTranslations(currentLang());
+
+  // ---------- floating control (modern bottom-right) ----------
+  const floatingHtml = `
+    <div class="floating-control" id="floatingControl" aria-hidden="false">
+      <div class="control-card" role="region" aria-label="Controls">
+        <div class="control-row">
+          <select id="themeSelect" class="select" aria-label="Theme select">
+            <option value="default">Theme: Gold</option>
+            <option value="theme-german">Theme: Green</option>
+            <option value="theme-dark">Theme: Dark</option>
+          </select>
+          <button id="langBtn" class="lang-toggle" aria-pressed="false" title="Toggle language">EN</button>
+        </div>
+        <div class="control-row">
+          <a class="icon-btn center" id="ctaResume" href="assets/resume.pdf" target="_blank" rel="noreferrer" title="Resume"><img src="assets/icons/document.svg" alt="Resume" style="width:20px;height:20px"></a>
+          <a class="icon-btn center" id="ctaEmail" href="mailto:georgepmathew424@gmail.com" title="Email"><img src="assets/icons/mail.svg" alt="Email" style="width:18px;height:18px"></a>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', floatingHtml);
+
+  // theme select logic
+  const themeSelect = document.getElementById('themeSelect');
+  const themeMap = { default: null, 'theme-german': 'theme-german', 'theme-dark': 'theme-dark' };
+
+  // apply saved theme
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'default';
+  if (savedTheme && themeMap[savedTheme]) document.documentElement.classList.add(themeMap[savedTheme]);
+  if (themeSelect) themeSelect.value = savedTheme;
+
+  if (themeSelect) {
+    themeSelect.addEventListener('change', (e) => {
+      const val = e.target.value;
+      // remove custom theme classes
+      document.documentElement.classList.remove('theme-german','theme-dark');
+      if (val !== 'default') document.documentElement.classList.add(val);
+      localStorage.setItem(THEME_KEY, val);
+    });
+  }
+
+  // language button
+  const langBtn = document.getElementById('langBtn');
+  function setLangButtonText(){
+    const c = currentLang();
+    if (langBtn) {
+      langBtn.textContent = c.toUpperCase();
+      langBtn.setAttribute('aria-pressed', c==='de' ? 'true' : 'false');
+    }
+  }
+  setLangButtonText();
+  langBtn.addEventListener('click', () => {
+    const next = currentLang() === 'en' ? 'de' : 'en';
+    setLang(next);
   });
-  STORE.lang = lang;
-  localStorage.setItem('lang', lang);
-}
 
-// initial
-applyLang(STORE.lang);
+  // mark active nav link
+  function markActive(){
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.mainnav .nav-link').forEach(a=>{
+      const href = a.getAttribute('href') || '';
+      // normalize index
+      if ((href === path) || (href === 'index.html' && path === '')) {
+        a.classList.add('active');
+      } else {
+        a.classList.remove('active');
+      }
+    });
+  }
+  markActive();
 
-// language toggle
-qs('#lang-toggle')?.addEventListener('click', () => {
-  const newLang = STORE.lang === 'en' ? 'de' : 'en';
-  applyLang(newLang);
-});
+  // ensure translations re-run on load (for content added after injection)
+  window.addEventListener('load', ()=> applyTranslations(currentLang()));
 
-// theme toggle
-qs('#theme-toggle')?.addEventListener('click', () => {
-  const themes = ['theme-gold', 'theme-dark', 'theme-light'];
-  const currentIndex = themes.indexOf(STORE.theme);
-  const nextTheme = themes[(currentIndex + 1) % themes.length] || themes[0];
+  // Accessibility: keyboard shortcut for language toggle (L)
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'l' || e.key === 'L') {
+      const next = currentLang() === 'en' ? 'de' : 'en';
+      setLang(next);
+    }
+  });
 
-  document.documentElement.classList.remove(STORE.theme);
-  document.documentElement.classList.add(nextTheme);
+  // small auto-hide for floating control on desktop after inactivity (optional)
+  (function floatingAutoHide(){
+    let timer;
+    const fc = document.getElementById('floatingControl');
+    if (!fc) return;
+    const show = () => { fc.style.opacity = '1'; fc.style.transform = 'translateY(0)'; clearTimeout(timer); timer = setTimeout(()=>{ fc.style.opacity='0.12'; }, 6000); };
+    ['mousemove','touchstart','scroll','keydown'].forEach(evt => window.addEventListener(evt, show, { passive:true }));
+    show();
+  })();
 
-  STORE.theme = nextTheme;
-  localStorage.setItem('theme', nextTheme);
-  // update icon if you want (switch sun/moon)
-});
-
-// nav toggle (mobile)
-qs('#nav-toggle')?.addEventListener('click', () => {
-  // show/hide the nav-mobile by toggling class on header or nav
-  const nav = qs('.nav-mobile');
-  if (nav) nav.classList.toggle('open');
-});
-
-// auto-hide mobile toggle button (hide after inactivity)
-(function autoHideMobileToggle(){
-  const t = qs('#nav-toggle');
-  if (!t) return;
-  let timer;
-  const show = () => t.classList.remove('is-hidden');
-  const hideSoon = () => { clearTimeout(timer); timer = setTimeout(() => t.classList.add('is-hidden'), 3000); };
-  const wake = () => { show(); hideSoon(); };
-  ['mousemove','touchstart','scroll','keydown'].forEach(evt => window.addEventListener(evt, wake, { passive: true }));
-  // start hidden soon
-  hideSoon();
 })();
