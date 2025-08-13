@@ -1,39 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Skills — George P. Mathew</title>
+  <meta name="description" content="My skills in Civil Engineering, AI-powered problem solving, software proficiency, and languages." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="site-header"></div>
-  <main class="container page-root section">
-    <h1 data-i18n="nav_skills">My Skills</h1>
+
+  <!-- ================= Header (Copied from index.html) ================= -->
+  <header class="topbar" role="banner" aria-label="Site header">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/profile.jpg" alt="George P. Mathew" class="brand-avatar" />
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </nav>
+
+      <!-- Language Toggle -->
+      <div class="header-actions">
+        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
+      </div>
+    </div>
+
+    <!-- Mobile two-line nav -->
+    <div class="container mobile-nav" aria-label="Mobile navigation">
+      <div class="nav-line">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+      </div>
+      <div class="nav-line">
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Content ================= -->
+  <main class="container page-root section" role="main">
+    <h1 data-i18n="skills_heading">My Capabilities</h1>
+
     <div class="skills-grid">
-      <div class="skill-card">
-        <img src="assets/icons/ai.svg" alt="AI" class="skill-icon" />
-        <h3>Artificial Intelligence</h3>
-        <p>Proficient in prompting, LLM usage, and AI integration for projects.</p>
-      </div>
-      <div class="skill-card">
-        <img src="assets/icons/coding.svg" alt="Coding" class="skill-icon" />
-        <h3>Web Development</h3>
-        <p>Modern, responsive websites with HTML, CSS, and JavaScript.</p>
-      </div>
-      <div class="skill-card">
-        <img src="assets/icons/project.svg" alt="Project" class="skill-icon" />
-        <h3>Project Management</h3>
-        <p>Efficient planning, execution, and delivery of engineering projects.</p>
-      </div>
-      <div class="skill-card">
+      <!-- Skill 1: Engineering -->
+      <div class="skill-card card">
         <img src="assets/icons/engineering.svg" alt="Engineering" class="skill-icon" />
-        <h3>Civil & Materials Engineering</h3>
-        <p>Expertise in precast erection, QA/QC, and structural analysis.</p>
+        <h3 data-i18n="skill1_title">Engineering Foundation</h3>
+        <p data-i18n="skill1_desc">Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.</p>
+      </div>
+
+      <!-- Skill 2: AI -->
+      <div class="skill-card card">
+        <img src="assets/icons/ai.svg" alt="AI" class="skill-icon" />
+        <h3 data-i18n="skill2_title">AI & Resourcefulness</h3>
+        <p data-i18n="skill2_desc">Expert Prompt Engineering, AI-Assisted Project Execution, and Rapid Prototyping & Learning.</p>
+      </div>
+      
+      <!-- Skill 3: Software -->
+      <div class="skill-card card">
+        <img src="assets/icons/coding.svg" alt="Software" class="skill-icon" />
+        <h3 data-i18n="skill3_title">Software & Tools</h3>
+        <p data-i18n="skill3_desc">AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), and MS Office.</p>
+      </div>
+
+      <!-- Skill 4: Languages -->
+      <div class="skill-card card">
+        <img src="assets/icons/globe.svg" alt="Languages" class="skill-icon" />
+        <h3 data-i18n="skill4_title">Languages & Communication</h3>
+        <p data-i18n="skill4_desc">English (C1), Malayalam (Native), Tamil & Hindi (Working Knowledge), German (Actively Learning).</p>
       </div>
     </div>
   </main>
-  <div id="site-footer"></div>
+
+  <!-- ================= Footer (Copied from index.html) ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div class="footer-text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality. <a href="about.html">Learn more.</a></div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
