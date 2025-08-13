@@ -59,29 +59,47 @@ body{
 .small-btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(15,111,255,0.12);color:var(--accent);text-decoration:none;font-weight:700}
 .theme-btn{background:transparent;border:0;padding:6px;cursor:pointer;font-size:18px}
 
-/* hero (minimalist white) */
+/* HERO - NEW: image on the left for larger screens */
 .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:56px 0}
+.hero-image{order:1}
+.hero-content{order:2}
 .eyebrow{color:var(--accent);font-weight:700;margin:0 0 8px 0}
 .hero-title{font-size:40px;margin:0 0 6px 0}
 .hero-sub{font-size:18px;margin:0 0 18px;color:var(--muted)}
 .hero-desc{max-width:680px;color:var(--muted);margin-bottom:18px}
-.hero-actions{display:flex;gap:12px}
+
+/* what i do */
+.what-i-do{margin:16px 0}
+.what-i-do h4{margin:0 0 8px}
+.what-i-do ul{margin:0;padding-left:18px;color:var(--muted)}
+.what-i-do li{margin:6px 0}
+
+/* buttons */
+.hero-actions{display:flex;gap:12px;margin-top:10px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;text-decoration:none;cursor:pointer}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:800}
 .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--accent);font-weight:700}
+
+/* meta & chips */
 .meta-row{margin-top:18px;color:var(--muted)}
 .chips{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
 .chip{background:rgba(15,111,255,0.06);padding:6px 10px;border-radius:10px;color:var(--muted);font-weight:600}
 
 /* image card */
 .image-card{border-radius:20px;padding:18px;background:var(--card);box-shadow:0 20px 40px rgba(3,10,24,0.06);display:flex;align-items:center;justify-content:center}
-.image-card img{max-width:100%;height:auto;display:block;}
+.image-card img{width:100%;height:auto;display:block;max-width:420px;border-radius:12px}
+
+/* home socials small row */
+.home-socials{display:flex;gap:10px;margin-top:18px;align-items:center}
+.social-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);text-decoration:none;color:var(--text);background:transparent}
+.social-btn svg{color:var(--accent-2)}
+.social-label{font-weight:700}
 
 /* sections */
 .section{padding:48px 0}
 .page-title{font-size:28px;margin:0 0 18px 0}
 .content-grid{display:grid;grid-template-columns:1fr;gap:18px}
-.side-card img{width:100%;border-radius:12px;}
+.side-card img{width:100%;border-radius:12px}
 
 /* cards */
 .card{padding:18px;border-radius:14px;background:var(--card);border:1px solid rgba(0,0,0,0.04);margin-bottom:16px}
@@ -91,14 +109,11 @@ body{
 .tags{display:flex;gap:8px;margin-top:12px}
 .tags span{background:rgba(0,0,0,0.04);padding:6px 8px;border-radius:8px;color:var(--muted);font-weight:700}
 
-/* grid */
-.grid-3{display:grid;grid-template-columns:1fr;gap:14px}
-.tile{padding:18px;border-radius:12px;background:var(--card);border:1px solid rgba(0,0,0,0.04);}
-
-/* education */
-.edu-list{display:grid;gap:12px}
-.edu-card{padding:16px;border-radius:12px;background:var(--card);border:1px solid rgba(0,0,0,0.04)}
-.small{color:var(--muted);font-size:13px}
+/* social page grid */
+.social-grid{display:grid;gap:14px}
+.social-card{display:flex;align-items:center;gap:12px;padding:16px;border-radius:12px;text-decoration:none;background:var(--card);border:1px solid rgba(0,0,0,0.04);color:inherit}
+.social-card .icon{width:56px;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800}
+.social-card .title{font-weight:700}
 
 /* contact */
 .contact-centered{display:flex;justify-content:center;align-items:center;min-height:50vh}
@@ -109,8 +124,20 @@ body{
 
 /* responsive */
 @media(min-width:768px){
-  .hero{grid-template-columns:1fr 460px}
+  .hero{grid-template-columns:420px 1fr}
+  .hero-image{order:1}
+  .hero-content{order:2}
+  .image-card img{max-width:380px}
   .content-grid{grid-template-columns:1fr 320px}
   .grid-3{grid-template-columns:repeat(3,1fr)}
   .nav-link{display:inline-block}
+  .social-grid{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:767px){
+  .hero{padding:28px 0}
+  .image-card img{max-width:320px}
+  .home-socials{flex-wrap:wrap}
+  .hero-title{font-size:32px}
 }
