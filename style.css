@@ -1,7 +1,7 @@
 /* style.css — Full stylesheet for Engineer GPM site
    - Core styles, responsive design, and themes
    - Signature "blueprint" motif included
-   - v2.0
+   - v4.0 (Includes all pages, logo styles removed)
 */
 
 /* -------------------------
@@ -21,7 +21,6 @@
   --maxw: 1200px;
   --glass: rgba(255, 255, 255, 0.8);
   
-  /* Blueprint Background - A subtle engineering grid */
   --blueprint-bg: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   --blueprint-size: 20px 20px;
 }
@@ -101,54 +100,19 @@ img {
   gap: 16px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-}
-.brand-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--border-color);
-}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.brand-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color); }
 .brand-text { line-height: 1.2; }
 .brand-name { font-weight: 700; }
 .brand-sub { font-size: 13px; color: var(--muted); }
 
 .mainnav { display: flex; gap: 8px; }
-.mainnav .nav-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--muted);
-  transition: color 0.2s, background-color 0.2s;
-}
+.mainnav .nav-link { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-size: 15px; font-weight: 700; color: var(--muted); transition: color 0.2s, background-color 0.2s; }
 .mainnav .nav-link:hover { color: var(--text); }
 .mainnav .nav-link.active { color: var(--accent); }
 .nav-icon { width: 16px; height: 16px; opacity: 0.8; }
 
-.header-actions .icon-btn {
-  display: inline-grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text);
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
+.header-actions .icon-btn { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; background: transparent; border: 1px solid var(--border-color); color: var(--text); font-weight: 700; cursor: pointer; transition: background-color 0.2s; }
 .header-actions .icon-btn:hover { background-color: rgba(0,0,0,0.05); }
 
 .mobile-nav { display: none; }
@@ -158,73 +122,25 @@ img {
    ------------------------- */
 .page-root { padding-top: 48px; padding-bottom: 64px; }
 
-.hero {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.image-card {
-  padding: 12px;
-  border-radius: 14px;
-  box-shadow: var(--shadow-strong);
-  
-  /* Applying the Blueprint Motif */
-  background-color: var(--surface);
-  background-image: var(--blueprint-bg);
-  background-size: var(--blueprint-size);
-}
+.hero { display: grid; grid-template-columns: 400px 1fr; gap: 60px; align-items: center; }
+.image-card { padding: 12px; border-radius: 14px; box-shadow: var(--shadow-strong); background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .hero-image { border-radius: 8px; }
-
-.hero-right .title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 900;
-  line-height: 1.1;
-  margin: 0 0 8px;
-}
-.hero-right .subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
-  font-weight: 700;
-  color: var(--accent);
-  margin: 0 0 24px;
-}
-.hero-right .lead {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 600px;
-  margin-bottom: 16px;
-}
+.hero-right .title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; margin: 0 0 8px; }
+.hero-right .subtitle { font-size: clamp(1.1rem, 3vw, 1.25rem); font-weight: 700; color: var(--accent); margin: 0 0 24px; }
+.hero-right .lead { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 16px; }
 .hero-right .lead:last-of-type { margin-bottom: 24px; }
 
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
-}
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease; }
 .btn.primary { background: var(--accent); color: white; }
 .btn.primary:hover { background: var(--accent-2); transform: translateY(-2px); }
 .btn.outline { border-color: var(--border-color); color: var(--text); }
 .btn.outline:hover { background: var(--surface); border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-
 /* -------------------------
    Footer
    ------------------------- */
-.footer {
-  padding: 32px 0;
-  border-top: 1px solid var(--border-color);
-  text-align: center;
-  color: var(--muted);
-}
+.footer { padding: 32px 0; border-top: 1px solid var(--border-color); text-align: center; color: var(--muted); }
 .footer-text { font-weight: 700; color: var(--text); }
 .footer-subtext { font-size: 14px; }
 .footer-subtext a { color: var(--accent); font-weight: 700; text-decoration: none; }
@@ -233,31 +149,56 @@ img {
 /* -------------------------
    Generic Page & Card Styles
    ------------------------- */
-.section h1 {
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 900;
-  margin-bottom: 32px;
-  text-align: center;
-}
+.section h1 { font-size: clamp(2rem, 5vw, 2.5rem); font-weight: 900; margin-bottom: 16px; text-align: center; }
+.section .section-lead { font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 48px; color: var(--muted); }
 
-.card {
-  background-color: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+.card { background-color: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-soft); transition: transform 0.2s, box-shadow 0.2s; }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
 
+/* -------------------------
+   Skills Page
+   ------------------------- */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.skill-card { text-align: center; }
+.skill-card { text-align: center; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .skill-icon { width: 48px; height: 48px; margin: 0 auto 16px; color: var(--accent); }
 .skill-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
 .skill-card p { color: var(--muted); margin: 0; font-size: 0.95rem; }
 
-/* Add other grid styles here as we build them... */
+/* -------------------------
+   About Page
+   ------------------------- */
+.about-content { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: flex-start; max-width: 900px; margin: 48px auto 0; }
+.about-image-wrapper { position: sticky; top: 140px; }
+.about-profile-pic { width: 100%; border-radius: 50%; border: 4px solid var(--surface); box-shadow: var(--shadow-strong); }
+.about-text p { font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-bottom: 24px; }
+.about-text h3 { font-size: 1.5rem; font-weight: 700; margin-top: 40px; margin-bottom: 16px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; }
 
+/* -------------------------
+   Experience Page
+   ------------------------- */
+.experience-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+.experience-card { background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
+.experience-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.experience-role { font-size: 1.5rem; font-weight: 700; margin: 0; }
+.experience-date { font-size: 0.9rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.experience-company { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin: 0 0 16px; }
+.experience-details { padding-left: 20px; margin: 0 0 20px; color: var(--muted); }
+.experience-details li { margin-bottom: 8px; line-height: 1.6; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; background-color: var(--bg); color: var(--muted); border: 1px solid var(--border-color); }
+
+/* -------------------------
+   Why Germany Page
+   ------------------------- */
+.manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto 48px; }
+.manifesto-column { border: 1px solid var(--border-color); padding: 24px; border-radius: var(--radius); background-color: var(--surface); }
+.manifesto-column h2 { font-size: 1.8rem; font-weight: 900; margin: 0 0 24px; border-bottom: 2px solid var(--border-color); padding-bottom: 12px; }
+.manifesto-item { margin-bottom: 24px; }
+.manifesto-item:last-child { margin-bottom: 0; }
+.manifesto-item h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 8px; }
+.manifesto-item p { margin: 0; color: var(--muted); }
+.bigger-picture-box { max-width: 900px; margin: 0 auto; text-align: center; padding: 32px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
+.bigger-picture-box h2 { margin-top: 0; color: var(--accent); }
 
 /* -------------------------
    Responsive Rules
@@ -267,34 +208,22 @@ img {
   .hero-right .lead { margin: 0 auto 16px; }
   .image-card { margin: 0 auto; max-width: 400px; }
   .hero-cta { justify-content: center; }
+  .manifesto-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 767px) {
   .mainnav { display: none; }
-  .mobile-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-top: 8px;
-    border-top: 1px solid var(--border-color);
-    margin-top: 8px;
-  }
-  .mobile-nav .nav-line {
-    display: flex;
-    gap: 8px;
-    justify-content: space-around;
-  }
-  .mobile-nav .nav-link {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 4px;
-    font-size: 12px;
-  }
+  .mobile-nav { display: flex; flex-direction: column; gap: 8px; padding-top: 8px; border-top: 1px solid var(--border-color); margin-top: 8px; }
+  .mobile-nav .nav-line { display: flex; gap: 8px; justify-content: space-around; }
+  .mobile-nav .nav-link { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 8px 4px; font-size: 12px; }
   .mobile-nav .nav-icon { margin-bottom: 4px; }
   .topbar { top: 0; border-radius: 0; }
   .brand-sub { display: none; }
+
+  .about-content { grid-template-columns: 1fr; gap: 24px; }
+  .about-image-wrapper { position: static; margin: 0 auto 16px; max-width: 180px; }
+  .about-text { text-align: center; }
+  .about-text h3 { border-left: none; border-bottom: 2px solid var(--accent); padding-left: 0; padding-bottom: 8px; display: inline-block; }
 }
 
 /* -------------------------
@@ -304,143 +233,4 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   box-shadow: none;
-}
-
-/* -------------------------
-   About Page Styles
-   ------------------------- */
-.about-content {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 40px;
-  align-items: flex-start;
-  max-width: 900px;
-  margin: 48px auto 0;
-}
-
-.about-image-wrapper {
-  position: sticky;
-  top: 140px; /* Aligns with header height */
-}
-
-.about-profile-pic {
-  width: 100%;
-  border-radius: 50%;
-  border: 4px solid var(--surface);
-  box-shadow: var(--shadow-strong);
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--muted);
-  margin-bottom: 24px;
-}
-
-.about-text h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 40px;
-  margin-bottom: 16px;
-  color: var(--accent);
-  border-left: 3px solid var(--accent);
-  padding-left: 12px;
-}
-
-/* Responsive adjustments for About Page */
-@media (max-width: 767px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .about-image-wrapper {
-    position: static; /* un-stick the image */
-    margin: 0 auto 16px;
-    max-width: 180px;
-  }
-  .about-text {
-    text-align: center;
-  }
-  .about-text h3 {
-    border-left: none;
-    border-bottom: 2px solid var(--accent);
-    padding-left: 0;
-    padding-bottom: 8px;
-    display: inline-block;
-  }
-}
-
-/* -------------------------
-   Experience Page Styles
-   ------------------------- */
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.experience-card {
-  /* Applying the blueprint motif to the experience cards for consistency */
-  background-color: var(--surface);
-  background-image: var(--blueprint-bg);
-  background-size: var(--blueprint-size);
-}
-
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.experience-role {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.experience-date {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.experience-company {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin: 0 0 16px;
-}
-
-.experience-details {
-  padding-left: 20px;
-  margin: 0 0 20px;
-  color: var(--muted);
-}
-
-.experience-details li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  background-color: var(--bg);
-  color: var(--muted);
-  border: 1px solid var(--border-color);
 }
