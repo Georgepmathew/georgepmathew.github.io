@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>George P. Mathew — The Engineer's Folio</title>
-  <meta name="description" content="George P. Mathew — Civil Engineer | M.Sc. Materials Engineering student. Construction, materials testing, AI & LLM expertise." />
+  <meta name="description" content="George P. Mathew — Civil Engineer and future Materials Innovator, leveraging AI to solve complex problems." />
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ================= Header (desktop + mobile DOM) ================= -->
+  <!-- ================= Header (To be copied to all pages) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -24,33 +26,33 @@
 
       <!-- Desktop nav -->
       <nav class="mainnav" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt="" aria-hidden="true"><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt="" aria-hidden="true"><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt="" aria-hidden="true"><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt="" aria-hidden="true"><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt="" aria-hidden="true"><span data-i18n="nav_education">Education</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt="" aria-hidden="true"><span data-i18n="nav_contact">Contact</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt="" aria-hidden="true"><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
 
-      <!-- Visible language toggle (header) - script will wire translations -->
-      <div class="header-actions" aria-hidden="false">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language" aria-pressed="false" aria-label="Toggle language">EN</button>
+      <!-- Language Toggle -->
+      <div class="header-actions">
+        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
       </div>
     </div>
 
-    <!-- Mobile two-line nav (DOM present so searchable / crawlable) -->
+    <!-- Mobile two-line nav -->
     <div class="container mobile-nav" aria-label="Mobile navigation">
       <div class="nav-line">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
       </div>
       <div class="nav-line">
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_education">Education</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_contact">Contact</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt="" aria-hidden="true"><span class="nav-label" data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </div>
     </div>
   </header>
@@ -58,58 +60,39 @@
   <!-- ================= Main / Hero ================= -->
   <main class="page-root container" role="main">
     <section class="hero" aria-labelledby="hero-heading">
-      <!-- LEFT: Illustration (keeps left-facing image on desktop) -->
+      <!-- LEFT: Illustration -->
       <div class="hero-left">
         <div class="image-card">
-          <!-- The image will auto-fit: CSS + script set max-width:100%, height:auto, object-fit:contain -->
-          <img src="assets/header.png" alt="Illustration of George P. Mathew facing left" class="hero-image" />
+          <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
         </div>
       </div>
 
       <!-- RIGHT: Content -->
       <div class="hero-right">
-        <p class="eyebrow" id="hero-eyebrow" data-i18n="hero_eyebrow">The Engineer's Folio</p>
         <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
-        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Materials Science Student</p>
+        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
 
-        <p class="lead" data-i18n="hero_lead">
-          I combine hands-on construction supervision and precast experience with materials research at RWTH Aachen. I also use AI & LLMs to speed up analysis, reporting and prototyping.
+        <p class="lead" data-i18n="hero_lead_1">
+          My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.
+        </p>
+        <p class="lead" data-i18n="hero_lead_2">
+          I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.
         </p>
 
-        <div class="what-id" aria-labelledby="what-title">
-          <h4 id="what-title" data-i18n="what_title">What I do</h4>
-          <ul>
-            <li data-i18n="what_1">Construction supervision & site coordination (foundations, precast erection, finishing)</li>
-            <li data-i18n="what_2">Materials testing and characterization (concrete durability)</li>
-            <li data-i18n="what_3">Quality assurance, documentation, technical problem solving</li>
-            <li data-i18n="what_4"><strong>AI & LLMs:</strong> strong prompt engineering, practical LLM workflows for engineering tasks</li>
-          </ul>
-        </div>
-
-        <div class="hero-cta" aria-hidden="false">
-          <a class="btn primary" href="experience.html" data-i18n="btn_experience">View Experience</a>
-          <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noreferrer" data-i18n="btn_cv">Download CV</a>
-        </div>
-
-        <div class="hero-socials" aria-label="Social links">
-          <a class="small-icon" href="https://www.instagram.com/georgepmathew/" target="_blank" rel="noreferrer" title="Instagram">
-            <img src="assets/icons/instagram.svg" alt="Instagram" class="hero-social-icon">
-          </a>
-          <a class="small-icon" href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noreferrer" title="YouTube">
-            <img src="assets/icons/youtube.svg" alt="YouTube" class="hero-social-icon">
-          </a>
+        <div class="hero-cta">
+          <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
+          <a class="btn outline" href="germany.html" data-i18n="btn_germany">Why Germany?</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= Footer ================= -->
+  <!-- ================= Footer (To be copied to all pages) ================= -->
   <footer class="footer container" role="contentinfo">
-    <div><strong>George P. Mathew</strong></div>
-    <div class="muted">Built with care • M.Sc. Materials Engineering</div>
+    <div class="footer-text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality. <a href="about.html">Learn more.</a></div>
   </footer>
 
-  <!-- Script (wires language, theme, and responsive behavior; ensures images/icons auto-fit) -->
   <script src="script.js"></script>
 </body>
 </html>
