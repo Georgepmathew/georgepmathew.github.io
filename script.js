@@ -40,7 +40,10 @@
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(a => {
     const href = a.getAttribute('href') || '';
-    if (href === page || (page === 'index.html' && href === 'index.html')) {
+    // handle index (home)
+    if ((page === 'index.html' && href === 'index.html') || (href === page) || (href === '' && page === 'index.html')) {
+      a.classList.add('active');
+    } else if (href === page) {
       a.classList.add('active');
     } else {
       a.classList.remove('active');
