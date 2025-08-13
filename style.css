@@ -1,7 +1,7 @@
 /* style.css — Full stylesheet for Engineer GPM site
    - Core styles, responsive design, and themes
    - Signature "blueprint" motif included
-   - v4.0 (Includes all pages, logo styles removed)
+   - Final Version (Includes all pages)
 */
 
 /* -------------------------
@@ -201,6 +201,41 @@ img {
 .bigger-picture-box h2 { margin-top: 0; color: var(--accent); }
 
 /* -------------------------
+   Social Page
+   ------------------------- */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.social-card { display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; padding: 20px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
+.social-icon { width: 48px; height: 48px; flex-shrink: 0; }
+.social-text { display: flex; flex-direction: column; }
+.social-text strong { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+.social-text .muted { font-size: 0.95rem; }
+
+/* -------------------------
+   Contact Page
+   ------------------------- */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto; }
+.contact-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: inherit; padding: 32px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
+.contact-card-icon { margin-bottom: 16px; }
+.contact-card-icon img { width: 48px; height: 48px; color: var(--accent); }
+.contact-card-text h3 { font-size: 1.5rem; font-weight: 700; margin: 0 0 8px; color: var(--text); }
+.contact-card-text p { color: var(--muted); margin: 0 0 24px; }
+.contact-card-link { display: inline-block; padding: 8px 16px; border-radius: 999px; background-color: var(--accent); color: white; font-weight: 700; font-size: 0.9rem; transition: background-color 0.2s; }
+.contact-card:hover .contact-card-link { background-color: var(--accent-2); }
+
+/* -------------------------
+   Education Timeline
+   ------------------------- */
+.timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 40px; }
+.timeline::before { content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 3px; background-color: var(--border-color); border-radius: 2px; }
+.timeline-item { position: relative; margin-bottom: 32px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-icon { position: absolute; left: -40px; top: 0; width: 46px; height: 46px; display: grid; place-items: center; background: var(--surface); border: 3px solid var(--border-color); border-radius: 50%; font-size: 1.5rem; z-index: 1; }
+.timeline-content { padding: 24px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
+.timeline-title { font-size: 1.5rem; margin: 0 0 4px; color: var(--accent); }
+.timeline-institution { font-size: 1.1rem; font-weight: 700; margin: 0 0 8px; }
+.timeline-date { color: var(--muted); font-weight: 700; margin: 0; }
+
+/* -------------------------
    Responsive Rules
    ------------------------- */
 @media (max-width: 900px) {
@@ -224,6 +259,9 @@ img {
   .about-image-wrapper { position: static; margin: 0 auto 16px; max-width: 180px; }
   .about-text { text-align: center; }
   .about-text h3 { border-left: none; border-bottom: 2px solid var(--accent); padding-left: 0; padding-bottom: 8px; display: inline-block; }
+
+  .timeline { padding-left: 30px; }
+  .timeline-icon { left: -35px; width: 40px; height: 40px; font-size: 1.2rem; }
 }
 
 /* -------------------------
