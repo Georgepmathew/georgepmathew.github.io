@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — George P. Mathew</title>
-  <meta name="description" content="Get in touch via Email or connect on LinkedIn." />
+  <meta name="description" content="Get in touch with George P. Mathew via Email or connect on LinkedIn." />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +17,10 @@
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.jpg" alt="George P. Mathew" class="brand-avatar" />
+        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
         <div class="brand-text">
           <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
         </div>
       </a>
 
@@ -29,7 +29,7 @@
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
         <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
         <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
@@ -47,7 +47,7 @@
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
       </div>
       <div class="nav-line">
         <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
@@ -64,36 +64,40 @@
     
     <div class="contact-grid">
         <!-- Email Card -->
-        <a href="mailto:YOUR_EMAIL@example.com" class="contact-card card">
-            <div class="contact-card-icon">
-                <img src="assets/icons/mail.svg" alt="Email Icon">
-            </div>
-            <div class="contact-card-text">
-                <h3 data-i18n="contact_email_title">Email</h3>
-                <p data-i18n="contact_email_desc">The most direct way to contact me.</p>
-                <span class="contact-card-link" data-i18n="contact_email_cta">Send an Email</span>
-            </div>
-        </a>
+        <div class="contact-card-wrapper">
+            <h3 class="contact-card-title" data-i18n="contact_email_title">Email</h3>
+            <a href="mailto:georgepmathew424@gmail.com" class="contact-card card">
+                <div class="contact-card-icon">
+                    <img src="assets/icons/mail.svg" alt="Email Icon">
+                </div>
+                <div class="contact-card-text">
+                    <p class="contact-card-address">georgepmathew424@gmail.com</p>
+                    <span class="contact-card-link" data-i18n="contact_email_cta">Send an Email</span>
+                </div>
+            </a>
+        </div>
 
         <!-- LinkedIn Card -->
-        <a href="#" class="contact-card card" target="_blank" rel="noopener noreferrer">
-            <div class="contact-card-icon">
-                <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon">
-            </div>
-            <div class="contact-card-text">
-                <h3 data-i18n="contact_linkedin_title">LinkedIn</h3>
-                <p data-i18n="contact_linkedin_desc">For professional networking and career-related inquiries.</p>
-                <span class="contact-card-link" data-i18n="contact_linkedin_cta">View My Profile</span>
-            </div>
-        </a>
+        <div class="contact-card-wrapper">
+            <h3 class="contact-card-title" data-i18n="contact_linkedin_title">LinkedIn</h3>
+            <a href="#" class="contact-card card" target="_blank" rel="noopener noreferrer">
+                <div class="contact-card-icon">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon">
+                </div>
+                <div class="contact-card-text">
+                    <p class="contact-card-address" data-i18n="contact_linkedin_desc">Professional Networking</p>
+                    <span class="contact-card-link" data-i18n="contact_linkedin_cta">View My Profile</span>
+                </div>
+            </a>
+        </div>
     </div>
 
   </main>
 
   <!-- ================= Footer (Copied from index.html) ================= -->
   <footer class="footer container" role="contentinfo">
-    <div class="footer-text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality. <a href="about.html">Learn more.</a></div>
+    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
   </footer>
 
   <script src="script.js"></script>
