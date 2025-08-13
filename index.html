@@ -4,105 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>George P. Mathew — The Engineer's Folio</title>
-  <meta name="description" content="George P. Mathew — Civil Engineer, M.Sc. Materials Engineering student. Construction, materials, AI & LLM skills." />
+  <meta name="description" content="George P. Mathew — Civil Engineer | M.Sc. Materials Engineering student. Construction, materials testing, AI & LLM expertise." />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- TOP HEADER / NAV -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html">
-        <div class="logo">GM</div>
-        <div class="brand-text">
-          <div class="brand-name">George P. Mathew</div>
-          <div class="brand-sub">The Engineer's Folio</div>
-        </div>
-      </a>
+  <!-- header/footer are injected by script -->
+  <div id="site-header"></div>
 
-      <nav class="mainnav" aria-label="Primary">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="skills.html">Skill</a>
-        <a class="nav-link" href="education.html">Education</a>
-        <a class="nav-link" href="experience.html">Experience</a>
-        <a class="nav-link" href="social.html">Projects</a>
-        <a class="nav-link" href="social.html">Open Source</a>
-        <a class="nav-link" href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main class="page-root">
-    <section class="hero container">
-      <!-- IMAGE ON LEFT (desktop). On mobile image stacks above -->
-      <div class="hero-image">
+  <main class="page-root container">
+    <!-- HERO (desktop: image left, content right; mobile stacked) -->
+    <section class="hero">
+      <div class="hero-left">
         <div class="image-card">
           <img src="assets/header.png" alt="Graduate illustration — George P. Mathew" />
         </div>
       </div>
 
-      <div class="hero-content">
-        <p class="eyebrow">The Engineer's Folio</p>
-        <h1 class="hero-title">George P. Mathew</h1>
-        <p class="hero-lead">Civil Engineer & Materials Science Student</p>
+      <div class="hero-right">
+        <p class="eyebrow" data-i18n="hero_eyebrow">The Engineer's Folio</p>
+        <h1 class="title" data-i18n="hero_name">George P. Mathew</h1>
+        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Materials Science Student</p>
 
-        <p class="hero-desc">
-          Civil engineer with hands-on construction and precast experience — now pursuing an M.Sc. in Materials Engineering at RWTH Aachen University. I combine site experience with materials research and practical AI/LLM workflows to deliver better, more sustainable structures.
+        <p class="lead" data-i18n="hero_lead">
+          I combine hands-on construction supervision and precast experience with advanced materials research at RWTH Aachen University. I leverage AI & LLMs for faster analysis, reporting and prototyping.
         </p>
 
-        <div class="what-i-do">
-          <h4>What I do</h4>
+        <div class="what-id">
+          <h4 data-i18n="what_title">What I do</h4>
           <ul>
-            <li>Construction supervision & site coordination (foundations, precast erection, finishing)</li>
-            <li>Materials testing & characterization (concrete, durability)</li>
-            <li>Quality assurance, technical problem solving</li>
-            <li><strong>AI & LLMs:</strong> prompt engineering, LLM-based analysis & documentation</li>
+            <li data-i18n="what_1">Construction supervision & site coordination (foundations, precast erection, finishing)</li>
+            <li data-i18n="what_2">Materials testing and characterization (concrete durability)</li>
+            <li data-i18n="what_3">Quality assurance, technical problem solving</li>
+            <li data-i18n="what_4"><strong>AI & LLMs:</strong> prompt engineering and practical LLM workflows for engineering tasks</li>
           </ul>
         </div>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="experience.html">View Experience</a>
-          <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noreferrer">See My Resume</a>
+        <div class="hero-cta">
+          <a class="btn primary" href="experience.html" data-i18n="btn_experience">View Experience</a>
+          <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noreferrer" data-i18n="btn_cv">Download CV</a>
         </div>
 
-        <div class="social-row">
-          <a class="icon-btn" href="https://www.instagram.com/georgepmathew/" target="_blank" rel="noreferrer" title="Instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
-          </a>
-
-          <a class="icon-btn" href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noreferrer" title="YouTube">
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M22 7.2c0 0-0.2-1.6-0.8-2.2s-1.6-0.8-2-0.9C16.6 3.9 12 3.9 12 3.9h0s-4.6 0-7.1 0.2c-0.5 0.1-1.6 0.4-2 0.9S2 7.2 2 7.2 1.8 9 1.8 10.8v2.4C1.8 15 2 16.8 2 16.8s0.2 1.6 0.6 2.2 1.6 0.8 2 0.9c2.5 0.2 7.1 0.2 7.1 0.2s4.6 0 7.1-0.2c0.5-0.1 1.6-0.4 2-0.9s0.8-2.2 0.8-2.2 0.2-1.8 0.2-3.6v-2.4C22.2 9 22 7.2 22 7.2z" fill="currentColor"/><path d="M10 15V9l5 3-5 3z" fill="#fff"/></svg>
-          </a>
+        <div class="hero-socials" aria-label="Social links">
+          <a class="small-icon" href="https://www.instagram.com/georgepmathew/" target="_blank" rel="noreferrer" title="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+          <a class="small-icon" href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noreferrer" title="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+          <a class="small-icon" href="https://github.com/Georgepmathew" target="_blank" rel="noreferrer" title="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
+          <a class="small-icon" href="https://x.com/EngineerGPM" target="_blank" rel="noreferrer" title="X / Twitter"><img src="assets/icons/x.svg" alt="X"></a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- COLLAPSIBLE ABOUT (mobile only quick-access) -->
-  <div id="mobile-about" class="mobile-about">
-    <button id="mobileAboutToggle" class="mobile-about-toggle" aria-expanded="false" aria-controls="mobileAboutContent">
-      <span>About</span>
-      <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
+  <div id="site-footer"></div>
 
-    <div id="mobileAboutContent" class="mobile-about-content" hidden>
-      <div class="mobile-about-card">
-        <h3>About</h3>
-        <p>I'm a civil engineer with experience in construction supervision, precast works and QA. Now studying M.Sc. Materials Engineering at RWTH Aachen. I specialise in materials testing, construction problem solving and using AI/LLM tools to accelerate reporting and analysis.</p>
-        <a class="btn primary" href="contact.html">Contact Me</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOTTOM NAV (mobile) -->
-  <nav class="mobile-bottom-nav" aria-hidden="false">
-    <a href="index.html" class="mb-link">Home</a>
-    <a href="skills.html" class="mb-link">Skills</a>
-    <a href="education.html" class="mb-link">Education</a>
-    <a href="experience.html" class="mb-link">Experience</a>
-    <a href="social.html" class="mb-link">Social</a>
-  </nav>
-
+  <!-- floating modern control (bottom-right) injected/handled by script as well -->
   <script src="script.js"></script>
 </body>
 </html>
