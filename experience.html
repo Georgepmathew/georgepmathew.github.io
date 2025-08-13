@@ -13,49 +13,41 @@
 </head>
 <body>
 
-  <!-- ================= Header (Copied from index.html) ================= -->
+  <!-- ================= Header (Final Structure) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.jpg" alt="George P. Mathew" class="brand-avatar" />
+        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
         <div class="brand-text">
           <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
         </div>
       </a>
-
-      <!-- Desktop nav -->
       <nav class="mainnav" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
         <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
         <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
-
-      <!-- Language Toggle -->
       <div class="header-actions">
         <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
       </div>
     </div>
-
-    <!-- Mobile two-line nav -->
-    <div class="container mobile-nav" aria-label="Mobile navigation">
-      <div class="nav-line">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
-      </div>
-      <div class="nav-line">
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile Scrolling Nav (Final Structure) -->
+  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
+      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
+      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
+      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
+      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
+      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
+      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
+      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
+  </nav>
 
   <!-- ================= Main Content ================= -->
   <main class="container page-root section" role="main">
@@ -119,10 +111,10 @@
     </div>
   </main>
 
-  <!-- ================= Footer (Copied from index.html) ================= -->
+  <!-- ================= Footer (Final Structure) ================= -->
   <footer class="footer container" role="contentinfo">
-    <div class="footer-text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality. <a href="about.html">Learn more.</a></div>
+    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
   </footer>
 
   <script src="script.js"></script>
