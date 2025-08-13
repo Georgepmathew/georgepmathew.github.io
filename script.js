@@ -1,6 +1,6 @@
 /* script.js — Engineer GPM Folio
    - Handles EN/DE translations, theme persistence, and active navigation.
-   - Final Version
+   - FINAL VERSION
 */
 
 (function () {
@@ -13,14 +13,15 @@
     en: {
       // General
       brand_name: "George P. Mathew",
-      brand_sub: "The Engineer's Folio",
+      brand_sub: "Engineer GPM",
+      footer_text: "Engineered by George P. Mathew",
       footer_subtext: "Leveraging AI to bridge vision and reality.",
 
       // Navigation
       nav_home: "Home",
       nav_experience: "Experience",
       nav_skills: "Skills",
-      nav_germany: "Why Germany",
+      nav_germany: "Germany",
       nav_about: "About",
       nav_social: "Social",
       nav_contact: "Contact",
@@ -31,7 +32,7 @@
       hero_lead_1: "My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.",
       hero_lead_2: "I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.",
       btn_story: "My Full Story",
-      btn_germany: "Why Germany?",
+      btn_germany: "My Plan for Germany",
 
       // About Page
       about_heading: "My Story",
@@ -73,11 +74,16 @@
       skill1_title: "Engineering Foundation",
       skill1_desc: "Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.",
       skill2_title: "AI & Resourcefulness",
-      skill2_desc: "Expert Prompt Engineering, AI-Assisted Project Execution, and Rapid Prototyping & Learning.",
+      skill2_desc_revised: "Expert in prompting for complex tasks like code generation and image synthesis. I leverage AI models to rapidly prototype solutions and solve daily engineering challenges.",
       skill3_title: "Software & Tools",
       skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), and MS Office.",
-      skill4_title: "Languages & Communication",
-      skill4_desc: "English (C1), Malayalam (Native), Tamil & Hindi (Working Knowledge), German (Actively Learning).",
+      lang_heading: "Languages & Communication",
+      lang1_name: "English",
+      lang1_level: "C1 – Professional Proficiency",
+      lang2_name: "Malayalam",
+      lang2_level: "Native Speaker",
+      lang3_name: "German",
+      lang3_level: "Actively Learning",
       
       // Germany Page
       germany_heading: "My Commitment to Engineering in Germany",
@@ -102,18 +108,20 @@
       // Social Page
       social_heading: "My Channels & Socials",
       social_intro: "Follow my journey, watch my projects, and connect with me on your favorite platform.",
-      social1_title: "LinkedIn",
-      social1_desc: "Professional network & career updates",
-      social2_title: "YouTube",
-      social2_desc: "Engineering videos & tutorials",
-      social3_title: "X (Twitter)",
-      social3_desc: "Short updates & tech insights",
-      social4_title: "Instagram",
-      social4_desc: "Visual projects & personal updates",
-      social5_title: "Threads",
-      social5_desc: "Community posts & discussions",
-      social6_title: "Facebook",
-      social6_desc: "Connect & messages",
+      social_brand_heading: "My Brand Channels (Engineer GPM)",
+      social_youtube_title: "YouTube",
+      social_youtube_desc: "Engineering videos & tutorials",
+      social_x_title: "X (Twitter)",
+      social_x_desc: "Short updates & tech insights",
+      social_threads_title: "Threads",
+      social_threads_desc: "Community posts & discussions",
+      social_personal_heading: "Connect with Me Personally",
+      social_linkedin_title: "LinkedIn",
+      social_linkedin_desc: "For professional networking",
+      social_insta_title: "Instagram",
+      social_insta_desc: "Personal updates & photography",
+      social_fb_title: "Facebook",
+      social_fb_desc: "Connect with friends & family",
       
       // Contact Page
       contact_heading: "Get In Touch",
@@ -125,7 +133,7 @@
       contact_linkedin_desc: "For professional networking and career-related inquiries.",
       contact_linkedin_cta: "View My Profile",
 
-      // Education Page
+      // Education Page (assuming this page exists)
       education_heading: "Education",
       edu1_degree: "M.Sc. Materials Engineering",
       edu1_school: "RWTH Aachen University, Germany",
@@ -138,33 +146,37 @@
       edu3_date: "2015 – 2017",
     },
     de: {
-      // German translations will go here. For now, we'll copy English as a placeholder.
-      // In a real project, these would be translated.
+      // General
       brand_name: "George P. Mathew",
-      brand_sub: "Das Ingenieur-Portfolio",
+      brand_sub: "Engineer GPM",
+      footer_text: "Entwickelt von George P. Mathew",
       footer_subtext: "KI nutzen, um Vision und Realität zu verbinden.",
-
-      nav_home: "Startseite",
+      
+      // Navigation
+      nav_home: "Start",
       nav_experience: "Erfahrung",
       nav_skills: "Fähigkeiten",
-      nav_germany: "Warum Deutschland",
+      nav_germany: "Deutschland",
       nav_about: "Über mich",
-      nav_social: "Soziale Medien",
+      nav_social: "Soziales",
       nav_contact: "Kontakt",
-
+      
+      // Homepage
       hero_name: "George P. Mathew",
       hero_role: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
       hero_lead_1: "Meine Praxiserfahrung mit Fundamenten und Fertigteilen hat mir gezeigt, dass die größten Herausforderungen im Bau oft Materialprobleme sind. Diese Erkenntnis treibt meinen Wechsel nach Deutschland an, um einen M.Sc. in Werkstofftechnik an der RWTH Aachen zu absolvieren.",
       hero_lead_2: "Ich löse Probleme mit einer einzigartigen Denkweise. Ohne Programmierkenntnisse habe ich KI genutzt, um dieses Portfolio von Grund auf zu entwickeln. So gehe ich jede Herausforderung an: mit Einfallsreichtum, Neugier und dem Antrieb, die beste Lösung zu finden.",
       btn_story: "Meine Geschichte",
-      btn_germany: "Warum Deutschland?",
-
+      btn_germany: "Mein Plan für Deutschland",
+      
+      // About Page
       about_heading: "Meine Geschichte",
       about_p1: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete und Fundamentarbeiten überwachte. Das war nicht nur ein Job; es war ein Labor in der realen Welt, in dem ich die entscheidende Verbindung zwischen Materialqualität und Projekterfolg erlebte. Die Herausforderungen durch Materialfehler aus erster Hand zu sehen, weckte meine Leidenschaft, das 'Warum' hinter den von uns verwendeten Materialien zu verstehen.",
       about_p2: "Diese Erfahrung vor Ort führte mich zu einer klaren Schlussfolgerung: Um bessere, langlebigere Strukturen zu bauen, müssen wir zuerst die Materialien selbst innovieren. Diese Erkenntnis ist die treibende Kraft hinter meiner Entscheidung, einen Master in Werkstofftechnik an der weltberühmten RWTH Aachen zu absolvieren und mich an die Spitze der Bauinnovation zu setzen.",
       about_subtitle: "Meine Denkweise: Die Geschichte dieser Website",
       about_p3: "Ich definiere mich durch meinen Einfallsreichtum. Diese Website ist mein Beweis. Ohne vorherige Programmiererfahrung behandelte ich ihre Erstellung wie ein Ingenieurproblem. Mein Werkzeug war kein CAD-Programm; es war Künstliche Intelligenz. Durch iteratives Prompting und logisches Debugging leitete ich die KI an, den Code zu generieren, das Design zu strukturieren und die Funktionen zu erstellen, die Sie jetzt sehen. Das ist die zukunftsorientierte, werkzeugunabhängige Denkweise, die ich bei jeder Herausforderung anwende.",
       
+      // Experience Page
       experience_heading: "Berufserfahrung",
       exp1_role: "Business Assistant",
       exp1_date: "12/2023 – Heute",
@@ -192,16 +204,23 @@
       tag_precast: "Fertigteilmontage",
       tag_civil: "Bauingenieurwesen",
 
+      // Skills Page
       skills_heading: "Meine Fähigkeiten",
       skill1_title: "Ingenieurwissen",
       skill1_desc: "Bauüberwachung, Fertigteilmontage, Qualitätssicherung und Projektkoordination.",
       skill2_title: "KI & Einfallsreichtum",
-      skill2_desc: "Experten-Prompt-Engineering, KI-gestützte Projektdurchführung und schnelles Prototyping & Lernen.",
+      skill2_desc_revised: "Experte im Prompting für komplexe Aufgaben wie Codegenerierung und Bildsynthese. Ich nutze KI-Modelle, um schnell Prototypen zu entwickeln und tägliche Ingenieurprobleme zu lösen.",
       skill3_title: "Software & Werkzeuge",
       skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign) und MS Office.",
-      skill4_title: "Sprachen & Kommunikation",
-      skill4_desc: "Englisch (C1), Malayalam (Muttersprache), Tamil & Hindi (Arbeitskenntnisse), Deutsch (im Lernprozess).",
-      
+      lang_heading: "Sprachen & Kommunikation",
+      lang1_name: "Englisch",
+      lang1_level: "C1 – Professionelle Sprachverwendung",
+      lang2_name: "Malayalam",
+      lang2_level: "Muttersprache",
+      lang3_name: "Deutsch",
+      lang3_level: "Wird aktiv gelernt",
+
+      // Germany Page
       germany_heading: "Mein Engagement für das Ingenieurwesen in Deutschland",
       germany_intro: "Meine Erfahrung vor Ort hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung und nachhaltiger Technologie. Dies ist nicht nur ein Ziel, sondern das Epizentrum der Zukunft, die ich mitgestalten möchte.",
       germany_col1_title: "Warum Deutschland?",
@@ -221,30 +240,34 @@
       germany_bigger_picture_title: "Das große Ganze",
       germany_bigger_picture_desc: "Hier geht es nicht nur um einen Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Ausbildung bin ich positioniert, um die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe. Mein Ziel ist es, die Art, wie wir bauen, zu revolutionieren – eine Materialinnovation nach der anderen.",
 
-      social_heading: "Meine Kanäle & Soziale Medien",
+      // Social Page
+      social_heading: "Meine Kanäle & Soziales",
       social_intro: "Folgen Sie meiner Reise, sehen Sie sich meine Projekte an und vernetzen Sie sich mit mir auf Ihrer Lieblingsplattform.",
-      social1_title: "LinkedIn",
-      social1_desc: "Berufliches Netzwerk & Karriere-Updates",
-      social2_title: "YouTube",
-      social2_desc: "Ingenieurvideos & Tutorials",
-      social3_title: "X (Twitter)",
-      social3_desc: "Kurze Updates & technische Einblicke",
-      social4_title: "Instagram",
-      social4_desc: "Visuelle Projekte & persönliche Updates",
-      social5_title: "Threads",
-      social5_desc: "Community-Beiträge & Diskussionen",
-      social6_title: "Facebook",
-      social6_desc: "Vernetzen & Nachrichten",
+      social_brand_heading: "Meine Markenkanäle (Engineer GPM)",
+      social_youtube_title: "YouTube",
+      social_youtube_desc: "Ingenieurvideos & Tutorials",
+      social_x_title: "X (Twitter)",
+      social_x_desc: "Kurze Updates & technische Einblicke",
+      social_threads_title: "Threads",
+      social_threads_desc: "Community-Beiträge & Diskussionen",
+      social_personal_heading: "Vernetzen Sie sich persönlich mit mir",
+      social_linkedin_title: "LinkedIn",
+      social_linkedin_desc: "Für berufliches Networking",
+      social_insta_title: "Instagram",
+      social_insta_desc: "Persönliche Updates & Fotografie",
+      social_fb_title: "Facebook",
+      social_fb_desc: "Vernetzen mit Freunden & Familie",
       
+      // Contact Page
       contact_heading: "Kontakt aufnehmen",
       contact_intro_simple: "Ich bin immer offen für die Diskussion neuer Projekte, kreativer Ideen oder Möglichkeiten. Die besten Wege, mich zu erreichen, sind unten aufgeführt.",
       contact_email_title: "E-Mail",
-      contact_email_desc: "Der direkteste Weg, mich zu kontaktieren.",
       contact_email_cta: "E-Mail senden",
       contact_linkedin_title: "LinkedIn",
       contact_linkedin_desc: "Für berufliches Networking und karrierebezogene Anfragen.",
       contact_linkedin_cta: "Profil ansehen",
 
+      // Education Page
       education_heading: "Bildung",
       edu1_degree: "M.Sc. Werkstofftechnik",
       edu1_school: "RWTH Aachen University, Deutschland",
@@ -264,19 +287,10 @@
   const LANG_KEY = 'gpm_lang';
   const THEME_KEY = 'gpm_theme';
 
-  function getSavedLang() {
-    return localStorage.getItem(LANG_KEY) || 'en';
-  }
-  function saveLang(code) {
-    localStorage.setItem(LANG_KEY, code);
-  }
-
-  function getSavedTheme() {
-    return localStorage.getItem(THEME_KEY) || 'default';
-  }
-  function saveTheme(t) {
-    localStorage.setItem(THEME_KEY, t);
-  }
+  function getSavedLang() { return localStorage.getItem(LANG_KEY) || 'en'; }
+  function saveLang(code) { localStorage.setItem(LANG_KEY, code); }
+  function getSavedTheme() { return localStorage.getItem(THEME_KEY) || 'default'; }
+  function saveTheme(t) { localStorage.setItem(THEME_KEY, t); }
 
   /* =========================
      Core Functions
@@ -286,7 +300,7 @@
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
-        el.innerHTML = dict[key]; // Use innerHTML to allow for links in translations
+        el.innerHTML = dict[key]; // Use innerHTML for potential links in footer etc.
       }
     });
     document.documentElement.setAttribute('lang', code);
@@ -304,7 +318,7 @@
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-link').forEach(link => {
-      const linkPage = link.getAttribute('href').split('/').pop() || 'index.html';
+      const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
       if (currentPage === linkPage) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
@@ -324,14 +338,6 @@
     
     const setButtonState = (lang) => {
         btn.textContent = lang.toUpperCase();
-        // Optional: auto-switch theme to 'german' when language is 'de'
-        if (lang === 'de') {
-            applyTheme('german');
-        } else {
-            // If switching back to EN, revert to the saved theme that isn't 'german'
-            const savedTheme = getSavedTheme();
-            applyTheme(savedTheme === 'german' ? 'default' : savedTheme);
-        }
     };
 
     btn.addEventListener('click', () => {
@@ -349,8 +355,10 @@
       if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 't') {
         e.preventDefault();
         const currentTheme = getSavedTheme();
-        const nextTheme = currentTheme === 'default' ? 'german' : currentTheme === 'german' ? 'dark' : 'default';
-        applyTheme(nextTheme);
+        const themes = ['default', 'german', 'dark'];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        applyTheme(themes[nextIndex]);
       }
     });
   }
@@ -359,11 +367,8 @@
      Initialization
      ========================= */
   function init() {
-    const savedLang = getSavedLang();
-    const savedTheme = getSavedTheme();
-
-    applyTheme(savedTheme);
-    applyTranslations(savedLang);
+    applyTheme(getSavedTheme());
+    applyTranslations(getSavedLang());
     markActiveNav();
     
     initLangToggle();
