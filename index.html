@@ -2,16 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Engineer GPM — George P. Mathew</title>
-  <meta name="description" content="George P. Mathew — Civil Engineer & M.Sc. Materials Engineering student. Construction, materials, and practical AI/LLM workflows." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>George P. Mathew — The Engineer's Folio</title>
+  <meta name="description" content="George P. Mathew — Civil Engineer | M.Sc. Materials Engineering student. Construction, materials testing, AI & LLM expertise." />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="site-header"></div>
+  <!-- ======= Top Bar / Header ======= -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-avatar" src="assets/profile.jpg" alt="George P. Mathew" />
+        <div class="brand-text">
+          <div class="brand-name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+        </div>
+      </a>
 
+      <!-- Desktop nav (mobile transforms to two rows via CSS) -->
+      <nav class="mainnav" role="navigation" aria-label="Primary">
+        <a class="nav-link" href="index.html"><img src="assets/icons/home.svg" alt=""/> <span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="about.html"><img src="assets/icons/user.svg" alt=""/> <span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="experience.html"><img src="assets/icons/briefcase.svg" alt=""/> <span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img src="assets/icons/sparkles.svg" alt=""/> <span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="education.html"><img src="assets/icons/graduation.svg" alt=""/> <span data-i18n="nav_education">Education</span></a>
+        <a class="nav-link" href="contact.html"><img src="assets/icons/mail.svg" alt=""/> <span data-i18n="nav_contact">Contact</span></a>
+        <a class="nav-link" href="social.html"><img src="assets/icons/share.svg" alt=""/> <span data-i18n="nav_social">Social</span></a>
+      </nav>
+    </div>
+
+    <!-- Mobile two-line nav (kept in DOM so it's crawlable; CSS shows/hides appropriately) -->
+    <div class="container mobile-nav" aria-label="Primary mobile navigation">
+      <div class="row">
+        <a class="nav-link" href="index.html"><img src="assets/icons/home.svg" alt=""/> <span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="about.html"><img src="assets/icons/user.svg" alt=""/> <span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="experience.html"><img src="assets/icons/briefcase.svg" alt=""/> <span data-i18n="nav_experience">Experience</span></a>
+      </div>
+      <div class="row">
+        <a class="nav-link" href="skills.html"><img src="assets/icons/sparkles.svg" alt=""/> <span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="education.html"><img src="assets/icons/graduation.svg" alt=""/> <span data-i18n="nav_education">Education</span></a>
+        <a class="nav-link" href="contact.html"><img src="assets/icons/mail.svg" alt=""/> <span data-i18n="nav_contact">Contact</span></a>
+        <a class="nav-link" href="social.html"><img src="assets/icons/share.svg" alt=""/> <span data-i18n="nav_social">Social</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= Page Content ======= -->
   <main class="page-root container">
+    <!-- HERO: image on the LEFT, content on the RIGHT (stacks on mobile) -->
     <section class="hero">
       <div class="hero-left">
         <div class="image-card">
@@ -20,21 +60,21 @@
       </div>
 
       <div class="hero-right">
-        <p class="eyebrow" data-i18n="hero_eyebrow">Engineer GPM</p>
+        <p class="eyebrow" data-i18n="hero_eyebrow">The Engineer's Folio</p>
         <h1 class="title" data-i18n="hero_name">George P. Mathew</h1>
-        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Materials Engineering Student</p>
+        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Materials Science Student</p>
 
         <p class="lead" data-i18n="hero_lead">
-          I bridge civil engineering practice with modern materials science at RWTH Aachen University. I also apply AI & LLMs — strong prompting and toolchains — to analyze faster and prototype better.
+          I combine hands-on construction supervision and precast experience with materials research at RWTH Aachen. I also use AI & LLMs to speed up analysis, reporting and prototyping.
         </p>
 
         <div class="what-id">
-          <h4 data-i18n="what_title">What I Do</h4>
+          <h4 data-i18n="what_title">What I do</h4>
           <ul>
             <li data-i18n="what_1">Construction supervision & site coordination (foundations, precast erection, finishing)</li>
-            <li data-i18n="what_2">Materials testing & characterization (durability, concrete)</li>
-            <li data-i18n="what_3">QA/QC, documentation, stakeholder communication</li>
-            <li data-i18n="what_4"><strong>AI & LLMs:</strong> prompt engineering and practical workflows for reporting & analysis</li>
+            <li data-i18n="what_2">Materials testing and characterization (concrete durability)</li>
+            <li data-i18n="what_3">Quality assurance, documentation, and technical problem solving</li>
+            <li data-i18n="what_4"><strong>AI & LLMs:</strong> strong prompt engineering, practical LLM workflows for engineering tasks</li>
           </ul>
         </div>
 
@@ -51,7 +91,13 @@
     </section>
   </main>
 
-  <div id="site-footer"></div>
+  <!-- ======= Footer ======= -->
+  <footer class="footer container">
+    <div><strong>George P. Mathew</strong></div>
+    <div class="muted">Built with care • M.Sc. Materials Engineering</div>
+  </footer>
+
+  <!-- Script will add translations + theme switch + mobile behaviors next step -->
   <script src="script.js"></script>
 </body>
 </html>
