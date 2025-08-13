@@ -305,3 +305,67 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   outline-offset: 2px;
   box-shadow: none;
 }
+
+/* -------------------------
+   About Page Styles
+   ------------------------- */
+.about-content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 48px auto 0;
+}
+
+.about-image-wrapper {
+  position: sticky;
+  top: 140px; /* Aligns with header height */
+}
+
+.about-profile-pic {
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--surface);
+  box-shadow: var(--shadow-strong);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--accent);
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+}
+
+/* Responsive adjustments for About Page */
+@media (max-width: 767px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .about-image-wrapper {
+    position: static; /* un-stick the image */
+    margin: 0 auto 16px;
+    max-width: 180px;
+  }
+  .about-text {
+    text-align: center;
+  }
+  .about-text h3 {
+    border-left: none;
+    border-bottom: 2px solid var(--accent);
+    padding-left: 0;
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+}
