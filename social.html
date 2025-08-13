@@ -1,105 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Social — George P. Mathew</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-  }
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .social-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  .social-card {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .social-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  }
-  .social-icon {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    margin-right: 15px;
-    flex-shrink: 0;
-  }
-  .social-text strong {
-    font-size: 1.1em;
-  }
-  .muted {
-    font-size: 0.9em;
-    color: gray;
-  }
-  @media (max-width: 600px) {
-    .social-card {
-      flex-direction: column;
-      text-align: center;
-    }
-    .social-icon {
-      margin: 0 0 10px 0;
-      width: 40px;
-      height: 40px;
-    }
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social — George P. Mathew</title>
+  <meta name="description" content="Connect with me on LinkedIn, YouTube, and other social media channels." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>My Channels & Socials</h1>
+
+  <!-- ================= Header (Copied from index.html) ================= -->
+  <header class="topbar" role="banner" aria-label="Site header">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/profile.jpg" alt="George P. Mathew" class="brand-avatar" />
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">The Engineer's Folio</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </nav>
+
+      <!-- Language Toggle -->
+      <div class="header-actions">
+        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
+      </div>
+    </div>
+
+    <!-- Mobile two-line nav -->
+    <div class="container mobile-nav" aria-label="Mobile navigation">
+      <div class="nav-line">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Why Germany</span></a>
+      </div>
+      <div class="nav-line">
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Content ================= -->
+  <main class="container page-root section" role="main">
+    <h1 data-i18n="social_heading">My Channels & Socials</h1>
+    <p class="section-lead" data-i18n="social_intro">Follow my journey, watch my projects, and connect with me on your favorite platform.</p>
+
     <div class="social-grid">
-      <a class="social-card" href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noreferrer">
-        <img src="assets/icons/youtube.svg" alt="YouTube" class="social-icon" />
+      <!-- LinkedIn -->
+      <a href="#" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
         <div class="social-text">
-          <strong>YouTube — EngineerGPM</strong>
-          <div class="muted">Engineering videos & tutorials</div>
+          <strong data-i18n="social1_title">LinkedIn</strong>
+          <span class="muted" data-i18n="social1_desc">Professional network & career updates</span>
         </div>
       </a>
-      <a class="social-card" href="https://x.com/EngineerGPM" target="_blank" rel="noreferrer">
-        <img src="assets/icons/x.svg" alt="X" class="social-icon" />
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@EngineerGPM" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/youtube.svg" alt="YouTube" class="social-icon">
         <div class="social-text">
-          <strong>X — @EngineerGPM</strong>
-          <div class="muted">Short updates & links</div>
+          <strong data-i18n="social2_title">YouTube</strong>
+          <span class="muted" data-i18n="social2_desc">Engineering videos & tutorials</span>
         </div>
       </a>
-      <a class="social-card" href="https://www.threads.com/@engineergpm" target="_blank" rel="noreferrer">
-        <img src="assets/icons/threads.svg" alt="Threads" class="social-icon" />
+
+      <!-- X (Twitter) -->
+      <a href="https://x.com/EngineerGPM" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/x.svg" alt="X" class="social-icon">
         <div class="social-text">
-          <strong>Threads — @engineergpm</strong>
-          <div class="muted">Community posts</div>
+          <strong data-i18n="social3_title">X (Twitter)</strong>
+          <span class="muted" data-i18n="social3_desc">Short updates & tech insights</span>
         </div>
       </a>
-      <a class="social-card" href="https://www.facebook.com/engineergpm" target="_blank" rel="noreferrer">
-        <img src="assets/icons/facebook.svg" alt="Facebook" class="social-icon" />
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
         <div class="social-text">
-          <strong>Facebook — EngineerGPM</strong>
-          <div class="muted">Connect & messages</div>
+          <strong data-i18n="social4_title">Instagram</strong>
+          <span class="muted" data-i18n="social4_desc">Visual projects & personal updates</span>
+        </div>
+      </a>
+      
+      <!-- Threads -->
+      <a href="https://www.threads.com/@engineergpm" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/threads.svg" alt="Threads" class="social-icon">
+        <div class="social-text">
+          <strong data-i18n="social5_title">Threads</strong>
+          <span class="muted" data-i18n="social5_desc">Community posts & discussions</span>
+        </div>
+      </a>
+      
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/engineergpm" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/icons/facebook.svg" alt="Facebook" class="social-icon">
+        <div class="social-text">
+          <strong data-i18n="social6_title">Facebook</strong>
+          <span class="muted" data-i18n="social6_desc">Connect & messages</span>
         </div>
       </a>
     </div>
-  </div>
+  </main>
+
+  <!-- ================= Footer (Copied from index.html) ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div class="footer-text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality. <a href="about.html">Learn more.</a></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
