@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ================= Header (Updated for Mobile Menu) ================= -->
+  <!-- ================= Header (FINAL Universal Structure) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -24,7 +24,7 @@
         </div>
       </a>
 
-      <!-- Desktop nav -->
+      <!-- Desktop Navigation -->
       <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
@@ -35,10 +35,9 @@
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
 
-      <!-- Language Toggle & Mobile Menu Toggle -->
+      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
       <div class="header-actions">
         <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <!-- NEW: Hamburger Menu Button -->
         <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
           <span class="hamburger-icon"></span>
         </button>
@@ -49,31 +48,22 @@
   <!-- ================= Main / Hero ================= -->
   <main class="page-root container" role="main">
     <section class="hero" aria-labelledby="hero-heading">
-      <!-- LEFT: Illustration (will be re-ordered on mobile via CSS) -->
       <div class="hero-left">
         <div class="image-card">
           <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
         </div>
       </div>
 
-      <!-- RIGHT: Content (will appear first on mobile via CSS) -->
       <div class="hero-right">
         <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
         <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
-
-        <div class="hero-cta-mobile">
-          <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
-          <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
-        </div>
-
         <p class="lead" data-i18n="hero_lead_1">
           My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.
         </p>
         <p class="lead" data-i18n="hero_lead_2">
           I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.
         </p>
-
-        <div class="hero-cta-desktop">
+        <div class="hero-cta">
           <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
           <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
         </div>
@@ -81,10 +71,10 @@
     </section>
   </main>
 
-  <!-- ================= Footer ================= -->
+  <!-- ================= Footer (Updated Subtext) ================= -->
   <footer class="footer container" role="contentinfo">
     <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
+    <div class="footer-subtext" data-i18n="footer_subtext_new">Where engineering principles meet artificial intelligence.</div>
   </footer>
 
   <script src="script.js"></script>
