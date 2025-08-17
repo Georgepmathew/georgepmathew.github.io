@@ -1,9 +1,6 @@
-/* script.js — Engineer GPM Folio
-   - Handles EN/DE translations, theme persistence, active navigation,
-   - the mobile menu, and the new Gemini-style in-page navigator.
-   - REVISED: Dark theme default, added IntersectionObserver for in-page nav.
+/* script.js — FINAL CORRECTED VERSION
+   - Handles theming (dark default), mobile menu, and Gemini-style in-page nav.
 */
-
 (function () {
   'use strict';
 
@@ -11,179 +8,14 @@
      Translation Dictionary
      ========================= */
   const I18N = {
-    en: { /* ... (translations are unchanged from last version) ... */ },
-    de: { /* ... (translations are unchanged from last version) ... */ }
-  };
-  // NOTE: For brevity, the giant I18N dictionary is collapsed here.
-  // The code you should use is the full version from our previous step.
-  // I will add the full dictionary at the end of this block.
-
-
-  /* =========================
-     Persistence keys & defaults
-     ========================= */
-  const LANG_KEY = 'gpm_lang';
-  const THEME_KEY = 'gpm_theme';
-
-  function getSavedLang() { return localStorage.getItem(LANG_KEY) || 'en'; }
-  function saveLang(code) { localStorage.setItem(LANG_KEY, code); }
-  
-  // NEW: Defaults to 'dark' theme if nothing is saved
-  function getSavedTheme() { return localStorage.getItem(THEME_KEY) || 'dark'; }
-  function saveTheme(t) { localStorage.setItem(THEME_KEY, t); }
-
-  /* =========================
-     Core Functions
-     ========================= */
-  function applyTranslations(code) {
-    const dict = I18N[code] || I18N.en;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key]) {
-        el.innerHTML = dict[key];
-      }
-    });
-    document.documentElement.setAttribute('lang', code);
-  }
-
-  function applyTheme(themeValue) {
-    const html = document.documentElement;
-    html.removeAttribute('data-theme');
-    // Simplified logic: only sets 'light' or 'german' as data-theme attributes
-    if (themeValue === 'light' || themeValue === 'german') {
-      html.setAttribute('data-theme', themeValue);
-    }
-    saveTheme(themeValue);
-  }
-
-  function markActiveNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.mainnav .nav-link').forEach(link => {
-      const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
-      if (currentPage === linkPage) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    });
-  }
-
-  /* =========================
-     UI Event Listeners & Animations
-     ========================= */
-  
-  function initMobileMenu() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('.mainnav-menu');
-    
-    if (!menuToggle || !menu) return;
-
-    menuToggle.addEventListener('click', () => {
-      document.body.classList.toggle('menu-is-open');
-    });
-
-    menu.addEventListener('click', (e) => {
-      if (e.target.matches('.nav-link')) {
-        document.body.classList.remove('menu-is-open');
-      }
-    });
-  }
-
-  function initLangToggle() {
-    const btn = document.getElementById('lang-toggle');
-    if (!btn) return;
-    
-    const setButtonState = (lang) => {
-        btn.textContent = lang.toUpperCase();
-    };
-
-    btn.addEventListener('click', () => {
-      const newLang = getSavedLang() === 'en' ? 'de' : 'en';
-      saveLang(newLang);
-      applyTranslations(newLang);
-      setButtonState(newLang);
-    });
-    
-    setButtonState(getSavedLang());
-  }
-
-  function initThemeShortcuts() {
-    window.addEventListener('keydown', (e) => {
-      if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 't') {
-        e.preventDefault();
-        const currentTheme = getSavedTheme();
-        const themes = ['dark', 'light', 'german'];
-        const currentIndex = themes.indexOf(currentTheme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        applyTheme(themes[nextIndex]);
-      }
-    });
-  }
-
-  // NEW: In-Page Navigator Logic
-  function initInPageNav() {
-    const nav = document.querySelector('.inpage-nav');
-    if (!nav) return;
-
-    const navLinks = nav.querySelectorAll('a');
-    const sections = Array.from(navLinks).map(link => {
-      const id = link.getAttribute('href');
-      return document.querySelector(id);
-    }).filter(Boolean); // Filter out nulls if a section doesn't exist
-
-    if (sections.length === 0) return;
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, {
-      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of the viewport
-      threshold: 0
-    });
-
-    sections.forEach(section => observer.observe(section));
-  }
-
-
-  /* =========================
-     Initialization
-     ========================= */
-  function init() {
-    applyTheme(getSavedTheme());
-    applyTranslations(getSavedLang());
-    
-    markActiveNav();
-    initLangToggle();
-    initThemeShortcuts();
-    initMobileMenu();
-    initInPageNav(); // <-- Initialize the new in-page navigator
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-  // Full I18N dictionary to be placed here
-  const full_I18N = {
     en: {
+      // General
       brand_name: "George P. Mathew",
       brand_sub: "Engineer GPM",
       footer_text: "Engineered by George P. Mathew",
-      footer_subtext: "Leveraging AI to bridge vision and reality.",
+      footer_subtext_new: "Where engineering principles meet artificial intelligence.",
+
+      // Navigation
       nav_home: "Home",
       nav_experience: "Experience",
       nav_skills: "Skills",
@@ -191,38 +23,41 @@
       nav_about: "About",
       nav_social: "Social",
       nav_contact: "Contact",
+
+      // Homepage
       hero_name: "George P. Mathew",
       hero_role: "Civil Engineer & Future Materials Innovator",
       hero_lead_1: "My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.",
       hero_lead_2: "I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.",
       btn_story: "My Full Story",
       btn_germany: "My Plan for Germany",
+
+      // About Page
       about_heading: "My Story",
       about_p1: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success. Seeing the challenges of material defects firsthand ignited my passion for understanding the 'why' behind the materials we use.",
       about_p2: "This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University, positioning myself at the forefront of construction innovation.",
       about_subtitle: "My Mindset: The Story of this Website",
       about_p3: "I am defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem. My tool wasn't a CAD program; it was Artificial Intelligence. Through iterative prompting and logical debugging, I guided AI to generate the code, structure the design, and build the features you see now. This is the forward-thinking, tool-agnostic mindset I bring to every challenge.",
+
+      // Experience Page
       experience_heading: "Professional Experience",
       exp1_role: "Business Assistant",
       exp1_date: "12/2023 – Present",
       exp1_company: "Best Trading, Pathanapuram, India",
       exp1_li1: "Assisted customers with product inquiries, improving sales through personalized service and technical guidance.",
-      exp1_li2: "Handled billing operations.",
-      exp1_li3_new: "Contributed to local marketing efforts including product promotions and flyer distribution.",
+      exp1_li2: "Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.",
       exp2_role: "Junior Engineer",
       exp2_date: "07/02/2023 – 30/11/2023",
       exp2_company: "SG Construction Company, Mumbai, India",
-      exp2_li1: "Supervised pile foundation work and finishing work of the building.",
-      exp2_li2: "Coordinated with various teams to ensure project milestones were met.",
-      exp2_li3_new: "Assisted in solving on-site issues and ensuring project quality.",
-      exp2_li4_new: "Maintained communication with contractors and suppliers.",
+      exp2_li1: "Supervised pile foundation work and finishing stages of the building project.",
+      exp2_li2: "Coordinated with various teams to ensure project milestones were met on schedule.",
+      exp2_li3: "Resolved on-site issues to maintain project quality and maintained communication with contractors.",
       exp3_role: "Graduate Engineer Trainee",
       exp3_date: "01/10/2021 – 30/09/2022",
       exp3_company: "Excel Precast Solutions Pvt Ltd, Bangalore, India",
-      exp3_li1: "Managed the erection of wall panels, beams, and slabs.",
-      exp3_li2: "Conducted grouting and repair work on precast wall panels.",
-      exp3_li3_new: "Assisted in quality checks of precast components.",
-      exp3_li4_new: "Collaborated with the team to ensure timely completion of tasks.",
+      exp3_li1: "Managed the erection of precast components including wall panels, beams, and slabs.",
+      exp3_li2: "Conducted grouting, repair work, and assisted in quality checks for precast components.",
+      exp3_li3: "Collaborated with the team to ensure timely completion of construction tasks.",
       tag_cs: "Customer Service",
       tag_sales: "Sales",
       tag_marketing: "Marketing",
@@ -231,23 +66,27 @@
       tag_qa: "Quality Assurance",
       tag_precast: "Precast Erection",
       tag_civil: "Civil Engineering",
+
+      // Skills Page
       skills_heading: "My Capabilities",
       skill1_title: "Engineering Foundation",
       skill1_desc: "Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.",
       skill2_title: "AI & Resourcefulness",
       skill2_desc_revised: "Expert in prompting for complex tasks like code generation and image synthesis. I leverage AI models to rapidly prototype solutions and solve daily engineering challenges.",
       skill3_title: "Software & Tools",
-      skill3_desc_new: "Microsoft Office (Word, Excel, PowerPoint), Adobe Suite (Illustrator, Photoshop, InDesign), Autodesk AutoCAD, and SketchUp.",
+      skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), and MS Office.",
       lang_heading: "Languages & Communication",
       lang1_name: "English",
-      lang1_level: "C1 – Proficient User",
+      lang1_level: "C1 – Professional Proficiency",
       lang2_name: "Malayalam",
-      lang2_level: "Mother Tongue",
+      lang2_level_new: "Mother Tongue",
       lang3_name: "German",
       lang3_level: "Actively Learning",
       lang_tamil_name: "Tamil",
       lang_hindi_name: "Hindi",
       lang_other_level: "Other Language",
+      
+      // Germany Page
       germany_heading: "My Commitment to Engineering in Germany",
       germany_intro: "My on-site experience revealed the critical need for material innovation, which led me directly to Germany—the European leader in engineering research and sustainable technology. This is not just a destination; it's the epicenter of the future I want to help build.",
       germany_col1_title: "Why Germany?",
@@ -266,6 +105,8 @@
       germany_item6_desc: "This choice positions me at the unique intersection of construction knowledge, advanced materials science, German engineering excellence, and an international perspective.",
       germany_bigger_picture_title: "The Bigger Picture",
       germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and now access to world-class education, I'm positioned to help solve the real-world challenges I've witnessed on construction sites. My goal is to help revolutionize how we build, one material innovation at a time.",
+
+      // Social Page
       social_heading: "My Channels & Socials",
       social_intro: "Follow my journey, watch my projects, and connect with me on your favorite platform.",
       social_brand_heading: "My Brand Channels (Engineer GPM)",
@@ -280,8 +121,8 @@
       social_linkedin_desc: "For professional networking",
       social_insta_title: "Instagram (Personal)",
       social_insta_desc: "Personal updates & photography",
-      social_fb_title: "Facebook",
-      social_fb_desc: "Connect with friends & family",
+      
+      // Contact Page
       contact_heading: "Get In Touch",
       contact_intro_simple: "I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.",
       contact_email_title: "Email",
@@ -289,6 +130,8 @@
       contact_linkedin_desc: "Professional Networking",
       contact_email_cta: "Send an Email",
       contact_linkedin_cta: "View My Profile",
+
+      // Education Page
       education_heading: "Education",
       edu1_degree: "M.Sc. Materials Engineering",
       edu1_school: "RWTH Aachen University, Germany",
@@ -301,10 +144,11 @@
       edu3_date: "2015 – 2017",
     },
     de: {
+      // German translations...
       brand_name: "George P. Mathew",
       brand_sub: "Engineer GPM",
       footer_text: "Entwickelt von George P. Mathew",
-      footer_subtext: "KI nutzen, um Vision und Realität zu verbinden.",
+      footer_subtext_new: "Wo Ingenieurprinzipien auf künstliche Intelligenz treffen.",
       nav_home: "Start",
       nav_experience: "Erfahrung",
       nav_skills: "Fähigkeiten",
@@ -328,22 +172,19 @@
       exp1_date: "12/2023 – Heute",
       exp1_company: "Best Trading, Pathanapuram, Indien",
       exp1_li1: "Unterstützung von Kunden bei Produktanfragen, Verbesserung des Vertriebs durch personalisierten Service und technische Beratung.",
-      exp1_li2: "Abwicklung von Abrechnungen.",
-      exp1_li3_new: "Mitarbeit bei lokalen Marketingmaßnahmen, einschließlich Werbeaktionen und Flyerverteilung.",
+      exp1_li2: "Abwicklung von Abrechnungen und Beitrag zu lokalen Marketingmaßnahmen, einschließlich Werbeaktionen und Flyerverteilung.",
       exp2_role: "Junior-Ingenieur",
       exp2_date: "07.02.2023 – 30.11.2023",
       exp2_company: "SG Construction Company, Mumbai, Indien",
-      exp2_li1: "Überwachung von Pfahlgründungsarbeiten und Ausbauarbeiten des Gebäudes.",
+      exp2_li1: "Überwachung von Pfahlgründungsarbeiten und Ausbauphasen des Bauprojekts.",
       exp2_li2: "Koordination mit verschiedenen Teams, um die Einhaltung der Projektmeilensteine sicherzustellen.",
-      exp2_li3_new: "Hilfe bei der Lösung von Problemen vor Ort und Sicherstellung der Projektqualität.",
-      exp2_li4_new: "Aufrechterhaltung der Kommunikation mit Auftragnehmern und Lieferanten.",
+      exp2_li3: "Lösung von Problemen vor Ort zur Aufrechterhaltung der Projektqualität und Kommunikation mit Auftragnehmern.",
       exp3_role: "Absolvent-Ingenieur Trainee",
       exp3_date: "01.10.2021 – 30.09.2022",
       exp3_company: "Excel Precast Solutions Pvt Ltd, Bangalore, Indien",
       exp3_li1: "Management der Montage von Fertigteilen einschließlich Wandpaneelen, Trägern und Platten.",
-      exp3_li2: "Durchführung von Verpressungs- und Reparaturarbeiten an Fertigteilwänden.",
-      exp3_li3_new: "Unterstützung bei Qualitätsprüfungen von Fertigteilen.",
-      exp3_li4_new: "Zusammenarbeit mit dem Team, um die rechtzeitige Fertigstellung der Aufgaben zu gewährleisten.",
+      exp3_li2: "Durchführung von Verpressungs-, Reparaturarbeiten und Unterstützung bei der Qualitätsprüfung von Fertigteilen.",
+      exp3_li3: "Zusammenarbeit mit dem Team, um die rechtzeitige Fertigstellung der Bauaufgaben zu gewährleisten.",
       tag_cs: "Kundenservice",
       tag_sales: "Vertrieb",
       tag_marketing: "Marketing",
@@ -358,12 +199,12 @@
       skill2_title: "KI & Einfallsreichtum",
       skill2_desc_revised: "Experte im Prompting für komplexe Aufgaben wie Codegenerierung und Bildsynthese. Ich nutze KI-Modelle, um schnell Prototypen zu entwickeln und tägliche Ingenieurprobleme zu lösen.",
       skill3_title: "Software & Werkzeuge",
-      skill3_desc_new: "Microsoft Office (Word, Excel, PowerPoint), Adobe Suite (Illustrator, Photoshop, InDesign), Autodesk AutoCAD und SketchUp.",
+      skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign) und MS Office.",
       lang_heading: "Sprachen & Kommunikation",
       lang1_name: "Englisch",
-      lang1_level: "C1 – Kompetente Sprachverwendung",
+      lang1_level: "C1 – Professionelle Sprachverwendung",
       lang2_name: "Malayalam",
-      lang2_level: "Muttersprache",
+      lang2_level_new: "Muttersprache",
       lang3_name: "Deutsch",
       lang3_level: "Wird aktiv gelernt",
       lang_tamil_name: "Tamil",
@@ -401,8 +242,6 @@
       social_linkedin_desc: "Für berufliches Networking",
       social_insta_title: "Instagram (Persönlich)",
       social_insta_desc: "Persönliche Updates & Fotografie",
-      social_fb_title: "Facebook",
-      social_fb_desc: "Vernetzen mit Freunden & Familie",
       contact_heading: "Kontakt aufnehmen",
       contact_intro_simple: "Ich bin immer offen für die Diskussion neuer Projekte, kreativer Ideen oder Möglichkeiten. Die besten Wege, mich zu erreichen, sind unten aufgeführt.",
       contact_email_title: "E-Mail",
@@ -423,7 +262,137 @@
     }
   };
 
-  // Replace the placeholder I18N object at the top of the file with this full one.
-  Object.assign(I18N, full_I18N);
+  /* =========================
+     Persistence & Core Functions
+     ========================= */
+  const LANG_KEY = 'gpm_lang';
+  const THEME_KEY = 'gpm_theme';
 
+  function getSavedLang() { return localStorage.getItem(LANG_KEY) || 'en'; }
+  function saveLang(code) { localStorage.setItem(LANG_KEY, code); }
+  
+  function getSavedTheme() { 
+    // To make LIGHT the default, change 'dark' to 'light' here.
+    return localStorage.getItem(THEME_KEY) || 'dark'; 
+  }
+  function saveTheme(t) { localStorage.setItem(THEME_KEY, t); }
+
+  function applyTranslations(code) {
+    const dict = I18N[code] || I18N.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) { el.innerHTML = dict[key]; }
+    });
+    document.documentElement.setAttribute('lang', code);
+  }
+
+  function applyTheme(themeValue) {
+    const html = document.documentElement;
+    html.removeAttribute('data-theme');
+    if (themeValue === 'light' || themeValue === 'german') {
+      html.setAttribute('data-theme', themeValue);
+    }
+    saveTheme(themeValue);
+  }
+
+  function markActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.mainnav .nav-link').forEach(link => {
+      const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
+      link.classList.toggle('active', currentPage === linkPage);
+      if (currentPage === linkPage) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  
+  /* =========================
+     UI Event Listeners
+     ========================= */
+  function initMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.mainnav-menu');
+    if (!menuToggle || !menu) return;
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('menu-is-open');
+    });
+    menu.addEventListener('click', (e) => {
+      if (e.target.matches('.nav-link')) {
+        document.body.classList.remove('menu-is-open');
+      }
+    });
+  }
+
+  function initLangToggle() {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const setButtonState = (lang) => { btn.textContent = lang.toUpperCase(); };
+    btn.addEventListener('click', () => {
+      const newLang = getSavedLang() === 'en' ? 'de' : 'en';
+      saveLang(newLang);
+      applyTranslations(newLang);
+      setButtonState(newLang);
+    });
+    setButtonState(getSavedLang());
+  }
+
+  function initThemeShortcuts() {
+    window.addEventListener('keydown', (e) => {
+      if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        const themes = ['dark', 'light', 'german'];
+        const currentIndex = themes.indexOf(getSavedTheme());
+        const nextIndex = (currentIndex + 1) % themes.length;
+        applyTheme(themes[nextIndex]);
+      }
+    });
+  }
+
+  function initInPageNav() {
+    const nav = document.querySelector('.inpage-nav');
+    if (!nav) return;
+    const navLinks = nav.querySelectorAll('.inpage-nav-link');
+    const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(entries => {
+      let intersectingSectionId = null;
+      // Find the first section that is intersecting from the top of the viewport
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          intersectingSectionId = entry.target.getAttribute('id');
+          break; 
+        }
+      }
+      
+      // If no section is intersecting (e.g., scrolled past all), keep the last one active
+      if (!intersectingSectionId && entries.length > 0) {
+        const lastEntry = entries[entries.length - 1];
+        if (lastEntry.boundingClientRect.top < 0) {
+            intersectingSectionId = lastEntry.target.getAttribute('id');
+        }
+      }
+
+      navLinks.forEach(link => {
+        const id = link.getAttribute('href').substring(1);
+        link.classList.toggle('active', id === intersectingSectionId);
+      });
+    }, { rootMargin: '-65px 0px -75% 0px', threshold: 0 });
+    
+    sections.forEach(section => observer.observe(section));
+  }
+
+  /* =========================
+     Initialization
+     ========================= */
+  function init() {
+    applyTheme(getSavedTheme());
+    applyTranslations(getSavedLang());
+    markActiveNav();
+    initLangToggle();
+    initThemeShortcuts();
+    initMobileMenu();
+    initInPageNav();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
 })();
