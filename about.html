@@ -2,78 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About Me — George P. Mathew</title>
-  <meta name="description" content="The story behind my journey from Civil Engineering to Materials Science and how I use AI to solve problems." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="About me page." />
+  <title>About — Your Name</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-
-  <!-- ================= Header (FINAL Universal Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
+  <header class="mobile-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo-btn" aria-label="Home">
+        <img src="assets/logo.svg" alt="Site logo" class="logo" />
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
-          <span class="hamburger-icon"></span>
+      <div class="lang-wrap">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" aria-pressed="false" data-lang="en">
+          <span class="lang-text">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-text inactive">DE</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Main Content ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="about_heading">My Story</h1>
-    
-    <div class="about-content">
-      <div class="about-text">
-        <p data-i18n="about_p1">
-          My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success. Seeing the challenges of material defects firsthand ignited my passion for understanding the 'why' behind the materials we use.
-        </p>
-        <p data-i18n="about_p2">
-          This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University, positioning myself at the forefront of construction innovation.
-        </p>
-        <h3 data-i18n="about_subtitle">My Mindset: The Story of this Website</h3>
-        <p data-i18n="about_p3">
-          I am defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem. My tool wasn't a CAD program; it was Artificial Intelligence. Through iterative prompting and logical debugging, I guided AI to generate the code, structure the design, and build the features you see now. This is the forward-thinking, tool-agnostic mindset I bring to every challenge.
-        </p>
+  <main id="main" class="main-single" role="main">
+    <section class="section">
+      <div class="section-inner">
+        <h1 class="section-title">About Me</h1>
+        <div class="about-profile">
+          <img src="assets/profile.jpg" alt="Profile photo" class="profile-photo" />
+          <div class="about-text">
+            <p>Hello, I’m <strong>Your Name</strong>. I’m a civil engineer with a growing passion for materials engineering and research. My experience spans site engineering, precast erection, and academic projects, with a strong focus on sustainability and materials durability.</p>
+            <p>I am currently preparing for a transition to Germany, where I plan to pursue opportunities in research and higher education, particularly at RWTH Aachen and similar institutions. This website shares my background, projects, and aspirations.</p>
+            <p>Outside of work and study, I enjoy exploring technology, learning new languages, and connecting with professionals across industries.</p>
+          </div>
+        </div>
       </div>
-      <div class="about-image-wrapper">
-        <img src="assets/SG SITE.jpg" alt="George P. Mathew at a construction site" class="about-site-pic">
-      </div>
-    </div>
+    </section>
   </main>
 
-  <!-- ================= Footer (Updated Subtext) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext_new">Where engineering principles meet artificial intelligence.</div>
-  </footer>
+  <nav class="floating-nav" role="navigation">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-btn"><span class="icon"><img src="assets/icon-home.svg" alt=""></span><span class="nav-label">Home</span></a></li>
+      <li><a href="germany.html" class="nav-btn"><span class="icon"><img src="assets/icon-models.svg" alt=""></span><span class="nav-label">Germany</span></a></li>
+      <li><a href="projects.html" class="nav-btn"><span class="icon"><img src="assets/icon-projects.svg" alt=""></span><span class="nav-label">Projects</span></a></li>
+      <li><a href="experience.html" class="nav-btn"><span class="icon"><img src="assets/icon-experience.svg" alt=""></span><span class="nav-label">Experience</span></a></li>
+      <li><a href="about.html" class="nav-btn active"><span class="icon"><img src="assets/icon-contact.svg" alt=""></span><span class="nav-label">About</span></a></li>
+    </ul>
+  </nav>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
