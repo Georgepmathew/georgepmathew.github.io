@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ================= Header (Updated for Mobile Menu) ================= -->
+  <!-- ================= Header (FINAL Universal Structure) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -24,7 +24,7 @@
         </div>
       </a>
 
-      <!-- Desktop nav -->
+      <!-- Desktop Navigation -->
       <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
@@ -34,8 +34,8 @@
         <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
-      
-      <!-- Language Toggle & Mobile Menu Toggle -->
+
+      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
       <div class="header-actions">
         <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
         <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
@@ -45,7 +45,7 @@
     </div>
   </header>
 
-  <!-- ================= Main Content (Updated from Resume) ================= -->
+  <!-- ================= Main Content ================= -->
   <main class="container page-root section" role="main">
     <h1 data-i18n="experience_heading">Professional Experience</h1>
 
@@ -59,9 +59,7 @@
         <p class="experience-company" data-i18n="exp1_company">Best Trading, Pathanapuram, India</p>
         <ul class="experience-details">
           <li data-i18n="exp1_li1">Assisted customers with product inquiries, improving sales through personalized service and technical guidance.</li>
-          <li data-i18n="exp1_li2">Handled billing operations.</li>
-          <!-- NOTE: I've added a new item below to match the resume. We will add the translation later in script.js -->
-          <li data-i18n="exp1_li3_new">Contributed to local marketing efforts including product promotions and flyer distribution.</li>
+          <li data-i18n="exp1_li2">Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.</li>
         </ul>
         <div class="tags">
           <span class="tag" data-i18n="tag_cs">Customer Service</span>
@@ -78,11 +76,9 @@
         </div>
         <p class="experience-company" data-i18n="exp2_company">SG Construction Company, Mumbai, India</p>
         <ul class="experience-details">
-          <li data-i18n="exp2_li1">Supervised pile foundation work and finishing work of the building.</li>
-          <li data-i18n="exp2_li2">Coordinated with various teams to ensure project milestones were met.</li>
-          <!-- NOTE: Updated and added new items below to match the resume. We will update translations later. -->
-          <li data-i18n="exp2_li3_new">Assisted in solving on-site issues and ensuring project quality.</li>
-          <li data-i18n="exp2_li4_new">Maintained communication with contractors and suppliers.</li>
+          <li data-i18n="exp2_li1">Supervised pile foundation work and finishing stages of the building project.</li>
+          <li data-i18n="exp2_li2">Coordinated with various teams to ensure project milestones were met on schedule.</li>
+          <li data-i18n="exp2_li3">Resolved on-site issues to maintain project quality and maintained communication with contractors.</li>
         </ul>
         <div class="tags">
           <span class="tag" data-i18n="tag_supervision">Site Supervision</span>
@@ -93,32 +89,4 @@
 
       <!-- Role 3: Excel Precast Solutions -->
       <article class="experience-card card">
-        <div class="experience-header">
-          <h2 class="experience-role" data-i18n="exp3_role">Graduate Engineer Trainee</h2>
-          <div class="experience-date" data-i18n="exp3_date">01/10/2021 – 30/09/2022</div>
-        </div>
-        <p class="experience-company" data-i18n="exp3_company">Excel Precast Solutions Pvt Ltd, Bangalore, India</p>
-        <ul class="experience-details">
-          <li data-i18n="exp3_li1">Managed the erection of wall panels, beams, and slabs.</li>
-          <li data-i18n="exp3_li2">Conducted grouting and repair work on precast wall panels.</li>
-          <!-- NOTE: Updated and added new items below to match the resume. We will update translations later. -->
-          <li data-i18n="exp3_li3_new">Assisted in quality checks of precast components.</li>
-          <li data-i1a8n="exp3_li4_new">Collaborated with the team to ensure timely completion of tasks.</li>
-        </ul>
-        <div class="tags">
-          <span class="tag" data-i18n="tag_precast">Precast Erection</span>
-          <span class="tag" data-i18n="tag_civil">Civil Engineering</span>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <!-- ================= Footer ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+ 
