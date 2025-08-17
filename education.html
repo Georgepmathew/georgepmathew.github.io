@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Education — George P. Mathew</title>
+  <meta name="description" content="My academic background, including a B.E. in Civil Engineering and my upcoming M.Sc. in Materials Engineering at RWTH Aachen University." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= Header (Final Structure) ================= -->
+  <header class="topbar" role="banner" aria-label="Site header">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="Go to home">
+        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
+          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
+        </div>
+      </a>
+      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
+        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
+        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
+        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
+        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
+        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
+      </nav>
+      <div class="header-actions">
+        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Scrolling Nav (Final Structure) -->
+  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
+      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
+      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
+      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
+      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
+      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
+      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
+      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
+  </nav>
+
+  <!-- ================= Main Content ================= -->
+  <main class="container page-root section" role="main">
+    <h1 data-i18n="education_heading">Education</h1>
+
+    <div class="timeline">
+      <!-- Item 1: RWTH Aachen -->
+      <div class="timeline-item">
+        <div class="timeline-icon">🎓</div>
+        <div class="timeline-content card">
+          <h2 class="timeline-title" data-i18n="edu1_degree">M.Sc. Materials Engineering</h2>
+          <p class="timeline-institution" data-i18n="edu1_school">RWTH Aachen University, Germany</p>
+          <p class="timeline-date" data-i18n="edu1_date">Accepted Offer — Starting Winter 2025</p>
+        </div>
+      </div>
+
+      <!-- Item 2: B.E. Civil Engineering -->
+      <div class="timeline-item">
+        <div class="timeline-icon">🎓</div>
+        <div class="timeline-content card">
+          <h2 class="timeline-title" data-i18n="edu2_degree">B.E. Civil Engineering</h2>
+          <p class="timeline-institution" data-i18n="edu2_school">Mar Ephraem College of Engineering and Technology, India</p>
+          <p class="timeline-date" data-i18n="edu2_date">06/2017 – 07/2021</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Higher Secondary -->
+      <div class="timeline-item">
+        <div class="timeline-icon">🏫</div>
+        <div class="timeline-content card">
+          <h2 class="timeline-title" data-i18n="edu3_degree">Higher Secondary Education (Science)</h2>
+          <p class="timeline-institution" data-i18n="edu3_school">St. Thomas Higher Secondary School, India</p>
+          <p class="timeline-date" data-i18n="edu3_date">2015 – 2017</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer (Final Structure) ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
