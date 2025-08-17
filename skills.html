@@ -2,135 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Skills — George P. Mathew</title>
-  <meta name="description" content="My skills in Civil Engineering, AI-powered problem solving, software proficiency, and languages." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Skills and competencies." />
+  <title>Skills — Your Name</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-
-  <!-- ================= Header (FINAL Universal Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
+  <header class="mobile-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo-btn" aria-label="Home">
+        <img src="assets/logo.svg" alt="Site logo" class="logo" />
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
-          <span class="hamburger-icon"></span>
+      <div class="lang-wrap">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" aria-pressed="false" data-lang="en">
+          <span class="lang-text">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-text inactive">DE</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Main Content (Language section updated) ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="skills_heading">My Capabilities</h1>
+  <main id="main" class="main-single" role="main">
+    <section class="section">
+      <div class="section-inner">
+        <h1 class="section-title">Skills</h1>
 
-    <div class="skills-grid">
-      <!-- Skill 1: Engineering -->
-      <div class="skill-card card">
-        <img src="assets/icons/engineering.svg" alt="Engineering" class="skill-icon" />
-        <h3 data-i18n="skill1_title">Engineering Foundation</h3>
-        <p data-i18n="skill1_desc">Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.</p>
-      </div>
-
-      <!-- Skill 2: AI -->
-      <div class="skill-card card">
-        <img src="assets/icons/ai.svg" alt="AI" class="skill-icon" />
-        <h3 data-i18n="skill2_title">AI & Resourcefulness</h3>
-        <p data-i18n="skill2_desc_revised">Expert in prompting for complex tasks like code generation and image synthesis. I leverage AI models to rapidly prototype solutions and solve daily engineering challenges.</p>
-      </div>
-      
-      <!-- Skill 3: Software -->
-      <div class="skill-card card">
-        <img src="assets/icons/coding.svg" alt="Software" class="skill-icon" />
-        <h3 data-i18n="skill3_title">Software & Tools</h3>
-        <p data-i18n="skill3_desc">AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), and MS Office.</p>
-      </div>
-    </div>
-
-    <!-- Languages Section -->
-    <div class="languages-section">
-      <h2 class="section-subtitle" data-i18n="lang_heading">Languages & Communication</h2>
-      <div class="language-grid">
-        <div class="language-item">
-          <div class="language-info">
-            <span class="language-name" data-i18n="lang1_name">English</span>
-            <span class="language-level" data-i18n="lang1_level">C1 – Professional Proficiency</span>
+        <div class="skills-grid">
+          <div class="skill">
+            <span class="icon"><img src="assets/icon-cad.svg" alt="CAD"></span>
+            <h2>CAD & Drafting</h2>
+            <p>AutoCAD, Revit, and drafting for construction and materials projects.</p>
           </div>
-          <div class="language-bar-wrapper">
-            <div class="language-bar" style="width: 90%;"></div>
+          <div class="skill">
+            <span class="icon"><img src="assets/icon-precast.svg" alt="Precast"></span>
+            <h2>Precast & Site</h2>
+            <p>Experience with precast erection, site supervision, and quality checks.</p>
           </div>
-        </div>
-        <div class="language-item">
-          <div class="language-info">
-            <span class="language-name" data-i18n="lang2_name">Malayalam</span>
-            <span class="language-level" data-i18n="lang2_level_new">Mother Tongue</span>
+          <div class="skill">
+            <span class="icon"><img src="assets/icon-research.svg" alt="Research"></span>
+            <h2>Research</h2>
+            <p>Materials testing, lab work, data analysis, and academic research methods.</p>
           </div>
-          <div class="language-bar-wrapper">
-            <div class="language-bar" style="width: 100%;"></div>
-          </div>
-        </div>
-         <div class="language-item">
-            <div class="language-info">
-              <span class="language-name" data-i18n="lang_tamil_name">Tamil</span>
-              <span class="language-level" data-i18n="lang_other_level">Other Language</span>
-            </div>
-            <div class="language-bar-wrapper">
-              <div class="language-bar" style="width: 75%;"></div>
-            </div>
-        </div>
-        <div class="language-item">
-            <div class="language-info">
-              <span class="language-name" data-i18n="lang_hindi_name">Hindi</span>
-              <span class="language-level" data-i18n="lang_other_level">Other Language</span>
-            </div>
-            <div class="language-bar-wrapper">
-              <div class="language-bar" style="width: 60%;"></div>
-            </div>
-        </div>
-        <div class="language-item">
-          <div class="language-info">
-            <span class="language-name" data-i18n="lang3_name">German</span>
-            <span class="language-level" data-i18n="lang3_level">Actively Learning</span>
-          </div>
-          <div class="language-bar-wrapper">
-            <div class="language-bar" style="width: 20%;"></div>
+          <div class="skill">
+            <span class="icon"><img src="assets/icon-language.svg" alt="Languages"></span>
+            <h2>Languages</h2>
+            <p>English (fluent), German (learning, B1 target).</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- ================= Footer (Updated Subtext) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext_new">Where engineering principles meet artificial intelligence.</div>
-  </footer>
+  <nav class="floating-nav" role="navigation">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-btn"><span class="icon"><img src="assets/icon-home.svg" alt=""></span><span class="nav-label">Home</span></a></li>
+      <li><a href="germany.html" class="nav-btn"><span class="icon"><img src="assets/icon-models.svg" alt=""></span><span class="nav-label">Germany</span></a></li>
+      <li><a href="projects.html" class="nav-btn"><span class="icon"><img src="assets/icon-projects.svg" alt=""></span><span class="nav-label">Projects</span></a></li>
+      <li><a href="experience.html" class="nav-btn"><span class="icon"><img src="assets/icon-experience.svg" alt=""></span><span class="nav-label">Experience</span></a></li>
+      <li><a href="skills.html" class="nav-btn active"><span class="icon"><img src="assets/icon-education.svg" alt=""></span><span class="nav-label">Skills</span></a></li>
+    </ul>
+  </nav>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
