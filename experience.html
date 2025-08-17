@@ -2,91 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Experience — George P. Mathew</title>
-  <meta name="description" content="Professional experience in Civil Engineering, including site supervision, project coordination, and precast erection." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Experience timeline and career history." />
+  <title>Experience — Your Name</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-
-  <!-- ================= Header (FINAL Universal Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
+  <header class="mobile-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo-btn" aria-label="Home">
+        <img src="assets/logo.svg" alt="Site logo" class="logo" />
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
-          <span class="hamburger-icon"></span>
+      <div class="lang-wrap">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" aria-pressed="false" data-lang="en">
+          <span class="lang-text">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-text inactive">DE</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Main Content ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="experience_heading">Professional Experience</h1>
-
-    <div class="experience-grid">
-      <!-- Role 1: Best Trading -->
-      <article class="experience-card card">
-        <div class="experience-header">
-          <h2 class="experience-role" data-i18n="exp1_role">Business Assistant</h2>
-          <div class="experience-date" data-i18n="exp1_date">12/2023 – Present</div>
-        </div>
-        <p class="experience-company" data-i18n="exp1_company">Best Trading, Pathanapuram, India</p>
-        <ul class="experience-details">
-          <li data-i18n="exp1_li1">Assisted customers with product inquiries, improving sales through personalized service and technical guidance.</li>
-          <li data-i18n="exp1_li2">Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.</li>
+  <main id="main" class="main-single" role="main">
+    <section class="section">
+      <div class="section-inner">
+        <h1 class="section-title">Experience</h1>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <h2>Site Engineer — Company A</h2>
+            <span class="time">2023 – Present</span>
+            <p>Worked on precast erection, scheduling, and materials testing. Improved adherence to deadlines and safety protocols.</p>
+          </li>
+          <li class="timeline-item">
+            <h2>Intern — Company B</h2>
+            <span class="time">2022</span>
+            <p>Supported senior engineers with CAD drawings and supervised minor site works.</p>
+          </li>
         </ul>
-        <div class="tags">
-          <span class="tag" data-i18n="tag_cs">Customer Service</span>
-          <span class="tag" data-i18n="tag_sales">Sales</span>
-          <span class="tag" data-i18n="tag_marketing">Marketing</span>
-        </div>
-      </article>
+      </div>
+    </section>
+  </main>
 
-      <!-- Role 2: SG Construction Company -->
-      <article class="experience-card card">
-        <div class="experience-header">
-          <h2 class="experience-role" data-i18n="exp2_role">Junior Engineer</h2>
-          <div class="experience-date" data-i18n="exp2_date">07/02/2023 – 30/11/2023</div>
-        </div>
-        <p class="experience-company" data-i18n="exp2_company">SG Construction Company, Mumbai, India</p>
-        <ul class="experience-details">
-          <li data-i18n="exp2_li1">Supervised pile foundation work and finishing stages of the building project.</li>
-          <li data-i18n="exp2_li2">Coordinated with various teams to ensure project milestones were met on schedule.</li>
-          <li data-i18n="exp2_li3">Resolved on-site issues to maintain project quality and maintained communication with contractors.</li>
-        </ul>
-        <div class="tags">
-          <span class="tag" data-i18n="tag_supervision">Site Supervision</span>
-          <span class="tag" data-i18n="tag_coordination">Project Coordination</span>
-          <span class="tag" data-i18n="tag_qa">Quality Assurance</span>
-        </div>
-      </article>
+  <nav class="floating-nav" role="navigation">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-btn"><span class="icon"><img src="assets/icon-home.svg" alt=""></span><span class="nav-label">Home</span></a></li>
+      <li><a href="germany.html" class="nav-btn"><span class="icon"><img src="assets/icon-models.svg" alt=""></span><span class="nav-label">Germany</span></a></li>
+      <li><a href="projects.html" class="nav-btn"><span class="icon"><img src="assets/icon-projects.svg" alt=""></span><span class="nav-label">Projects</span></a></li>
+      <li><a href="experience.html" class="nav-btn active"><span class="icon"><img src="assets/icon-experience.svg" alt=""></span><span class="nav-label">Experience</span></a></li>
+      <li><a href="contact.html" class="nav-btn"><span class="icon"><img src="assets/icon-contact.svg" alt=""></span><span class="nav-label">Contact</span></a></li>
+    </ul>
+  </nav>
 
-      <!-- Role 3: Excel Precast Solutions -->
-      <article class="experience-card card">
- 
+  <script src="script.js" defer></script>
+</body>
+</html>
