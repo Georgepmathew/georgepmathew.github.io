@@ -345,8 +345,8 @@
      ========================= */
   function initIntroAnimation() {
     const container = document.getElementById('intro-animation');
-    const nameEl = container.querySelector('.intro-name');
-    if (!nameEl) return;
+    const nameEl = container?.querySelector('.intro-name');
+    if (!container || !nameEl) return;
 
     const name = nameEl.textContent;
     nameEl.innerHTML = ''; // Clear original text
@@ -374,6 +374,7 @@
     pill.title = 'Toggle language (EN/DE)';
     pill.setAttribute('aria-label', 'Toggle language');
     pill.setAttribute('role', 'button');
+    pill.setAttribute('tabindex', '0');
     pill.innerHTML = `
       <span class="en">EN</span>
       <span class="de">DE</span>
@@ -389,11 +390,19 @@
       pill.querySelector('.de').classList.toggle('active', lang === 'de');
     };
   
-    pill.addEventListener('click', () => {
+    const toggleLang = () => {
       const newLang = getSavedLang() === 'en' ? 'de' : 'en';
       saveLang(newLang);
       applyTranslations(newLang);
       setButtonState(newLang);
+    };
+
+    pill.addEventListener('click', toggleLang);
+    pill.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleLang();
+      }
     });
     
     setButtonState(getSavedLang());
@@ -417,10 +426,76 @@
     const contentWrapper = document.getElementById('about-content-wrapper');
     if (!imageWrapper || !contentWrapper) return;
 
-    let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
       if (window.innerWidth > 900) { 
         const isHidden = window.scrollY > 150;
         imageWrapper.classList.toggle('is-hidden', isHidden);
-        contentWrapper.classList.togg
+        contentWrapper.classList.toggle('is-centered', isHidden);
+      } else {
+        imageWrapper.classList.remove('is-hidden');
+        contentWrapper.classList.remove('is-centered');
+      }
+    };
+
+    let isThrottled = false;
+    window.addEventListener('scroll', () => {
+      if (!isThrottled) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          isThrottled = false;
+        });
+        isThrottled = true;
+      }
+    });
+    
+    // Initial check in case page is loaded scrolled down
+    handleScroll(); 
+  }
+
+  function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.anim-fade-in');
+    if (!animatedElements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  }
+
+  /* =========================
+     Initialization
+     ========================= */
+  function init() {
+    applyTheme(getSavedTheme());
+    applyTranslations(getSavedLang());
+    
+    // Only run intro on homepage
+    if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/gpm-folio/')) {
+      initIntroAnimation();
+    } else {
+      const intro = document.getElementById('intro-animation');
+      if (intro) intro.classList.add('hidden');
+    }
+
+    markActiveNav();
+    initLangToggle();
+    initThemeShortcuts();
+    initAboutImageScroll();
+    initScrollAnimations();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
