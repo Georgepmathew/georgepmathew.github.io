@@ -2,91 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Social — George P. Mathew</title>
-  <meta name="description" content="Connect with my brand, Engineer GPM, on YouTube and other channels, or connect with me personally." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Social links and networking." />
+  <title>Social — Your Name</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-
-  <!-- ================= Header (FINAL Universal Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
+  <header class="mobile-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo-btn" aria-label="Home">
+        <img src="assets/logo.svg" alt="Site logo" class="logo" />
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
-          <span class="hamburger-icon"></span>
+      <div class="lang-wrap">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" aria-pressed="false" data-lang="en">
+          <span class="lang-text">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-text inactive">DE</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Main Content (Social links added) ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="social_heading">My Channels & Socials</h1>
-    <p class="section-lead" data-i18n="social_intro">Follow my journey, watch my projects, and connect with me on your favorite platform.</p>
+  <main id="main" class="main-single" role="main">
+    <section class="section">
+      <div class="section-inner">
+        <h1 class="section-title">Social</h1>
+        <p class="section-text">Connect with me on the platforms below:</p>
 
-    <!-- Brand Channels -->
-    <h2 class="section-subtitle" data-i18n="social_brand_heading">My Brand Channels (Engineer GPM)</h2>
-    <div class="social-grid">
-      <a href="https://www.youtube.com/@EngineerGPM" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/youtube.svg" alt="YouTube" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_youtube_title">YouTube</strong>
-          <span class="muted" data-i18n="social_youtube_desc">Engineering videos & tutorials</span>
-        </div>
-      </a>
-      <a href="https://www.instagram.com/engineergpm/" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_brand_insta_title">Instagram (Brand)</strong>
-          <span class="muted" data-i18n="social_brand_insta_desc">Content & updates for Engineer GPM</span>
-        </div>
-      </a>
-      <a href="https://x.com/EngineerGPM" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/x.svg" alt="X" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_x_title">X (Twitter)</strong>
-          <span class="muted" data-i18n="social_x_desc">Short updates & tech insights</span>
-        </div>
-      </a>
-    </div>
+        <ul class="social-list">
+          <li>
+            <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener" class="social-link">
+              <span class="icon"><img src="assets/icon-linkedin.svg" alt="LinkedIn"></span>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/yourprofile" target="_blank" rel="noopener" class="social-link">
+              <span class="icon"><img src="assets/icon-github.svg" alt="GitHub"></span>
+              <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener" class="social-link">
+              <span class="icon"><img src="assets/icon-twitter.svg" alt="Twitter"></span>
+              <span>Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/georgepmathew/" target="_blank" rel="noopener" class="social-link">
+              <span class="icon"><img src="assets/icon-instagram.svg" alt="Instagram"></span>
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-    <!-- Personal Channels -->
-    <h2 class="section-subtitle" data-i18n="social_personal_heading">Connect with Me Personally</h2>
-    <div class="social-grid">
-        <!-- LinkedIn Card -->
-        <a href="https://www.linkedin.com/in/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
-            <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
-            <div class="social-text">
-              <strong data-i18n="social_linkedin_title">LinkedIn</strong>
-              <span class="muted" data-i18n="social_linkedin_desc">For professional networking</span>
-            </div>
-        </a>
-        <!-- Personal Instagram Card -->
-        <a href="https://www.instagram.com/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
-            <img src="assets/icons/instagram.svg" a
+  <nav class="floating-nav" role="navigation">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-btn"><span class="icon"><img src="assets/icon-home.svg" alt=""></span><span class="nav-label">Home</span></a></li>
+      <li><a href="germany.html" class="nav-btn"><span class="icon"><img src="assets/icon-models.svg" alt=""></span><span class="nav-label">Germany</span></a></li>
+      <li><a href="projects.html" class="nav-btn"><span class="icon"><img src="assets/icon-projects.svg" alt=""></span><span class="nav-label">Projects</span></a></li>
+      <li><a href="experience.html" class="nav-btn"><span class="icon"><img src="assets/icon-experience.svg" alt=""></span><span class="nav-label">Experience</span></a></li>
+      <li><a href="social.html" class="nav-btn active"><span class="icon"><img src="assets/icon-contact.svg" alt=""></span><span class="nav-label">Social</span></a></li>
+    </ul>
+  </nav>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
