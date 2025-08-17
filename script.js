@@ -1,24 +1,189 @@
 /* script.js — Engineer GPM Folio
    - Handles EN/DE translations, theme persistence, active navigation,
-   - scroll animations, and the new mobile menu.
-   - REVISED FOR NEW MOBILE DESIGN
+   - the mobile menu, and the new Gemini-style in-page navigator.
+   - REVISED: Dark theme default, added IntersectionObserver for in-page nav.
 */
 
 (function () {
   'use strict';
 
   /* =========================
-     Translation Dictionary (UPDATED)
+     Translation Dictionary
      ========================= */
   const I18N = {
+    en: { /* ... (translations are unchanged from last version) ... */ },
+    de: { /* ... (translations are unchanged from last version) ... */ }
+  };
+  // NOTE: For brevity, the giant I18N dictionary is collapsed here.
+  // The code you should use is the full version from our previous step.
+  // I will add the full dictionary at the end of this block.
+
+
+  /* =========================
+     Persistence keys & defaults
+     ========================= */
+  const LANG_KEY = 'gpm_lang';
+  const THEME_KEY = 'gpm_theme';
+
+  function getSavedLang() { return localStorage.getItem(LANG_KEY) || 'en'; }
+  function saveLang(code) { localStorage.setItem(LANG_KEY, code); }
+  
+  // NEW: Defaults to 'dark' theme if nothing is saved
+  function getSavedTheme() { return localStorage.getItem(THEME_KEY) || 'dark'; }
+  function saveTheme(t) { localStorage.setItem(THEME_KEY, t); }
+
+  /* =========================
+     Core Functions
+     ========================= */
+  function applyTranslations(code) {
+    const dict = I18N[code] || I18N.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) {
+        el.innerHTML = dict[key];
+      }
+    });
+    document.documentElement.setAttribute('lang', code);
+  }
+
+  function applyTheme(themeValue) {
+    const html = document.documentElement;
+    html.removeAttribute('data-theme');
+    // Simplified logic: only sets 'light' or 'german' as data-theme attributes
+    if (themeValue === 'light' || themeValue === 'german') {
+      html.setAttribute('data-theme', themeValue);
+    }
+    saveTheme(themeValue);
+  }
+
+  function markActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.mainnav .nav-link').forEach(link => {
+      const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
+      if (currentPage === linkPage) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  /* =========================
+     UI Event Listeners & Animations
+     ========================= */
+  
+  function initMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.mainnav-menu');
+    
+    if (!menuToggle || !menu) return;
+
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('menu-is-open');
+    });
+
+    menu.addEventListener('click', (e) => {
+      if (e.target.matches('.nav-link')) {
+        document.body.classList.remove('menu-is-open');
+      }
+    });
+  }
+
+  function initLangToggle() {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    
+    const setButtonState = (lang) => {
+        btn.textContent = lang.toUpperCase();
+    };
+
+    btn.addEventListener('click', () => {
+      const newLang = getSavedLang() === 'en' ? 'de' : 'en';
+      saveLang(newLang);
+      applyTranslations(newLang);
+      setButtonState(newLang);
+    });
+    
+    setButtonState(getSavedLang());
+  }
+
+  function initThemeShortcuts() {
+    window.addEventListener('keydown', (e) => {
+      if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        const currentTheme = getSavedTheme();
+        const themes = ['dark', 'light', 'german'];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        applyTheme(themes[nextIndex]);
+      }
+    });
+  }
+
+  // NEW: In-Page Navigator Logic
+  function initInPageNav() {
+    const nav = document.querySelector('.inpage-nav');
+    if (!nav) return;
+
+    const navLinks = nav.querySelectorAll('a');
+    const sections = Array.from(navLinks).map(link => {
+      const id = link.getAttribute('href');
+      return document.querySelector(id);
+    }).filter(Boolean); // Filter out nulls if a section doesn't exist
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of the viewport
+      threshold: 0
+    });
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+
+  /* =========================
+     Initialization
+     ========================= */
+  function init() {
+    applyTheme(getSavedTheme());
+    applyTranslations(getSavedLang());
+    
+    markActiveNav();
+    initLangToggle();
+    initThemeShortcuts();
+    initMobileMenu();
+    initInPageNav(); // <-- Initialize the new in-page navigator
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Full I18N dictionary to be placed here
+  const full_I18N = {
     en: {
-      // General
       brand_name: "George P. Mathew",
       brand_sub: "Engineer GPM",
       footer_text: "Engineered by George P. Mathew",
       footer_subtext: "Leveraging AI to bridge vision and reality.",
-
-      // Navigation
       nav_home: "Home",
       nav_experience: "Experience",
       nav_skills: "Skills",
@@ -26,23 +191,17 @@
       nav_about: "About",
       nav_social: "Social",
       nav_contact: "Contact",
-
-      // Homepage
       hero_name: "George P. Mathew",
       hero_role: "Civil Engineer & Future Materials Innovator",
       hero_lead_1: "My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.",
       hero_lead_2: "I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.",
       btn_story: "My Full Story",
       btn_germany: "My Plan for Germany",
-
-      // About Page
       about_heading: "My Story",
       about_p1: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success. Seeing the challenges of material defects firsthand ignited my passion for understanding the 'why' behind the materials we use.",
       about_p2: "This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University, positioning myself at the forefront of construction innovation.",
       about_subtitle: "My Mindset: The Story of this Website",
       about_p3: "I am defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem. My tool wasn't a CAD program; it was Artificial Intelligence. Through iterative prompting and logical debugging, I guided AI to generate the code, structure the design, and build the features you see now. This is the forward-thinking, tool-agnostic mindset I bring to every challenge.",
-
-      // Experience Page (Updated from resume)
       experience_heading: "Professional Experience",
       exp1_role: "Business Assistant",
       exp1_date: "12/2023 – Present",
@@ -72,8 +231,6 @@
       tag_qa: "Quality Assurance",
       tag_precast: "Precast Erection",
       tag_civil: "Civil Engineering",
-
-      // Skills Page (Updated from resume)
       skills_heading: "My Capabilities",
       skill1_title: "Engineering Foundation",
       skill1_desc: "Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.",
@@ -91,8 +248,6 @@
       lang_tamil_name: "Tamil",
       lang_hindi_name: "Hindi",
       lang_other_level: "Other Language",
-      
-      // Germany Page
       germany_heading: "My Commitment to Engineering in Germany",
       germany_intro: "My on-site experience revealed the critical need for material innovation, which led me directly to Germany—the European leader in engineering research and sustainable technology. This is not just a destination; it's the epicenter of the future I want to help build.",
       germany_col1_title: "Why Germany?",
@@ -111,8 +266,6 @@
       germany_item6_desc: "This choice positions me at the unique intersection of construction knowledge, advanced materials science, German engineering excellence, and an international perspective.",
       germany_bigger_picture_title: "The Bigger Picture",
       germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and now access to world-class education, I'm positioned to help solve the real-world challenges I've witnessed on construction sites. My goal is to help revolutionize how we build, one material innovation at a time.",
-
-      // Social Page
       social_heading: "My Channels & Socials",
       social_intro: "Follow my journey, watch my projects, and connect with me on your favorite platform.",
       social_brand_heading: "My Brand Channels (Engineer GPM)",
@@ -129,8 +282,6 @@
       social_insta_desc: "Personal updates & photography",
       social_fb_title: "Facebook",
       social_fb_desc: "Connect with friends & family",
-      
-      // Contact Page
       contact_heading: "Get In Touch",
       contact_intro_simple: "I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.",
       contact_email_title: "Email",
@@ -138,8 +289,6 @@
       contact_linkedin_desc: "Professional Networking",
       contact_email_cta: "Send an Email",
       contact_linkedin_cta: "View My Profile",
-
-      // Education Page
       education_heading: "Education",
       edu1_degree: "M.Sc. Materials Engineering",
       edu1_school: "RWTH Aachen University, Germany",
@@ -274,158 +423,7 @@
     }
   };
 
-  /* =========================
-     Persistence keys & defaults
-     ========================= */
-  const LANG_KEY = 'gpm_lang';
-  const THEME_KEY = 'gpm_theme';
-
-  function getSavedLang() { return localStorage.getItem(LANG_KEY) || 'en'; }
-  function saveLang(code) { localStorage.setItem(LANG_KEY, code); }
-  function getSavedTheme() { return localStorage.getItem(THEME_KEY) || 'default'; }
-  function saveTheme(t) { localStorage.setItem(THEME_KEY, t); }
-
-  /* =========================
-     Core Functions
-     ========================= */
-  function applyTranslations(code) {
-    const dict = I18N[code] || I18N.en;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key]) {
-        el.innerHTML = dict[key];
-      }
-    });
-    document.documentElement.setAttribute('lang', code);
-  }
-
-  function applyTheme(themeValue) {
-    const html = document.documentElement;
-    html.removeAttribute('data-theme');
-    if (themeValue === 'german' || themeValue === 'dark') {
-      html.setAttribute('data-theme', themeValue);
-    }
-    saveTheme(themeValue);
-  }
-
-  function markActiveNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    // Cleaned up selector to only target the main navigation links
-    document.querySelectorAll('.mainnav .nav-link').forEach(link => {
-      const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
-      if (currentPage === linkPage) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    });
-  }
-
-  /* =========================
-     UI Event Listeners & Animations
-     ========================= */
-  
-  // NEW: Mobile Menu Functionality
-  function initMobileMenu() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('.mainnav-menu');
-    
-    if (!menuToggle || !menu) return;
-
-    menuToggle.addEventListener('click', () => {
-      document.body.classList.toggle('menu-is-open');
-    });
-
-    // Close menu when a link is clicked
-    menu.addEventListener('click', (e) => {
-      if (e.target.matches('.nav-link')) {
-        document.body.classList.remove('menu-is-open');
-      }
-    });
-  }
-
-  function initLangToggle() {
-    const btn = document.getElementById('lang-toggle');
-    if (!btn) return;
-    
-    const setButtonState = (lang) => {
-        btn.textContent = lang.toUpperCase();
-    };
-
-    btn.addEventListener('click', () => {
-      const newLang = getSavedLang() === 'en' ? 'de' : 'en';
-      saveLang(newLang);
-      applyTranslations(newLang);
-      setButtonState(newLang);
-    });
-    
-    setButtonState(getSavedLang());
-  }
-
-  function initThemeShortcuts() {
-    window.addEventListener('keydown', (e) => {
-      if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 't') {
-        e.preventDefault();
-        const currentTheme = getSavedTheme();
-        const themes = ['default', 'german', 'dark'];
-        const currentIndex = themes.indexOf(currentTheme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        applyTheme(themes[nextIndex]);
-      }
-    });
-  }
-
-  function initAboutImageScroll() {
-    const imageWrapper = document.querySelector('.about-image-wrapper');
-    if (!imageWrapper) return;
-
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      if (window.innerWidth > 900) { 
-        if (window.scrollY > lastScrollY && window.scrollY > 150) {
-          imageWrapper.classList.add('is-hidden');
-        } else {
-          imageWrapper.classList.remove('is-hidden');
-        }
-      } else {
-        imageWrapper.classList.remove('is-hidden');
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    let isThrottled = false;
-    window.addEventListener('scroll', () => {
-      if (!isThrottled) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          isThrottled = false;
-        });
-        isThrottled = true;
-      }
-    });
-  }
-
-  /* =========================
-     Initialization
-     ========================= */
-  function init() {
-    applyTheme(getSavedTheme());
-    applyTranslations(getSavedLang());
-    
-    markActiveNav();
-    initLangToggle();
-    initThemeShortcuts();
-    initAboutImageScroll();
-    initMobileMenu(); // <-- Initialize the new menu
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  // Replace the placeholder I18N object at the top of the file with this full one.
+  Object.assign(I18N, full_I18N);
 
 })();
