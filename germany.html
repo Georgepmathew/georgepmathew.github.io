@@ -7,13 +7,13 @@
   <meta name="description" content="My commitment to engineering in Germany and my reasons for choosing RWTH Aachen University for my M.Sc. in Materials Engineering." />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ================= Header (Updated for Mobile Menu) ================= -->
+  <!-- ================= Header ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -24,7 +24,6 @@
         </div>
       </a>
 
-      <!-- Desktop nav -->
       <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
@@ -35,7 +34,6 @@
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
       
-      <!-- Language Toggle & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
         <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
@@ -45,14 +43,23 @@
     </div>
   </header>
 
-  <!-- ================= Main Content ================= -->
+  <!-- ================= Main Content (UPDATED) ================= -->
   <main class="container page-root section" role="main">
     <h1 data-i18n="germany_heading">My Commitment to Engineering in Germany</h1>
     <p class="section-lead" data-i18n="germany_intro">My on-site experience revealed the critical need for material innovation, which led me directly to Germany—the European leader in engineering research and sustainable technology. This is not just a destination; it's the epicenter of the future I want to help build.</p>
 
+    <!-- NEW: In-Page Navigator -->
+    <div class="inpage-nav-wrapper">
+      <nav class="inpage-nav" aria-label="Page sections">
+        <a href="#why-germany">Why Germany?</a>
+        <a href="#why-rwth">Why RWTH Aachen?</a>
+        <a href="#bigger-picture">The Bigger Picture</a>
+      </nav>
+    </div>
+
+    <!-- UPDATED: Added ID attributes to sections -->
     <div class="manifesto-grid">
-      <!-- Left Column: Why Germany? -->
-      <div class="manifesto-column">
+      <div id="why-germany" class="manifesto-column">
         <h2 data-i18n="germany_col1_title">Why Germany?</h2>
         <div class="manifesto-item">
           <h3 data-i18n="germany_item1_title">Engineering & Innovation Leadership</h3>
@@ -68,8 +75,7 @@
         </div>
       </div>
 
-      <!-- Right Column: Why RWTH Aachen? -->
-      <div class="manifesto-column">
+      <div id="why-rwth" class="manifesto-column">
         <h2 data-i18n="germany_col2_title">Why RWTH Aachen?</h2>
         <div class="manifesto-item">
           <h3 data-i18n="germany_item4_title">World-Class University</h3>
@@ -86,8 +92,7 @@
       </div>
     </div>
 
-    <!-- The Bigger Picture Section -->
-    <div class="bigger-picture-box card">
+    <div id="bigger-picture" class="bigger-picture-box card">
       <h2 data-i18n="germany_bigger_picture_title">The Bigger Picture</h2>
       <p data-i18n="germany_bigger_picture_desc">This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and now access to world-class education, I'm positioned to help solve the real-world challenges I've witnessed on construction sites. My goal is to help revolutionize how we build, one material innovation at a time.</p>
     </div>
