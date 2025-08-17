@@ -1,7 +1,7 @@
 /* style.css — Full stylesheet for Engineer GPM site
    - Core styles, responsive design, and themes
    - Signature "blueprint" motif included
-   - FINAL POLISHED VERSION
+   - REVISED FOR NEW MOBILE DESIGN
 */
 
 /* -------------------------
@@ -65,6 +65,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
+/* NEW: Prevent scrolling when mobile menu is open */
+body.menu-is-open {
+  overflow: hidden;
+}
 
 .container {
   max-width: var(--maxw);
@@ -112,12 +116,13 @@ img {
 .mainnav .nav-link.active { color: var(--accent); }
 .nav-icon { width: 16px; height: 16px; opacity: 0.8; }
 
+.header-actions { display: flex; align-items: center; gap: 8px; }
 .header-actions .icon-btn {
   display: inline-grid;
   place-items: center;
-  min-width: 48px;
-  height: 40px;
-  padding: 0 12px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border-radius: 8px;
   background: transparent;
   border: 2px solid var(--border-color);
@@ -129,13 +134,38 @@ img {
 }
 .header-actions .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-.mobile-nav-scroll { display: none; }
+/* NEW: Hamburger menu button styles */
+.menu-toggle-btn { display: none; /* Hidden on desktop */ }
+.hamburger-icon {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text);
+  transition: all 0.2s ease-in-out;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text);
+  transition: all 0.2s ease-in-out;
+}
+.hamburger-icon::before { top: -6px; }
+.hamburger-icon::after { bottom: -6px; }
+
+/* NEW: Hamburger animation when menu is open */
+.menu-is-open .hamburger-icon { background-color: transparent; }
+.menu-is-open .hamburger-icon::before { transform: translateY(6px) rotate(45deg); }
+.menu-is-open .hamburger-icon::after { transform: translateY(-6px) rotate(-45deg); }
+
 
 /* -------------------------
    Hero Section
    ------------------------- */
 .page-root { padding-top: 48px; padding-bottom: 64px; }
-
 .hero { display: grid; grid-template-columns: 400px 1fr; gap: 60px; align-items: center; }
 .image-card { padding: 12px; border-radius: 14px; box-shadow: var(--shadow-strong); background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .hero-image { border-radius: 8px; }
@@ -144,8 +174,9 @@ img {
 .hero-right .lead { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 16px; }
 .hero-right .lead:last-of-type { margin-bottom: 24px; }
 
-.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease; }
+.hero-cta-desktop { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-cta-mobile { display: none; } /* Hide mobile CTA on desktop */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease; }
 .btn.primary { background: var(--accent); color: white; }
 .btn.primary:hover { background: var(--accent-2); transform: translateY(-2px); }
 .btn.outline { border-color: var(--border-color); color: var(--text); }
@@ -169,16 +200,23 @@ img {
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
 
 /* -------------------------
-   Skills Page
+   Skills, Experience, etc. Pages (shared styles)
    ------------------------- */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+.skills-grid, .experience-grid, .social-grid, .contact-grid, .language-grid { 
+  display: grid;
+  gap: 20px; 
+}
+.skills-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); max-width: 900px; margin: 0 auto; }
+.experience-grid { grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; }
+.social-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.contact-grid { grid-template-columns: 1fr 1fr; max-width: 800px; margin: 0 auto; }
+
 .skill-card { text-align: center; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .skill-icon { width: 48px; height: 48px; margin: 0 auto 16px; color: var(--accent); }
 .skill-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
 .skill-card p { color: var(--muted); margin: 0; font-size: 0.95rem; }
 
 .languages-section { max-width: 900px; margin: 64px auto 0; }
-.language-grid { display: grid; gap: 20px; }
 .language-item { padding: 16px; border: 1px solid var(--border-color); border-radius: var(--radius); background-color: var(--surface); }
 .language-info { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
 .language-name { font-weight: 700; font-size: 1.1rem; }
@@ -186,30 +224,14 @@ img {
 .language-bar-wrapper { width: 100%; height: 8px; background-color: var(--bg); border-radius: 999px; overflow: hidden; }
 .language-bar { height: 100%; background-color: var(--accent); border-radius: 999px; }
 
-/* -------------------------
-   About Page
-   ------------------------- */
 .about-content { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: flex-start; max-width: 1000px; margin: 48px auto 0; }
 .about-text { order: 1; }
-.about-image-wrapper { 
-  order: 2; 
-  position: sticky; 
-  top: 100px;
-  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-}
-.about-image-wrapper.is-hidden {
-  transform: translateY(-20px);
-  opacity: 0;
-  pointer-events: none;
-}
+.about-image-wrapper { order: 2; position: sticky; top: 100px; transition: transform 0.4s ease-out, opacity 0.4s ease-out; }
+.about-image-wrapper.is-hidden { transform: translateY(-20px); opacity: 0; pointer-events: none; }
 .about-site-pic { width: 100%; border-radius: var(--radius); border: 4px solid var(--surface); box-shadow: var(--shadow-strong); object-fit: cover; }
 .about-text p { font-size: 1.1rem; line-height: 1.7; color: var(--muted); margin-bottom: 24px; }
 .about-text h3 { font-size: 1.5rem; font-weight: 700; margin-top: 40px; margin-bottom: 16px; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; }
 
-/* -------------------------
-   Experience Page
-   ------------------------- */
-.experience-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
 .experience-card { background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .experience-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
 .experience-role { font-size: 1.5rem; font-weight: 700; margin: 0; }
@@ -220,9 +242,6 @@ img {
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; background-color: var(--bg); color: var(--muted); border: 1px solid var(--border-color); }
 
-/* -------------------------
-   Why Germany Page
-   ------------------------- */
 .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto 48px; }
 .manifesto-column { border: 1px solid var(--border-color); padding: 24px; border-radius: var(--radius); background-color: var(--surface); }
 .manifesto-column h2 { font-size: 1.8rem; font-weight: 900; margin: 0 0 24px; border-bottom: 2px solid var(--border-color); padding-bottom: 12px; }
@@ -233,20 +252,12 @@ img {
 .bigger-picture-box { max-width: 900px; margin: 0 auto; text-align: center; padding: 32px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .bigger-picture-box h2 { margin-top: 0; color: var(--accent); }
 
-/* -------------------------
-   Social Page
-   ------------------------- */
-.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .social-card { display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; padding: 20px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
 .social-icon { width: 48px; height: 48px; flex-shrink: 0; }
 .social-text { display: flex; flex-direction: column; }
 .social-text strong { font-size: 1.2rem; font-weight: 700; color: var(--text); }
 .social-text .muted { font-size: 0.95rem; }
 
-/* -------------------------
-   Contact Page
-   ------------------------- */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
 .contact-card-wrapper h3.contact-card-title { text-align: center; font-size: 1.2rem; margin-bottom: 12px; }
 .contact-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: inherit; padding: 32px; background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); height: 100%; }
 .contact-card-icon { margin-bottom: 16px; }
@@ -256,9 +267,6 @@ img {
 .contact-card-link { display: inline-block; padding: 8px 16px; border-radius: 999px; background-color: var(--accent); color: white; font-weight: 700; font-size: 0.9rem; transition: background-color 0.2s; margin-top: auto;}
 .contact-card:hover .contact-card-link { background-color: var(--accent-2); }
 
-/* -------------------------
-   Education Timeline
-   ------------------------- */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 40px; }
 .timeline::before { content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 3px; background-color: var(--border-color); border-radius: 2px; }
 .timeline-item { position: relative; margin-bottom: 32px; }
@@ -276,39 +284,80 @@ img {
   .hero { grid-template-columns: 1fr; gap: 32px; text-align: center; }
   .hero-right .lead { margin: 0 auto 16px; }
   .image-card { margin: 0 auto; max-width: 400px; }
-  .hero-cta { justify-content: center; }
   .manifesto-grid { grid-template-columns: 1fr; }
   .about-content { grid-template-columns: 1fr; gap: 32px; }
-  .about-image-wrapper { order: 1; position: static; /* Un-stick image on smaller screens */ margin: 0 auto 16px; max-width: 350px; }
+  .about-image-wrapper { order: 1; position: static; margin: 0 auto 16px; max-width: 350px; }
   .about-text { order: 2; text-align: center; }
   .about-text h3 { border-left: none; border-bottom: 2px solid var(--accent); padding-left: 0; padding-bottom: 8px; display: inline-block; }
 }
 
+/* -------------------------------------
+   NEW MOBILE STYLES (767px and below)
+   ------------------------------------- */
 @media (max-width: 767px) {
-  .mainnav { display: none; }
-  .mobile-nav-scroll { 
-    display: block; 
-    position: sticky;
-    top: 61px; /* Height of the topbar */
-    z-index: 99;
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border-color);
-    padding: 0 16px;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+  /* NEW: Increase spacing between cards for better readability */
+  .skills-grid, .experience-grid, .social-grid, .contact-grid, .language-grid {
+      gap: 24px;
   }
-  .mobile-nav-scroll::-webkit-scrollbar { display: none; }
-  .mobile-nav-scroll { scrollbar-width: none; }
-  .mobile-nav-scroll .nav-link { display: inline-block; padding: 12px 16px; text-decoration: none; font-size: 15px; font-weight: 700; color: var(--muted); }
-  .mobile-nav-scroll .nav-link.active { color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 9px; }
+  .experience-grid { gap: 32px; }
 
+  /* NEW: Mobile Header & Menu Button */
   .brand-sub { display: none; }
+  .header-actions #lang-toggle { display: none; /* Hide lang toggle from header */ }
+  .menu-toggle-btn { display: inline-grid; /* Show hamburger button */ }
 
+  /* NEW: Hide Desktop Nav, style Mobile Nav */
+  .mainnav.mainnav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--surface);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: -1; /* Place it behind the header */
+    padding-top: 60px; /* Offset for header height */
+  }
+  .menu-is-open .mainnav.mainnav-menu {
+    transform: translateY(0);
+  }
+  .mainnav.mainnav-menu .nav-link {
+    font-size: 24px; /* Make links bigger and easier to tap */
+    padding: 12px 20px;
+  }
+  .mainnav.mainnav-menu .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* NEW: Mobile Homepage Hero Layout */
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-right { order: 1; } /* Text comes first */
+  .hero-left { order: 2; width: 100%; } /* Image comes second */
+  
+  .hero-cta-desktop { display: none; } /* Hide desktop buttons */
+  .hero-cta-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Make buttons full width */
+    gap: 12px;
+    margin: 24px 0;
+  }
+  
   .timeline { padding-left: 30px; }
   .timeline-icon { left: -35px; width: 40px; height: 40px; font-size: 1.2rem; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
 
 /* -------------------------
    Accessibility Focus States
