@@ -2,92 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Education — George P. Mathew</title>
-  <meta name="description" content="My academic background, including a B.E. in Civil Engineering and my upcoming M.Sc. in Materials Engineering at RWTH Aachen University." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Education background and academic history." />
+  <title>Education — Your Name</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-
-  <!-- ================= Header (FINAL Universal Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
+  <header class="mobile-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo-btn" aria-label="Home">
+        <img src="assets/logo.svg" alt="Site logo" class="logo" />
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
-          <span class="hamburger-icon"></span>
+      <div class="lang-wrap">
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" aria-pressed="false" data-lang="en">
+          <span class="lang-text">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-text inactive">DE</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Main Content ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="education_heading">Education</h1>
-
-    <div class="timeline">
-      <!-- Item 1: RWTH Aachen -->
-      <div class="timeline-item">
-        <div class="timeline-icon">🎓</div>
-        <div class="timeline-content card">
-          <h2 class="timeline-title" data-i18n="edu1_degree">M.Sc. Materials Engineering</h2>
-          <p class="timeline-institution" data-i18n="edu1_school">RWTH Aachen University, Germany</p>
-          <p class="timeline-date" data-i18n="edu1_date">Accepted Offer — Starting Winter 2025</p>
-        </div>
+  <main id="main" class="main-single" role="main">
+    <section class="section">
+      <div class="section-inner">
+        <h1 class="section-title">Education</h1>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <h2>Bachelor of Civil Engineering — University Name</h2>
+            <span class="time">2017 – 2021</span>
+            <p>Graduated with focus on materials, structural analysis, and project management.</p>
+          </li>
+          <li class="timeline-item">
+            <h2>High School — School Name</h2>
+            <span class="time">2015 – 2017</span>
+            <p>Concentration in science and mathematics.</p>
+          </li>
+        </ul>
       </div>
-
-      <!-- Item 2: B.E. Civil Engineering -->
-      <div class="timeline-item">
-        <div class="timeline-icon">🎓</div>
-        <div class="timeline-content card">
-          <h2 class="timeline-title" data-i18n="edu2_degree">B.E. Civil Engineering</h2>
-          <p class="timeline-institution" data-i18n="edu2_school">Mar Ephraem College of Engineering and Technology, India</p>
-          <p class="timeline-date" data-i18n="edu2_date">06/2017 – 07/2021</p>
-        </div>
-      </div>
-
-      <!-- Item 3: Higher Secondary -->
-      <div class="timeline-item">
-        <div class="timeline-icon">🏫</div>
-        <div class="timeline-content card">
-          <h2 class="timeline-title" data-i18n="edu3_degree">Higher Secondary Education (Science)</h2>
-          <p class="timeline-institution" data-i18n="edu3_school">St. Thomas Higher Secondary School, India</p>
-          <p class="timeline-date" data-i18n="edu3_date">2015 – 2017</p>
-        </div>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <!-- ================= Footer (Updated Subtext) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext_new">Where engineering principles meet artificial intelligence.</div>
-  </footer>
+  <nav class="floating-nav" role="navigation">
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-btn"><span class="icon"><img src="assets/icon-home.svg" alt=""></span><span class="nav-label">Home</span></a></li>
+      <li><a href="germany.html" class="nav-btn"><span class="icon"><img src="assets/icon-models.svg" alt=""></span><span class="nav-label">Germany</span></a></li>
+      <li><a href="projects.html" class="nav-btn"><span class="icon"><img src="assets/icon-projects.svg" alt=""></span><span class="nav-label">Projects</span></a></li>
+      <li><a href="experience.html" class="nav-btn"><span class="icon"><img src="assets/icon-experience.svg" alt=""></span><span class="nav-label">Experience</span></a></li>
+      <li><a href="education.html" class="nav-btn active"><span class="icon"><img src="assets/icon-education.svg" alt=""></span><span class="nav-label">Education</span></a></li>
+    </ul>
+  </nav>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
