@@ -13,7 +13,12 @@
 </head>
 <body>
 
-  <!-- ================= Header (To be copied to all pages) ================= -->
+  <!-- ================= Animation Preloader ================= -->
+  <div id="intro-animation">
+    <div class="intro-name">George P. Mathew</div>
+  </div>
+
+  <!-- ================= Header (Final Structure) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -28,6 +33,7 @@
       <nav class="mainnav" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt=""><span data-i18n="nav_education">Education</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
         <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
         <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
@@ -42,10 +48,11 @@
     </div>
   </header>
 
-  <!-- New Mobile Scrolling Nav (To be copied to all pages) -->
+  <!-- Mobile Scrolling Nav (Final Structure) -->
   <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
       <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
       <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
+      <a class="nav-link" href="education.html"><span data-i18n="nav_education">Education</span></a>
       <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
       <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
       <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
@@ -57,14 +64,14 @@
   <main class="page-root container" role="main">
     <section class="hero" aria-labelledby="hero-heading">
       <!-- LEFT: Illustration -->
-      <div class="hero-left">
+      <div class="hero-left anim-fade-in">
         <div class="image-card">
           <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
         </div>
       </div>
 
       <!-- RIGHT: Content -->
-      <div class="hero-right">
+      <div class="hero-right anim-fade-in">
         <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
         <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
 
@@ -78,12 +85,13 @@
         <div class="hero-cta">
           <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
           <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
+          <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer"><img src="assets/icons/document.svg" alt="" class="btn-icon"><span data-i18n="btn_cv">Download CV</span></a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= Footer (To be copied to all pages) ================= -->
+  <!-- ================= Footer (Final Structure) ================= -->
   <footer class="footer container" role="contentinfo">
     <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
     <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
