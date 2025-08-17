@@ -26,6 +26,7 @@
       <nav class="mainnav" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt=""><span data-i18n="nav_education">Education</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
         <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
         <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
@@ -42,6 +43,7 @@
   <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
       <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
       <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
+      <a class="nav-link" href="education.html"><span data-i18n="nav_education">Education</span></a>
       <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
       <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
       <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
@@ -51,33 +53,33 @@
 
   <!-- ================= Main Content ================= -->
   <main class="container page-root section" role="main">
-    <h1 data-i18n="skills_heading">My Capabilities</h1>
+    <h1 data-i18n="skills_heading" class="anim-fade-in">My Capabilities</h1>
 
     <div class="skills-grid">
       <!-- Skill 1: Engineering -->
-      <div class="skill-card card">
+      <div class="skill-card card anim-fade-in">
         <img src="assets/icons/engineering.svg" alt="Engineering" class="skill-icon" />
         <h3 data-i18n="skill1_title">Engineering Foundation</h3>
         <p data-i18n="skill1_desc">Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.</p>
       </div>
 
       <!-- Skill 2: AI -->
-      <div class="skill-card card">
+      <div class="skill-card card anim-fade-in">
         <img src="assets/icons/ai.svg" alt="AI" class="skill-icon" />
         <h3 data-i18n="skill2_title">AI & Resourcefulness</h3>
         <p data-i18n="skill2_desc_revised">Expert in prompting for complex tasks like code generation and image synthesis. I leverage AI models to rapidly prototype solutions and solve daily engineering challenges.</p>
       </div>
       
       <!-- Skill 3: Software -->
-      <div class="skill-card card">
+      <div class="skill-card card anim-fade-in">
         <img src="assets/icons/coding.svg" alt="Software" class="skill-icon" />
         <h3 data-i18n="skill3_title">Software & Tools</h3>
         <p data-i18n="skill3_desc">AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), and MS Office.</p>
       </div>
     </div>
 
-    <!-- New Languages Section -->
-    <div class="languages-section">
+    <!-- Languages Section -->
+    <div class="languages-section anim-fade-in">
       <h2 class="section-subtitle" data-i18n="lang_heading">Languages & Communication</h2>
       <div class="language-grid">
         <div class="language-item">
@@ -99,6 +101,24 @@
           </div>
         </div>
         <div class="language-item">
+            <div class="language-info">
+              <span class="language-name" data-i18n="lang4_name">Tamil</span>
+              <span class="language-level" data-i18n="lang4_level">Conversational</span>
+            </div>
+            <div class="language-bar-wrapper">
+              <div class="language-bar" style="width: 50%;"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <div class="language-info">
+              <span class="language-name" data-i18n="lang5_name">Hindi</span>
+              <span class="language-level" data-i18n="lang5_level">Conversational</span>
+            </div>
+            <div class="language-bar-wrapper">
+              <div class="language-bar" style="width: 50%;"></div>
+            </div>
+          </div>
+        <div class="language-item">
           <div class="language-info">
             <span class="language-name" data-i18n="lang3_name">German</span>
             <span class="language-level" data-i18n="lang3_level">Actively Learning</span>
@@ -111,12 +131,4 @@
     </div>
   </main>
 
-  <!-- ================= Footer (Final Structure) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- ================= Footer (Final S
