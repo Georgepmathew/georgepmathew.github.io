@@ -1,14 +1,14 @@
 /* script.js — Engineer GPM Folio
    - Handles EN/DE translations, theme persistence, active navigation,
-   - and scroll animations.
-   - FINAL POLISHED VERSION
+   - scroll animations, and the new mobile menu.
+   - REVISED FOR NEW MOBILE DESIGN
 */
 
 (function () {
   'use strict';
 
   /* =========================
-     Translation Dictionary
+     Translation Dictionary (UPDATED)
      ========================= */
   const I18N = {
     en: {
@@ -42,25 +42,28 @@
       about_subtitle: "My Mindset: The Story of this Website",
       about_p3: "I am defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem. My tool wasn't a CAD program; it was Artificial Intelligence. Through iterative prompting and logical debugging, I guided AI to generate the code, structure the design, and build the features you see now. This is the forward-thinking, tool-agnostic mindset I bring to every challenge.",
 
-      // Experience Page
+      // Experience Page (Updated from resume)
       experience_heading: "Professional Experience",
       exp1_role: "Business Assistant",
       exp1_date: "12/2023 – Present",
       exp1_company: "Best Trading, Pathanapuram, India",
       exp1_li1: "Assisted customers with product inquiries, improving sales through personalized service and technical guidance.",
-      exp1_li2: "Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.",
+      exp1_li2: "Handled billing operations.",
+      exp1_li3_new: "Contributed to local marketing efforts including product promotions and flyer distribution.",
       exp2_role: "Junior Engineer",
       exp2_date: "07/02/2023 – 30/11/2023",
       exp2_company: "SG Construction Company, Mumbai, India",
-      exp2_li1: "Supervised pile foundation work and finishing stages of the building project.",
-      exp2_li2: "Coordinated with various teams to ensure project milestones were met on schedule.",
-      exp2_li3: "Resolved on-site issues to maintain project quality and maintained communication with contractors.",
+      exp2_li1: "Supervised pile foundation work and finishing work of the building.",
+      exp2_li2: "Coordinated with various teams to ensure project milestones were met.",
+      exp2_li3_new: "Assisted in solving on-site issues and ensuring project quality.",
+      exp2_li4_new: "Maintained communication with contractors and suppliers.",
       exp3_role: "Graduate Engineer Trainee",
       exp3_date: "01/10/2021 – 30/09/2022",
       exp3_company: "Excel Precast Solutions Pvt Ltd, Bangalore, India",
-      exp3_li1: "Managed the erection of precast components including wall panels, beams, and slabs.",
-      exp3_li2: "Conducted grouting, repair work, and assisted in quality checks for precast components.",
-      exp3_li3: "Collaborated with the team to ensure timely completion of construction tasks.",
+      exp3_li1: "Managed the erection of wall panels, beams, and slabs.",
+      exp3_li2: "Conducted grouting and repair work on precast wall panels.",
+      exp3_li3_new: "Assisted in quality checks of precast components.",
+      exp3_li4_new: "Collaborated with the team to ensure timely completion of tasks.",
       tag_cs: "Customer Service",
       tag_sales: "Sales",
       tag_marketing: "Marketing",
@@ -70,21 +73,24 @@
       tag_precast: "Precast Erection",
       tag_civil: "Civil Engineering",
 
-      // Skills Page
+      // Skills Page (Updated from resume)
       skills_heading: "My Capabilities",
       skill1_title: "Engineering Foundation",
       skill1_desc: "Site Supervision, Precast Erection, Quality Assurance, and Project Coordination.",
       skill2_title: "AI & Resourcefulness",
       skill2_desc_revised: "Expert in prompting for complex tasks like code generation and image synthesis. I leverage AI models to rapidly prototype solutions and solve daily engineering challenges.",
       skill3_title: "Software & Tools",
-      skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), and MS Office.",
+      skill3_desc_new: "Microsoft Office (Word, Excel, PowerPoint), Adobe Suite (Illustrator, Photoshop, InDesign), Autodesk AutoCAD, and SketchUp.",
       lang_heading: "Languages & Communication",
       lang1_name: "English",
-      lang1_level: "C1 – Professional Proficiency",
+      lang1_level: "C1 – Proficient User",
       lang2_name: "Malayalam",
-      lang2_level: "Native Speaker",
+      lang2_level: "Mother Tongue",
       lang3_name: "German",
       lang3_level: "Actively Learning",
+      lang_tamil_name: "Tamil",
+      lang_hindi_name: "Hindi",
+      lang_other_level: "Other Language",
       
       // Germany Page
       germany_heading: "My Commitment to Engineering in Germany",
@@ -173,19 +179,22 @@
       exp1_date: "12/2023 – Heute",
       exp1_company: "Best Trading, Pathanapuram, Indien",
       exp1_li1: "Unterstützung von Kunden bei Produktanfragen, Verbesserung des Vertriebs durch personalisierten Service und technische Beratung.",
-      exp1_li2: "Abwicklung von Abrechnungen und Beitrag zu lokalen Marketingmaßnahmen, einschließlich Werbeaktionen und Flyerverteilung.",
+      exp1_li2: "Abwicklung von Abrechnungen.",
+      exp1_li3_new: "Mitarbeit bei lokalen Marketingmaßnahmen, einschließlich Werbeaktionen und Flyerverteilung.",
       exp2_role: "Junior-Ingenieur",
       exp2_date: "07.02.2023 – 30.11.2023",
       exp2_company: "SG Construction Company, Mumbai, Indien",
-      exp2_li1: "Überwachung von Pfahlgründungsarbeiten und Ausbauphasen des Bauprojekts.",
+      exp2_li1: "Überwachung von Pfahlgründungsarbeiten und Ausbauarbeiten des Gebäudes.",
       exp2_li2: "Koordination mit verschiedenen Teams, um die Einhaltung der Projektmeilensteine sicherzustellen.",
-      exp2_li3: "Lösung von Problemen vor Ort zur Aufrechterhaltung der Projektqualität und Kommunikation mit Auftragnehmern.",
+      exp2_li3_new: "Hilfe bei der Lösung von Problemen vor Ort und Sicherstellung der Projektqualität.",
+      exp2_li4_new: "Aufrechterhaltung der Kommunikation mit Auftragnehmern und Lieferanten.",
       exp3_role: "Absolvent-Ingenieur Trainee",
       exp3_date: "01.10.2021 – 30.09.2022",
       exp3_company: "Excel Precast Solutions Pvt Ltd, Bangalore, Indien",
       exp3_li1: "Management der Montage von Fertigteilen einschließlich Wandpaneelen, Trägern und Platten.",
-      exp3_li2: "Durchführung von Verpressungs-, Reparaturarbeiten und Unterstützung bei der Qualitätsprüfung von Fertigteilen.",
-      exp3_li3: "Zusammenarbeit mit dem Team, um die rechtzeitige Fertigstellung der Bauaufgaben zu gewährleisten.",
+      exp3_li2: "Durchführung von Verpressungs- und Reparaturarbeiten an Fertigteilwänden.",
+      exp3_li3_new: "Unterstützung bei Qualitätsprüfungen von Fertigteilen.",
+      exp3_li4_new: "Zusammenarbeit mit dem Team, um die rechtzeitige Fertigstellung der Aufgaben zu gewährleisten.",
       tag_cs: "Kundenservice",
       tag_sales: "Vertrieb",
       tag_marketing: "Marketing",
@@ -200,14 +209,17 @@
       skill2_title: "KI & Einfallsreichtum",
       skill2_desc_revised: "Experte im Prompting für komplexe Aufgaben wie Codegenerierung und Bildsynthese. Ich nutze KI-Modelle, um schnell Prototypen zu entwickeln und tägliche Ingenieurprobleme zu lösen.",
       skill3_title: "Software & Werkzeuge",
-      skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign) und MS Office.",
+      skill3_desc_new: "Microsoft Office (Word, Excel, PowerPoint), Adobe Suite (Illustrator, Photoshop, InDesign), Autodesk AutoCAD und SketchUp.",
       lang_heading: "Sprachen & Kommunikation",
       lang1_name: "Englisch",
-      lang1_level: "C1 – Professionelle Sprachverwendung",
+      lang1_level: "C1 – Kompetente Sprachverwendung",
       lang2_name: "Malayalam",
       lang2_level: "Muttersprache",
       lang3_name: "Deutsch",
       lang3_level: "Wird aktiv gelernt",
+      lang_tamil_name: "Tamil",
+      lang_hindi_name: "Hindi",
+      lang_other_level: "Weitere Sprache",
       germany_heading: "Mein Engagement für das Ingenieurwesen in Deutschland",
       germany_intro: "Meine Erfahrung vor Ort hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung und nachhaltiger Technologie. Dies ist nicht nur ein Ziel, sondern das Epizentrum der Zukunft, die ich mitgestalten möchte.",
       germany_col1_title: "Warum Deutschland?",
@@ -298,7 +310,8 @@
 
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.mainnav .nav-link, .mobile-nav-scroll .nav-link').forEach(link => {
+    // Cleaned up selector to only target the main navigation links
+    document.querySelectorAll('.mainnav .nav-link').forEach(link => {
       const linkPage = (link.getAttribute('href') || '').split('/').pop() || 'index.html';
       if (currentPage === linkPage) {
         link.classList.add('active');
@@ -313,6 +326,26 @@
   /* =========================
      UI Event Listeners & Animations
      ========================= */
+  
+  // NEW: Mobile Menu Functionality
+  function initMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.mainnav-menu');
+    
+    if (!menuToggle || !menu) return;
+
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('menu-is-open');
+    });
+
+    // Close menu when a link is clicked
+    menu.addEventListener('click', (e) => {
+      if (e.target.matches('.nav-link')) {
+        document.body.classList.remove('menu-is-open');
+      }
+    });
+  }
+
   function initLangToggle() {
     const btn = document.getElementById('lang-toggle');
     if (!btn) return;
@@ -346,28 +379,23 @@
 
   function initAboutImageScroll() {
     const imageWrapper = document.querySelector('.about-image-wrapper');
-    if (!imageWrapper) return; // Only run on pages with this element
+    if (!imageWrapper) return;
 
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      // We check window width to only apply the effect on desktop
       if (window.innerWidth > 900) { 
         if (window.scrollY > lastScrollY && window.scrollY > 150) {
-          // Scrolling down, hide image
           imageWrapper.classList.add('is-hidden');
         } else {
-          // Scrolling up, show image
           imageWrapper.classList.remove('is-hidden');
         }
       } else {
-        // On mobile, ensure image is always visible
         imageWrapper.classList.remove('is-hidden');
       }
       lastScrollY = window.scrollY;
     };
 
-    // Use a throttled scroll listener for performance
     let isThrottled = false;
     window.addEventListener('scroll', () => {
       if (!isThrottled) {
@@ -380,7 +408,6 @@
     });
   }
 
-
   /* =========================
      Initialization
      ========================= */
@@ -392,6 +419,7 @@
     initLangToggle();
     initThemeShortcuts();
     initAboutImageScroll();
+    initMobileMenu(); // <-- Initialize the new menu
   }
 
   if (document.readyState === 'loading') {
