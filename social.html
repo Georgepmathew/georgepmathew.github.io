@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ================= Header (Final Structure) ================= -->
+  <!-- ================= Header (Updated for Mobile Menu) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -23,7 +23,9 @@
           <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
         </div>
       </a>
-      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+      
+      <!-- Desktop nav -->
+      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
@@ -32,24 +34,18 @@
         <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
+
+      <!-- Language Toggle & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
+        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
+          <span class="hamburger-icon"></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Scrolling Nav (Final Structure) -->
-  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
-      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
-      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
-      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
-      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
-      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
-      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
-  </nav>
-
-  <!-- ================= Main Content ================= -->
+  <!-- ================= Main Content (Links Added) ================= -->
   <main class="container page-root section" role="main">
     <h1 data-i18n="social_heading">My Channels & Socials</h1>
     <p class="section-lead" data-i18n="social_intro">Follow my journey, watch my projects, and connect with me on your favorite platform.</p>
@@ -83,12 +79,31 @@
     <!-- Personal Channels -->
     <h2 class="section-subtitle" data-i18n="social_personal_heading">Connect with Me Personally</h2>
     <div class="social-grid">
-        <a href="https://www.linkedin.com/in/your-profile-url" class="social-card card" target="_blank" rel="noopener noreferrer">
+        <!-- NEW: LinkedIn Card -->
+        <a href="https://www.linkedin.com/in/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
             <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
             <div class="social-text">
               <strong data-i18n="social_linkedin_title">LinkedIn</strong>
               <span class="muted" data-i18n="social_linkedin_desc">For professional networking</span>
             </div>
         </a>
+        <!-- NEW: Personal Instagram Card -->
         <a href="https://www.instagram.com/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
-            <img src="assets/icons/instagram.svg" alt="Instagram" class="social-ico
+            <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
+            <div class="social-text">
+              <strong data-i18n="social_insta_title">Instagram (Personal)</strong>
+              <span class="muted" data-i18n="social_insta_desc">Personal updates & photography</span>
+            </div>
+        </a>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
