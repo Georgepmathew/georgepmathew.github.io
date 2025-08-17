@@ -1,34 +1,31 @@
-/* style.css — Full stylesheet for Engineer GPM site
-   - Core styles, responsive design, and themes
-   - REVISED: Dark theme is now default. Added Gemini-style in-page navigator.
+/* style.css — FINAL CORRECTED VERSION
+   - Restores desktop view to original state.
+   - Delivers polished, Gemini-inspired mobile view.
+   - Dark theme is default.
 */
 
 /* -------------------------
    Variables & Themes
    ------------------------- */
 :root {
-  /* NEW: Dark theme is now the default */
-  --bg: #0A0A0A; /* Deeper black */
-  --surface: #1E1E1E;
-  --text: #EAEAEA;
-  --muted: #9A9A9A;
+  /* Dark theme is default */
+  --bg: #0A0A0A;
+  --surface: #1C1C1C;
+  --text: #EDEDED;
+  --muted: #A0A0A0;
   --accent: #F5C36A;
   --accent-2: #E29B2F;
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.15);
   --radius: 12px;
   --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.3);
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.2);
   --maxw: 1200px;
-  --glass: rgba(30, 30, 30, 0.75);
-
-  /* NEW: Accent glow effect */
-  --accent-glow: 0 0 15px rgba(245, 195, 106, 0.3);
-
+  --glass: rgba(28, 28, 28, 0.75);
+  --accent-glow: 0 0 20px rgba(245, 195, 106, 0.35);
   --blueprint-bg: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   --blueprint-size: 20px 20px;
 }
 
-/* Light theme */
 html[data-theme="light"] {
   --bg: #F8F9FA;
   --surface: #FFFFFF;
@@ -42,7 +39,6 @@ html[data-theme="light"] {
   --blueprint-bg: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
-/* German / Forest theme */
 html[data-theme="german"] {
   --bg: #EAF3E9;
   --surface: #FBFFFB;
@@ -60,7 +56,7 @@ html[data-theme="german"] {
    Base & Layout
    ------------------------- */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; } /* Enables smooth scrolling for in-page links */
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -70,44 +66,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
-body.menu-is-open {
-  overflow: hidden;
-}
+body.menu-is-open { overflow: hidden; }
 
-.container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+img { max-width: 100%; height: auto; display: block; object-fit: contain; }
 
 /* -------------------------
-   Header & Navigation
+   Header & Navigation (DESKTOP FIRST)
    ------------------------- */
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1001; /* Must be highest z-index */
   padding: 8px 0;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   background: var(--glass);
   border-bottom: 1px solid var(--border-color);
 }
-
-.topbar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
 .brand-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color); }
 .brand-text { line-height: 1.2; }
@@ -126,8 +103,9 @@ img {
   place-items: center;
   width: 44px;
   height: 44px;
-  padding: 0;
-  border-radius: 999px; /* Modern circular buttons */
+  min-width: 44px;
+  padding: 0 8px;
+  border-radius: 999px;
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text);
@@ -138,33 +116,14 @@ img {
 }
 .header-actions .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-.menu-toggle-btn { display: none; }
-.hamburger-icon {
-  position: relative;
-  width: 20px;
-  height: 2px;
-  background-color: var(--text);
-  transition: all 0.2s ease-in-out;
-}
-.hamburger-icon::before,
-.hamburger-icon::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 20px;
-  height: 2px;
-  background-color: var(--text);
-  transition: all 0.2s ease-in-out;
-}
+.menu-toggle-btn { display: none; } /* HIDDEN ON DESKTOP */
+.hamburger-icon { position: relative; width: 20px; height: 2px; background-color: var(--text); transition: all 0.2s ease-in-out; }
+.hamburger-icon::before, .hamburger-icon::after { content: ''; position: absolute; left: 0; width: 20px; height: 2px; background-color: var(--text); transition: all 0.2s ease-in-out; }
 .hamburger-icon::before { top: -6px; }
 .hamburger-icon::after { bottom: -6px; }
 
-.menu-is-open .hamburger-icon { background-color: transparent; }
-.menu-is-open .hamburger-icon::before { transform: translateY(6px) rotate(45deg); }
-.menu-is-open .hamburger-icon::after { transform: translateY(-6px) rotate(-45deg); }
-
 /* -------------------------
-   Hero Section
+   Hero Section (DESKTOP FIRST)
    ------------------------- */
 .page-root { padding-top: 48px; padding-bottom: 64px; }
 .hero { display: grid; grid-template-columns: 400px 1fr; gap: 60px; align-items: center; }
@@ -177,78 +136,39 @@ img {
 
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 700; cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease; }
-.btn.primary { background: var(--accent); color: var(--bg); box-shadow: var(--accent-glow); }
+.btn.primary { background: var(--accent); color: #0A0A0A; box-shadow: var(--accent-glow); }
 .btn.primary:hover { background: var(--accent-2); transform: translateY(-2px); }
 .btn.outline { border-color: var(--border-color); color: var(--text); }
 .btn.outline:hover { background: var(--surface); border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
 /* -------------------------
-   NEW: In-Page Navigator (Gemini Style)
+   In-Page Navigator (Gemini Style)
    ------------------------- */
-.inpage-nav-wrapper {
-  position: sticky;
-  top: 60px; /* Height of the topbar */
-  z-index: 50;
-  background-color: var(--bg);
-  padding: 12px 0;
-  margin-bottom: 32px;
-}
-.inpage-nav {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 12px; /* For scrollbar space */
-}
-.inpage-nav::-webkit-scrollbar { display: none; } /* Hide scrollbar */
-.inpage-nav { scrollbar-width: none; } /* Hide scrollbar Firefox */
-
-.inpage-nav a {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background-color: var(--surface);
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  border: 1px solid var(--border-color);
-  transition: all 0.2s;
-}
-.inpage-nav a:hover {
-  color: var(--text);
-  border-color: var(--muted);
-}
-.inpage-nav a.active {
-  background-color: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
-  box-shadow: var(--accent-glow);
-}
-
+.inpage-nav-wrapper { display: none; } /* HIDDEN ON DESKTOP */
+.inpage-nav a.active { background-color: var(--accent); color: #0A0A0A; border-color: var(--accent); box-shadow: var(--accent-glow); }
 
 /* -------------------------
-   Generic Page & Card Styles
+   Generic Page Styles
    ------------------------- */
 .section h1 { font-size: clamp(2rem, 5vw, 2.5rem); font-weight: 900; margin-bottom: 16px; text-align: center; }
 .section .section-lead { font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 48px; color: var(--muted); }
 .section .section-subtitle { font-size: 1.8rem; font-weight: 700; text-align: center; margin: 64px 0 32px; }
-
 .card { background-color: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-soft); transition: transform 0.2s, box-shadow 0.2s; }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-strong); }
-
-/* Other page styles remain largely the same */
-.skills-grid, .experience-grid, .social-grid, .contact-grid, .language-grid { display: grid; gap: 20px; }
-.skills-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); max-width: 900px; margin: 0 auto; }
+.experience-grid, .social-grid, .contact-grid, .language-grid { display: grid; gap: 20px; }
+.skills-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); max-width: 900px; margin: 0 auto; }
 .experience-grid { grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; }
 .social-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .contact-grid { grid-template-columns: 1fr 1fr; max-width: 800px; margin: 0 auto; }
 .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto 48px; }
 .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 40px; }
+.timeline::before { content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 3px; background-color: var(--border-color); border-radius: 2px; }
+.timeline-item { position: relative; margin-bottom: 32px; }
+.timeline-icon { position: absolute; left: -40px; top: 0; width: 46px; height: 46px; display: grid; place-items: center; background: var(--surface); border: 3px solid var(--border-color); border-radius: 50%; font-size: 1.5rem; z-index: 1; }
+/* ... other desktop styles ... */
 
 /* -------------------------
-   Responsive Rules
+   Responsive Rules (Desktop-to-Tablet)
    ------------------------- */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; text-align: center; }
@@ -257,23 +177,23 @@ img {
   .manifesto-grid, .about-content { grid-template-columns: 1fr; }
 }
 
-/* -------------------------------------
-   MOBILE STYLES (767px and below)
-   ------------------------------------- */
+/* -------------------------------------------
+   MOBILE STYLES (767px and below) - FULLY CORRECTED
+   ------------------------------------------- */
 @media (max-width: 767px) {
   .brand-sub { display: none; }
+  .page-root { padding-top: 32px; padding-bottom: 48px; }
   
-  /* NEW: Show mobile menu button and language toggle */
-  .header-actions .menu-toggle-btn { display: inline-grid; }
-  .header-actions .icon-btn#lang-toggle { min-width: 44px; padding: 0 8px; }
-
-  /* NEW: Hide Desktop Nav, style Mobile Nav */
-  .mainnav.mainnav-menu {
+  /* --- Mobile Header & Menu --- */
+  .mainnav { display: none; } /* Hide desktop nav */
+  .menu-toggle-btn { display: inline-grid; } /* Show hamburger */
+  
+  .mainnav-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 24px;
     position: fixed;
     top: 0;
     left: 0;
@@ -281,33 +201,44 @@ img {
     height: 100%;
     background-color: var(--bg);
     transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 99; /* Below header, above content */
-    padding-top: 60px;
+    transition: transform 0.35s ease-in-out;
+    z-index: 1000; /* Layer below header, above everything else */
+    padding: 80px 24px 24px;
   }
-  .menu-is-open .mainnav.mainnav-menu { transform: translateY(0); }
-  .mainnav.mainnav-menu .nav-link { font-size: 24px; padding: 12px 20px; }
-  .mainnav.mainnav-menu .nav-icon { width: 20px; height: 20px; }
+  body.menu-is-open .mainnav-menu { transform: translateY(0); }
+  .mainnav-menu .nav-link { font-size: 28px; font-weight: 700; color: var(--muted); }
+  .mainnav-menu .nav-link.active { color: var(--accent); }
+  .mainnav-menu .nav-icon { width: 24px; height: 24px; }
   
-  /* NEW: Mobile Homepage - No Image */
-  .hero-left { display: none; }
-  .hero { display: block; } /* Revert from grid to simple block */
-
-  .hero-cta {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
+  /* Hamburger animation */
+  body.menu-is-open .hamburger-icon { background-color: transparent; }
+  body.menu-is-open .hamburger-icon::before { transform: translateY(6px) rotate(45deg); }
+  body.menu-is-open .hamburger-icon::after { transform: translateY(-6px) rotate(-45deg); }
+  
+  /* --- Mobile Homepage --- */
+  .hero-left { display: none; } /* Hide illustration */
+  .hero { display: block; text-align: center; }
+  .hero-cta { flex-direction: column; align-items: stretch; gap: 16px; margin-top: 32px; }
   .btn { width: 100%; }
 
-  /* Other layout adjustments */
+  /* --- Mobile In-Page Navigator --- */
+  .inpage-nav-wrapper { display: block; position: sticky; top: 60.5px; z-index: 50; background-color: var(--bg); padding: 12px 0; margin: 0 0 32px; }
+  .inpage-nav { display: flex; gap: 8px; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 12px; }
+  .inpage-nav::-webkit-scrollbar { display: none; }
+  .inpage-nav { scrollbar-width: none; }
+  .inpage-nav a { display: inline-block; padding: 8px 20px; border-radius: 999px; background-color: var(--surface); color: var(--muted); text-decoration: none; font-weight: 700; font-size: 15px; border: 1px solid var(--border-color); transition: all 0.2s; }
+  .inpage-nav a:hover { color: var(--text); }
+  
+  /* --- General Mobile Layout --- */
+  .section .section-lead { margin-bottom: 32px; font-size: 1rem; }
   .skills-grid, .experience-grid, .social-grid, .language-grid, .contact-grid { 
-    gap: 24px;
-    grid-template-columns: 1fr; /* Force single column */
+      gap: 24px;
+      grid-template-columns: 1fr;
   }
   .experience-grid { gap: 32px; }
-  .timeline { padding-left: 30px; }
-  .timeline-icon { left: -35px; width: 40px; height: 40px; }
+  .timeline { padding-left: 20px; }
+  .timeline::before { left: 5px; }
+  .timeline-icon { left: -20px; width: 30px; height: 30px; font-size: 1rem; border-width: 2px; }
 }
 
 /* -------------------------
