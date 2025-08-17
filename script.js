@@ -1,6 +1,6 @@
 /* script.js — Engineer GPM Folio
    - Handles EN/DE translations, theme persistence, active navigation,
-   - and scroll animations.
+   - intro sequence, and scroll animations.
    - FINAL POLISHED VERSION
 */
 
@@ -21,6 +21,7 @@
       // Navigation
       nav_home: "Home",
       nav_experience: "Experience",
+      nav_education: "Education",
       nav_skills: "Skills",
       nav_germany: "Germany",
       nav_about: "About",
@@ -34,6 +35,7 @@
       hero_lead_2: "I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.",
       btn_story: "My Full Story",
       btn_germany: "My Plan for Germany",
+      btn_cv: "Download CV",
 
       // About Page
       about_heading: "My Story",
@@ -85,6 +87,10 @@
       lang2_level: "Native Speaker",
       lang3_name: "German",
       lang3_level: "Actively Learning",
+      lang4_name: "Tamil",
+      lang4_level: "Conversational",
+      lang5_name: "Hindi",
+      lang5_level: "Conversational",
       
       // Germany Page
       germany_heading: "My Commitment to Engineering in Germany",
@@ -146,28 +152,39 @@
       edu3_date: "2015 – 2017",
     },
     de: {
+      // General
       brand_name: "George P. Mathew",
       brand_sub: "Engineer GPM",
       footer_text: "Entwickelt von George P. Mathew",
       footer_subtext: "KI nutzen, um Vision und Realität zu verbinden.",
+
+      // Navigation
       nav_home: "Start",
       nav_experience: "Erfahrung",
+      nav_education: "Bildung",
       nav_skills: "Fähigkeiten",
       nav_germany: "Deutschland",
       nav_about: "Über mich",
       nav_social: "Soziales",
       nav_contact: "Kontakt",
+
+      // Homepage
       hero_name: "George P. Mathew",
       hero_role: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
       hero_lead_1: "Meine Praxiserfahrung mit Fundamenten und Fertigteilen hat mir gezeigt, dass die größten Herausforderungen im Bau oft Materialprobleme sind. Diese Erkenntnis treibt meinen Wechsel nach Deutschland an, um einen M.Sc. in Werkstofftechnik an der RWTH Aachen zu absolvieren.",
       hero_lead_2: "Ich löse Probleme mit einer einzigartigen Denkweise. Ohne Programmierkenntnisse habe ich KI genutzt, um dieses Portfolio von Grund auf zu entwickeln. So gehe ich jede Herausforderung an: mit Einfallsreichtum, Neugier und dem Antrieb, die beste Lösung zu finden.",
       btn_story: "Meine Geschichte",
       btn_germany: "Mein Plan für Deutschland",
+      btn_cv: "Lebenslauf",
+
+      // About Page
       about_heading: "Meine Geschichte",
       about_p1: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete und Fundamentarbeiten überwachte. Das war nicht nur ein Job; es war ein Labor in der realen Welt, in dem ich die entscheidende Verbindung zwischen Materialqualität und Projekterfolg erlebte. Die Herausforderungen durch Materialfehler aus erster Hand zu sehen, weckte meine Leidenschaft, das 'Warum' hinter den von uns verwendeten Materialien zu verstehen.",
       about_p2: "Diese Erfahrung vor Ort führte mich zu einer klaren Schlussfolgerung: Um bessere, langlebigere Strukturen zu bauen, müssen wir zuerst die Materialien selbst innovieren. Diese Erkenntnis ist die treibende Kraft hinter meiner Entscheidung, einen Master in Werkstofftechnik an der weltberühmten RWTH Aachen zu absolvieren und mich an die Spitze der Bauinnovation zu setzen.",
       about_subtitle: "Meine Denkweise: Die Geschichte dieser Website",
       about_p3: "Ich definiere mich durch meinen Einfallsreichtum. Diese Website ist mein Beweis. Ohne vorherige Programmiererfahrung behandelte ich ihre Erstellung wie ein Ingenieurproblem. Mein Werkzeug war kein CAD-Programm; es war Künstliche Intelligenz. Durch iteratives Prompting und logisches Debugging leitete ich die KI an, den Code zu generieren, das Design zu strukturieren und die Funktionen zu erstellen, die Sie jetzt sehen. Das ist die zukunftsorientierte, werkzeugunabhängige Denkweise, die ich bei jeder Herausforderung anwende.",
+
+      // Experience Page
       experience_heading: "Berufserfahrung",
       exp1_role: "Business Assistant",
       exp1_date: "12/2023 – Heute",
@@ -194,6 +211,8 @@
       tag_qa: "Qualitätssicherung",
       tag_precast: "Fertigteilmontage",
       tag_civil: "Bauingenieurwesen",
+
+      // Skills Page
       skills_heading: "Meine Fähigkeiten",
       skill1_title: "Ingenieurwissen",
       skill1_desc: "Bauüberwachung, Fertigteilmontage, Qualitätssicherung und Projektkoordination.",
@@ -208,6 +227,12 @@
       lang2_level: "Muttersprache",
       lang3_name: "Deutsch",
       lang3_level: "Wird aktiv gelernt",
+      lang4_name: "Tamil",
+      lang4_level: "Konversationssicher",
+      lang5_name: "Hindi",
+      lang5_level: "Konversationssicher",
+      
+      // Germany Page
       germany_heading: "Mein Engagement für das Ingenieurwesen in Deutschland",
       germany_intro: "Meine Erfahrung vor Ort hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung und nachhaltiger Technologie. Dies ist nicht nur ein Ziel, sondern das Epizentrum der Zukunft, die ich mitgestalten möchte.",
       germany_col1_title: "Warum Deutschland?",
@@ -226,6 +251,8 @@
       germany_item6_desc: "Diese Wahl positioniert mich an der einzigartigen Schnittstelle von Bauwissen, moderner Werkstoffkunde, deutscher Ingenieurkunst und einer internationalen Perspektive.",
       germany_bigger_picture_title: "Das große Ganze",
       germany_bigger_picture_desc: "Hier geht es nicht nur um einen Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Ausbildung bin ich positioniert, um die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe. Mein Ziel ist es, die Art, wie wir bauen, zu revolutionieren – eine Materialinnovation nach der anderen.",
+
+      // Social Page
       social_heading: "Meine Kanäle & Soziales",
       social_intro: "Folgen Sie meiner Reise, sehen Sie sich meine Projekte an und vernetzen Sie sich mit mir auf Ihrer Lieblingsplattform.",
       social_brand_heading: "Meine Markenkanäle (Engineer GPM)",
@@ -242,6 +269,8 @@
       social_insta_desc: "Persönliche Updates & Fotografie",
       social_fb_title: "Facebook",
       social_fb_desc: "Vernetzen mit Freunden & Familie",
+      
+      // Contact Page
       contact_heading: "Kontakt aufnehmen",
       contact_intro_simple: "Ich bin immer offen für die Diskussion neuer Projekte, kreativer Ideen oder Möglichkeiten. Die besten Wege, mich zu erreichen, sind unten aufgeführt.",
       contact_email_title: "E-Mail",
@@ -249,6 +278,8 @@
       contact_linkedin_desc: "Für berufliches Networking",
       contact_email_cta: "E-Mail senden",
       contact_linkedin_cta: "Profil ansehen",
+
+      // Education Page
       education_heading: "Bildung",
       edu1_degree: "M.Sc. Werkstofftechnik",
       edu1_school: "RWTH Aachen University, Deutschland",
@@ -263,15 +294,14 @@
   };
 
   /* =========================
-     Persistence keys & defaults
+     Persistence & Helpers
      ========================= */
   const LANG_KEY = 'gpm_lang';
   const THEME_KEY = 'gpm_theme';
-
-  function getSavedLang() { return localStorage.getItem(LANG_KEY) || 'en'; }
-  function saveLang(code) { localStorage.setItem(LANG_KEY, code); }
-  function getSavedTheme() { return localStorage.getItem(THEME_KEY) || 'default'; }
-  function saveTheme(t) { localStorage.setItem(THEME_KEY, t); }
+  const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
+  const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
+  const getSavedTheme = () => localStorage.getItem(THEME_KEY) || 'default';
+  const saveTheme = (t) => localStorage.setItem(THEME_KEY, t);
 
   /* =========================
      Core Functions
@@ -311,17 +341,55 @@
   }
 
   /* =========================
-     UI Event Listeners & Animations
+     UI & Animations
      ========================= */
-  function initLangToggle() {
-    const btn = document.getElementById('lang-toggle');
-    if (!btn) return;
-    
-    const setButtonState = (lang) => {
-        btn.textContent = lang.toUpperCase();
-    };
+  function initIntroAnimation() {
+    const container = document.getElementById('intro-animation');
+    const nameEl = container.querySelector('.intro-name');
+    if (!nameEl) return;
 
-    btn.addEventListener('click', () => {
+    const name = nameEl.textContent;
+    nameEl.innerHTML = ''; // Clear original text
+
+    name.split('').forEach((char, index) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space
+      span.style.animationDelay = `${index * 0.05}s`;
+      nameEl.appendChild(span);
+    });
+
+    setTimeout(() => {
+      container.classList.add('hidden');
+    }, 2500); // Should match total animation time
+  }
+  
+  function initLangToggle() {
+    const btnContainer = document.querySelector('.header-actions');
+    const oldBtn = document.getElementById('lang-toggle');
+    if (!btnContainer || !oldBtn) return;
+  
+    // Create new pill structure
+    const pill = document.createElement('div');
+    pill.className = 'lang-toggle-pill';
+    pill.title = 'Toggle language (EN/DE)';
+    pill.setAttribute('aria-label', 'Toggle language');
+    pill.setAttribute('role', 'button');
+    pill.innerHTML = `
+      <span class="en">EN</span>
+      <span class="de">DE</span>
+      <div class="glider"></div>
+    `;
+    
+    // Replace old button
+    btnContainer.replaceChild(pill, oldBtn);
+  
+    const setButtonState = (lang) => {
+      pill.classList.toggle('de', lang === 'de');
+      pill.querySelector('.en').classList.toggle('active', lang === 'en');
+      pill.querySelector('.de').classList.toggle('active', lang === 'de');
+    };
+  
+    pill.addEventListener('click', () => {
       const newLang = getSavedLang() === 'en' ? 'de' : 'en';
       saveLang(newLang);
       applyTranslations(newLang);
@@ -346,58 +414,13 @@
 
   function initAboutImageScroll() {
     const imageWrapper = document.querySelector('.about-image-wrapper');
-    if (!imageWrapper) return; // Only run on pages with this element
+    const contentWrapper = document.getElementById('about-content-wrapper');
+    if (!imageWrapper || !contentWrapper) return;
 
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      // We check window width to only apply the effect on desktop
       if (window.innerWidth > 900) { 
-        if (window.scrollY > lastScrollY && window.scrollY > 150) {
-          // Scrolling down, hide image
-          imageWrapper.classList.add('is-hidden');
-        } else {
-          // Scrolling up, show image
-          imageWrapper.classList.remove('is-hidden');
-        }
-      } else {
-        // On mobile, ensure image is always visible
-        imageWrapper.classList.remove('is-hidden');
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    // Use a throttled scroll listener for performance
-    let isThrottled = false;
-    window.addEventListener('scroll', () => {
-      if (!isThrottled) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          isThrottled = false;
-        });
-        isThrottled = true;
-      }
-    });
-  }
-
-
-  /* =========================
-     Initialization
-     ========================= */
-  function init() {
-    applyTheme(getSavedTheme());
-    applyTranslations(getSavedLang());
-    
-    markActiveNav();
-    initLangToggle();
-    initThemeShortcuts();
-    initAboutImageScroll();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-})();
+        const isHidden = window.scrollY > 150;
+        imageWrapper.classList.toggle('is-hidden', isHidden);
+        contentWrapper.classList.togg
