@@ -26,6 +26,7 @@
       <nav class="mainnav" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
+        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt=""><span data-i18n="nav_education">Education</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
         <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
         <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
@@ -42,6 +43,7 @@
   <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
       <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
       <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
+      <a class="nav-link" href="education.html"><span data-i18n="nav_education">Education</span></a>
       <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
       <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
       <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
@@ -51,12 +53,12 @@
 
   <!-- ================= Main Content ================= -->
   <main class="container page-root section" role="main">
-    <h1 data-i18n="contact_heading">Get In Touch</h1>
-    <p class="section-lead" data-i18n="contact_intro_simple">I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.</p>
+    <h1 data-i18n="contact_heading" class="anim-fade-in">Get In Touch</h1>
+    <p class="section-lead anim-fade-in" data-i18n="contact_intro_simple">I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.</p>
     
     <div class="contact-grid">
         <!-- Email Card -->
-        <div class="contact-card-wrapper">
+        <div class="contact-card-wrapper anim-fade-in">
             <h3 class="contact-card-title" data-i18n="contact_email_title">Email</h3>
             <a href="mailto:georgepmathew424@gmail.com" class="contact-card card">
                 <div class="contact-card-icon">
@@ -70,11 +72,27 @@
         </div>
 
         <!-- LinkedIn Card -->
-        <div class="contact-card-wrapper">
+        <div class="contact-card-wrapper anim-fade-in">
             <h3 class="contact-card-title" data-i18n="contact_linkedin_title">LinkedIn</h3>
-            <a href="#" class="contact-card card" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/georgepmathew/" class="contact-card card" target="_blank" rel="noopener noreferrer">
                 <div class="contact-card-icon">
                     <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon">
                 </div>
                 <div class="contact-card-text">
-                    <p class="contact-card-address" data-i
+                    <p class="contact-card-address" data-i18n="contact_linkedin_desc">Professional Networking</p>
+                    <span class="contact-card-link" data-i18n="contact_linkedin_cta">View My Profile</span>
+                </div>
+            </a>
+        </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer (Final Structure) ================= -->
+  <footer class="footer container" role="contentinfo">
+    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
