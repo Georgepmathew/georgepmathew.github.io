@@ -2,81 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>George P. Mathew — Engineer GPM</title>
-  <meta name="description" content="George P. Mathew — Civil Engineer and future Materials Innovator, leveraging AI to solve complex problems." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Portfolio & Germany transition — mobile-first swipe site." />
+  <title>Your Name — Mobile Portfolio</title>
+
+  <!-- Link to CSS (will provide next) -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= Header (FINAL Universal Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
-      </a>
+  <div id="app" class="app">
 
-      <!-- Desktop Navigation -->
-      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-
-      <!-- Header Actions: Language Toggle & Mobile Menu Button -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
-          <span class="hamburger-icon"></span>
+    <!-- Top header (logo + persistent language toggle) -->
+    <header class="mobile-header" role="banner">
+      <div class="header-inner">
+        <button class="logo-btn" aria-label="Home" data-target="home">
+          <!-- Logo (SVG preferred) -->
+          <img src="assets/logo.svg" alt="Site logo" class="logo" />
         </button>
-      </div>
-    </div>
-  </header>
 
-  <!-- ================= Main / Hero ================= -->
-  <main class="page-root container" role="main">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-left">
-        <div class="image-card">
-          <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
+        <!-- Persistent language toggle (always visible) -->
+        <div class="lang-wrap">
+          <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" aria-pressed="false" data-lang="en">
+            <span class="lang-text">EN</span>
+            <span class="lang-divider">|</span>
+            <span class="lang-text inactive">DE</span>
+          </button>
         </div>
       </div>
+    </header>
 
-      <div class="hero-right">
-        <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
-        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
-        <p class="lead" data-i18n="hero_lead_1">
-          My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.
-        </p>
-        <p class="lead" data-i18n="hero_lead_2">
-          I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.
-        </p>
-        <div class="hero-cta">
-          <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
-          <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
+    <!-- Main content: horizontal scroll-snap container (swipe between full-screen sections) -->
+    <main id="main" class="snap-container" role="main" tabindex="-1">
+      <!-- Section: Home / Hero -->
+      <section id="home" class="section snap-item" role="region" aria-label="Home" data-section="home">
+        <div class="hero">
+          <picture>
+            <source type="image/webp" srcset="assets/hero-mobile.webp">
+            <img src="assets/hero-mobile.jpg" alt="Hero image" class="hero-image img-cover" loading="lazy">
+          </picture>
+
+          <div class="hero-content">
+            <h1 class="hero-title">Your Name — Materials & Engineering</h1>
+            <p class="hero-sub">Transition to Germany | Research & internships | Practical materials engineering</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#contact" data-target="contact">Contact</a>
+              <a class="btn btn-secondary" href="#germany" data-target="germany">Germany Plan</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- ================= Footer (Updated Subtext) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext_new">Where engineering principles meet artificial intelligence.</div>
-  </footer>
+      <!-- Section: Germany / Transition (targeted page) -->
+      <section id="germany" class="section snap-item" role="region" aria-label="Germany plan" data-section="germany">
+        <div class="section-inner">
+          <h2 class="section-title">Why Germany & RWTH</h2>
+          <p class="section-text">
+            Short, clear points about your goals: internships, RWTH fit, and how you contribute. (Replace with your content.)
+          </p>
+          <div class="card-list">
+            <article class="card">
+              <img class="card-thumb" src="assets/section-1-thumb.webp" alt="research thumbnail" loading="lazy">
+              <div class="card-body">
+                <h3>Targeted Labs</h3>
+                <p>Professors & labs you're interested in (short bullets).</p>
+              </div>
+            </article>
 
-  <script src="script.js"></script>
+            <article class="card">
+              <img class="card-thumb" src="assets/section-2-thumb.webp" alt="projects thumbnail" loading="lazy">
+              <div class="card-body">
+                <h3>Planned Projects</h3>
+                <p>One-liners about your planned experiments or projects.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Projects / Experience -->
+      <section id="projects" class="section snap-item" role="region" aria-label="Projects and experience" data-section="projects">
+        <div class="section-inner">
+          <h2 class="section-title">Selected Projects</h2>
+
+          <div class="project-cards">
+            <article class="project">
+              <div class="project-thumb">
+                <img src="assets/section-3-thumb.webp" alt="project thumbnail" class="img-cover" loading="lazy">
+              </div>
+              <div class="project-body">
+                <h3>Precast Durability Study</h3>
+                <p>Brief description and impact/outcome. Add metrics where possible.</p>
+              </div>
+            </article>
+
+            <!-- Add more projects as needed -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Experience / Education -->
+      <section id="experience" class="section snap-item" role="region" aria-label="Experience & education" data-section="experience">
+        <div class="section-inner">
+          <h2 class="section-title">Experience & Education</h2>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <strong>Role — Company</strong>
+              <span class="time">2023</span>
+              <p>One-line achievement (quantify if possible).</p>
+            </li>
+            <li class="timeline-item">
+              <strong>Bachelor / Institution</strong>
+              <span class="time">2021</span>
+              <p>Relevant coursework & grades (if helpful).</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: Contact / Download CV -->
+      <section id="contact" class="section snap-item" role="region" aria-label="Contact" data-section="contact">
+        <div class="section-inner">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-text">Open to internships & research collaborations. Available from Sep 2025.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:your.email@example.com">Email me</a>
+            <a class="btn btn-secondary" href="assets/cv.pdf" download>Download CV</a>
+          </div>
+
+          <div class="profile-compact">
+            <img class="profile-photo" src="assets/profile.jpg" alt="Your profile photo" loading="lazy">
+            <div class="profile-bio">
+              <p><strong>Your Name</strong></p>
+              <p>Materials / Civil Engineer — transitioning to Germany</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating bottom navigation pill (persistent) -->
+    <nav class="floating-nav" role="navigation" aria-label="Primary">
+      <ul class="nav-list" role="menubar" aria-hidden="false">
+        <li class="nav-item" role="none">
+          <button class="nav-btn" role="menuitem" data-target="home" aria-label="Home">
+            <span class="icon"><img src="assets/icon-home.svg" alt=""></span>
+            <span class="nav-label">Home</span>
+          </button>
+        </li>
+
+        <li class="nav-item" role="none">
+          <button class="nav-btn" role="menuitem" data-target="germany" aria-label="Germany">
+            <span class="icon"><img src="assets/icon-models.svg" alt=""></span>
+            <span class="nav-label">Germany</span>
+          </button>
+        </li>
+
+        <!-- Center CTA -->
+        <li class="nav-item nav-item-cta" role="none">
+          <button class="nav-cta" role="menuitem" data-target="contact" aria-label="Contact">
+            <span class="icon"><img src="assets/icon-contact.svg" alt=""></span>
+          </button>
+        </li>
+
+        <li class="nav-item" role="none">
+          <button class="nav-btn" role="menuitem" data-target="projects" aria-label="Projects">
+            <span class="icon"><img src="assets/icon-projects.svg" alt=""></span>
+            <span class="nav-label">Projects</span>
+          </button>
+        </li>
+
+        <li class="nav-item" role="none">
+          <button class="nav-btn" role="menuitem" data-target="experience" aria-label="Experience">
+            <span class="icon"><img src="assets/icon-experience.svg" alt=""></span>
+            <span class="nav-label">Experience</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Small toast area for language & other micro-notifications -->
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true" hidden></div>
+
+  </div> <!-- /#app -->
+
+  <noscript>
+    <div class="noscript-note">This site needs JavaScript for full functionality. Please enable JavaScript.</div>
+  </noscript>
+
+  <!-- Link to JS (will provide next) -->
+  <script src="script.js" defer></script>
 </body>
 </html>
