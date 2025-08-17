@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- ================= Header (To be copied to all pages) ================= -->
+  <!-- ================= Header (Updated for Mobile Menu) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
@@ -25,7 +25,7 @@
       </a>
 
       <!-- Desktop nav -->
-      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
+      <nav class="mainnav mainnav-menu" role="navigation" aria-label="Primary navigation">
         <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
         <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
         <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
@@ -35,38 +35,36 @@
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
 
-      <!-- Language Toggle -->
+      <!-- Language Toggle & Mobile Menu Toggle -->
       <div class="header-actions">
         <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
+        <!-- NEW: Hamburger Menu Button -->
+        <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Toggle menu" aria-label="Toggle menu">
+          <span class="hamburger-icon"></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- New Mobile Scrolling Nav (To be copied to all pages) -->
-  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
-      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
-      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
-      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
-      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
-      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
-      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
-  </nav>
-
   <!-- ================= Main / Hero ================= -->
   <main class="page-root container" role="main">
     <section class="hero" aria-labelledby="hero-heading">
-      <!-- LEFT: Illustration -->
+      <!-- LEFT: Illustration (will be re-ordered on mobile via CSS) -->
       <div class="hero-left">
         <div class="image-card">
           <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
         </div>
       </div>
 
-      <!-- RIGHT: Content -->
+      <!-- RIGHT: Content (will appear first on mobile via CSS) -->
       <div class="hero-right">
         <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
         <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
+
+        <div class="hero-cta-mobile">
+          <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
+          <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
+        </div>
 
         <p class="lead" data-i18n="hero_lead_1">
           My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.
@@ -75,7 +73,7 @@
           I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.
         </p>
 
-        <div class="hero-cta">
+        <div class="hero-cta-desktop">
           <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
           <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
         </div>
@@ -83,7 +81,7 @@
     </section>
   </main>
 
-  <!-- ================= Footer (To be copied to all pages) ================= -->
+  <!-- ================= Footer ================= -->
   <footer class="footer container" role="contentinfo">
     <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
     <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
