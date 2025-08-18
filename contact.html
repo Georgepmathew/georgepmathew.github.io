@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — George P. Mathew</title>
   <meta name="description" content="Get in touch with George P. Mathew via Email or connect on LinkedIn." />
-  <!-- Fonts -->
+  <!-- Optimized Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -33,9 +33,8 @@
         <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-      </div>
+      <!-- Language Toggle Placeholder -->
+      <div class="header-actions"></div>
     </div>
   </header>
 
@@ -53,12 +52,12 @@
 
   <!-- ================= Main Content ================= -->
   <main class="container page-root section" role="main">
-    <h1 data-i18n="contact_heading" class="anim-fade-in">Get In Touch</h1>
-    <p class="section-lead anim-fade-in" data-i18n="contact_intro_simple">I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.</p>
+    <h1 data-i18n="contact_heading">Get In Touch</h1>
+    <p class="section-lead" data-i18n="contact_intro_simple">I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.</p>
     
     <div class="contact-grid">
         <!-- Email Card -->
-        <div class="contact-card-wrapper anim-fade-in">
+        <div class="contact-card-wrapper">
             <h3 class="contact-card-title" data-i18n="contact_email_title">Email</h3>
             <a href="mailto:georgepmathew424@gmail.com" class="contact-card card">
                 <div class="contact-card-icon">
@@ -69,3 +68,24 @@
                     <span class="contact-card-link" data-i18n="contact_email_cta">Send an Email</span>
                 </div>
             </a>
+        </div>
+
+        <!-- LinkedIn Card -->
+        <div class="contact-card-wrapper">
+            <h3 class="contact-card-title" data-i18n="contact_linkedin_title">LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/georgepmathew/" class="contact-card card" target="_blank" rel="noopener noreferrer">
+                <div class="contact-card-icon">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon">
+                </div>
+                <div class="contact-card-text">
+                    <p class="contact-card-address" data-i18n="contact_linkedin_desc">Professional Networking</p>
+                    <span class="contact-card-link" data-i18n="contact_linkedin_cta">View My Profile</span>
+                </div>
+            </a>
+        </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer (Final Structure) ================= -->
+  <footer class="footer container" role="contentinfo">
+    <
