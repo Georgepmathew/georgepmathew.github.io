@@ -1,7 +1,7 @@
 /* script.js — Engineer GPM Folio
    - Handles EN/DE translations, theme persistence, active navigation,
-   - intro sequence, and scroll animations.
-   - FINAL POLISHED VERSION
+   - hero animations, and scroll effects.
+   - FINAL POLISHED VERSION 2.0
 */
 
 (function () {
@@ -36,6 +36,9 @@
       btn_story: "My Full Story",
       btn_germany: "My Plan for Germany",
       btn_cv: "Download CV",
+      callout1: "AI-Powered Mindset",
+      callout2: "Civil Engineering Expertise",
+      callout3: "Future Materials Innovator",
 
       // About Page
       about_heading: "My Story",
@@ -122,13 +125,13 @@
       social_brand_insta_desc: "Content & updates for Engineer GPM",
       social_x_title: "X (Twitter)",
       social_x_desc: "Short updates & tech insights",
+      social_brand_fb_title: "Facebook (Brand)",
+      social_brand_fb_desc: "Page for Engineer GPM",
       social_personal_heading: "Connect with Me Personally",
       social_linkedin_title: "LinkedIn",
       social_linkedin_desc: "For professional networking",
       social_insta_title: "Instagram (Personal)",
       social_insta_desc: "Personal updates & photography",
-      social_fb_title: "Facebook",
-      social_fb_desc: "Connect with friends & family",
       
       // Contact Page
       contact_heading: "Get In Touch",
@@ -176,6 +179,9 @@
       btn_story: "Meine Geschichte",
       btn_germany: "Mein Plan für Deutschland",
       btn_cv: "Lebenslauf",
+      callout1: "KI-gestützte Denkweise",
+      callout2: "Bauingenieurwesen-Expertise",
+      callout3: "Zukünftiger Werkstoff-Innovator",
 
       // About Page
       about_heading: "Meine Geschichte",
@@ -262,13 +268,13 @@
       social_brand_insta_desc: "Inhalte & Updates für Engineer GPM",
       social_x_title: "X (Twitter)",
       social_x_desc: "Kurze Updates & technische Einblicke",
+      social_brand_fb_title: "Facebook (Marke)",
+      social_brand_fb_desc: "Seite für Engineer GPM",
       social_personal_heading: "Vernetzen Sie sich persönlich mit mir",
       social_linkedin_title: "LinkedIn",
       social_linkedin_desc: "Für berufliches Networking",
       social_insta_title: "Instagram (Persönlich)",
       social_insta_desc: "Persönliche Updates & Fotografie",
-      social_fb_title: "Facebook",
-      social_fb_desc: "Vernetzen mit Freunden & Familie",
       
       // Contact Page
       contact_heading: "Kontakt aufnehmen",
@@ -318,11 +324,7 @@
   }
 
   function applyTheme(themeValue) {
-    const html = document.documentElement;
-    html.removeAttribute('data-theme');
-    if (themeValue === 'german' || themeValue === 'dark') {
-      html.setAttribute('data-theme', themeValue);
-    }
+    document.documentElement.setAttribute('data-theme', themeValue);
     saveTheme(themeValue);
   }
 
@@ -343,30 +345,30 @@
   /* =========================
      UI & Animations
      ========================= */
-  function initIntroAnimation() {
-    const container = document.getElementById('intro-animation');
-    const nameEl = container?.querySelector('.intro-name');
-    if (!container || !nameEl) return;
+  function initHeroAnimation() {
+    const title = document.querySelector('.hero .title');
+    if (!title) return;
 
-    const name = nameEl.textContent;
-    nameEl.innerHTML = ''; // Clear original text
+    const originalText = title.textContent;
+    title.innerHTML = ''; // Clear it
 
-    name.split('').forEach((char, index) => {
+    const textChars = originalText.split('');
+    textChars.forEach((char, i) => {
       const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space
-      span.style.animationDelay = `${index * 0.05}s`;
-      nameEl.appendChild(span);
+      span.className = 'reveal-char';
+      span.style.animationDelay = `${0.2 + i * 0.03}s`;
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      title.appendChild(span);
     });
 
-    setTimeout(() => {
-      container.classList.add('hidden');
-    }, 2500); // Should match total animation time
+    const scanLine = document.createElement('div');
+    scanLine.className = 'scan-line';
+    title.appendChild(scanLine);
   }
   
   function initLangToggle() {
     const btnContainer = document.querySelector('.header-actions');
-    const oldBtn = document.getElementById('lang-toggle');
-    if (!btnContainer || !oldBtn) return;
+    if (!btnContainer) return; // Defensive check
   
     // Create new pill structure
     const pill = document.createElement('div');
@@ -381,8 +383,7 @@
       <div class="glider"></div>
     `;
     
-    // Replace old button
-    btnContainer.replaceChild(pill, oldBtn);
+    btnContainer.appendChild(pill);
   
     const setButtonState = (lang) => {
       pill.classList.toggle('de', lang === 'de');
@@ -412,7 +413,7 @@
     window.addEventListener('keydown', (e) => {
       if ((e.altKey || e.metaKey) && e.key.toLowerCase() === 't') {
         e.preventDefault();
-        const currentTheme = getSavedTheme();
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'default';
         const themes = ['default', 'german', 'dark'];
         const currentIndex = themes.indexOf(currentTheme);
         const nextIndex = (currentIndex + 1) % themes.length;
@@ -424,7 +425,7 @@
   function initAboutImageScroll() {
     const imageWrapper = document.querySelector('.about-image-wrapper');
     const contentWrapper = document.getElementById('about-content-wrapper');
-    if (!imageWrapper || !contentWrapper) return;
+    if (!imageWrapper || !contentWrapper) return; // Defensive check for this page
 
     const handleScroll = () => {
       if (window.innerWidth > 900) { 
@@ -448,50 +449,30 @@
       }
     });
     
-    // Initial check in case page is loaded scrolled down
     handleScroll(); 
-  }
-
-  function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.anim-fade-in');
-    if (!animatedElements.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1 // Trigger when 10% of the element is visible
-    });
-
-    animatedElements.forEach(el => observer.observe(el));
   }
 
   /* =========================
      Initialization
      ========================= */
   function init() {
+    // Apply saved theme on initial load
     applyTheme(getSavedTheme());
-    applyTranslations(getSavedLang());
     
-    // Only run intro on homepage
-    if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/gpm-folio/')) {
-      initIntroAnimation();
-    } else {
-      const intro = document.getElementById('intro-animation');
-      if (intro) intro.classList.add('hidden');
-    }
+    // Apply translations
+    applyTranslations(getSavedLang());
 
+    // Initialize all UI components
     markActiveNav();
     initLangToggle();
     initThemeShortcuts();
-    initAboutImageScroll();
-    initScrollAnimations();
+
+    // Page-specific initializations
+    initHeroAnimation(); // Will only run if title element is found
+    initAboutImageScroll(); // Will only run if about page elements are found
   }
 
+  // Run init once the DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
