@@ -5,18 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>George P. Mathew — Engineer GPM</title>
   <meta name="description" content="George P. Mathew — Civil Engineer and future Materials Innovator, leveraging AI to solve complex problems." />
-  <!-- Fonts -->
+  <!-- Optimized Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ================= Animation Preloader ================= -->
-  <div id="intro-animation">
-    <div class="intro-name">George P. Mathew</div>
-  </div>
 
   <!-- ================= Header (Final Structure) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
@@ -41,10 +36,8 @@
         <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
       </nav>
 
-      <!-- Language Toggle -->
-      <div class="header-actions">
-        <button id="lang-toggle" class="icon-btn" title="Toggle language (EN/DE)" aria-label="Toggle language">EN</button>
-      </div>
+      <!-- Language Toggle Placeholder -->
+      <div class="header-actions"></div>
     </div>
   </header>
 
@@ -63,15 +56,27 @@
   <!-- ================= Main / Hero ================= -->
   <main class="page-root container" role="main">
     <section class="hero" aria-labelledby="hero-heading">
-      <!-- LEFT: Illustration -->
-      <div class="hero-left anim-fade-in">
+      
+      <!-- LEFT: Illustration with Callouts -->
+      <div class="hero-illustration-wrapper">
         <div class="image-card">
           <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
         </div>
+        <ul class="hero-callouts" aria-label="Key Skills">
+          <li class="callout callout-1">
+            <span data-i18n="callout1">AI-Powered Mindset</span>
+          </li>
+          <li class="callout callout-2">
+            <span data-i18n="callout2">Civil Engineering Expertise</span>
+          </li>
+          <li class="callout callout-3">
+            <span data-i18n="callout3">Future Materials Innovator</span>
+          </li>
+        </ul>
       </div>
 
       <!-- RIGHT: Content -->
-      <div class="hero-right anim-fade-in">
+      <div class="hero-right">
         <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
         <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
 
