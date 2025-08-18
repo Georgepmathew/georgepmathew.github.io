@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>George P. Mathew — Engineer GPM</title>
-  <meta name="description" content="George P. Mathew — Civil Engineer and future Materials Innovator, leveraging AI to solve complex problems." />
+  <meta name="description" content="George P. Mathew — A multi-faceted engineering journey from Civil to Materials, Content Creation, and Entrepreneurship." />
   <!-- Optimized Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="home-page">
 
   <!-- ================= Header (Final Structure) ================= -->
   <header class="topbar" role="banner" aria-label="Site header">
@@ -53,47 +53,64 @@
       <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
   </nav>
 
-  <!-- ================= Main / Hero ================= -->
-  <main class="page-root container" role="main">
-    <section class="hero" aria-labelledby="hero-heading">
-      
-      <!-- LEFT: Illustration with Callouts -->
-      <div class="hero-illustration-wrapper">
-        <div class="image-card">
-          <img src="assets/header.png" alt="Illustration of George P. Mathew" class="hero-image" />
+  <!-- ================= Main / Hero Timeline ================= -->
+  <main class="page-root" role="main">
+    <section class="hero-timeline">
+      <div class="container timeline-container">
+        <div class="timeline-header">
+          <div class="timeline-brand" data-i18n="timeline_brand">◆ Engineer GPM</div>
         </div>
-        <ul class="hero-callouts" aria-label="Key Skills">
-          <li class="callout callout-1">
-            <span data-i18n="callout1">AI-Powered Mindset</span>
-          </li>
-          <li class="callout callout-2">
-            <span data-i18n="callout2">Civil Engineering Expertise</span>
-          </li>
-          <li class="callout callout-3">
-            <span data-i18n="callout3">Future Materials Innovator</span>
-          </li>
-        </ul>
-      </div>
+        
+        <div class="timeline-svg-wrapper">
+          <svg id="timeline-svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
+            <!-- The Path -->
+            <path id="timeline-path" d="M 50 250 Q 150 150 250 200 T 450 250 T 650 200 T 850 250 T 1050 200 T 1150 250" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            
+            <!-- Milestones (Nodes + Text) -->
+            <g class="milestone" id="milestone-materials" data-scroll-to="#skills-summary">
+              <rect class="node" x="235" y="270" width="30" height="20" rx="3"/>
+              <text class="label" x="250" y="320" text-anchor="middle" data-i18n="timeline_materials">Materials Engineer</text>
+            </g>
+            <g class="milestone" id="milestone-content" data-scroll-to="#social-summary">
+              <rect class="node" x="435" y="140" width="30" height="20" rx="3"/>
+              <text class="label" x="450" y="130" text-anchor="middle" data-i18n="timeline_content">Content Creator</text>
+            </g>
+            <g class="milestone" id="milestone-entrepreneur" data-scroll-to="#about-summary">
+              <rect class="node" x="635" y="270" width="30" height="20" rx="3"/>
+              <text class="label" x="650" y="320" text-anchor="middle" data-i18n="timeline_entrepreneur">Entrepreneur</text>
+            </g>
+            <g class="milestone" id="milestone-civil" data-scroll-to="#experience-summary">
+              <rect class="node" x="835" y="140" width="30" height="20" rx="3"/>
+              <text class="label" x="850" y="130" text-anchor="middle" data-i18n="timeline_civil">Civil Engineer</text>
+            </g>
+          </svg>
+        </div>
 
-      <!-- RIGHT: Content -->
-      <div class="hero-right">
-        <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
-        <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
-
-        <p class="lead" data-i18n="hero_lead_1">
-          My on-site experience with foundations and precast components taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering at RWTH Aachen.
-        </p>
-        <p class="lead" data-i18n="hero_lead_2">
-          I solve problems with a unique mindset. With no coding background, I leveraged AI to engineer this portfolio from scratch. It's how I approach every challenge: with resourcefulness, curiosity, and a drive to find the best solution.
-        </p>
-
-        <div class="hero-cta">
-          <a class="btn primary" href="about.html" data-i18n="btn_story">My Full Story</a>
-          <a class="btn outline" href="germany.html" data-i18n="btn_germany">My Plan for Germany</a>
-          <a class="btn outline" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer"><img src="assets/icons/document.svg" alt="" class="btn-icon"><span data-i18n="btn_cv">Download CV</span></a>
+        <div class="timeline-footer">
+            <h1 class="timeline-headline" data-i18n="timeline_headline">A Multi-faceted Engineering Journey.</h1>
+            <a href="#experience-summary" class="btn primary timeline-cta" data-i18n="timeline_cta">Explore My Work</a>
         </div>
       </div>
     </section>
+
+    <!-- ================= Content Sections ================= -->
+    <section id="experience-summary" class="summary-section">
+      <!-- Experience content will be dynamically loaded here or link to full page -->
+      <h2>Experience Summary</h2>
+    </section>
+    <section id="skills-summary" class="summary-section">
+      <!-- Skills content -->
+      <h2>Skills Summary</h2>
+    </section>
+    <section id="social-summary" class="summary-section">
+      <!-- Social content -->
+      <h2>Social Summary</h2>
+    </section>
+    <section id="about-summary" class="summary-section">
+      <!-- About/Entrepreneur content -->
+      <h2>Mindset Summary</h2>
+    </section>
+
   </main>
 
   <!-- ================= Footer (Final Structure) ================= -->
