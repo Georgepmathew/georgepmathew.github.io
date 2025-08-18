@@ -1,7 +1,7 @@
 /* style.css — Full stylesheet for Engineer GPM site
    - Core styles, responsive design, themes, and animations
    - Signature "blueprint" motif included
-   - FINAL POLISHED VERSION
+   - FINAL POLISHED VERSION 2.0
 */
 
 /* -------------------------
@@ -64,6 +64,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  opacity: 0;
+  animation: fadeInBody 0.5s ease-out forwards;
+}
+@keyframes fadeInBody {
+  to { opacity: 1; }
 }
 
 .container {
@@ -79,51 +84,6 @@ img {
 }
 
 /* -------------------------
-   Intro Animation
-   ------------------------- */
-#intro-animation {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--bg);
-  display: grid;
-  place-items: center;
-  transition: opacity 0.5s ease-in, visibility 0.5s;
-  transition-delay: 2.2s;
-}
-#intro-animation.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-.intro-name {
-  font-size: clamp(2rem, 8vw, 4rem);
-  font-weight: 900;
-  display: flex;
-  gap: 0.1em;
-}
-.intro-name span {
-  display: inline-block;
-  color: var(--muted);
-  animation: fall 1s cubic-bezier(0.2, -0.5, 0.2, 1.5) forwards, 
-             flash 0.5s ease-in-out 1s forwards, 
-             lift 0.5s ease-in 2s forwards;
-  opacity: 0;
-}
-@keyframes fall {
-  from { transform: translateY(-100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-@keyframes flash {
-  50% { color: var(--accent); }
-  100% { color: var(--text); }
-}
-@keyframes lift {
-  to { transform: translateY(-20px); opacity: 0; }
-}
-
-
-/* -------------------------
    Header & Navigation
    ------------------------- */
 .topbar {
@@ -135,8 +95,6 @@ img {
   -webkit-backdrop-filter: blur(8px);
   background: var(--glass);
   border-bottom: 1px solid var(--border-color);
-  opacity: 0;
-  animation: fade-in 0.5s ease 2.5s forwards;
 }
 .topbar-inner {
   display: flex;
@@ -158,9 +116,9 @@ img {
 .nav-icon { width: 16px; height: 16px; opacity: 0.8; }
 html[data-theme="dark"] .nav-icon { filter: invert(1) opacity(0.8); }
 
-.header-actions { display: flex; align-items: center; }
+.header-actions { display: flex; align-items: center; min-width: 80px; justify-content: flex-end; }
 
-/* New Language Toggle Pill */
+/* Language Toggle Pill */
 .lang-toggle-pill {
   position: relative;
   display: flex;
@@ -197,18 +155,55 @@ html[data-theme="dark"] .lang-toggle-pill span.active { color: var(--bg); }
 }
 .lang-toggle-pill.de .glider { transform: translateX(calc(100%)); }
 
-
 .mobile-nav-scroll { display: none; }
 
 /* -------------------------
-   Hero Section
+   Hero Section & "Living Hero" Animation
    ------------------------- */
 .page-root { padding-top: 48px; padding-bottom: 64px; }
 
 .hero { display: grid; grid-template-columns: 400px 1fr; gap: 60px; align-items: center; }
-.image-card { padding: 12px; border-radius: 14px; box-shadow: var(--shadow-strong); background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); }
-.hero-image { border-radius: 8px; }
-.hero-right .title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.1; margin: 0 0 8px; }
+.hero-right { opacity: 0; animation: hero-fade-in 0.5s ease-out 0.8s forwards; }
+@keyframes hero-fade-in { to { opacity: 1; } }
+
+.hero-right .title { 
+  font-size: clamp(2rem, 5vw, 3rem); 
+  font-weight: 900; 
+  line-height: 1.1; 
+  margin: 0 0 8px; 
+  position: relative;
+  overflow: hidden;
+}
+/* Blueprint Reveal Animation */
+.title .reveal-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: reveal-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes reveal-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.title .scan-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scan 0.8s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+@keyframes scan {
+  0% { transform: scaleX(0); transform-origin: left; }
+  40%, 60% { transform: scaleX(1); transform-origin: left; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
 .hero-right .subtitle { font-size: clamp(1.1rem, 3vw, 1.25rem); font-weight: 700; color: var(--accent); margin: 0 0 24px; }
 .hero-right .lead { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 16px; }
 .hero-right .lead:last-of-type { margin-bottom: 24px; }
@@ -223,6 +218,46 @@ html[data-theme="dark"] .lang-toggle-pill span.active { color: var(--bg); }
 html[data-theme="dark"] .btn.outline .btn-icon { filter: invert(1) opacity(0.8); }
 .btn.outline:hover .btn-icon { filter: none; }
 
+/* Callouts */
+.hero-illustration-wrapper { position: relative; }
+.image-card { padding: 12px; border-radius: 14px; box-shadow: var(--shadow-strong); background-color: var(--surface); background-image: var(--blueprint-bg); background-size: var(--blueprint-size); transition: transform 0.3s, box-shadow 0.3s; }
+.hero-illustration-wrapper:hover .image-card { transform: scale(1.02); box-shadow: var(--shadow-strong); }
+.hero-image { border-radius: 8px; }
+.hero-callouts { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; pointer-events: none; }
+.callout {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+  opacity: 0;
+  animation: hero-fade-in 0.5s ease-out forwards;
+}
+.callout::before, .callout::after { /* Lines */
+  content: '';
+  position: absolute;
+  background: var(--accent);
+  pointer-events: auto;
+}
+.callout span { transition: color 0.3s; }
+.hero-illustration-wrapper:hover .callout span { color: var(--muted); }
+.hero-illustration-wrapper .callout:hover span { color: var(--accent) !important; }
+
+/* Callout 1: AI Mindset */
+.callout-1 { top: 15%; left: 95%; animation-delay: 1.2s; }
+.callout-1::before { width: 30px; height: 1px; top: 50%; right: 100%; }
+.callout-1::after { width: 1px; height: 35px; right: calc(100% + 30px); top: calc(50% - 35px); }
+/* Callout 2: Civil Eng */
+.callout-2 { top: 50%; right: 100%; animation-delay: 1.4s; }
+.callout-2::before { width: 20px; height: 1px; top: 50%; left: 100%; }
+/* Callout 3: Materials */
+.callout-3 { bottom: 12%; left: 100%; animation-delay: 1.6s; }
+.callout-3::before { width: 25px; height: 1px; top: 50%; right: 100%; }
+.callout-3::after { width: 1px; height: 40px; right: calc(100% + 25px); bottom: calc(50% - 1px); }
 
 /* -------------------------
    Footer
@@ -360,20 +395,6 @@ html[data-theme="dark"] .btn.outline .btn-icon { filter: invert(1) opacity(0.8);
 .timeline-date { color: var(--muted); font-weight: 700; margin: 0; }
 
 /* -------------------------
-   On-Scroll Animations
-   ------------------------- */
-@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
-.anim-fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.anim-fade-in.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* -------------------------
    Responsive Rules
    ------------------------- */
 @media (max-width: 900px) {
@@ -386,6 +407,8 @@ html[data-theme="dark"] .btn.outline .btn-icon { filter: invert(1) opacity(0.8);
   .about-image-wrapper { order: 1; position: static; margin: 0 auto 16px; max-width: 350px; }
   .about-text { order: 2; text-align: center; }
   .about-text h3 { border-left: none; border-bottom: 2px solid var(--accent); padding-left: 0; padding-bottom: 8px; display: inline-block; }
+  .hero-illustration-wrapper { max-width: 400px; margin: 0 auto; }
+  .hero-callouts { display: none; } /* Hide callouts on smaller screens for simplicity */
 }
 
 @media (max-width: 767px) {
@@ -408,21 +431,4 @@ html[data-theme="dark"] .btn.outline .btn-icon { filter: invert(1) opacity(0.8);
   }
   .mobile-nav-scroll::-webkit-scrollbar { display: none; }
   .mobile-nav-scroll { scrollbar-width: none; }
-  .mobile-nav-scroll .nav-link { display: inline-block; padding: 12px 16px; text-decoration: none; font-size: 15px; font-weight: 700; color: var(--muted); }
-  .mobile-nav-scroll .nav-link.active { color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 9px; }
-
-  .brand-sub { display: none; }
-
-  .timeline { padding-left: 30px; }
-  .timeline-icon { left: -35px; width: 40px; height: 40px; font-size: 1.2rem; }
-  .contact-grid { grid-template-columns: 1fr; }
-}
-
-/* -------------------------
-   Accessibility Focus States
-   ------------------------- */
-a:focus-visible, button:focus-visible, .btn:focus-visible, .lang-toggle-pill:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  box-shadow: none;
-}
+  .mobile-nav-scroll .na
