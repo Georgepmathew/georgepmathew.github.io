@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Engineer GPM Portfolio --- World-Class Redesign
+   Engineer GPM Portfolio --- World-Class Overhaul
    --- [ script.js ] ---
    - Handles EN/DE translations and theme switching
-   - Manages active navigation links
-   - Powers the interactive journey timeline on the homepage
+   - Manages active navigation links and NEW mobile navigation
+   - Animates the NEW vertical storyline on scroll
    - Creates the 3D tilt effect on the About page image
    ========================================================================== */
 
@@ -16,9 +16,9 @@
   const I18N = {
     en: {
         // General
-        brand_name: "George P. Mathew",
+        brand_name: "George P Mathew",
         brand_sub: "Engineer GPM",
-        footer_brand: "Engineered by George P. Mathew",
+        footer_brand: "Engineered by George P Mathew",
         footer_social: "Social",
 
         // Navigation
@@ -36,13 +36,13 @@
         btn_germany: "My Plan for Germany",
         journey_title: "An Evolving Engineering Journey",
         journey1_title: "Civil Engineer",
-        journey1_desc: "My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience at SG Construction and Excel Precast provided a deep understanding of real-world construction challenges and the critical role of material integrity.",
+        journey1_desc_revised: "My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.",
         journey2_title: "Entrepreneur",
-        journey2_desc: "Joining my father at our family business, Best Trading, I applied my problem-solving skills to a new context. I focused on customer relations, technical sales, and business operations, learning the importance of user needs and effective communication.",
+        journey2_desc_revised: "At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.",
         journey3_title: "Content Creator",
-        journey3_desc: "To share my passion for engineering, I created the 'Engineer GPM' brand. Through this platform, I develop content that makes complex engineering concepts accessible, honing my ability to communicate technical ideas clearly and effectively.",
+        journey3_desc_revised: "As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.",
         journey4_title: "Materials Engineer",
-        journey4_desc: "My on-site experience revealed that construction's biggest hurdles are material-based. This insight is driving me to pursue an M.Sc. in Materials Engineering at RWTH Aachen, where I aim to innovate the very materials we use to build the future.",
+        journey4_desc_revised: "My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.",
 
         // Profile Page
         edu_heading: "Education",
@@ -112,10 +112,9 @@
         germany_bigger_picture_title: "The Bigger Picture",
         germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.",
         
-        // Social Page
-        social_heading: "Connect With Me",
-        social_intro: "Follow my journey, watch my projects, and connect with me on your favorite platform.",
-        social_brand_heading: "My Brand Channels (Engineer GPM)",
+        // Social Page (Redesigned)
+        social_hub_title: "Join the Community",
+        social_hub_subtitle: "Explore my content, connect with me, and follow my engineering journey.",
         social_youtube_title: "YouTube",
         social_youtube_desc: "Engineering videos & tutorials",
         social_brand_insta_title: "Instagram (Brand)",
@@ -124,17 +123,14 @@
         social_x_desc: "Short updates & tech insights",
         social_brand_fb_title: "Facebook (Brand)",
         social_brand_fb_desc: "Page for Engineer GPM",
-        social_personal_heading: "Connect with Me Personally",
         social_linkedin_title: "LinkedIn",
         social_linkedin_desc: "For professional networking",
         social_insta_title: "Instagram (Personal)",
         social_insta_desc: "Personal updates & photography",
         
-        // About Page
+        // About Page (Redesigned)
         about_intro: "I'm",
-        about_name_first: "George",
-        about_name_middle: "P.",
-        about_name_last: "Mathew.",
+        about_name_full: "George P Mathew",
         about_p1: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.",
         about_p2: "This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University.",
         about_p3: "I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding AI to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.",
@@ -156,22 +152,16 @@
         contact_linkedin_cta: "View My Profile"
     },
     de: {
-        // German translations would go here...
-        // For brevity, I will only include a few examples.
-        brand_name: "George P. Mathew",
+        // German translations...
+        brand_name: "George P Mathew",
         brand_sub: "Ingenieur GPM",
         nav_home: "Startseite",
         nav_profile: "Profil",
-        hero_title: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
-        hero_subtitle: "Meine Praxiserfahrung hat mir gezeigt, dass die größten Herausforderungen im Bau oft materialbedingt sind. Diese Erkenntnis treibt meinen Wechsel zur Werkstofftechnik in Deutschland an, wo ich die Art, wie wir bauen, innovieren möchte.",
-        btn_story: "Meine Geschichte",
-        btn_germany: "Mein Plan für Deutschland",
-        journey_title: "Eine sich entwickelnde Ingenieursreise",
         // ... and so on for all keys
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v2';
+  const LANG_KEY = 'gpm_lang_v3';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -190,7 +180,6 @@
   function initLangToggle() {
     const container = document.querySelector('.header-actions');
     if (!container) return;
-
     const toggleHTML = `
       <div class="lang-toggle" title="Toggle Language (EN/DE)">
         <button class="lang-toggle-btn en" data-lang="en">EN</button>
@@ -199,16 +188,13 @@
       </div>
     `;
     container.innerHTML = toggleHTML;
-
     const toggle = container.querySelector('.lang-toggle');
     const buttons = toggle.querySelectorAll('.lang-toggle-btn');
     const glider = toggle.querySelector('.lang-glider');
-
     function setButtonState(lang) {
         buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
         glider.classList.toggle('de', lang === 'de');
     }
-
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const newLang = button.dataset.lang;
@@ -217,17 +203,17 @@
             setButtonState(newLang);
         });
     });
-    
     setButtonState(getSavedLang());
   }
 
 
   /* =========================
-     2. Active Navigation Link
+     2. Navigation (Desktop & Mobile)
      ========================= */
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+    // Mark both desktop and mobile links
+    document.querySelectorAll('.main-nav .nav-link, .mobile-nav .nav-link').forEach(link => {
       const linkPage = link.getAttribute('href');
       if (linkPage === currentPage) {
         link.classList.add('active');
@@ -236,57 +222,41 @@
     });
   }
 
+  function initMobileNav() {
+    const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const body = document.body;
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('nav-open');
+    });
+  }
+
   /* =========================
-     3. Homepage Journey Timeline
+     3. Homepage Storyline Animation
      ========================= */
-  function initJourneyTimeline() {
-    const timeline = document.querySelector('.journey .timeline');
-    if (!timeline) return; // Only run on the homepage
+  function initStorylineObserver() {
+    const milestones = document.querySelectorAll('.storyline-milestone');
+    if (milestones.length === 0) return; // Only run on homepage
 
-    const nodes = timeline.querySelectorAll('.timeline-node');
-    const cards = document.querySelectorAll('.journey-card');
-    const progress = timeline.querySelector('.timeline-progress');
-    let activeStep = 1;
-
-    function updateState(step, isInitial = false) {
-      const newActiveNode = timeline.querySelector(`.timeline-node[data-step="${step}"]`);
-      const newActiveCard = document.querySelector(`.journey-card[data-step="${step}"]`);
-      
-      // Update nodes
-      nodes.forEach((node, index) => {
-        node.classList.remove('active', 'next-step');
-        if (parseInt(node.dataset.step) === step) {
-          node.classList.add('active');
-        }
-        // Add pulse to the next one
-        if (index + 1 === step + 1 && step < nodes.length) {
-            nodes[index].classList.add('next-step');
-        }
-      });
-      
-      // Update cards
-      cards.forEach(card => card.classList.remove('active'));
-      if (newActiveCard) newActiveCard.classList.add('active');
-      
-      // Update progress bar
-      const nodeIndex = step - 1;
-      const progressWidth = nodeIndex > 0 ? (nodeIndex / (nodes.length - 1)) * 100 : 0;
-      progress.style.width = `${progressWidth}%`;
-
-      activeStep = step;
-    }
-
-    nodes.forEach(node => {
-      node.addEventListener('click', () => {
-        const step = parseInt(node.dataset.step);
-        if (step !== activeStep) {
-          updateState(step);
-        }
-      });
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add a delay to each subsequent item for a staggered effect
+                setTimeout(() => {
+                    entry.target.classList.add('in-view');
+                }, index * 200);
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.2 // Trigger when 20% of the item is visible
     });
 
-    // Initialize first step
-    updateState(1, true);
+    milestones.forEach(milestone => {
+        observer.observe(milestone);
+    });
   }
 
   /* =========================
@@ -294,19 +264,16 @@
      ========================= */
   function initInteractiveImage() {
     const imageContainer = document.getElementById('interactive-image');
-    if (!imageContainer) return; // Only run on about page
+    if (!imageContainer) return;
 
     imageContainer.addEventListener('mousemove', (e) => {
         const rect = imageContainer.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
-        const rotateY = ((x - centerX) / centerX) * 10; // Max rotation 10deg
-
+        const rotateX = ((y - centerY) / centerY) * -8; // Reduced intensity
+        const rotateY = ((x - centerX) / centerX) * 8;
         imageContainer.style.transition = 'transform 0.1s';
         imageContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
     });
@@ -317,7 +284,6 @@
     });
   }
 
-
   /* =========================
      5. Initialization
      ========================= */
@@ -325,15 +291,11 @@
     applyTranslations(getSavedLang());
     initLangToggle();
     markActiveNav();
-    initJourneyTimeline();
+    initMobileNav();
+    initStorylineObserver();
     initInteractiveImage();
   }
 
-  // Run init once the DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  document.addEventListener('DOMContentLoaded', init);
 
 })();
