@@ -1,119 +1,128 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Social — George P. Mathew</title>
-  <meta name="description" content="Connect with my brand, Engineer GPM, on YouTube and other channels, or connect with me personally." />
-  <!-- Optimized Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social — George P. Mathew</title>
+    <meta name="description" content="Connect with George P. Mathew and his brand, Engineer GPM, on YouTube, LinkedIn, Instagram, and more.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/profile.png" type="image/png">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display-swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript (defer ensures it runs after HTML parsing) -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- ================= Header (Final Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile-avatar.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
-        </div>
-      </a>
-      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt=""><span data-i18n="nav_education">Education</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-      <!-- Language Toggle Placeholder -->
-      <div class="header-actions"></div>
-    </div>
-  </header>
-
-  <!-- Mobile Scrolling Nav (Final Structure) -->
-  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
-      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
-      <a class="nav-link" href="education.html"><span data-i18n="nav_education">Education</span></a>
-      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
-      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
-      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
-      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
-      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
-  </nav>
-
-  <!-- ================= Main Content ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="social_heading">My Channels & Socials</h1>
-    <p class="section-lead" data-i18n="social_intro">Follow my journey, watch my projects, and connect with me on your favorite platform.</p>
-
-    <!-- Brand Channels -->
-    <h2 class="section-subtitle" data-i18n="social_brand_heading">My Brand Channels (Engineer GPM)</h2>
-    <div class="social-grid">
-      <a href="https://www.youtube.com/@EngineerGPM" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/youtube.svg" alt="YouTube" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_youtube_title">YouTube</strong>
-          <span class="muted" data-i18n="social_youtube_desc">Engineering videos & tutorials</span>
-        </div>
-      </a>
-      <a href="https://www.instagram.com/engineergpm/" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_brand_insta_title">Instagram (Brand)</strong>
-          <span class="muted" data-i18n="social_brand_insta_desc">Content & updates for Engineer GPM</span>
-        </div>
-      </a>
-      <a href="https://x.com/EngineerGPM" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/x.svg" alt="X" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_x_title">X (Twitter)</strong>
-          <span class="muted" data-i18n="social_x_desc">Short updates & tech insights</span>
-        </div>
-      </a>
-      <a href="https://www.facebook.com/engineergpm" class="social-card card" target="_blank" rel="noopener noreferrer">
-        <img src="assets/icons/facebook.svg" alt="Facebook" class="social-icon">
-        <div class="social-text">
-          <strong data-i18n="social_brand_fb_title">Facebook (Brand)</strong>
-          <span class="muted" data-i18n="social_brand_fb_desc">Page for Engineer GPM</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Personal Channels -->
-    <h2 class="section-subtitle" data-i18n="social_personal_heading">Connect with Me Personally</h2>
-    <div class="social-grid">
-        <a href="https://www.linkedin.com/in/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
-            <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
-            <div class="social-text">
-              <strong data-i18n="social_linkedin_title">LinkedIn</strong>
-              <span class="muted" data-i18n="social_linkedin_desc">For professional networking</span>
+    <!-- ======================= Header ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand" aria-label="Go to homepage">
+                <img src="assets/profile.png" alt="George P. Mathew profile picture" class="brand-avatar">
+                <div class="brand-text">
+                    <span class="brand-name" data-i18n="brand_name">George P. Mathew</span>
+                    <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+                <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
+                <a href="social.html" class="nav-link active" data-i18n="nav_social">Social</a>
+                <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <!-- Language/Theme Toggle will be injected here by JavaScript -->
             </div>
-        </a>
-        <a href="https://www.instagram.com/georgepmathew/" class="social-card card" target="_blank" rel="noopener noreferrer">
-            <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
-            <div class="social-text">
-              <strong data-i18n="social_insta_title">Instagram (Personal)</strong>
-              <span class="muted" data-i18n="social_insta_desc">Personal updates & photography</span>
+        </div>
+    </header>
+
+    <!-- ======================== Main Content ======================== -->
+    <main class="container page-container">
+        <header class="page-header">
+            <h1 class="page-title" data-i18n="social_heading">Connect With Me</h1>
+            <p class="page-subtitle" data-i18n="social_intro">Follow my journey, watch my projects, and connect with me on your favorite platform.</p>
+        </header>
+
+        <!-- Brand Channels -->
+        <h2 class="section-title-medium" data-i18n="social_brand_heading">My Brand Channels (Engineer GPM)</h2>
+        <div class="social-grid">
+            <a href="https://www.youtube.com/@EngineerGPM" class="social-card" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/youtube.svg" alt="YouTube" class="social-icon">
+                <div class="social-text">
+                    <strong data-i18n="social_youtube_title">YouTube</strong>
+                    <span data-i18n="social_youtube_desc">Engineering videos & tutorials</span>
+                </div>
+                <div class="social-arrow">→</div>
+            </a>
+            <a href="https://www.instagram.com/engineergpm/" class="social-card" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
+                <div class="social-text">
+                    <strong data-i18n="social_brand_insta_title">Instagram (Brand)</strong>
+                    <span data-i18n="social_brand_insta_desc">Content & updates for Engineer GPM</span>
+                </div>
+                <div class="social-arrow">→</div>
+            </a>
+            <a href="https://x.com/EngineerGPM" class="social-card" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/x.svg" alt="X" class="social-icon">
+                <div class="social-text">
+                    <strong data-i18n="social_x_title">X (Twitter)</strong>
+                    <span data-i18n="social_x_desc">Short updates & tech insights</span>
+                </div>
+                <div class="social-arrow">→</div>
+            </a>
+            <a href="https://www.facebook.com/engineergpm" class="social-card" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/facebook.svg" alt="Facebook" class="social-icon">
+                <div class="social-text">
+                    <strong data-i18n="social_brand_fb_title">Facebook (Brand)</strong>
+                    <span data-i18n="social_brand_fb_desc">Page for Engineer GPM</span>
+                </div>
+                <div class="social-arrow">→</div>
+            </a>
+        </div>
+
+        <!-- Personal Channels -->
+        <h2 class="section-title-medium" data-i18n="social_personal_heading">Connect with Me Personally</h2>
+        <div class="social-grid">
+            <a href="https://www.linkedin.com/in/georgepmathew/" class="social-card" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+                <div class="social-text">
+                    <strong data-i18n="social_linkedin_title">LinkedIn</strong>
+                    <span data-i18n="social_linkedin_desc">For professional networking</span>
+                </div>
+                <div class="social-arrow">→</div>
+            </a>
+            <a href="https://www.instagram.com/georgepmathew/" class="social-card" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
+                <div class="social-text">
+                    <strong data-i18n="social_insta_title">Instagram (Personal)</strong>
+                    <span data-i18n="social_insta_desc">Personal updates & photography</span>
+                </div>
+                <div class="social-arrow">→</div>
+            </a>
+        </div>
+    </main>
+
+    <!-- ======================= Footer ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P. Mathew</div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/georgepmathew" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="social.html" data-i18n="footer_social">Social</a>
             </div>
-        </a>
-    </div>
-  </main>
+        </div>
+    </footer>
 
-  <!-- ================= Footer (Final Structure) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Where hard work transforms vision into reality.</div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
