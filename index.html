@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>George P. Mathew — Engineer GPM</title>
-  <meta name="description" content="George P. Mathew — A multi-faceted engineering journey from Civil to Materials, Content Creation, and Entrepreneurship." />
+  <meta name="description" content="George P. Mathew — Civil Engineer and future Materials Innovator, leveraging AI to solve complex problems." />
   <!-- Optimized Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
   <header class="topbar" role="banner" aria-label="Site header">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile.png" alt="George P. Mathew" class="brand-avatar" />
+        <img src="assets/profile-avatar.png" alt="George P. Mathew" class="brand-avatar" />
         <div class="brand-text">
           <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
           <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
@@ -53,62 +53,71 @@
       <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
   </nav>
 
-  <!-- ================= Main / Hero Timeline ================= -->
-  <main class="page-root" role="main">
-    <section class="hero-timeline">
-      <div class="container timeline-container">
-        <div class="timeline-header">
-          <div class="timeline-brand" data-i18n="timeline_brand">◆ Engineer GPM</div>
+  <!-- ================= Main Content ================= -->
+  <main class="page-root-home" role="main">
+    
+    <!-- ACT I: The Digital Innovator Hero -->
+    <section class="hero-interface" aria-labelledby="hero-heading">
+      <div class="gradient-bg"></div>
+      <div class="blueprint-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-image-wrapper">
+          <img src="assets/profile-main.png" alt="George P. Mathew" class="hero-image-main" />
         </div>
-        
-        <div class="timeline-svg-wrapper">
-          <svg id="timeline-svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-            <!-- The Path -->
-            <path id="timeline-path" d="M 50 250 Q 150 150 250 200 T 450 250 T 650 200 T 850 250 T 1050 200 T 1150 250" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            
-            <!-- Milestones (Nodes + Text) -->
-            <g class="milestone" id="milestone-materials" data-scroll-to="#skills-summary">
-              <rect class="node" x="235" y="270" width="30" height="20" rx="3"/>
-              <text class="label" x="250" y="320" text-anchor="middle" data-i18n="timeline_materials">Materials Engineer</text>
-            </g>
-            <g class="milestone" id="milestone-content" data-scroll-to="#social-summary">
-              <rect class="node" x="435" y="140" width="30" height="20" rx="3"/>
-              <text class="label" x="450" y="130" text-anchor="middle" data-i18n="timeline_content">Content Creator</text>
-            </g>
-            <g class="milestone" id="milestone-entrepreneur" data-scroll-to="#about-summary">
-              <rect class="node" x="635" y="270" width="30" height="20" rx="3"/>
-              <text class="label" x="650" y="320" text-anchor="middle" data-i18n="timeline_entrepreneur">Entrepreneur</text>
-            </g>
-            <g class="milestone" id="milestone-civil" data-scroll-to="#experience-summary">
-              <rect class="node" x="835" y="140" width="30" height="20" rx="3"/>
-              <text class="label" x="850" y="130" text-anchor="middle" data-i18n="timeline_civil">Civil Engineer</text>
-            </g>
-          </svg>
+        <div class="hero-text">
+          <h1 class="title" id="hero-heading" data-i18n="hero_name">George P. Mathew</h1>
+          <p class="subtitle" data-i18n="hero_role">Civil Engineer & Future Materials Innovator</p>
+          <p class="lead" data-i18n="hero_lead_1">
+            My on-site experience taught me that construction's biggest challenges are often materials problems. This insight drives my move to Germany to pursue an M.Sc. in Materials Engineering.
+          </p>
+          <div class="hero-cta">
+            <a class="btn gradient" href="#journey" data-i18n="btn_journey">Explore My Journey</a>
+            <a class="btn outline" href="experience.html" data-i18n="btn_work">View My Work</a>
+          </div>
         </div>
-
-        <div class="timeline-footer">
-            <h1 class="timeline-headline" data-i18n="timeline_headline">A Multi-faceted Engineering Journey.</h1>
-            <a href="#experience-summary" class="btn primary timeline-cta" data-i18n="timeline_cta">Explore My Work</a>
-        </div>
+      </div>
+      <div class="scroll-indicator">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19M12 19L7 14M12 19L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
     </section>
 
-    <!-- ================= Content Sections ================= -->
-    <section id="experience-summary" class="summary-section">
-      <!-- Experience content will be dynamically loaded here or link to full page -->
-      <h2>Experience Summary</h2>
-    </section>
-    <section id="skills-summary" class="summary-section">
-      <!-- Skills content -->
-      <h2>Skills Summary</h2>
-    </section>
-    <section id="social-summary" class="summary-section">
-      <!-- Social content -->
-      <h2>Social Summary</h2>
-    </section>
-    <section id="about-summary" class="summary-section">
-      <!-- About/Entrepreneur content -->
-      <h2>Mindset Summary</h2>
+    <!-- ACT II: The Evolving Journey Timeline -->
+    <section id="journey" class="timeline-section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="timeline_title">An Evolving Engineering Journey</h2>
+        <div class="timeline-wrapper">
+          <div class="timeline-path"></div>
+          
+          <!-- Milestone 1: Civil Engineer -->
+          <div class="milestone" id="milestone-civil">
+            <div class="node"></div>
+            <div class="label" data-i18n="timeline_civil">Civil Engineer</div>
+            <div class="info-card" data-i18n="info_civil">Building my foundation in real-world construction challenges, from site supervision to precast component management.</div>
+          </div>
+          
+          <!-- Milestone 2: Materials Engineer -->
+          <div class="milestone" id="milestone-materials">
+            <div class="node"></div>
+            <div class="label" data-i18n="timeline_materials">Materials Engineer</div>
+            <div class="info-card" data-i18n="info_materials">My next chapter: Pursuing an M.Sc. at RWTH Aachen to innovate construction's core components.</div>
+          </div>
+
+          <!-- Milestone 3: Content Creator -->
+          <div class="milestone" id="milestone-content">
+            <div class="node"></div>
+            <div class="label" data-i18n="timeline_content">Content Creator</div>
+            <div class="info-card" data-i18n="info_content">Sharing knowledge and insights through the "Engineer GPM" brand on platforms like YouTube.</div>
+          </div>
+
+          <!-- Milestone 4: Entrepreneur -->
+          <div class="milestone" id="milestone-entrepreneur">
+            <div class="node"></div>
+            <div class="label" data-i18n="timeline_entrepreneur">Entrepreneur</div>
+            <div class="info-card" data-i18n="info_entrepreneur">Applying an engineering mindset to business challenges, from customer service to marketing.</div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
   </main>
@@ -116,7 +125,7 @@
   <!-- ================= Footer (Final Structure) ================= -->
   <footer class="footer container" role="contentinfo">
     <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Leveraging AI to bridge vision and reality.</div>
+    <div class="footer-subtext" data-i18n="footer_subtext">Where hard work transforms vision into reality.</div>
   </footer>
 
   <script src="script.js"></script>
