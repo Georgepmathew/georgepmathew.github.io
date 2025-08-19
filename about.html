@@ -1,84 +1,124 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About Me — George P. Mathew</title>
-  <meta name="description" content="The story behind my journey from Civil Engineering to Materials Science and how I use AI to solve problems." />
-  <!-- Optimized Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me — George P. Mathew</title>
+    <meta name="description" content="The story behind my journey from Civil Engineering to Materials Science and how I use AI to solve problems.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/profile.png" type="image/png">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript (defer ensures it runs after HTML parsing) -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- ================= Header (Final Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile-avatar.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
+    <!-- ======================= Header ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand" aria-label="Go to homepage">
+                <img src="assets/profile.png" alt="George P. Mathew profile picture" class="brand-avatar">
+                <div class="brand-text">
+                    <span class="brand-name" data-i18n="brand_name">George P. Mathew</span>
+                    <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+                <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
+                <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
+                <a href="about.html" class="nav-link active" data-i18n="nav_about">About</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <!-- Language/Theme Toggle will be injected here by JavaScript -->
+            </div>
         </div>
-      </a>
-      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt=""><span data-i18n="nav_education">Education</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-      <!-- Language Toggle Placeholder -->
-      <div class="header-actions"></div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Mobile Scrolling Nav (Final Structure) -->
-  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
-      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
-      <a class="nav-link" href="education.html"><span data-i18n="nav_education">Education</span></a>
-      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
-      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
-      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
-      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
-      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
-  </nav>
+    <!-- ======================== Main Content ======================== -->
+    <main class="container page-container">
+        <div class="about-layout">
+            
+            <!-- ====== Left Column: The Story ====== -->
+            <div class="about-content">
+                <h1 class="about-title">
+                    <span data-i18n="about_intro">I'm</span>
+                    <span class="gradient-text" data-i18n="about_name_first">George</span>
+                    <span class="accent-text" data-i18n="about_name_middle">P.</span>
+                    <span class="gradient-text" data-i18n="about_name_last">Mathew.</span>
+                </h1>
+                
+                <div class="about-narrative">
+                    <p data-i18n="about_p1">My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.</p>
+                    <p data-i18n="about_p2">This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University.</p>
+                    <p data-i18n="about_p3">I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding AI to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.</p>
+                </div>
+            </div>
 
-  <!-- ================= Main Content ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="about_heading">My Story</h1>
-    
-    <div class="about-content">
-      <div class="about-text">
-        <p data-i18n="about_p1">
-          My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success. Seeing the challenges of material defects firsthand ignited my passion for understanding the 'why' behind the materials we use.
-        </p>
-        <p data-i18n="about_p2">
-          This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University, positioning myself at the forefront of construction innovation.
-        </p>
-        <h3 data-i18n="about_subtitle">My Mindset: The Story of this Website</h3>
-        <p data-i18n="about_p3">
-          I am defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem. My tool wasn't a CAD program; it was Artificial Intelligence. Through iterative prompting and logical debugging, I guided AI to generate the code, structure the design, and build the features you see now. This is the forward-thinking, tool-agnostic mindset I bring to every challenge.
-        </p>
-      </div>
-      <div class="about-image-wrapper">
-        <img src="assets/SG SITE.jpg" alt="George P. Mathew at a construction site" class="about-site-pic">
-      </div>
-    </div>
-  </main>
+            <!-- ====== Right Column: The Image ====== -->
+            <div class="about-image-column">
+                <div class="about-image-container" id="interactive-image">
+                    <img src="assets/SG SITE.jpg" alt="George P. Mathew at a construction site in a safety vest" class="about-image">
+                </div>
+            </div>
+        </div>
 
-  <!-- ================= Footer (Final Structure) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Where hard work transforms vision into reality.</div>
-  </footer>
+        <!-- "What I'm Focused On" Section -->
+        <div class="focus-section">
+            <h2 class="section-title-medium" data-i18n="focus_title">What I'm Focused On</h2>
+            <div class="focus-grid">
+                <!-- Card 1: Engineer GPM -->
+                <a href="social.html" class="focus-card">
+                    <div class="focus-icon">
+                        <img src="assets/icons/share.svg" alt="Share Icon">
+                    </div>
+                    <div class="focus-text">
+                        <h3 data-i18n="focus1_title">Engineer GPM - The Brand</h3>
+                        <p data-i18n="focus1_desc">Sharing my passion for engineering and making complex topics accessible through my content creation platform.</p>
+                    </div>
+                    <div class="focus-link" data-i18n="focus1_cta">
+                        Explore My Channels <span>→</span>
+                    </div>
+                </a>
+                <!-- Card 2: Materials Engineering -->
+                <a href="germany.html" class="focus-card">
+                    <div class="focus-icon">
+                         <img src="assets/icons/globe.svg" alt="Globe Icon">
+                    </div>
+                    <div class="focus-text">
+                        <h3 data-i18n="focus2_title">Materials Engineering - The Future</h3>
+                        <p data-i18n="focus2_desc">Preparing for my M.Sc. at RWTH Aachen to be at the forefront of innovating the sustainable construction materials of tomorrow.</p>
+                    </div>
+                    <div class="focus-link" data-i18n="focus2_cta">
+                        See My Plan for Germany <span>→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
 
-  <script src="script.js"></script>
+    <!-- ======================= Footer ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P. Mathew</div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/georgepmathew" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="social.html" data-i18n="footer_social">Social</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
