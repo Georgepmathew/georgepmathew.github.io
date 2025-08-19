@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — George P. Mathew</title>
-    <meta name="description" content="Get in touch with George P. Mathew via Email or connect on LinkedIn for professional opportunities.">
+    <title>Contact — George P Mathew</title>
+    <meta name="description" content="Get in touch with George P Mathew via Email or connect on LinkedIn for professional opportunities.">
 
     <!-- Favicon -->
     <link rel="icon" href="assets/profile.png" type="image/png">
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display-swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -26,9 +26,9 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand" aria-label="Go to homepage">
-                <img src="assets/profile.png" alt="George P. Mathew profile picture" class="brand-avatar">
+                <img src="assets/profile.png" alt="George P Mathew profile picture" class="brand-avatar">
                 <div class="brand-text">
-                    <span class="brand-name" data-i18n="brand_name">George P. Mathew</span>
+                    <span class="brand-name" data-i18n="brand_name">George P Mathew</span>
                     <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
                 </div>
             </a>
@@ -43,8 +43,23 @@
             <div class="header-actions">
                 <!-- Language/Theme Toggle will be injected here by JavaScript -->
             </div>
+             <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <div class="hamburger"></div>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+            <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
+            <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
+            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+            <a href="contact.html" class="nav-link active" data-i18n="nav_contact">Contact</a>
+        </nav>
+    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main class="container page-container">
@@ -85,10 +100,9 @@
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P. Mathew</div>
+            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-                <a href="https://github.com/georgepmathew" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
                 <a href="social.html" data-i18n="footer_social">Social</a>
             </div>
         </div>
