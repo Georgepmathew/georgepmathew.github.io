@@ -1,110 +1,112 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Why Germany — George P. Mathew</title>
-  <meta name="description" content="My commitment to engineering in Germany and my reasons for choosing RWTH Aachen University for my M.Sc. in Materials Engineering." />
-  <!-- Optimized Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Plan for Germany — George P. Mathew</title>
+    <meta name="description" content="My commitment to engineering in Germany and my reasons for choosing RWTH Aachen University for my M.Sc. in Materials Engineering.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/profile.png" type="image/png">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript (defer ensures it runs after HTML parsing) -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- ================= Header (Final Structure) ================= -->
-  <header class="topbar" role="banner" aria-label="Site header">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to home">
-        <img src="assets/profile-avatar.png" alt="George P. Mathew" class="brand-avatar" />
-        <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">George P. Mathew</div>
-          <div class="brand-sub" data-i18n="brand_sub">Engineer GPM</div>
+    <!-- ======================= Header ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand" aria-label="Go to homepage">
+                <img src="assets/profile.png" alt="George P. Mathew profile picture" class="brand-avatar">
+                <div class="brand-text">
+                    <span class="brand-name" data-i18n="brand_name">George P. Mathew</span>
+                    <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+                <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+                <a href="germany.html" class="nav-link active" data-i18n="nav_germany">Germany</a>
+                <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
+                <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <!-- Language/Theme Toggle will be injected here by JavaScript -->
+            </div>
         </div>
-      </a>
-      <nav class="mainnav" role="navigation" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html"><img class="nav-icon" src="assets/icons/home.svg" alt=""><span data-i18n="nav_home">Home</span></a>
-        <a class="nav-link" href="experience.html"><img class="nav-icon" src="assets/icons/briefcase.svg" alt=""><span data-i18n="nav_experience">Experience</span></a>
-        <a class="nav-link" href="education.html"><img class="nav-icon" src="assets/icons/graduation.svg" alt=""><span data-i18n="nav_education">Education</span></a>
-        <a class="nav-link" href="skills.html"><img class="nav-icon" src="assets/icons/sparkles.svg" alt=""><span data-i18n="nav_skills">Skills</span></a>
-        <a class="nav-link" href="germany.html"><img class="nav-icon" src="assets/icons/globe.svg" alt=""><span data-i18n="nav_germany">Germany</span></a>
-        <a class="nav-link" href="about.html"><img class="nav-icon" src="assets/icons/user.svg" alt=""><span data-i18n="nav_about">About</span></a>
-        <a class="nav-link" href="social.html"><img class="nav-icon" src="assets/icons/share.svg" alt=""><span data-i18n="nav_social">Social</span></a>
-        <a class="nav-link" href="contact.html"><img class="nav-icon" src="assets/icons/mail.svg" alt=""><span data-i18n="nav_contact">Contact</span></a>
-      </nav>
-      <!-- Language Toggle Placeholder -->
-      <div class="header-actions"></div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Mobile Scrolling Nav (Final Structure) -->
-  <nav class="mobile-nav-scroll" aria-label="Mobile navigation">
-      <a class="nav-link" href="index.html"><span data-i18n="nav_home">Home</span></a>
-      <a class="nav-link" href="experience.html"><span data-i18n="nav_experience">Experience</span></a>
-      <a class="nav-link" href="education.html"><span data-i18n="nav_education">Education</span></a>
-      <a class="nav-link" href="skills.html"><span data-i18n="nav_skills">Skills</span></a>
-      <a class="nav-link" href="germany.html"><span data-i18n="nav_germany">Germany</span></a>
-      <a class="nav-link" href="about.html"><span data-i18n="nav_about">About</span></a>
-      <a class="nav-link" href="social.html"><span data-i18n="nav_social">Social</span></a>
-      <a class="nav-link" href="contact.html"><span data-i18n="nav_contact">Contact</span></a>
-  </nav>
+    <!-- ======================== Main Content ======================== -->
+    <main class="container page-container">
+        <header class="page-header">
+            <h1 class="page-title" data-i18n="germany_heading">My Commitment to Engineering in Germany</h1>
+            <p class="page-subtitle" data-i18n="germany_intro">My on-site experience revealed the critical need for material innovation, leading me directly to Germany—the European leader in engineering research. This is the epicenter of the future I want to help build.</p>
+        </header>
 
-  <!-- ================= Main Content ================= -->
-  <main class="container page-root section" role="main">
-    <h1 data-i18n="germany_heading">My Commitment to Engineering in Germany</h1>
-    <p class="section-lead" data-i18n="germany_intro">My on-site experience revealed the critical need for material innovation, which led me directly to Germany—the European leader in engineering research and sustainable technology. This is not just a destination; it's the epicenter of the future I want to help build.</p>
+        <div class="manifesto-grid">
+            <!-- Left Column: Why Germany? -->
+            <div class="manifesto-column">
+                <h2 data-i18n="germany_col1_title">Why Germany?</h2>
+                <div class="manifesto-item">
+                    <h3 data-i18n="germany_item1_title">Engineering & Innovation Leadership</h3>
+                    <p data-i18n="germany_item1_desc">Home to industry giants and a culture of precision, Germany is where theoretical knowledge meets world-class application. It's the ideal environment to develop my expertise.</p>
+                </div>
+                <div class="manifesto-item">
+                    <h3 data-i18n="germany_item2_title">Industry 4.0 & Research Ecosystem</h3>
+                    <p data-i18n="germany_item2_desc">The collaborative ecosystem between academia and industry is unmatched, which is crucial for bridging my construction background with advanced materials.</p>
+                </div>
+                <div class="manifesto-item">
+                    <h3 data-i18n="germany_item3_title">Leading Construction & Materials Industry</h3>
+                    <p data-i18n="germany_item3_desc">Renowned for sustainability and precision, the German construction and materials industries provide the perfect landscape to contribute to meaningful advancements.</p>
+                </div>
+            </div>
 
-    <div class="manifesto-grid">
-      <!-- Left Column: Why Germany? -->
-      <div class="manifesto-column card">
-        <h2 data-i18n="germany_col1_title">Why Germany?</h2>
-        <div class="manifesto-item">
-          <h3 data-i18n="germany_item1_title">Engineering & Innovation Leadership</h3>
-          <p data-i18n="germany_item1_desc">Home to industry giants and a culture of precision, Germany is where theoretical knowledge meets world-class application. It's the ideal environment to develop my expertise.</p>
+            <!-- Right Column: Why RWTH Aachen? -->
+            <div class="manifesto-column">
+                <h2 data-i18n="germany_col2_title">Why RWTH Aachen?</h2>
+                <div class="manifesto-item">
+                    <h3 data-i18n="germany_item4_title">World-Class University</h3>
+                    <p data-i18n="germany_item4_desc">RWTH Aachen's global reputation in Materials Engineering ensures an education at the forefront of the field and opens doors to global opportunities.</p>
+                </div>
+                <div class="manifesto-item">
+                    <h3 data-i18n="germany_item5_title">Perfect Program & Industry Integration</h3>
+                    <p data-i18n="germany_item5_desc">The M.Sc. program is perfectly tailored for my background, and the university's strong industry connections provide opportunities to work on real-world challenges.</p>
+                </div>
+                <div class="manifesto-item">
+                    <h3 data-i18n="germany_item6_title">Strategic Career Positioning</h3>
+                    <p data-i18n="germany_item6_desc">This choice positions me at the unique intersection of construction knowledge, advanced materials science, and German engineering excellence.</p>
+                </div>
+            </div>
         </div>
-        <div class="manifesto-item">
-          <h3 data-i18n="germany_item2_title">Industry 4.0 & Research Ecosystem</h3>
-          <p data-i18n="germany_item2_desc">As the birthplace of Industry 4.0, Germany's collaborative ecosystem between academia and industry is unmatched. This is crucial for bridging my construction background with advanced materials.</p>
-        </div>
-        <div class="manifesto-item">
-          <h3 data-i18n="germany_item3_title">Leading Construction & Materials Industry</h3>
-          <p data-i18n="germany_item3_desc">Renowned for sustainability and precision, the German construction industry and materials firms provide the perfect landscape to contribute to meaningful advancements.</p>
-        </div>
-      </div>
 
-      <!-- Right Column: Why RWTH Aachen? -->
-      <div class="manifesto-column card">
-        <h2 data-i18n="germany_col2_title">Why RWTH Aachen?</h2>
-        <div class="manifesto-item">
-          <h3 data-i18n="germany_item4_title">World-Class University</h3>
-          <p data-i18n="germany_item4_desc">RWTH Aachen's global ranking and reputation in Materials Engineering open doors worldwide and ensure an education at the forefront of the field.</p>
+        <!-- The Bigger Picture Section -->
+        <div class="bigger-picture-box">
+            <h2 data-i18n="germany_bigger_picture_title">The Bigger Picture</h2>
+            <p data-i18n="germany_bigger_picture_desc">This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.</p>
         </div>
-        <div class="manifesto-item">
-          <h3 data-i18n="germany_item5_title">Perfect Program & Industry Integration</h3>
-          <p data-i18n="germany_item5_desc">The M.Sc. program is perfectly tailored for my background, and the university's strong industry connections provide opportunities to work on real-world materials challenges.</p>
+    </main>
+
+    <!-- ======================= Footer ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P. Mathew</div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/georgepmathew" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="social.html" data-i18n="footer_social">Social</a>
+            </div>
         </div>
-        <div class="manifesto-item">
-          <h3 data-i18n="germany_item6_title">Strategic Career Positioning</h3>
-          <p data-i18n="germany_item6_desc">This choice positions me at the unique intersection of construction knowledge, advanced materials science, German engineering excellence, and an international perspective.</p>
-        </div>
-      </div>
-    </div>
+    </footer>
 
-    <!-- The Bigger Picture Section -->
-    <div class="bigger-picture-box card">
-      <h2 data-i18n="germany_bigger_picture_title">The Bigger Picture</h2>
-      <p data-i18n="germany_bigger_picture_desc">This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and now access to world-class education, I'm positioned to help solve the real-world challenges I've witnessed on construction sites. My goal is to help revolutionize how we build, one material innovation at a time.</p>
-    </div>
-
-  </main>
-
-  <!-- ================= Footer (Final Structure) ================= -->
-  <footer class="footer container" role="contentinfo">
-    <div class="footer-text" data-i18n="footer_text">Engineered by George P. Mathew</div>
-    <div class="footer-subtext" data-i18n="footer_subtext">Where hard work transforms vision into reality.</div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
