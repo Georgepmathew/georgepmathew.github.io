@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George P. Mathew — Civil Engineer & Materials Innovator</title>
-    <meta name="description" content="The professional portfolio of George P. Mathew, a Civil Engineer transitioning to Materials Engineering with a focus on innovation and AI-driven problem-solving.">
+    <title>George P Mathew — Civil Engineer & Materials Innovator</title>
+    <meta name="description" content="The professional portfolio of George P Mathew, a Civil Engineer transitioning to Materials Engineering with a focus on innovation and AI-driven problem-solving.">
 
     <!-- Favicon -->
     <link rel="icon" href="assets/profile.png" type="image/png">
@@ -26,9 +26,9 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand" aria-label="Go to homepage">
-                <img src="assets/profile.png" alt="George P. Mathew profile picture" class="brand-avatar">
+                <img src="assets/profile.png" alt="George P Mathew profile picture" class="brand-avatar">
                 <div class="brand-text">
-                    <span class="brand-name" data-i18n="brand_name">George P. Mathew</span>
+                    <span class="brand-name" data-i18n="brand_name">George P Mathew</span>
                     <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
                 </div>
             </a>
@@ -43,8 +43,23 @@
             <div class="header-actions">
                 <!-- Language/Theme Toggle will be injected here by JavaScript -->
             </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <div class="hamburger"></div>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
+            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+            <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
+            <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
+            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+            <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </nav>
+    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main>
@@ -60,59 +75,57 @@
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
-                    <img src="assets/profile-main.png" alt="A professional portrait of George P. Mathew" class="hero-image">
+                    <img src="assets/profile-main.png" alt="A professional portrait of George P Mathew" class="hero-image">
                 </div>
             </div>
         </section>
 
-        <!-- Journey Timeline Section -->
-        <section class="journey">
-            <div class="container journey-container">
-                <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
+        <!-- New Vertical Storyline Section -->
+        <section class="storyline">
+            <div class="container storyline-container">
+                <header class="section-header">
+                    <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
+                </header>
                 
-                <div class="timeline">
-                    <div class="timeline-progress"></div>
-                    <div class="timeline-nodes">
-                        <!-- Timeline Node 1 -->
-                        <div class="timeline-node" data-step="1">
-                            <div class="node-point"></div>
-                            <div class="node-title" data-i18n="journey1_title">Civil Engineer</div>
-                        </div>
-                        <!-- Timeline Node 2 -->
-                        <div class="timeline-node" data-step="2">
-                            <div class="node-point"></div>
-                            <div class="node-title" data-i18n="journey2_title">Entrepreneur</div>
-                        </div>
-                        <!-- Timeline Node 3 -->
-                        <div class="timeline-node" data-step="3">
-                            <div class="node-point"></div>
-                            <div class="node-title" data-i18n="journey3_title">Content Creator</div>
-                        </div>
-                        <!-- Timeline Node 4 -->
-                        <div class="timeline-node" data-step="4">
-                            <div class="node-point"></div>
-                            <div class="node-title" data-i18n="journey4_title">Materials Engineer</div>
+                <div class="storyline-wrapper">
+                    <div class="storyline-line"></div>
+                    
+                    <!-- Milestone 1: Civil Engineer -->
+                    <div class="storyline-milestone">
+                        <div class="milestone-icon">🏗️</div>
+                        <div class="milestone-content">
+                            <h3 class="milestone-title" data-i18n="journey1_title">Civil Engineer</h3>
+                            <p class="milestone-desc" data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
                         </div>
                     </div>
-                </div>
 
-                <div class="journey-content-cards">
-                    <!-- Card 1: Civil Engineer -->
-                    <div class="journey-card" data-step="1">
-                        <p class="card-text" data-i18n="journey1_desc">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience at SG Construction and Excel Precast provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
+                    <!-- Milestone 2: Entrepreneur -->
+                    <div class="storyline-milestone">
+                        <div class="milestone-icon">📈</div>
+                        <div class="milestone-content">
+                            <h3 class="milestone-title" data-i18n="journey2_title">Entrepreneur</h3>
+                            <p class="milestone-desc" data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
+                        </div>
                     </div>
-                    <!-- Card 2: Entrepreneur -->
-                    <div class="journey-card" data-step="2">
-                        <p class="card-text" data-i18n="journey2_desc">Joining my father at our family business, Best Trading, I applied my problem-solving skills to a new context. I focused on customer relations, technical sales, and business operations, learning the importance of user needs and effective communication.</p>
+
+                    <!-- Milestone 3: Content Creator -->
+                    <div class="storyline-milestone">
+                        <div class="milestone-icon">💡</div>
+                        <div class="milestone-content">
+                            <h3 class="milestone-title" data-i18n="journey3_title">Content Creator</h3>
+                            <p class="milestone-desc" data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
+                        </div>
                     </div>
-                    <!-- Card 3: Content Creator -->
-                    <div class="journey-card" data-step="3">
-                        <p class="card-text" data-i18n="journey3_desc">To share my passion for engineering, I created the 'Engineer GPM' brand. Through this platform, I develop content that makes complex engineering concepts accessible, honing my ability to communicate technical ideas clearly and effectively.</p>
+
+                    <!-- Milestone 4: Materials Engineer -->
+                    <div class="storyline-milestone">
+                        <div class="milestone-icon">🔬</div>
+                        <div class="milestone-content">
+                            <h3 class="milestone-title" data-i18n="journey4_title">Materials Engineer</h3>
+                            <p class="milestone-desc" data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
+                        </div>
                     </div>
-                    <!-- Card 4: Materials Engineer -->
-                    <div class="journey-card" data-step="4">
-                        <p class="card-text" data-i18n="journey4_desc">My on-site experience revealed that construction's biggest hurdles are material-based. This insight is driving me to pursue an M.Sc. in Materials Engineering at RWTH Aachen, where I aim to innovate the very materials we use to build the future.</p>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -121,10 +134,9 @@
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P. Mathew</div>
+            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-                <a href="https://github.com/georgepmathew" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
                 <a href="social.html" data-i18n="footer_social">Social</a>
             </div>
         </div>
