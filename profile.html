@@ -34,32 +34,15 @@
             </a>
             <nav class="main-nav" aria-label="Primary navigation">
                 <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
-                <a href="profile.html" class="nav-link active" data-i18n="nav_profile">Profile</a>
-                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
-                <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+                <a href="profile.html" class="nav-link active" data-i18n="nav_profile">Profile</a>
+                <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
             <div class="header-actions">
-                <!-- Language/Theme Toggle will be injected here by JavaScript -->
+                <!-- Language/Theme Toggle is injected here by JavaScript -->
             </div>
-             <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <div class="hamburger"></div>
-            </button>
         </div>
     </header>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
-            <a href="profile.html" class="nav-link active" data-i18n="nav_profile">Profile</a>
-            <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
-            <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
-            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-            <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
-        </nav>
-    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main class="container page-container">
@@ -158,7 +141,7 @@
                         <img src="assets/profile.png" alt="George P Mathew headshot" class="sidebar-avatar">
                         <h2 class="sidebar-name" data-i18n="brand_name">George P Mathew</h2>
                         <p class="sidebar-title" data-i18n="sidebar_title">Civil Engineer & Materials Innovator</p>
-                        <a href="assets/resume.pdf" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer" data-i18n="btn_cv">Download CV</a>
+                        <a href="assets/Resume.pdf" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer" data-i18n="btn_cv">Download CV</a>
                     </div>
 
                     <!-- Capabilities Section -->
@@ -184,17 +167,37 @@
                     <div class="sidebar-section">
                         <h3 class="sidebar-section-title" data-i18n="lang_heading">Languages</h3>
                         <div class="language-grid">
-                            <div class="language-item" data-i18n="lang1_name" aria-label="English: C1 Proficiency">English</div>
-                            <div class="language-item" data-i18n="lang2_name" aria-label="Malayalam: Native">Malayalam</div>
-                            <div class="language-item" data-i18n="lang4_name" aria-label="Tamil: Conversational">Tamil</div>
-                            <div class="language-item" data-i18n="lang5_name" aria-label="Hindi: Conversational">Hindi</div>
-                            <div class="language-item" data-i18n="lang3_name" aria-label="German: Actively Learning">German</div>
+                            <div class="language-item" data-i18n="lang1_name">English</div>
+                            <div class="language-item" data-i18n="lang2_name">Malayalam</div>
+                            <div class="language-item" data-i18n="lang4_name">Tamil</div>
+                            <div class="language-item" data-i18n="lang5_name">Hindi</div>
+                            <div class="language-item" data-i18n="lang3_name">German</div>
                         </div>
                     </div>
                 </div>
             </aside>
         </div>
     </main>
+    
+    <!-- ======================= Floating Mobile Nav ======================= -->
+    <nav class="mobile-float-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="float-nav-link">
+            <img src="assets/icons/home.svg" alt="Home Icon">
+            <span data-i18n="nav_home">Home</span>
+        </a>
+        <a href="about.html" class="float-nav-link">
+            <img src="assets/icons/user.svg" alt="About Icon">
+            <span data-i18n="nav_about">About</span>
+        </a>
+        <a href="profile.html" class="float-nav-link active">
+            <img src="assets/icons/document.svg" alt="Profile Icon">
+            <span data-i18n="nav_profile">Profile</span>
+        </a>
+        <a href="connect.html" class="float-nav-link">
+            <img src="assets/icons/mail.svg" alt="Connect Icon">
+            <span data-i18n="nav_connect">Connect</span>
+        </a>
+    </nav>
 
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
@@ -202,7 +205,6 @@
             <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-                <a href="social.html" data-i18n="footer_social">Social</a>
             </div>
         </div>
     </footer>
