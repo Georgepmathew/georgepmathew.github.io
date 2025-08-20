@@ -1,10 +1,11 @@
 /* =-========================================================================
-   Engineer GPM Portfolio --- FINAL OVERHAUL v2.0
+   Engineer GPM Portfolio --- BLUEPRINT OVERHAUL v3.0
    --- [ script.js ] ---
    - Handles FULL EN/DE translations and theme switching
-   - Manages active navigation links (Desktop & Mobile Tab Bar)
-   - Animates the immersive homepage timeline on scroll
-   - Creates the 3D tilt effect on the About page image
+   - Manages active navigation links
+   - Animates immersive homepage timeline
+   - Creates 3D tilt effect for images
+   - Powers the NEW GSAP Horizontal Journey on About page
    ========================================================================== */
 
 (function () {
@@ -246,7 +247,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v7_final';
+  const LANG_KEY = 'gpm_lang_v8_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -265,8 +266,6 @@
   function initLangToggle() {
     const container = document.querySelector('.header-actions');
     if (!container) return;
-
-    // Prevent re-creating the toggle if it already exists
     if (container.querySelector('.lang-toggle')) return;
 
     const toggleHTML = `
@@ -308,11 +307,8 @@
     
     document.querySelectorAll('.main-nav .nav-link, .mobile-tab-bar .tab-link').forEach(link => {
       const linkPage = link.getAttribute('href');
-      
-      // Reset state first
       link.classList.remove('active');
       link.removeAttribute('aria-current');
-
       if (linkPage === currentPage) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
@@ -321,7 +317,7 @@
   }
 
   /* =====================================
-     3. Homepage Immersive Timeline Animation
+     3. Homepage Timeline Animation
      ===================================== */
   function initTimelineObserver() {
     const timeline = document.querySelector('.timeline-experience');
@@ -336,29 +332,18 @@
           entry.target.classList.add('in-view');
         }
       });
-    }, {
-      rootMargin: '0px',
-      threshold: 0.5 // Trigger when 50% of the milestone is visible
-    });
+    }, { rootMargin: '0px', threshold: 0.5 });
 
-    milestones.forEach(milestone => {
-      observer.observe(milestone);
-    });
+    milestones.forEach(milestone => observer.observe(milestone));
 
-    // Animate the conduit fill based on scroll
     window.addEventListener('scroll', () => {
       if (!conduit) return;
       const timelineRect = timeline.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-
-      // Start filling when the top of the timeline section is 3/4 down the viewport
       const startPoint = viewportHeight * 0.75;
-      // End filling when the bottom of the timeline is 1/4 up the viewport
       const endPoint = timelineRect.height - (viewportHeight * 0.25);
-      
       let progress = (startPoint - timelineRect.top) / endPoint;
-      progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
-      
+      progress = Math.max(0, Math.min(1, progress));
       conduit.style.height = `${progress * 100}%`;
     }, { passive: true });
   }
@@ -376,7 +361,7 @@
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8; // Invert for natural feel
+        const rotateX = ((y - centerY) / centerY) * -8;
         const rotateY = ((x - centerX) / centerX) * 8;
         
         imageContainer.style.transition = 'transform 0.1s linear';
@@ -389,8 +374,39 @@
     });
   }
 
+  /* ===================================
+     5. About Page Horizontal Journey
+     =================================== */
+  function initHorizontalJourney() {
+    const journeySection = document.querySelector('.horizontal-journey-section');
+    if (!journeySection) return;
+
+    // Check for GSAP and ScrollTrigger
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.error('GSAP and/or ScrollTrigger not loaded. Horizontal scroll will not work.');
+        return;
+    }
+
+    const container = journeySection.querySelector('.horizontal-journey-container');
+    const slides = gsap.utils.toArray('.journey-slide');
+    
+    gsap.to(container, {
+      x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+      ease: "none",
+      scrollTrigger: {
+        trigger: journeySection,
+        start: "top top",
+        end: () => "+=" + (container.scrollWidth - document.documentElement.clientWidth),
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true
+      }
+    });
+  }
+
   /* =========================
-     5. Initialization
+     6. Initialization
      ========================= */
   function init() {
     applyTranslations(getSavedLang());
@@ -398,9 +414,9 @@
     markActiveNav();
     initTimelineObserver();
     initInteractiveImage();
+    initHorizontalJourney();
   }
 
-  // Ensure the DOM is fully loaded before running scripts
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
