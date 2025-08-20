@@ -1,11 +1,11 @@
 /* =-========================================================================
-   Engineer GPM Portfolio --- BLUEPRINT OVERHAUL v3.0
+   Engineer GPM Portfolio --- DIGITAL PRODUCT OVERHAUL v4.0
    --- [ script.js ] ---
    - Handles FULL EN/DE translations and theme switching
    - Manages active navigation links
    - Animates immersive homepage timeline
    - Creates 3D tilt effect for images
-   - Powers the NEW GSAP Horizontal Journey on About page
+   - Powers the GSAP Horizontal Journey on About page
    ========================================================================== */
 
 (function () {
@@ -30,6 +30,9 @@
         hero_title: "Civil Engineer & Future Materials Innovator",
         hero_subtitle: "My on-site experience taught me that construction's biggest challenges are material-based. This insight drives my transition to Materials Engineering in Germany, where I aim to innovate how we build.",
         btn_story: "My Full Story",
+        pill1: "+100% total revenue (Best Trading)",
+        pill2: "Site supervision — pile foundations, precast erection",
+        pill3: "QA / QC experience on precast components",
         journey_title: "An Evolving Engineering Journey",
         journey1_title: "Civil Engineer",
         journey1_desc_revised: "My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.",
@@ -114,15 +117,13 @@
         germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.",
 
         // Connect Page
-        connect_hub_title: "Let's Connect",
-        connect_hub_subtitle: "Follow my journey or get in touch for professional inquiries.",
         social_brand_heading: "Follow My Journey",
         contact_pro_heading: "For Professional Inquiries",
         social_youtube_title: "YouTube",
         social_youtube_desc: "Engineering videos & tutorials",
-        social_brand_insta_title: "Instagram (Brand)",
+        social_brand_insta_title: "Instagram (@engineergpm)",
         social_brand_insta_desc: "Content & updates for Engineer GPM",
-        social_insta_title: "Instagram (Personal)",
+        social_insta_title: "Instagram (@georgepmathew)",
         social_insta_desc: "Personal updates & photography",
         contact_email_title: "Email",
         contact_linkedin_title: "LinkedIn",
@@ -145,6 +146,9 @@
         hero_title: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
         hero_subtitle: "Meine Praxiserfahrung hat mir gezeigt, dass die größten Herausforderungen im Bau oft materialbedingt sind. Diese Erkenntnis treibt meinen Wechsel zur Werkstofftechnik in Deutschland an, wo ich die Art, wie wir bauen, innovieren möchte.",
         btn_story: "Meine Geschichte",
+        pill1: "+100% Gesamtumsatz (Best Trading)",
+        pill2: "Bauüberwachung — Pfahlgründungen, Fertigteilmontage",
+        pill3: "QS/QK-Erfahrung bei Fertigteilkomponenten",
         journey_title: "Eine sich entwickelnde Ingenieursreise",
         journey1_title: "Bauingenieur",
         journey1_desc_revised: "Meine Karriere begann auf der Baustelle, wo ich die Montage von Fertigteilen leitete und Fundamentarbeiten überwachte. Diese praktische Erfahrung ermöglichte ein tiefes Verständnis für reale Bauherausforderungen und die entscheidende Rolle der Materialintegrität.",
@@ -229,15 +233,13 @@
         germany_bigger_picture_desc: "Dies ist nicht nur ein Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Bildung bin ich in der Lage, die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe.",
 
         // Connect Page
-        connect_hub_title: "Vernetzen wir uns",
-        connect_hub_subtitle: "Folgen Sie meiner Reise oder kontaktieren Sie mich für berufliche Anfragen.",
-        social_brand_heading: "Folgen Sie meiner Reise",
+        social_brand_heading: "Folge meiner Reise",
         contact_pro_heading: "Für berufliche Anfragen",
         social_youtube_title: "YouTube",
         social_youtube_desc: "Ingenieurvideos & Tutorials",
-        social_brand_insta_title: "Instagram (Marke)",
+        social_brand_insta_title: "Instagram (@engineergpm)",
         social_brand_insta_desc: "Inhalte & Updates für Ingenieur GPM",
-        social_insta_title: "Instagram (Persönlich)",
+        social_insta_title: "Instagram (@georgepmathew)",
         social_insta_desc: "Persönliche Updates & Fotografie",
         contact_email_title: "E-Mail",
         contact_linkedin_title: "LinkedIn",
@@ -247,7 +249,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v8_final';
+  const LANG_KEY = 'gpm_lang_v9_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -265,8 +267,7 @@
 
   function initLangToggle() {
     const container = document.querySelector('.header-actions');
-    if (!container) return;
-    if (container.querySelector('.lang-toggle')) return;
+    if (!container || container.querySelector('.lang-toggle')) return;
 
     const toggleHTML = `
       <div class="lang-toggle" title="Sprache wechseln (EN/DE)">
@@ -307,7 +308,7 @@
     
     document.querySelectorAll('.main-nav .nav-link, .mobile-tab-bar .tab-link').forEach(link => {
       const linkPage = link.getAttribute('href');
-      link.classList.remove('active');
+      link.classList.remove('active', 'active-gradient');
       link.removeAttribute('aria-current');
       if (linkPage === currentPage) {
         link.classList.add('active');
@@ -381,27 +382,30 @@
     const journeySection = document.querySelector('.horizontal-journey-section');
     if (!journeySection) return;
 
-    // Check for GSAP and ScrollTrigger
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
         console.error('GSAP and/or ScrollTrigger not loaded. Horizontal scroll will not work.');
         return;
     }
 
     const container = journeySection.querySelector('.horizontal-journey-container');
-    const slides = gsap.utils.toArray('.journey-slide');
     
-    gsap.to(container, {
-      x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
-      ease: "none",
-      scrollTrigger: {
-        trigger: journeySection,
-        start: "top top",
-        end: () => "+=" + (container.scrollWidth - document.documentElement.clientWidth),
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
+    // Use GSAP's media query utility to only run this on desktop
+    ScrollTrigger.matchMedia({
+        "(min-width: 769px)": function() {
+            gsap.to(container, {
+                x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: journeySection,
+                    start: "top top",
+                    end: () => "+=" + (container.scrollWidth - document.documentElement.clientWidth),
+                    scrub: true,
+                    pin: true,
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
+                }
+            });
+        }
     });
   }
 
