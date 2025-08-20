@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <!-- ======================= Header ======================= -->
+    <!-- ======================= Header (Desktop) ======================= -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand" aria-label="Go to homepage">
@@ -43,23 +43,8 @@
             <div class="header-actions">
                 <!-- Language/Theme Toggle will be injected here by JavaScript -->
             </div>
-             <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <div class="hamburger"></div>
-            </button>
         </div>
     </header>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
-            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
-            <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
-            <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
-            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-            <a href="contact.html" class="nav-link active" data-i18n="nav_contact">Contact</a>
-        </nav>
-    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main class="container page-container">
@@ -107,6 +92,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- ======================= Mobile Tab Bar ======================= -->
+    <nav class="mobile-tab-bar" aria-label="Mobile navigation">
+        <a href="index.html" class="tab-link" aria-label="Home">
+            <img src="assets/icons/home.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_home">Home</span>
+        </a>
+        <a href="profile.html" class="tab-link" aria-label="Profile">
+            <img src="assets/icons/user.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_profile">Profile</span>
+        </a>
+        <a href="about.html" class="tab-link" aria-label="About">
+            <img src="assets/icons/sparkles.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_about">About</span>
+        </a>
+        <a href="contact.html" class="tab-link active" aria-label="Contact">
+            <img src="assets/icons/mail.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_contact">Contact</span>
+        </a>
+    </nav>
 
 </body>
 </html>
