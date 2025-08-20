@@ -12,7 +12,7 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display-swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <!-- ======================= Header ======================= -->
+    <!-- ======================= Header (Desktop) ======================= -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand" aria-label="Go to homepage">
@@ -43,23 +43,8 @@
             <div class="header-actions">
                 <!-- Language/Theme Toggle will be injected here by JavaScript -->
             </div>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <div class="hamburger"></div>
-            </button>
         </div>
     </header>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
-            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
-            <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
-            <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
-            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-            <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
-        </nav>
-    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main>
@@ -80,7 +65,7 @@
             </div>
         </section>
 
-        <!-- New Vertical Storyline Section -->
+        <!-- New Vertical SVG Storyline Section -->
         <section class="storyline">
             <div class="container storyline-container">
                 <header class="section-header">
@@ -92,7 +77,7 @@
                     
                     <!-- Milestone 1: Civil Engineer -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">🏗️</div>
+                        <div class="milestone-icon"><img src="assets/icons/engineering.svg" alt="Engineering"></div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey1_title">Civil Engineer</h3>
                             <p class="milestone-desc" data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
@@ -101,7 +86,7 @@
 
                     <!-- Milestone 2: Entrepreneur -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">📈</div>
+                        <div class="milestone-icon"><img src="assets/icons/graph.svg" alt="Entrepreneurship"></div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey2_title">Entrepreneur</h3>
                             <p class="milestone-desc" data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
@@ -110,7 +95,7 @@
 
                     <!-- Milestone 3: Content Creator -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">💡</div>
+                        <div class="milestone-icon"><img src="assets/icons/idea.svg" alt="Content Creation"></div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey3_title">Content Creator</h3>
                             <p class="milestone-desc" data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
@@ -119,7 +104,7 @@
 
                     <!-- Milestone 4: Materials Engineer -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">🔬</div>
+                        <div class="milestone-icon"><img src="assets/icons/atom.svg" alt="Materials Science"></div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey4_title">Materials Engineer</h3>
                             <p class="milestone-desc" data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
@@ -141,6 +126,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- ======================= Mobile Tab Bar ======================= -->
+    <nav class="mobile-tab-bar" aria-label="Mobile navigation">
+        <a href="index.html" class="tab-link active" aria-label="Home">
+            <img src="assets/icons/home.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_home">Home</span>
+        </a>
+        <a href="profile.html" class="tab-link" aria-label="Profile">
+            <img src="assets/icons/user.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_profile">Profile</span>
+        </a>
+        <a href="about.html" class="tab-link" aria-label="About">
+            <img src="assets/icons/sparkles.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_about">About</span>
+        </a>
+        <a href="contact.html" class="tab-link" aria-label="Contact">
+            <img src="assets/icons/mail.svg" alt="" class="tab-icon">
+            <span class="tab-label" data-i18n="nav_contact">Contact</span>
+        </a>
+    </nav>
 
 </body>
 </html>
