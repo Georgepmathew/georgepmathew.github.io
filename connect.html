@@ -14,10 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
+    <!-- Defer loading of non-critical CSS/JS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- JavaScript (defer ensures it runs after HTML parsing) -->
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -35,9 +33,8 @@
             <nav class="main-nav" aria-label="Primary navigation">
                 <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
                 <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
-                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-                <a href="connect.html" class="nav-link active" data-i18n="nav_connect">Connect</a>
+                <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
             <div class="header-actions">
                 <!-- Language/Theme Toggle will be injected here by JavaScript -->
@@ -56,73 +53,75 @@
             </div>
         </header>
 
-        <div class="container page-container connect-page-layout">
-            <!-- Social "Power Links" Section -->
-            <section class="power-links-section">
-                <h2 class="section-title-medium" data-i18n="social_brand_heading">Follow My Journey</h2>
-                <div class="power-links-grid">
-                    <a href="https://www.youtube.com/@EngineerGPM" class="power-link" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/icons/youtube.svg" alt="YouTube Icon" class="power-link-icon">
-                        <div class="power-link-text">
-                            <strong data-i18n="social_youtube_title">YouTube</strong>
-                            <span data-i18n="social_youtube_desc">Engineering videos & tutorials</span>
-                        </div>
-                        <span class="power-link-arrow">→</span>
-                    </a>
-                    <a href="https://www.instagram.com/engineergpm/" class="power-link" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/icons/instagram.svg" alt="Instagram Icon" class="power-link-icon">
-                        <div class="power-link-text">
-                            <strong data-i18n="social_brand_insta_title">Instagram (Brand)</strong>
-                            <span data-i18n="social_brand_insta_desc">Content & updates for Engineer GPM</span>
-                        </div>
-                        <span class="power-link-arrow">→</span>
-                    </a>
-                     <a href="https://www.instagram.com/georgepmathew/" class="power-link" target="_blank" rel="noopener noreferrer">
-                         <img src="assets/icons/instagram.svg" alt="Instagram Icon" class="power-link-icon">
-                        <div class="power-link-text">
-                            <strong data-i18n="social_insta_title">Instagram (Personal)</strong>
-                            <span data-i18n="social_insta_desc">Personal updates & photography</span>
-                        </div>
-                        <span class="power-link-arrow">→</span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Professional Contact Section -->
-            <section class="professional-contact-section">
-                <h2 class="section-title-medium" data-i18n="contact_pro_heading">For Professional Inquiries</h2>
-                <div class="contact-grid">
-                    <a href="mailto:georgepmathew424@gmail.com" class="contact-card">
-                        <div class="contact-card-content">
-                            <img src="assets/icons/mail.svg" alt="Email Icon" class="contact-icon">
-                            <h3 class="contact-title" data-i18n="contact_email_title">Email</h3>
-                            <p class="contact-address">georgepmathew424@gmail.com</p>
-                            <div class="contact-cta">
-                                <span data-i18n="contact_email_cta">Send an Email</span>
-                                <span>→</span>
+        <div class="container page-container">
+            <div class="connect-page-layout">
+                <!-- Social "Power Links" Section -->
+                <section class="power-links-section">
+                    <h2 class="section-title-medium" data-i18n="social_brand_heading">Follow My Journey</h2>
+                    <div class="power-links-grid">
+                        <a href="https://www.youtube.com/@EngineerGPM" class="power-link" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/icons/youtube.svg" alt="YouTube Icon" class="power-link-icon">
+                            <div class="power-link-text">
+                                <strong data-i18n="social_youtube_title">YouTube</strong>
+                                <span data-i18n="social_youtube_desc">Engineering videos & tutorials</span>
                             </div>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/georgepmathew/" class="contact-card" target="_blank" rel="noopener noreferrer">
-                        <div class="contact-card-content">
-                            <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon" class="contact-icon">
-                            <h3 class="contact-title" data-i18n="contact_linkedin_title">LinkedIn</h3>
-                            <p class="contact-address" data-i18n="contact_linkedin_desc">Professional Networking</p>
-                            <div class="contact-cta">
-                                <span data-i18n="contact_linkedin_cta">View My Profile</span>
-                                <span>→</span>
+                            <span class="power-link-arrow">→</span>
+                        </a>
+                        <a href="https://www.instagram.com/engineergpm/" class="power-link" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/icons/instagram.svg" alt="Instagram Icon" class="power-link-icon">
+                            <div class="power-link-text">
+                                <strong data-i18n="social_brand_insta_title">Instagram (Brand)</strong>
+                                <span data-i18n="social_brand_insta_desc">Content & updates for Engineer GPM</span>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            </section>
+                            <span class="power-link-arrow">→</span>
+                        </a>
+                         <a href="https://www.instagram.com/georgepmathew/" class="power-link" target="_blank" rel="noopener noreferrer">
+                             <img src="assets/icons/instagram.svg" alt="Instagram Icon" class="power-link-icon">
+                            <div class="power-link-text">
+                                <strong data-i18n="social_insta_title">Instagram (Personal)</strong>
+                                <span data-i18n="social_insta_desc">Personal updates & photography</span>
+                            </div>
+                            <span class="power-link-arrow">→</span>
+                        </a>
+                    </div>
+                </section>
+    
+                <!-- Professional Contact Section -->
+                <section class="professional-contact-section">
+                    <h2 class="section-title-medium" data-i18n="contact_pro_heading">For Professional Inquiries</h2>
+                    <div class="contact-grid">
+                        <a href="mailto:georgepmathew424@gmail.com" class="contact-card">
+                            <div class="contact-card-content">
+                                <img src="assets/icons/mail.svg" alt="Email Icon" class="contact-icon">
+                                <h3 class="contact-title" data-i18n="contact_email_title">Email</h3>
+                                <p class="contact-address">georgepmathew424@gmail.com</p>
+                                <div class="contact-cta">
+                                    <span data-i18n="contact_email_cta">Send an Email</span>
+                                    <span>→</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/georgepmathew/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                            <div class="contact-card-content">
+                                <img src="assets/icons/linkedin.svg" alt="LinkedIn Icon" class="contact-icon">
+                                <h3 class="contact-title" data-i18n="contact_linkedin_title">LinkedIn</h3>
+                                <p class="contact-address" data-i18n="contact_linkedin_desc">Professional Networking</p>
+                                <div class="contact-cta">
+                                    <span data-i18n="contact_linkedin_cta">View My Profile</span>
+                                    <span>→</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
 
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
+            <div class="footer-brand">Engineered with precision. Designed with purpose.</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
             </div>
@@ -143,7 +142,7 @@
             <img src="assets/icons/sparkles.svg" alt="" class="tab-icon">
             <span class="tab-label" data-i18n="nav_about">About</span>
         </a>
-        <a href="connect.html" class="tab-link active" aria-label="Connect">
+        <a href="connect.html" class="tab-link" aria-label="Connect">
             <img src="assets/icons/mail.svg" alt="" class="tab-icon">
             <span class="tab-label" data-i18n="nav_connect">Connect</span>
         </a>
