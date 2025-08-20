@@ -33,9 +33,8 @@
                 </div>
             </a>
             <nav class="main-nav" aria-label="Primary navigation">
-                <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
                 <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
-                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
                 <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
@@ -55,7 +54,7 @@
                     <p class="hero-subtitle" data-i18n="hero_subtitle">My on-site experience taught me that construction's biggest challenges are material-based. This insight drives my transition to Materials Engineering in Germany, where I aim to innovate how we build.</p>
                     <div class="hero-cta">
                         <a href="about.html" class="btn btn-primary" data-i18n="btn_story">My Full Story</a>
-                        <a href="germany.html" class="btn btn-secondary" data-i18n="btn_germany">My Plan for Germany</a>
+                        <a href="profile.html" class="btn btn-secondary" data-i18n="nav_profile">View My Profile</a>
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -64,19 +63,21 @@
             </div>
         </section>
 
-        <!-- Vertical SVG Storyline Section -->
-        <section class="storyline">
-            <div class="container storyline-container">
+        <!-- Vertical Storyline Section -->
+        <section id="journey" class="timeline-experience">
+            <div class="container timeline-container">
                 <header class="section-header">
                     <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
                 </header>
                 
-                <div class="storyline-wrapper">
-                    <div class="storyline-line"></div>
+                <div class="timeline-wrapper">
+                    <div class="timeline-conduit"></div>
                     
                     <!-- Milestone 1: Civil Engineer -->
-                    <div class="storyline-milestone">
-                        <div class="milestone-icon"><img src="assets/icons/engineering.svg" alt="Engineering"></div>
+                    <div class="timeline-milestone">
+                        <div class="milestone-icon-wrapper">
+                            <div class="milestone-icon"><img src="assets/icons/engineering.svg" alt="Engineering Icon"></div>
+                        </div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey1_title">Civil Engineer</h3>
                             <p class="milestone-desc" data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
@@ -84,8 +85,10 @@
                     </div>
 
                     <!-- Milestone 2: Entrepreneur -->
-                    <div class="storyline-milestone">
-                        <div class="milestone-icon"><img src="assets/icons/graph.svg" alt="Entrepreneurship"></div>
+                    <div class="timeline-milestone">
+                        <div class="milestone-icon-wrapper">
+                            <div class="milestone-icon"><img src="assets/icons/graph.svg" alt="Entrepreneurship Icon"></div>
+                        </div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey2_title">Entrepreneur</h3>
                             <p class="milestone-desc" data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
@@ -93,8 +96,10 @@
                     </div>
 
                     <!-- Milestone 3: Content Creator -->
-                    <div class="storyline-milestone">
-                        <div class="milestone-icon"><img src="assets/icons/idea.svg" alt="Content Creation"></div>
+                    <div class="timeline-milestone">
+                        <div class="milestone-icon-wrapper">
+                            <div class="milestone-icon"><img src="assets/icons/idea.svg" alt="Content Creation Icon"></div>
+                        </div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey3_title">Content Creator</h3>
                             <p class="milestone-desc" data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
@@ -102,8 +107,10 @@
                     </div>
 
                     <!-- Milestone 4: Materials Engineer -->
-                    <div class="storyline-milestone">
-                        <div class="milestone-icon"><img src="assets/icons/atom.svg" alt="Materials Science"></div>
+                    <div class="timeline-milestone">
+                        <div class="milestone-icon-wrapper">
+                            <div class="milestone-icon"><img src="assets/icons/atom.svg" alt="Materials Science Icon"></div>
+                        </div>
                         <div class="milestone-content">
                             <h3 class="milestone-title" data-i18n="journey4_title">Materials Engineer</h3>
                             <p class="milestone-desc" data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
@@ -117,7 +124,7 @@
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
+            <div class="footer-brand">Engineered with precision. Designed with purpose.</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
             </div>
@@ -126,7 +133,7 @@
 
     <!-- ======================= Mobile Tab Bar ======================= -->
     <nav class="mobile-tab-bar" aria-label="Mobile navigation">
-        <a href="index.html" class="tab-link active" aria-label="Home">
+        <a href="index.html" class="tab-link" aria-label="Home">
             <img src="assets/icons/home.svg" alt="" class="tab-icon">
             <span class="tab-label" data-i18n="nav_home">Home</span>
         </a>
