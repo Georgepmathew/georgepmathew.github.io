@@ -1,9 +1,9 @@
-/* ==========================================================================
-   Engineer GPM Portfolio --- FINAL OVERHAUL
+/* =-========================================================================
+   Engineer GPM Portfolio --- FINAL OVERHAUL v2.0
    --- [ script.js ] ---
-   - Handles EN/DE translations and theme switching
-   - Manages active navigation links (Desktop & NEW Mobile Tab Bar)
-   - Animates the NEW SVG vertical storyline on scroll
+   - Handles FULL EN/DE translations and theme switching
+   - Manages active navigation links (Desktop & Mobile Tab Bar)
+   - Animates the SVG vertical storyline on scroll
    - Creates the 3D tilt effect on the About page image
    ========================================================================== */
 
@@ -142,17 +142,135 @@
         contact_linkedin_cta: "View My Profile"
     },
     de: {
-        // German translations...
+        // General
         brand_name: "George P Mathew",
         brand_sub: "Ingenieur GPM",
-        nav_home: "Startseite",
+        footer_brand: "Entwickelt von George P Mathew",
+
+        // Navigation
+        nav_home: "Start",
         nav_profile: "Profil",
+        nav_germany: "Deutschland",
+        nav_about: "Über mich",
         nav_connect: "Kontakt",
-        // ... and so on for all keys
+
+        // Homepage
+        hero_title: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
+        hero_subtitle: "Meine Praxiserfahrung hat mir gezeigt, dass die größten Herausforderungen im Bau oft materialbedingt sind. Diese Erkenntnis treibt meinen Wechsel zur Werkstofftechnik in Deutschland an, wo ich die Art, wie wir bauen, innovieren möchte.",
+        btn_story: "Meine Geschichte",
+        btn_germany: "Mein Plan für Deutschland",
+        journey_title: "Eine sich entwickelnde Ingenieursreise",
+        journey1_title: "Bauingenieur",
+        journey1_desc_revised: "Meine Karriere begann auf der Baustelle, wo ich die Montage von Fertigteilen leitete und Fundamentarbeiten überwachte. Diese praktische Erfahrung ermöglichte ein tiefes Verständnis für reale Bauherausforderungen und die entscheidende Rolle der Materialintegrität.",
+        journey2_title: "Unternehmer",
+        journey2_desc_revised: "Im Familienunternehmen habe ich unser Angebot von Eisenwaren auf Malerarbeiten erweitert. Diese Initiative diversifizierte unsere Einnahmen, steigerte den Gewinn und lehrte mich wertvolle Lektionen in Geschäftsentwicklung und Kundenbeziehungen.",
+        journey3_title: "Content Creator",
+        journey3_desc_revised: "Als 'Ingenieur GPM' teile ich mein Fachwissen zu komplexen Ingenieurthemen, einschließlich praktischer Anwendungsfälle für LLMs im Fachbereich. Diese Plattform schärft meine Fähigkeit, technisches Wissen klar und effektiv zu vermitteln.",
+        journey4_title: "Werkstoffingenieur",
+        journey4_desc_revised: "Meine Reise mündet in einer einzigen Erkenntnis: Die Zukunft des Bauens liegt in den Materialien. Mein bevorstehender M.Sc. an der RWTH Aachen ist ein bewusster Schritt, um an der Spitze der Innovation nachhaltiger Baumaterialien zu stehen.",
+
+        // Profile Page
+        edu_heading: "Bildung",
+        edu1_degree: "M.Sc. Werkstofftechnik",
+        edu1_school: "RWTH Aachen University, Deutschland",
+        edu1_date: "Zusage erhalten — Beginn Winter 2025",
+        edu2_degree: "B.E. Bauingenieurwesen",
+        edu2_school: "Mar Ephraem College of Engineering and Technology, Indien",
+        edu2_date: "06/2017 – 07/2021",
+        exp_heading: "Berufserfahrung",
+        exp1_role: "Geschäftsassistent",
+        exp1_date: "12/2023 – Heute",
+        exp1_company: "Best Trading, Pathanapuram, Indien",
+        exp1_li1: "Unterstützung von Kunden bei Produktanfragen, wodurch der Umsatz durch persönlichen Service und technische Beratung verbessert wurde.",
+        exp1_li2: "Abwicklung von Abrechnungen und Mitwirkung bei lokalen Marketingmaßnahmen, einschließlich Werbeaktionen und Flyerverteilung.",
+        exp2_role: "Junior-Ingenieur",
+        exp2_date: "02/2023 – 11/2023",
+        exp2_company: "SG Construction Company, Mumbai, Indien",
+        exp2_li1: "Überwachung von Pfahlgründungsarbeiten und Ausbauphasen des Bauprojekts.",
+        exp2_li2: "Koordination mit verschiedenen Teams, um die Einhaltung der Projektmeilensteine sicherzustellen.",
+        exp3_role: "Ingenieur-Absolvent (Trainee)",
+        exp3_date: "10/2021 – 09/2022",
+        exp3_company: "Excel Precast Solutions, Bangalore, Indien",
+        exp3_li1: "Management der Montage von Fertigteilen wie Wandpaneelen, Trägern und Platten.",
+        exp3_li2: "Durchführung von Qualitätssicherungsprüfungen und Unterstützung bei Reparaturen vor Ort an Fertigteilen.",
+        tag_cs: "Kundenservice",
+        tag_sales: "Vertrieb",
+        tag_marketing: "Marketing",
+        tag_supervision: "Bauüberwachung",
+        tag_coordination: "Projektkoordination",
+        tag_civil: "Bauingenieurwesen",
+        tag_precast: "Fertigteilmontage",
+        tag_qa: "Qualitätssicherung",
+        sidebar_title: "Bauingenieur & Werkstoff-Innovator",
+        btn_cv: "Lebenslauf herunterladen",
+        skills_heading: "Fähigkeiten",
+        skill1_title: "Ingenieurwissen",
+        skill1_desc: "Bauüberwachung, Fertigteilmontage, Qualitätssicherung, Projektkoordination.",
+        skill2_title: "KI & Einfallsreichtum",
+        skill2_desc: "Nutzung von KI-Modellen, um schnell Prototypen zu entwickeln und komplexe Ingenieuraufgaben zu lösen.",
+        skill3_title: "Software & Werkzeuge",
+        skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), MS Office.",
+        lang_heading: "Sprachen",
+        lang1_name: "Englisch",
+        lang2_name: "Malayalam",
+        lang3_name: "Deutsch",
+        lang4_name: "Tamil",
+        lang5_name: "Hindi",
+
+        // Germany Page
+        germany_heading: "Mein Engagement für das Ingenieurwesen in Deutschland",
+        germany_intro: "Meine Praxiserfahrung hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung. Dies ist das Epizentrum der Zukunft, die ich mitgestalten möchte.",
+        germany_col1_title: "Warum Deutschland?",
+        germany_item1_title: "Führung in Ingenieurwesen & Innovation",
+        germany_item1_desc: "Als Heimat von Branchenriesen und einer Kultur der Präzision verbindet Deutschland theoretisches Wissen mit erstklassiger Anwendung. Es ist das ideale Umfeld, um meine Expertise zu entwickeln.",
+        germany_item2_title: "Industrie 4.0 & Forschungsökosystem",
+        germany_item2_desc: "Das kollaborative Ökosystem zwischen Wissenschaft und Industrie ist unübertroffen und entscheidend, um meine Bauerfahrung mit modernen Werkstoffen zu verbinden.",
+        germany_item3_title: "Führende Bau- & Werkstoffindustrie",
+        germany_item3_desc: "Bekannt für Nachhaltigkeit und Präzision, bieten die deutsche Bau- und Werkstoffindustrie die perfekte Landschaft, um zu bedeutenden Fortschritten beizutragen.",
+        germany_col2_title: "Warum RWTH Aachen?",
+        germany_item4_title: "Weltklasse-Universität",
+        germany_item4_desc: "Der weltweite Ruf der RWTH Aachen in der Werkstofftechnik sichert eine Ausbildung an der Spitze des Fachgebiets und öffnet globale Möglichkeiten.",
+        germany_item5_title: "Perfektes Programm & Industrieintegration",
+        germany_item5_desc: "Der M.Sc.-Studiengang ist perfekt auf meinen Hintergrund zugeschnitten, und die starken Industrieverbindungen der Universität bieten Chancen, an realen Herausforderungen zu arbeiten.",
+        germany_item6_title: "Strategische Karrierepositionierung",
+        germany_item6_desc: "Diese Wahl positioniert mich an der einzigartigen Schnittstelle von Bauwissen, moderner Werkstoffkunde und deutscher Ingenieurskunst.",
+        germany_bigger_picture_title: "Das große Ganze",
+        germany_bigger_picture_desc: "Dies ist nicht nur ein Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Bildung bin ich in der Lage, die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe.",
+        
+        // About Page
+        about_intro: "Ich bin",
+        about_name_full: "George P Mathew",
+        about_p1: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete. Dies war nicht nur ein Job; es war ein Labor, in dem ich die kritische Verbindung zwischen Materialqualität und Projekterfolg erlebte.",
+        about_p2: "Diese Erfahrung führte mich zu einem klaren Schluss: Um bessere, langlebigere Strukturen zu bauen, müssen wir zuerst die Materialien selbst innovieren. Diese Erkenntnis ist die treibende Kraft für mein Masterstudium in Werkstofftechnik an der weltberühmten RWTH Aachen.",
+        about_p3: "Ich zeichne mich auch durch meinen Einfallsreichtum aus. Diese Website ist der Beweis. Ohne Programmiererfahrung behandelte ich ihre Erstellung wie ein Ingenieurproblem und leitete eine KI an, den Code zu generieren. Das ist die zukunftsorientierte Denkweise, die ich in jede Herausforderung einbringe.",
+        focus_title: "Worauf ich mich konzentriere",
+        focus1_title: "Ingenieur GPM - Die Marke",
+        focus1_desc: "Ich teile meine Leidenschaft für das Ingenieurwesen und mache komplexe Themen durch meine Content-Plattform zugänglich.",
+        focus1_cta: "Meine Kanäle entdecken",
+        focus2_title: "Werkstofftechnik - Die Zukunft",
+        focus2_desc: "Vorbereitung auf meinen M.Sc. an der RWTH Aachen, um bei der Innovation nachhaltiger Baumaterialien von morgen an vorderster Front zu stehen.",
+        focus2_cta: "Meinen Plan für Deutschland sehen",
+
+        // Connect Page
+        connect_hub_title: "Vernetzen wir uns",
+        connect_hub_subtitle: "Folgen Sie meiner Reise oder kontaktieren Sie mich für berufliche Anfragen.",
+        social_brand_heading: "Folgen Sie meiner Reise",
+        contact_pro_heading: "Für berufliche Anfragen",
+        social_youtube_title: "YouTube",
+        social_youtube_desc: "Ingenieurvideos & Tutorials",
+        social_brand_insta_title: "Instagram (Marke)",
+        social_brand_insta_desc: "Inhalte & Updates für Ingenieur GPM",
+        social_insta_title: "Instagram (Persönlich)",
+        social_insta_desc: "Persönliche Updates & Fotografie",
+        contact_email_title: "E-Mail",
+        contact_linkedin_title: "LinkedIn",
+        contact_linkedin_desc: "Berufliches Networking",
+        contact_email_cta: "E-Mail senden",
+        contact_linkedin_cta: "Profil ansehen"
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v5';
+  const LANG_KEY = 'gpm_lang_v6_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -197,13 +315,11 @@
     setButtonState(getSavedLang());
   }
 
-
   /* =========================
      2. Active Navigation
      ========================= */
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    // Mark both desktop and mobile links
     document.querySelectorAll('.main-nav .nav-link, .mobile-tab-bar .tab-link').forEach(link => {
       const linkPage = link.getAttribute('href');
       if (linkPage === currentPage) {
@@ -213,26 +329,22 @@
     });
   }
 
-
   /* =========================
      3. Homepage Storyline Animation
      ========================= */
   function initStorylineObserver() {
     const milestones = document.querySelectorAll('.storyline-milestone');
-    if (milestones.length === 0) return; // Only run on homepage
+    if (milestones.length === 0) return;
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Add a delay to each subsequent item for a staggered effect
-                setTimeout(() => {
-                    entry.target.classList.add('in-view');
-                }, index * 200);
-                observer.unobserve(entry.target); // Animate only once
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        rootMargin: '0px 0px -100px 0px', // Trigger a bit before it's fully in view
+        rootMargin: '0px 0px -100px 0px',
         threshold: 0.1
     });
 
