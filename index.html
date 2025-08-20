@@ -34,32 +34,15 @@
             </a>
             <nav class="main-nav" aria-label="Primary navigation">
                 <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
-                <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
-                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
-                <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+                <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+                <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
             <div class="header-actions">
-                <!-- Language/Theme Toggle will be injected here by JavaScript -->
+                <!-- Language/Theme Toggle is injected here by JavaScript -->
             </div>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <div class="hamburger"></div>
-            </button>
         </div>
     </header>
-
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay">
-        <nav class="mobile-nav">
-            <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
-            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
-            <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
-            <a href="social.html" class="nav-link" data-i18n="nav_social">Social</a>
-            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
-            <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
-        </nav>
-    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main>
@@ -70,8 +53,8 @@
                     <h1 class="hero-title" data-i18n="hero_title">Civil Engineer & Future Materials Innovator</h1>
                     <p class="hero-subtitle" data-i18n="hero_subtitle">My on-site experience taught me that construction's biggest challenges are material-based. This insight drives my transition to Materials Engineering in Germany, where I aim to innovate how we build.</p>
                     <div class="hero-cta">
-                        <a href="about.html" class="btn btn-primary" data-i18n="btn_story">My Full Story</a>
-                        <a href="germany.html" class="btn btn-secondary" data-i18n="btn_germany">My Plan for Germany</a>
+                        <a href="profile.html" class="btn btn-primary" data-i18n="btn_profile">View My Profile</a>
+                        <a href="about.html" class="btn btn-secondary" data-i18n="btn_story">Read My Story</a>
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -80,7 +63,7 @@
             </div>
         </section>
 
-        <!-- New Vertical Storyline Section -->
+        <!-- Redesigned Vertical Storyline Section -->
         <section class="storyline">
             <div class="container storyline-container">
                 <header class="section-header">
@@ -92,8 +75,11 @@
                     
                     <!-- Milestone 1: Civil Engineer -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">🏗️</div>
-                        <div class="milestone-content">
+                        <div class="milestone-icon-wrapper">
+                            <div class="milestone-icon-node"></div>
+                            <img src="assets/icons/engineering.svg" alt="Civil Engineer Icon" class="milestone-icon">
+                        </div>
+                        <div class="milestone-card">
                             <h3 class="milestone-title" data-i18n="journey1_title">Civil Engineer</h3>
                             <p class="milestone-desc" data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
                         </div>
@@ -101,8 +87,11 @@
 
                     <!-- Milestone 2: Entrepreneur -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">📈</div>
-                        <div class="milestone-content">
+                        <div class="milestone-icon-wrapper">
+                            <div class="milestone-icon-node"></div>
+                            <img src="assets/icons/briefcase.svg" alt="Entrepreneur Icon" class="milestone-icon">
+                        </div>
+                        <div class="milestone-card">
                             <h3 class="milestone-title" data-i18n="journey2_title">Entrepreneur</h3>
                             <p class="milestone-desc" data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
                         </div>
@@ -110,8 +99,11 @@
 
                     <!-- Milestone 3: Content Creator -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">💡</div>
-                        <div class="milestone-content">
+                        <div class="milestone-icon-wrapper">
+                             <div class="milestone-icon-node"></div>
+                            <img src="assets/icons/play.svg" alt="Content Creator Icon" class="milestone-icon">
+                        </div>
+                        <div class="milestone-card">
                             <h3 class="milestone-title" data-i18n="journey3_title">Content Creator</h3>
                             <p class="milestone-desc" data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
                         </div>
@@ -119,8 +111,11 @@
 
                     <!-- Milestone 4: Materials Engineer -->
                     <div class="storyline-milestone">
-                        <div class="milestone-icon">🔬</div>
-                        <div class="milestone-content">
+                        <div class="milestone-icon-wrapper">
+                             <div class="milestone-icon-node"></div>
+                            <img src="assets/icons/ai.svg" alt="Materials Engineer Icon" class="milestone-icon">
+                        </div>
+                        <div class="milestone-card">
                             <h3 class="milestone-title" data-i18n="journey4_title">Materials Engineer</h3>
                             <p class="milestone-desc" data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
                         </div>
@@ -130,6 +125,26 @@
             </div>
         </section>
     </main>
+    
+    <!-- ======================= Floating Mobile Nav ======================= -->
+    <nav class="mobile-float-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="float-nav-link active">
+            <img src="assets/icons/home.svg" alt="Home Icon">
+            <span data-i18n="nav_home">Home</span>
+        </a>
+        <a href="about.html" class="float-nav-link">
+            <img src="assets/icons/user.svg" alt="About Icon">
+            <span data-i18n="nav_about">About</span>
+        </a>
+        <a href="profile.html" class="float-nav-link">
+            <img src="assets/icons/document.svg" alt="Profile Icon">
+            <span data-i18n="nav_profile">Profile</span>
+        </a>
+        <a href="connect.html" class="float-nav-link">
+            <img src="assets/icons/mail.svg" alt="Connect Icon">
+            <span data-i18n="nav_connect">Connect</span>
+        </a>
+    </nav>
 
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
@@ -137,7 +152,6 @@
             <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-                <a href="social.html" data-i18n="footer_social">Social</a>
             </div>
         </div>
     </footer>
