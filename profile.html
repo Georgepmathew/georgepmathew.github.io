@@ -14,10 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
+    <!-- Defer loading of non-critical CSS/JS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- JavaScript (defer ensures it runs after HTML parsing) -->
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -34,8 +32,7 @@
             </a>
             <nav class="main-nav" aria-label="Primary navigation">
                 <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
-                <a href="profile.html" class="nav-link active" data-i18n="nav_profile">Profile</a>
-                <a href="germany.html" class="nav-link" data-i18n="nav_germany">Germany</a>
+                <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
                 <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
@@ -168,11 +165,11 @@
                     <div class="sidebar-section">
                         <h3 class="sidebar-section-title" data-i18n="lang_heading">Languages</h3>
                         <div class="language-grid">
-                            <div class="language-item" data-i18n="lang1_name" aria-label="English: C1 Proficiency">English</div>
-                            <div class="language-item" data-i18n="lang2_name" aria-label="Malayalam: Native">Malayalam</div>
-                            <div class="language-item" data-i18n="lang4_name" aria-label="Tamil: Conversational">Tamil</div>
-                            <div class="language-item" data-i18n="lang5_name" aria-label="Hindi: Conversational">Hindi</div>
-                            <div class="language-item" data-i18n="lang3_name" aria-label="German: Actively Learning">German</div>
+                            <div class="language-item" data-i18n="lang1_name">English</div>
+                            <div class="language-item" data-i18n="lang2_name">Malayalam</div>
+                            <div class="language-item" data-i18n="lang3_name">German</div>
+                            <div class="language-item" data-i18n="lang4_name">Tamil</div>
+                            <div class="language-item" data-i18n="lang5_name">Hindi</div>
                         </div>
                     </div>
                 </div>
@@ -183,7 +180,7 @@
     <!-- ======================= Footer ======================= -->
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-brand" data-i18n="footer_brand">Engineered by George P Mathew</div>
+            <div class="footer-brand">Engineered with precision. Designed with purpose.</div>
             <div class="footer-links">
                 <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
             </div>
@@ -196,7 +193,7 @@
             <img src="assets/icons/home.svg" alt="" class="tab-icon">
             <span class="tab-label" data-i18n="nav_home">Home</span>
         </a>
-        <a href="profile.html" class="tab-link active" aria-label="Profile">
+        <a href="profile.html" class="tab-link" aria-label="Profile">
             <img src="assets/icons/user.svg" alt="" class="tab-icon">
             <span class="tab-label" data-i18n="nav_profile">Profile</span>
         </a>
