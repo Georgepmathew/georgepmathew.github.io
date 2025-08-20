@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Engineer GPM Portfolio --- World-Class Overhaul
+   Engineer GPM Portfolio --- FINAL OVERHAUL
    --- [ script.js ] ---
    - Handles EN/DE translations and theme switching
-   - Manages active navigation links and NEW mobile navigation
-   - Animates the NEW vertical storyline on scroll
+   - Manages active navigation links (Desktop & NEW Mobile Tab Bar)
+   - Animates the NEW SVG vertical storyline on scroll
    - Creates the 3D tilt effect on the About page image
    ========================================================================== */
 
@@ -161,7 +161,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v3';
+  const LANG_KEY = 'gpm_lang_v4';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -169,7 +169,7 @@
     const dict = I18N[code] || I18N.en;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (dict[key]) {
+      if (dict[key] !== undefined) { // Check for undefined to handle empty strings
         el.textContent = dict[key];
       }
     });
@@ -208,12 +208,12 @@
 
 
   /* =========================
-     2. Navigation (Desktop & Mobile)
+     2. Active Navigation
      ========================= */
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     // Mark both desktop and mobile links
-    document.querySelectorAll('.main-nav .nav-link, .mobile-nav .nav-link').forEach(link => {
+    document.querySelectorAll('.main-nav .nav-link, .mobile-tab-bar .tab-link').forEach(link => {
       const linkPage = link.getAttribute('href');
       if (linkPage === currentPage) {
         link.classList.add('active');
@@ -222,15 +222,6 @@
     });
   }
 
-  function initMobileNav() {
-    const toggleBtn = document.querySelector('.mobile-nav-toggle');
-    const body = document.body;
-    if (!toggleBtn) return;
-
-    toggleBtn.addEventListener('click', () => {
-        body.classList.toggle('nav-open');
-    });
-  }
 
   /* =========================
      3. Homepage Storyline Animation
@@ -239,7 +230,7 @@
     const milestones = document.querySelectorAll('.storyline-milestone');
     if (milestones.length === 0) return; // Only run on homepage
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 // Add a delay to each subsequent item for a staggered effect
@@ -250,8 +241,8 @@
             }
         });
     }, {
-        rootMargin: '0px',
-        threshold: 0.2 // Trigger when 20% of the item is visible
+        rootMargin: '0px 0px -100px 0px', // Trigger a bit before it's fully in view
+        threshold: 0.1
     });
 
     milestones.forEach(milestone => {
@@ -274,7 +265,7 @@
         const centerY = rect.height / 2;
         const rotateX = ((y - centerY) / centerY) * -8; // Reduced intensity
         const rotateY = ((x - centerX) / centerX) * 8;
-        imageContainer.style.transition = 'transform 0.1s';
+        imageContainer.style.transition = 'transform 0.1s linear';
         imageContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
     });
 
@@ -291,7 +282,6 @@
     applyTranslations(getSavedLang());
     initLangToggle();
     markActiveNav();
-    initMobileNav();
     initStorylineObserver();
     initInteractiveImage();
   }
