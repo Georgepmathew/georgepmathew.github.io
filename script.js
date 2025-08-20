@@ -19,15 +19,13 @@
         brand_name: "George P Mathew",
         brand_sub: "Engineer GPM",
         footer_brand: "Engineered by George P Mathew",
-        footer_social: "Social",
 
         // Navigation
         nav_home: "Home",
         nav_profile: "Profile",
         nav_germany: "Germany",
-        nav_social: "Social",
         nav_about: "About",
-        nav_contact: "Contact",
+        nav_connect: "Connect",
 
         // Homepage
         hero_title: "Civil Engineer & Future Materials Innovator",
@@ -112,23 +110,7 @@
         germany_bigger_picture_title: "The Bigger Picture",
         germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.",
         
-        // Social Page (Redesigned)
-        social_hub_title: "Join the Community",
-        social_hub_subtitle: "Explore my content, connect with me, and follow my engineering journey.",
-        social_youtube_title: "YouTube",
-        social_youtube_desc: "Engineering videos & tutorials",
-        social_brand_insta_title: "Instagram (Brand)",
-        social_brand_insta_desc: "Content & updates for Engineer GPM",
-        social_x_title: "X (Twitter)",
-        social_x_desc: "Short updates & tech insights",
-        social_brand_fb_title: "Facebook (Brand)",
-        social_brand_fb_desc: "Page for Engineer GPM",
-        social_linkedin_title: "LinkedIn",
-        social_linkedin_desc: "For professional networking",
-        social_insta_title: "Instagram (Personal)",
-        social_insta_desc: "Personal updates & photography",
-        
-        // About Page (Redesigned)
+        // About Page
         about_intro: "I'm",
         about_name_full: "George P Mathew",
         about_p1: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.",
@@ -142,9 +124,17 @@
         focus2_desc: "Preparing for my M.Sc. at RWTH Aachen to be at the forefront of innovating the sustainable construction materials of tomorrow.",
         focus2_cta: "See My Plan for Germany",
 
-        // Contact Page
-        contact_heading: "Get In Touch",
-        contact_intro: "I'm always open to discussing new projects, creative ideas, or opportunities. The best ways to reach me are below.",
+        // Connect Page (replaces Social and Contact)
+        connect_hub_title: "Let's Connect",
+        connect_hub_subtitle: "Follow my journey or get in touch for professional inquiries.",
+        social_brand_heading: "Follow My Journey",
+        contact_pro_heading: "For Professional Inquiries",
+        social_youtube_title: "YouTube",
+        social_youtube_desc: "Engineering videos & tutorials",
+        social_brand_insta_title: "Instagram (Brand)",
+        social_brand_insta_desc: "Content & updates for Engineer GPM",
+        social_insta_title: "Instagram (Personal)",
+        social_insta_desc: "Personal updates & photography",
         contact_email_title: "Email",
         contact_linkedin_title: "LinkedIn",
         contact_linkedin_desc: "Professional Networking",
@@ -157,11 +147,12 @@
         brand_sub: "Ingenieur GPM",
         nav_home: "Startseite",
         nav_profile: "Profil",
+        nav_connect: "Kontakt",
         // ... and so on for all keys
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v4';
+  const LANG_KEY = 'gpm_lang_v5';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -169,7 +160,7 @@
     const dict = I18N[code] || I18N.en;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) { // Check for undefined to handle empty strings
+      if (dict[key] !== undefined) {
         el.textContent = dict[key];
       }
     });
@@ -263,7 +254,7 @@
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8; // Reduced intensity
+        const rotateX = ((y - centerY) / centerY) * -8;
         const rotateY = ((x - centerX) / centerX) * 8;
         imageContainer.style.transition = 'transform 0.1s linear';
         imageContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
