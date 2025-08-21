@@ -11,11 +11,16 @@
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     
     <!-- Defer loading of non-critical CSS/JS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -61,62 +66,61 @@
             </div>
         </section>
 
-        <!-- Diorama Timeline Section -->
-        <section class="diorama-timeline-section">
-            <div class="diorama-background">
-                <!-- Background elements like data clouds will be handled by CSS/JS -->
-            </div>
+        <!-- Story Conduit Timeline Section -->
+        <section class="story-timeline-section">
             <div class="container">
                 <header class="section-header">
                     <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
                 </header>
-                
-                <div class="diorama-scenes">
+            </div>
+            
+            <div class="story-timeline-wrapper">
+                <svg class="story-conduit-svg" width="100%" height="100%" viewBox="0 0 1100 2400" preserveAspectRatio="xMidYMin slice">
+                    <path id="story-conduit-path" d="M 200 100 C 400 300, 600 200, 900 400 C 1200 600, 1000 700, 600 900 C 200 1100, 400 1300, 200 1500 C 0 1700, 300 1800, 900 2000" fill="none" stroke-width="4"/>
+                </svg>
+
+                <div class="story-scenes">
                     <!-- Scene 1: Civil Engineer -->
-                    <div class="diorama-scene">
-                        <div class="diorama-content card">
+                    <div class="story-scene" id="scene1">
+                        <div class="story-content card">
                             <h3 data-i18n="journey1_title">Civil Engineer</h3>
                             <p data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
                         </div>
-                        <div class="diorama-visual">
-                            <img src="assets/diorama/scene1-bg.png" class="diorama-bg-layer" alt="">
-                            <img src="assets/diorama/character-civil.png" class="diorama-character" alt="Illustration of George as a Civil Engineer">
+                        <div class="story-visual">
+                            <img src="assets/diorama/character-civil.png" class="story-character" alt="Illustration of George as a Civil Engineer">
                         </div>
                     </div>
 
                     <!-- Scene 2: Entrepreneur -->
-                    <div class="diorama-scene">
-                        <div class="diorama-content card">
+                    <div class="story-scene" id="scene2">
+                        <div class="story-content card">
                             <h3 data-i18n="journey2_title">Entrepreneur</h3>
                             <p data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
                         </div>
-                        <div class="diorama-visual">
-                             <img src="assets/diorama/scene2-bg.png" class="diorama-bg-layer" alt="">
-                            <img src="assets/diorama/character-entrepreneur.png" class="diorama-character" alt="Illustration of George as an Entrepreneur">
+                        <div class="story-visual">
+                            <img src="assets/diorama/character-entrepreneur.png" class="story-character" alt="Illustration of George as an Entrepreneur">
                         </div>
                     </div>
 
                     <!-- Scene 3: Content Creator -->
-                    <div class="diorama-scene">
-                        <div class="diorama-content card">
+                    <div class="story-scene" id="scene3">
+                        <div class="story-content card">
                             <h3 data-i18n="journey3_title">Content Creator</h3>
                             <p data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
                         </div>
-                        <div class="diorama-visual">
-                             <img src="assets/diorama/scene3-bg.png" class="diorama-bg-layer" alt="">
-                            <img src="assets/diorama/character-creator.png" class="diorama-character" alt="Illustration of George as a Content Creator">
+                        <div class="story-visual">
+                            <img src="assets/diorama/character-creator.png" class="story-character" alt="Illustration of George as a Content Creator">
                         </div>
                     </div>
 
                     <!-- Scene 4: Materials Engineer -->
-                    <div class="diorama-scene">
-                        <div class="diorama-content card">
+                    <div class="story-scene" id="scene4">
+                        <div class="story-content card">
                             <h3 data-i18n="journey4_title">Materials Engineer</h3>
                             <p data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
                         </div>
-                        <div class="diorama-visual">
-                             <img src="assets/diorama/scene4-bg.png" class="diorama-bg-layer" alt="">
-                            <img src="assets/diorama/character-materials.png" class="diorama-character" alt="Illustration of George as a Materials Engineer">
+                        <div class="story-visual">
+                            <img src="assets/diorama/character-materials.png" class="story-character" alt="Illustration of George as a Materials Engineer">
                         </div>
                     </div>
                 </div>
