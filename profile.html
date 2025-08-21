@@ -9,10 +9,10 @@
     <!-- Favicon -->
     <link rel="icon" href="assets/profile.png" type="image/png">
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Gochi Hand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Gochi+Hand&display=swap" rel="stylesheet">
     
     <!-- Defer loading of non-critical CSS/JS -->
     <link rel="stylesheet" href="style.css">
@@ -20,7 +20,7 @@
 </head>
 <body>
 
-    <!-- ======================= Header (Desktop) ======================= -->
+    <!-- ======================= Universal Header ======================= -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand" aria-label="Go to homepage">
@@ -30,17 +30,37 @@
                     <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
                 </div>
             </a>
+            
+            <!-- Desktop Navigation -->
             <nav class="main-nav" aria-label="Primary navigation">
                 <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
                 <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
                 <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
+
             <div class="header-actions">
-                <!-- Language/Theme Toggle will be injected here by JavaScript -->
+                <!-- Language/Theme Toggle is injected here -->
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer">
+        <nav>
+            <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+            <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
+        </nav>
+    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main class="container page-container">
@@ -177,11 +197,11 @@
                     <div class="sidebar-section card">
                         <h3 class="sidebar-section-title" data-i18n="lang_heading">Languages</h3>
                         <div class="language-grid">
-                            <div class="language-item"><span data-i18n="lang1_name">English</span> <span>Native</span></div>
-                            <div class="language-item"><span data-i18n="lang2_name">Malayalam</span> <span>Native</span></div>
-                            <div class="language-item"><span data-i18n="lang4_name">Tamil</span> <span>Conversational</span></div>
-                            <div class="language-item"><span data-i18n="lang5_name">Hindi</span> <span>Conversational</span></div>
-                            <div class="language-item"><span data-i18n="lang3_name">German</span> <span class="pill pill-learning">Learning</span></div>
+                            <div class="language-item"><span data-i18n="lang1_name">English</span> <span class="pill pill-level" data-i18n="lang_en_level">Proficient (IELTS 7)</span></div>
+                            <div class="language-item"><span data-i18n="lang2_name">Malayalam</span> <span class="pill pill-level" data-i18n="lang_ml_level">Native</span></div>
+                            <div class="language-item"><span data-i18n="lang4_name">Tamil</span> <span class="pill pill-level" data-i18n="lang_ta_level">Conversational</span></div>
+                            <div class="language-item"><span data-i18n="lang5_name">Hindi</span> <span class="pill pill-level" data-i18n="lang_hi_level">Conversational</span></div>
+                            <div class="language-item"><span data-i18n="lang3_name">German</span> <span class="pill pill-learning" data-i18n="lang_de_level">Learning</span></div>
                         </div>
                     </div>
                 </div>
@@ -198,26 +218,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- ======================= Mobile Tab Bar ======================= -->
-    <nav class="mobile-tab-bar" aria-label="Mobile navigation">
-        <a href="index.html" class="tab-link" aria-label="Home">
-            <img src="assets/icons/home.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_home">Home</span>
-        </a>
-        <a href="profile.html" class="tab-link" aria-label="Profile">
-            <img src="assets/icons/user.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_profile">Profile</span>
-        </a>
-        <a href="about.html" class="tab-link" aria-label="About">
-            <img src="assets/icons/sparkles.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_about">About</span>
-        </a>
-        <a href="connect.html" class="tab-link" aria-label="Connect">
-            <img src="assets/icons/mail.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_connect">Connect</span>
-        </a>
-    </nav>
 
 </body>
 </html>
