@@ -1,8 +1,8 @@
 /* =-========================================================================
-   Engineer GPM Portfolio --- FINAL BLUEPRINT v9.0 (DEFINITIVE)
+   Engineer GPM Portfolio --- FINAL BLUEPRINT v10.0 (DEFINITIVE)
    --- [ script.js ] ---
    - Handles FULL EN/DE translations and theme switching
-   - Manages active navigation links
+   - Manages Universal Header & Mobile Drawer
    - Animates "Living Blueprint" on Homepage using GSAP
    ========================================================================== */
 
@@ -19,19 +19,22 @@
         brand_sub: "Engineer GPM",
         footer_tagline: "Building tomorrow with heart and smart tech",
         
-        // Navigation
+        // Navigation & Buttons
         nav_home: "Home",
         nav_profile: "Profile",
         nav_about: "About",
         nav_connect: "Connect",
-
-        // Homepage
-        hero_title: "Civil Engineer & Future Materials Innovator",
-        hero_subtitle: "My on-site experience taught me that construction's biggest challenges are material-based. This insight drives my transition to Materials Engineering in Germany, where I aim to innovate how we build.",
+        btn_chat: "Let's Talk 👋🏻",
         btn_story: "My Full Story",
+
+        // Homepage Hero
+        hero_title_new: "Civil Engineer & \nFuture Materials Innovator",
+        hero_subtitle: "My on-site experience taught me that construction's biggest challenges are material-based. This insight drives my transition to Materials Engineering in Germany, where I aim to innovate how we build.",
         pill1: "+100% total revenue (Best Trading)",
         pill2: "Site supervision — pile foundations, precast erection",
         pill3: "QA / QC experience on precast components",
+        
+        // Homepage Timeline
         journey_title: "An Evolving Engineering Journey",
         journey1_title: "Civil Engineer",
         journey1_desc_revised: "My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.",
@@ -60,7 +63,7 @@
         exp1_date: "12/2023 – Present",
         exp1_company: "Best Trading, Pathanapuram, India",
         exp1_li1_revised: "Expanded service offerings by introducing painting services alongside hardware sales, directly leading to a significant increase in revenue and profit margins.",
-        exp1_li2: "Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.",
+        exp1_li2: "Handled billing operations and contributed to local marketing efforts.",
         exp2_role: "Junior Engineer",
         exp2_date: "02/2023 – 11/2023",
         exp2_company: "SG Construction Company, Mumbai, India",
@@ -92,13 +95,17 @@
         skill3_desc: "AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), MS Office.",
         lang_heading: "Languages",
         lang1_name: "English",
+        lang_en_level: "Proficient (IELTS 7)",
         lang2_name: "Malayalam",
+        lang_ml_level: "Native",
         lang3_name: "German",
+        lang_de_level: "Learning",
         lang4_name: "Tamil",
+        lang_ta_level: "Conversational",
         lang5_name: "Hindi",
+        lang_hi_level: "Conversational",
         
         // About Page
-        welcome_intro: "WELCOME TO MY WORLD",
         welcome_title: "Hi, I'm George - I build things that matter.",
         welcome_subtitle: "A hands-on engineer who loves solving real problems with both time-tested methods and exciting new tech.",
         welcome_about: "I've gotten my hands dirty on construction sites across India, and now I'm studying at RWTH Aachen to understand how materials really work. I'm fascinated by how AI and robotics could help us build faster, safer, and more sustainably - without losing the craftsmanship that makes construction an art.",
@@ -132,7 +139,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v14_final';
+  const LANG_KEY = 'gpm_lang_v15_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -143,6 +150,8 @@
       if (dict[key] !== undefined) {
         if (key === 'welcome_title') {
             el.innerHTML = dict[key].replace('George', '<span class="text-accent-inline">George</span>');
+        } else if (key === 'hero_title_new') {
+            el.innerHTML = dict[key]; // Allows the <br> tag
         } else {
             el.textContent = dict[key];
         }
@@ -154,16 +163,23 @@
 
   function initLangToggle() {
     const container = document.querySelector('.header-actions');
-    if (!container || container.querySelector('.lang-toggle')) return;
-    const toggleHTML = `<div class="lang-toggle" title="Sprache wechseln (EN/DE)"><button class="lang-toggle-btn en" data-lang="en">EN</button><button class="lang-toggle-btn de" data-lang="de">DE</button><div class="lang-glider"></div></div>`;
-    container.innerHTML = toggleHTML;
+    if (!container) return;
+    
+    // Inject the HTML if it doesn't exist
+    if (!container.querySelector('.lang-toggle')) {
+        const toggleHTML = `<div class="lang-toggle" title="Sprache wechseln (EN/DE)"><button class="lang-toggle-btn en" data-lang="en">EN</button><button class="lang-toggle-btn de" data-lang="de">DE</button><div class="lang-glider"></div></div>`;
+        container.insertAdjacentHTML('afterbegin', toggleHTML);
+    }
+
     const toggle = container.querySelector('.lang-toggle');
     const buttons = toggle.querySelectorAll('.lang-toggle-btn');
     const glider = toggle.querySelector('.lang-glider');
+    
     function setButtonState(lang) {
         buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
         glider.classList.toggle('de', lang === 'de');
     }
+
     buttons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
@@ -177,10 +193,21 @@
     });
     setButtonState(getSavedLang());
   }
+  
+  function initMobileMenu() {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      if (!toggle) return;
+      
+      toggle.addEventListener('click', () => {
+          const isOpened = toggle.getAttribute('aria-expanded') === 'true';
+          document.body.classList.toggle('mobile-menu-open');
+          toggle.setAttribute('aria-expanded', !isOpened);
+      });
+  }
 
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.main-nav .nav-link, .mobile-tab-bar .tab-link').forEach(link => {
+    document.querySelectorAll('.main-nav .nav-link, .mobile-nav-drawer .nav-link').forEach(link => {
       const linkPage = link.getAttribute('href');
       link.classList.remove('active');
       link.removeAttribute('aria-current');
@@ -226,23 +253,25 @@
           molecular: document.querySelector('#canvas-molecular'),
       };
       
-      // Use GSAP to fade in the correct canvas based on scroll position
-      gsap.to(canvases.concrete, { autoAlpha: 1, scrollTrigger: { trigger: '#node1', start: 'top center', end: 'bottom center', toggleActions: 'play reverse play reverse', scrub: true } });
-      gsap.to(canvases.grid, { autoAlpha: 1, scrollTrigger: { trigger: '#node3', start: 'top center', end: 'bottom center', toggleActions: 'play reverse play reverse', scrub: true } });
+      gsap.to(canvases.concrete, { autoAlpha: 1, scrollTrigger: { trigger: '#node1', start: 'top center', end: 'bottom top', toggleActions: 'play reverse play reverse', scrub: true } });
+      gsap.to(canvases.grid, { autoAlpha: 1, scrollTrigger: { trigger: '#node3', start: 'top center', end: 'bottom top', toggleActions: 'play reverse play reverse', scrub: true } });
       gsap.to(canvases.molecular, { autoAlpha: 1, scrollTrigger: { trigger: '#node4', start: 'top center', end: 'bottom center', toggleActions: 'play reverse play reverse', scrub: true } });
   }
 
   function init() {
+    // This function runs once the DOM is fully loaded.
     applyTranslations(getSavedLang());
     initLangToggle();
     markActiveNav();
+    initMobileMenu();
     initLivingBlueprint();
   }
 
+  // This is the foolproof way to ensure scripts run after the DOM is ready.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
-    init();
+    init(); // Or call it directly if the DOM is already loaded.
   }
 
 })();
