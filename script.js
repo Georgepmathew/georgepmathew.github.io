@@ -1,10 +1,10 @@
 /* =-========================================================================
-   Engineer GPM Portfolio --- DIGITAL PRODUCT OVERHAUL v5.0
+   Engineer GPM Portfolio --- DIORAMA & CAROUSEL v6.0
    --- [ script.js ] ---
    - Handles FULL EN/DE translations and theme switching
    - Manages active navigation links
-   - Animates immersive homepage timeline
-   - Powers the GSAP "Focus Elevator" on About page
+   - Animates "Perspective Carousel" on About page
+   - Animates parallax "Diorama Timeline" on Homepage
    ========================================================================== */
 
 (function () {
@@ -29,9 +29,6 @@
         hero_title: "Civil Engineer & Future Materials Innovator",
         hero_subtitle: "My on-site experience taught me that construction's biggest challenges are material-based. This insight drives my transition to Materials Engineering in Germany, where I aim to innovate how we build.",
         btn_story: "My Full Story",
-        pill1: "+100% total revenue (Best Trading)",
-        pill2: "Site supervision — pile foundations, precast erection",
-        pill3: "QA / QC experience on precast components",
         journey_title: "An Evolving Engineering Journey",
         journey1_title: "Civil Engineer",
         journey1_desc_revised: "My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.",
@@ -90,10 +87,9 @@
         lang4_name: "Tamil",
         lang5_name: "Hindi",
         
-        // About Page (Genesis)
-        about_name_full: "George P Mathew.",
-        about_p1_revised: "My career began on construction sites, where I witnessed the critical link between material quality and project success. This insight is the driving force behind my transition to Materials Engineering.",
-        floating_insight: "The future of construction is in the materials.",
+        // About Page
+        about_name_full: "I'm George P Mathew.",
+        about_intro_p: "I'm a civil engineer driven by a simple observation: the future of construction isn't just about bigger structures, but better materials. Scroll to see my journey.",
         elevator1_title: "The Foundation",
         about_p1_full: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.",
         elevator2_title: "The Insight",
@@ -135,9 +131,6 @@
         hero_title: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
         hero_subtitle: "Meine Praxiserfahrung hat mir gezeigt, dass die größten Herausforderungen im Bau oft materialbedingt sind. Diese Erkenntnis treibt meinen Wechsel zur Werkstofftechnik in Deutschland an, wo ich die Art, wie wir bauen, innovieren möchte.",
         btn_story: "Meine Geschichte",
-        pill1: "+100% Gesamtumsatz (Best Trading)",
-        pill2: "Bauüberwachung — Pfahlgründungen, Fertigteilmontage",
-        pill3: "QS/QK-Erfahrung bei Fertigteilkomponenten",
         journey_title: "Eine sich entwickelnde Ingenieursreise",
         journey1_title: "Bauingenieur",
         journey1_desc_revised: "Meine Karriere begann auf der Baustelle, wo ich die Montage von Fertigteilen leitete und Fundamentarbeiten überwachte. Diese praktische Erfahrung ermöglichte ein tiefes Verständnis für reale Bauherausforderungen und die entscheidende Rolle der Materialintegrität.",
@@ -193,9 +186,8 @@
         lang3_name: "Deutsch",
         lang4_name: "Tamil",
         lang5_name: "Hindi",
-        about_name_full: "George P Mathew.",
-        about_p1_revised: "Meine Karriere begann auf Baustellen, wo ich die entscheidende Verbindung zwischen Materialqualität und Projekterfolg erlebte. Diese Erkenntnis ist die treibende Kraft für meinen Wechsel zur Werkstofftechnik.",
-        floating_insight: "Die Zukunft des Bauens liegt in den Materialien.",
+        about_name_full: "Ich bin George P Mathew.",
+        about_intro_p: "Ich bin Bauingenieur, angetrieben von einer einfachen Beobachtung: Die Zukunft des Bauens liegt nicht nur in größeren Strukturen, sondern in besseren Materialien. Scrollen Sie, um meine Reise zu sehen.",
         elevator1_title: "Das Fundament",
         about_p1_full: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete. Dies war nicht nur ein Job; es war ein Labor, in dem ich die kritische Verbindung zwischen Materialqualität und Projekterfolg erlebte.",
         elevator2_title: "Die Erkenntnis",
@@ -226,7 +218,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v10_final';
+  const LANG_KEY = 'gpm_lang_v11_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -245,24 +237,15 @@
   function initLangToggle() {
     const container = document.querySelector('.header-actions');
     if (!container || container.querySelector('.lang-toggle')) return;
-
-    const toggleHTML = `
-      <div class="lang-toggle" title="Sprache wechseln (EN/DE)">
-        <button class="lang-toggle-btn en" data-lang="en">EN</button>
-        <button class="lang-toggle-btn de" data-lang="de">DE</button>
-        <div class="lang-glider"></div>
-      </div>
-    `;
+    const toggleHTML = `<div class="lang-toggle" title="Sprache wechseln (EN/DE)"><button class="lang-toggle-btn en" data-lang="en">EN</button><button class="lang-toggle-btn de" data-lang="de">DE</button><div class="lang-glider"></div></div>`;
     container.innerHTML = toggleHTML;
     const toggle = container.querySelector('.lang-toggle');
     const buttons = toggle.querySelectorAll('.lang-toggle-btn');
     const glider = toggle.querySelector('.lang-glider');
-
     function setButtonState(lang) {
         buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
         glider.classList.toggle('de', lang === 'de');
     }
-
     buttons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
@@ -290,66 +273,105 @@
     });
   }
 
-  function initTimelineObserver() {
-    const timeline = document.querySelector('.timeline-experience');
-    if (!timeline) return;
-
-    const milestones = timeline.querySelectorAll('.timeline-milestone');
-    const conduit = timeline.querySelector('.timeline-conduit::before');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    }, { rootMargin: '0px', threshold: 0.5 });
-
-    milestones.forEach(milestone => observer.observe(milestone));
-
-    window.addEventListener('scroll', () => {
-      if (!conduit) return;
-      const timelineRect = timeline.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const startPoint = viewportHeight * 0.75;
-      const endPoint = timelineRect.height - (viewportHeight * 0.25);
-      let progress = (startPoint - timelineRect.top) / endPoint;
-      progress = Math.max(0, Math.min(1, progress));
-      conduit.style.height = `${progress * 100}%`;
-    }, { passive: true });
+  function initDioramaTimeline() {
+    if (typeof gsap === 'undefined') return;
+    const scenes = gsap.utils.toArray('.diorama-scene');
+    scenes.forEach(scene => {
+        const bg = scene.querySelector('.diorama-bg-layer');
+        const char = scene.querySelector('.diorama-character');
+        gsap.to([bg, char], {
+            yPercent: -10,
+            ease: "none",
+            scrollTrigger: {
+                trigger: scene,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+        gsap.to(char, {
+            yPercent: -20, // Character moves faster for parallax
+            ease: "none",
+            scrollTrigger: {
+                trigger: scene,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
   }
 
-  function initFocusElevator() {
-    const elevatorSection = document.querySelector('.elevator-section');
-    if (!elevatorSection) return;
-
+  function initPerspectiveCarousel() {
+    const carouselSection = document.querySelector('.carousel-section');
+    if (!carouselSection) return;
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        console.error('GSAP and/or ScrollTrigger not loaded. Elevator will not work.');
+        console.error('GSAP and/or ScrollTrigger not loaded. Carousel will not work.');
         return;
     }
 
-    const cards = gsap.utils.toArray('.elevator-card-container');
-    const progressNodes = gsap.utils.toArray('.progress-node');
+    const cards = gsap.utils.toArray('.carousel-card-wrapper');
+    const numCards = cards.length;
+    
+    // Create a horizontal scroll animation using GSAP
+    let scrollTween = gsap.to(cards, {
+        xPercent: -100 * (numCards - 1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".carousel-section",
+            pin: true,
+            scrub: 0.5,
+            snap: 1 / (numCards - 1),
+            start: "top top",
+            end: () => "+=" + (carouselSection.offsetWidth * (numCards - 1))
+        }
+    });
 
-    gsap.set('.elevator-wrapper', { height: (cards.length * 100) + 'vh' });
-
+    // Animate cards into and out of view with a perspective effect
     cards.forEach((card, i) => {
-        gsap.to(card.querySelector('.elevator-card'), {
+        gsap.set(card, {
+            scale: 1,
+            autoAlpha: 1,
+            xPercent: 0
+        });
+
+        const startPos = card.offsetLeft;
+        const width = card.offsetWidth;
+
+        gsap.to(card, {
+            scale: 0.9,
+            autoAlpha: 0.7,
             scrollTrigger: {
                 trigger: card,
-                start: "top top",
-                end: "bottom top",
-                pin: true,
-                pinSpacing: false,
+                start: 'center center-=' + (width * 0.55),
+                end: 'center center-=' + (width * 0.45),
                 scrub: true,
-                onEnter: () => progressNodes[i]?.classList.add('active'),
-                onLeave: () => progressNodes[i]?.classList.remove('active'),
-                onEnterBack: () => progressNodes[i]?.classList.add('active'),
-                onLeaveBack: () => progressNodes[i]?.classList.remove('active'),
-            },
-            autoAlpha: 1,
+                containerAnimation: scrollTween,
+            }
+        });
+
+        gsap.to(card, {
             scale: 1,
-            ease: 'power1.inOut'
+            autoAlpha: 1,
+            scrollTrigger: {
+                trigger: card,
+                start: 'center center-=' + (width * 0.45),
+                end: 'center center+=' + (width * 0.45),
+                scrub: true,
+                containerAnimation: scrollTween,
+            }
+        });
+        
+        gsap.to(card, {
+            scale: 0.9,
+            autoAlpha: 0.7,
+            scrollTrigger: {
+                trigger: card,
+                start: 'center center+=' + (width * 0.45),
+                end: 'center center+=' + (width * 0.55),
+                scrub: true,
+                containerAnimation: scrollTween,
+            }
         });
     });
   }
@@ -358,8 +380,8 @@
     applyTranslations(getSavedLang());
     initLangToggle();
     markActiveNav();
-    initTimelineObserver();
-    initFocusElevator();
+    initDioramaTimeline();
+    initPerspectiveCarousel();
   }
 
   if (document.readyState === 'loading') {
@@ -367,5 +389,4 @@
   } else {
     init();
   }
-
 })();
