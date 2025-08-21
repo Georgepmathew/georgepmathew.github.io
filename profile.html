@@ -48,9 +48,15 @@
             
             <!-- ====== Left Column: Narrative (Education & Experience) ====== -->
             <div class="profile-main">
+                <!-- Mission Section -->
+                <section id="mission" class="mission-section card">
+                    <h1 class="mission-title" data-i18n="mission_title">My Mission</h1>
+                    <p data-i18n="mission_statement">Building tomorrow with smart technology and sustainable materials. Passionate about integrating AI, robotics, and innovative materials to create construction solutions that benefit both builders and our planet.</p>
+                </section>
+
                 <!-- Education Section -->
                 <section id="education">
-                    <h1 class="section-title-large" data-i18n="edu_heading">Education</h1>
+                    <h2 class="section-title-large" data-i18n="edu_heading">Education</h2>
                     <div class="education-timeline">
                         <!-- Item 1: RWTH Aachen -->
                         <div class="timeline-item">
@@ -85,7 +91,7 @@
                             </div>
                             <p class="card-subtitle" data-i18n="exp1_company">Best Trading, Pathanapuram, India</p>
                             <ul class="exp-details">
-                                <li data-i18n="exp1_li1">Assisted customers with product inquiries, improving sales through personalized service and technical guidance.</li>
+                                <li data-i18n="exp1_li1_revised">Expanded service offerings by introducing painting services alongside hardware sales, directly leading to a significant increase in revenue and profit margins.</li>
                                 <li data-i18n="exp1_li2">Handled billing operations and contributed to local marketing efforts, including promotions and flyer distribution.</li>
                             </ul>
                             <div class="tags">
@@ -129,6 +135,12 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- CTA Section -->
+                <section class="profile-cta card">
+                    <h2 data-i18n="profile_cta_title">Let's Build the Future Together</h2>
+                    <a href="connect.html" class="btn btn-primary" data-i18n="profile_cta_btn">Get in Touch</a>
+                </section>
             </div>
 
             <!-- ====== Right Column: Sticky Sidebar (Vitals & Skills) ====== -->
@@ -147,15 +159,15 @@
                         <h3 class="sidebar-section-title" data-i18n="skills_heading">Capabilities</h3>
                         <div class="capabilities-grid">
                             <div class="capability-card">
-                                <h4 data-i18n="skill1_title">Engineering Foundation</h4>
+                                <h4><img src="assets/icons/engineering-accent.svg" alt=""> <span data-i18n="skill1_title">Engineering Foundation</span></h4>
                                 <p data-i18n="skill1_desc">Site Supervision, Precast Erection, Quality Assurance, Project Coordination.</p>
                             </div>
                             <div class="capability-card">
-                                <h4 data-i18n="skill2_title">AI & Resourcefulness</h4>
+                                <h4><img src="assets/icons/ai-accent.svg" alt=""> <span data-i18n="skill2_title">AI & Resourcefulness</span></h4>
                                 <p data-i18n="skill2_desc">Leveraging AI models to rapidly prototype solutions and solve complex engineering challenges.</p>
                             </div>
                             <div class="capability-card">
-                                <h4 data-i18n="skill3_title">Software & Tools</h4>
+                                <h4><img src="assets/icons/tools-accent.svg" alt=""> <span data-i18n="skill3_title">Software & Tools</span></h4>
                                 <p data-i18n="skill3_desc">AutoCAD, SketchUp, Adobe Suite (Illustrator, Photoshop, InDesign), MS Office.</p>
                             </div>
                         </div>
@@ -165,11 +177,11 @@
                     <div class="sidebar-section card">
                         <h3 class="sidebar-section-title" data-i18n="lang_heading">Languages</h3>
                         <div class="language-grid">
-                            <span class="pill" data-i18n="lang1_name">English</span>
-                            <span class="pill" data-i18n="lang2_name">Malayalam</span>
-                            <span class="pill" data-i18n="lang3_name">German</span>
-                            <span class="pill" data-i18n="lang4_name">Tamil</span>
-                            <span class="pill" data-i18n="lang5_name">Hindi</span>
+                            <div class="language-item"><span data-i18n="lang1_name">English</span> <span>Native</span></div>
+                            <div class="language-item"><span data-i18n="lang2_name">Malayalam</span> <span>Native</span></div>
+                            <div class="language-item"><span data-i18n="lang4_name">Tamil</span> <span>Conversational</span></div>
+                            <div class="language-item"><span data-i18n="lang5_name">Hindi</span> <span>Conversational</span></div>
+                            <div class="language-item"><span data-i18n="lang3_name">German</span> <span class="pill pill-learning">Learning</span></div>
                         </div>
                     </div>
                 </div>
