@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Engineer GPM Portfolio --- FINAL BLUEPRINT v10.0 (DEFINITIVE)
+   Engineer GPM Portfolio --- FINAL BLUEPRINT v11.0 (DEFINITIVE)
    --- [ style.css ] ---
    - Core Styles & Variables (Blue Gradient Palette)
-   - Layout & Universal Header with Mobile Drawer
-   - "Executive Manifesto" About Page with Fluid Dividers
-   - "Living Blueprint" Homepage Timeline with Evolving Canvas
+   - Layout & Universal Header + Floating Mobile Nav
+   - "Executive Manifesto" About Page
+   - "Living Blueprint" Homepage Timeline
    - Animations & Responsive Design
    ========================================================================== */
 
@@ -33,13 +33,14 @@
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
   --header-height: 73px;
+  --mobile-nav-height: 60px;
 }
 
 /* German Theme Variables */
 html[data-theme="german"] {
   --bg-color: #F0F3EF;
   --text-primary: #0B2F23;
-  --text-secondary: #4B6B58;
+  --text-secondary: #4B5568;
   --accent-primary: #12372A; /* Forest Green */
   --border-color: #DDE2DD;
   --accent-gradient: linear-gradient(90deg, #166534 0%, #14532D 100%);
@@ -59,6 +60,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
   opacity: 0;
   animation: fadeIn 0.5s ease-out forwards;
+  padding-bottom: var(--mobile-nav-height); /* Space for floating nav */
 }
 @keyframes fadeIn { to { opacity: 1; } }
 
@@ -86,7 +88,7 @@ body {
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--text-primary); text-decoration: none; }
 .brand-avatar { width: 40px; height: 40px; border-radius: 50%; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-.main-nav { display: none; } /* Hidden on mobile */
+.main-nav { display: none; } /* Hidden by default, shown on desktop */
 .nav-link { font-size: 14px; font-weight: 500; padding: 8px 12px; border-radius: 8px; color: var(--text-secondary); text-decoration: none; }
 .nav-link:hover { color: var(--text-primary); background-color: rgba(0, 0, 0, 0.05); }
 .nav-link.active { color: var(--accent-primary); font-weight: 600; }
@@ -98,17 +100,11 @@ html[data-theme="german"] .lang-toggle-btn.active { color: var(--surface-color);
 .lang-glider { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: var(--accent-gradient); border-radius: 99px; transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
 .lang-glider.de { transform: translateX(100%); }
 
-/* Mobile Menu */
-.mobile-menu-toggle { display: flex; flex-direction: column; justify-content: space-around; width: 24px; height: 24px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
-.mobile-menu-toggle .bar { width: 100%; height: 2px; background-color: var(--text-primary); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
-body.mobile-menu-open .mobile-menu-toggle .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-body.mobile-menu-open .mobile-menu-toggle .bar:nth-child(2) { opacity: 0; }
-body.mobile-menu-open .mobile-menu-toggle .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.mobile-nav-drawer { position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100vh - var(--header-height)); background-color: var(--bg-color); z-index: 999; transform: translateX(100%); transition: transform 0.3s ease-in-out; padding: 40px 24px; }
-body.mobile-menu-open .mobile-nav-drawer { transform: translateX(0); }
-.mobile-nav-drawer nav { display: flex; flex-direction: column; align-items: center; gap: 24px; }
-.mobile-nav-drawer .nav-link { font-size: 1.5rem; font-weight: 600; }
+.mobile-tab-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-around; height: var(--mobile-nav-height); background-color: rgba(248, 249, 250, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--border-color); padding: 4px; }
+.tab-link { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; flex-grow: 1; color: var(--text-secondary); text-decoration: none; }
+.tab-link.active { color: var(--accent-primary); font-weight: 600; }
+.tab-icon { width: 24px; height: 24px; }
+.tab-label { font-size: 10px; }
 
 /* -------------------------
    3. Footer
@@ -129,12 +125,16 @@ body.mobile-menu-open .mobile-nav-drawer { transform: translateX(0); }
 .hero-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 500px; margin: 0 0 32px; text-align: left; }
 .hero-cta { display: flex; justify-content: flex-start; gap: 16px; }
 .hero-pills { margin-top: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.pill-card { background-color: var(--surface-color); color: var(--accent-primary); font-weight: 500; border: 1px solid var(--accent-light); padding: 8px 16px; border-radius: 8px; }
-.hero-image-wrapper { display: flex; justify-content: center; order: -1; }
+.pill-card { background-color: var(--surface-color); color: var(--accent-primary); font-weight: 500; border: 1px solid var(--accent-light); padding: 8px 16px; border-radius: 8px; font-size: 0.875rem; }
+.hero-image-wrapper { display: flex; flex-direction: column; justify-content: center; align-items: center; order: -1; gap: 24px; }
 .hero-image-circle { width: 300px; height: 300px; border-radius: 50%; background-color: var(--surface-color); box-shadow: var(--shadow-lg); display: flex; justify-content: center; align-items: center; overflow: hidden; }
 .hero-image { width: 100%; height: 100%; object-fit: cover; }
-.btn-chat-shaky { font-family: var(--font-handwritten); position: absolute; top: 0; right: 0; background-color: #EF4444; color: white; padding: 10px 20px; border: 2px solid #DC2626; border-radius: 8px; text-decoration: none; animation: shake 1.5s infinite; }
-@keyframes shake { 0%, 100% { transform: rotate(0); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-3deg); } 20%, 40%, 60%, 80% { transform: rotate(3deg); } }
+.btn-chat-shaky { font-family: var(--font-handwritten); background-color: #EF4444; color: white; padding: 10px 20px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; text-decoration: none; animation: shake 2.5s infinite; display: inline-flex; align-items: center; gap: 8px; font-size: 1.25rem; }
+.radiant-lines { display: inline-block; width: 10px; height: 10px; border-left: 2px solid white; border-right: 2px solid white; opacity: 0.6; }
+.radiant-lines.right { transform: scaleX(-1); }
+@keyframes shake { 0%, 100% { transform: rotate(0) scale(1); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-3deg) scale(1.02); } 20%, 40%, 60%, 80% { transform: rotate(3deg) scale(1.02); } }
+.desktop-only { display: none; }
+.mobile-command-center { display: flex; justify-content: center; align-items: center; gap: 24px; width: 100%; }
 
 .living-blueprint-section { padding: 80px 0; position: relative; overflow: hidden; background-color: var(--accent-light); }
 .timeline-frame { position: relative; padding: 0 40px; border-left: 1px solid rgba(0,0,0,0.1); border-right: 1px solid rgba(0,0,0,0.1); }
@@ -238,18 +238,25 @@ body.mobile-menu-open .mobile-nav-drawer { transform: translateX(0); }
 /* -------------------------
    8. Responsive Design
    ------------------------- */
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .mobile-command-center .lang-toggle { font-size: 0.8rem; }
+}
+
 @media (min-width: 769px) {
+  body { padding-bottom: 0; }
+  .mobile-tab-bar { display: none; }
+  .mobile-command-center { display: none; }
+  .desktop-only { display: inline-flex; }
   .main-nav { display: flex; }
-  .mobile-menu-toggle { display: none; }
   .hero-container { grid-template-columns: 1fr 1fr; }
   .hero-content { text-align: left; }
-  .btn-chat-shaky { right: -50px; top: -20px; }
   .hero-image-wrapper { order: 1; }
   .hero-image-circle { width: 400px; height: 400px; }
   .story-node { grid-template-columns: 1fr 1fr; }
   .profile-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 60px; align-items: flex-start; }
   .profile-sidebar { position: sticky; top: calc(var(--header-height) + 40px); }
-  .welcome-mat-layout { grid-template-columns: 1fr 1fr; }
+  .welcome-mat-layout { grid-template-columns: 1.2fr 1fr; }
   .welcome-mat-content { text-align: left; }
   .connect-page-layout { grid-template-columns: 1fr 1fr; }
 }
