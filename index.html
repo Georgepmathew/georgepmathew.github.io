@@ -59,6 +59,11 @@
                         <a href="about.html" class="btn btn-primary" data-i18n="btn_story">My Full Story</a>
                         <a href="profile.html" class="btn btn-secondary" data-i18n="nav_profile">View My Profile</a>
                     </div>
+                    <div class="hero-pills">
+                        <div class="pill" data-i18n="pill1">+100% total revenue (Best Trading)</div>
+                        <div class="pill" data-i18n="pill2">Site supervision — pile foundations, precast erection</div>
+                        <div class="pill" data-i18n="pill3">QA / QC experience on precast components</div>
+                    </div>
                 </div>
                 <div class="hero-image-wrapper">
                     <img src="assets/profile-main.png" alt="A professional portrait of George P Mathew" class="hero-image">
@@ -66,8 +71,8 @@
             </div>
         </section>
 
-        <!-- Story Conduit Timeline Section -->
-        <section class="story-timeline-section">
+        <!-- Living Blueprint Timeline Section -->
+        <section class="living-blueprint-section">
             <div class="evolving-canvas">
                 <div class="canvas-layer" id="canvas-concrete"></div>
                 <div class="canvas-layer" id="canvas-grid"></div>
@@ -75,75 +80,78 @@
             </div>
             
             <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
-                </header>
-                
-                <div class="story-path-wrapper">
-                    <svg class="story-path-svg" viewBox="0 0 1000 2800" preserveAspectRatio="xMidYMin slice">
-                         <path id="story-path" d="M 500 150 C 500 300, 800 450, 800 600 C 800 750, 500 900, 500 1050 C 500 1200, 200 1350, 200 1500 C 200 1650, 500 1800, 500 1950 C 500 2100, 800 2250, 800 2400" fill="none"/>
-                    </svg>
+                <div class="timeline-frame">
+                    <div class="timeline-header-divider"></div>
+                    <header class="section-header">
+                        <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
+                    </header>
+                    
+                    <div class="story-path-wrapper">
+                        <svg class="story-path-svg" viewBox="0 0 1000 2800" preserveAspectRatio="xMidYMin slice">
+                             <path id="story-path" d="M 500 150 C 500 300, 800 450, 800 600 C 800 750, 500 900, 500 1050 C 500 1200, 200 1350, 200 1500 C 200 1650, 500 1800, 500 1950 C 500 2100, 800 2250, 800 2400" fill="none"/>
+                        </svg>
 
-                    <div class="story-nodes">
-                        <!-- Scene 1: Civil Engineer -->
-                        <div class="story-node" id="node1">
-                            <div class="story-content card">
-                                <h3 data-i18n="journey1_title">Civil Engineer</h3>
-                                <p data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
+                        <div class="story-nodes">
+                            <!-- Scene 1: Civil Engineer -->
+                            <div class="story-node" id="node1">
+                                <div class="story-content card">
+                                    <h3 data-i18n="journey1_title">Civil Engineer</h3>
+                                    <p data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
+                                </div>
+                                <div class="story-visual">
+                                    <img src="assets/diorama/character-civil.png" class="story-character" alt="Illustration of George as a Civil Engineer">
+                                </div>
                             </div>
-                            <div class="story-visual">
-                                <img src="assets/diorama/character-civil.png" class="story-character" alt="Illustration of George as a Civil Engineer">
-                            </div>
-                        </div>
 
-                        <!-- Interstitial 1 -->
-                        <div class="interstitial-node" id="interstitial1">
-                             <img src="assets/icons/gear-to-lightbulb.svg" alt="Transition from engineering to ideas">
-                             <p data-i18n="interstitial1_text">This experience led me to...</p>
-                        </div>
-
-                        <!-- Scene 2: Entrepreneur -->
-                        <div class="story-node" id="node2">
-                            <div class="story-content card">
-                                <h3 data-i18n="journey2_title">Entrepreneur</h3>
-                                <p data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
+                            <!-- Interstitial 1 -->
+                            <div class="interstitial-node" id="interstitial1">
+                                 <img src="assets/icons/gear-to-lightbulb.svg" alt="Transition from engineering to ideas">
+                                 <p data-i18n="interstitial1_text">This experience led me to...</p>
                             </div>
-                            <div class="story-visual">
-                                <img src="assets/diorama/character-entrepreneur.png" class="story-character" alt="Illustration of George as an Entrepreneur">
-                            </div>
-                        </div>
 
-                        <!-- Interstitial 2 -->
-                        <div class="interstitial-node" id="interstitial2">
-                            <img src="assets/icons/lightbulb-to-atom.svg" alt="Transition from ideas to science">
-                            <p data-i18n="interstitial2_text">Which sparked a new focus on...</p>
-                        </div>
-
-                        <!-- Scene 3: Content Creator -->
-                        <div class="story-node" id="node3">
-                            <div class="story-content card">
-                                <h3 data-i18n="journey3_title">Content Creator</h3>
-                                <p data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
+                            <!-- Scene 2: Entrepreneur -->
+                            <div class="story-node" id="node2">
+                                <div class="story-content card">
+                                    <h3 data-i18n="journey2_title">Entrepreneur</h3>
+                                    <p data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
+                                </div>
+                                <div class="story-visual">
+                                    <img src="assets/diorama/character-entrepreneur.png" class="story-character" alt="Illustration of George as an Entrepreneur">
+                                </div>
                             </div>
-                            <div class="story-visual">
-                                <img src="assets/diorama/character-creator.png" class="story-character" alt="Illustration of George as a Content Creator">
-                            </div>
-                        </div>
 
-                         <!-- Interstitial 3 -->
-                        <div class="interstitial-node" id="interstitial3">
-                            <img src="assets/icons/atom-accent.svg" alt="Focus on materials science">
-                            <p data-i18n="interstitial3_text">Ultimately leading to my future in...</p>
-                        </div>
-
-                        <!-- Scene 4: Materials Engineer -->
-                        <div class="story-node" id="node4">
-                            <div class="story-content card">
-                                <h3 data-i18n="journey4_title">Materials Engineer</h3>
-                                <p data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
+                            <!-- Interstitial 2 -->
+                            <div class="interstitial-node" id="interstitial2">
+                                <img src="assets/icons/lightbulb-to-atom.svg" alt="Transition from ideas to science">
+                                <p data-i18n="interstitial2_text">Which sparked a new focus on...</p>
                             </div>
-                            <div class="story-visual">
-                                <img src="assets/diorama/character-materials.png" class="story-character" alt="Illustration of George as a Materials Engineer">
+
+                            <!-- Scene 3: Content Creator -->
+                            <div class="story-node" id="node3">
+                                <div class="story-content card">
+                                    <h3 data-i18n="journey3_title">Content Creator</h3>
+                                    <p data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
+                                </div>
+                                <div class="story-visual">
+                                    <img src="assets/diorama/character-creator.png" class="story-character" alt="Illustration of George as a Content Creator">
+                                </div>
+                            </div>
+
+                             <!-- Interstitial 3 -->
+                            <div class="interstitial-node" id="interstitial3">
+                                <img src="assets/icons/atom-accent.svg" alt="Focus on materials science">
+                                <p data-i18n="interstitial3_text">Ultimately leading to my future in...</p>
+                            </div>
+
+                            <!-- Scene 4: Materials Engineer -->
+                            <div class="story-node" id="node4">
+                                <div class="story-content card">
+                                    <h3 data-i18n="journey4_title">Materials Engineer</h3>
+                                    <p data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
+                                </div>
+                                <div class="story-visual">
+                                    <img src="assets/diorama/character-materials.png" class="story-character" alt="Illustration of George as a Materials Engineer">
+                                </div>
                             </div>
                         </div>
                     </div>
