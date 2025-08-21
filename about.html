@@ -9,10 +9,10 @@
     <!-- Favicon -->
     <link rel="icon" href="assets/profile.png" type="image/png">
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Gochi Hand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Gochi+Hand&display=swap" rel="stylesheet">
     
     <!-- Defer loading of non-critical CSS/JS -->
     <link rel="stylesheet" href="style.css">
@@ -20,7 +20,7 @@
 </head>
 <body>
 
-    <!-- ======================= Header (Desktop) ======================= -->
+    <!-- ======================= Universal Header ======================= -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand" aria-label="Go to homepage">
@@ -30,17 +30,37 @@
                     <span class="brand-sub" data-i18n="brand_sub">Engineer GPM</span>
                 </div>
             </a>
+            
+            <!-- Desktop Navigation -->
             <nav class="main-nav" aria-label="Primary navigation">
                 <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
                 <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
                 <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
             </nav>
+
             <div class="header-actions">
-                <!-- Language/Theme Toggle will be injected here by JavaScript -->
+                <!-- Language/Theme Toggle is injected here -->
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer">
+        <nav>
+            <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+            <a href="profile.html" class="nav-link" data-i18n="nav_profile">Profile</a>
+            <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+            <a href="connect.html" class="nav-link" data-i18n="nav_connect">Connect</a>
+        </nav>
+    </div>
 
     <!-- ======================== Main Content ======================== -->
     <main class="about-page-main">
@@ -49,7 +69,7 @@
             <div class="container">
                 <div class="welcome-mat-layout">
                     <div class="welcome-mat-content">
-                        <h1 class="welcome-mat-title" data-i18n="welcome_title">Hi, I'm <span class="text-accent-inline">George</span> - I build things that matter.</h1>
+                        <h1 class="welcome-mat-title" data-i18n="welcome_title">Hi, I'm George - I build things that matter.</h1>
                         <p class="welcome-mat-summary" data-i18n="welcome_subtitle">A hands-on engineer who loves solving real problems with both time-tested methods and exciting new tech.</p>
                         <p class="welcome-mat-secondary" data-i18n="welcome_about">I've gotten my hands dirty on construction sites across India, and now I'm studying at RWTH Aachen to understand how materials really work. I'm fascinated by how AI and robotics could help us build faster, safer, and more sustainably - without losing the craftsmanship that makes construction an art.</p>
                     </div>
@@ -108,26 +128,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- ======================= Mobile Tab Bar ======================= -->
-    <nav class="mobile-tab-bar" aria-label="Mobile navigation">
-        <a href="index.html" class="tab-link" aria-label="Home">
-            <img src="assets/icons/home.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_home">Home</span>
-        </a>
-        <a href="profile.html" class="tab-link" aria-label="Profile">
-            <img src="assets/icons/user.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_profile">Profile</span>
-        </a>
-        <a href="about.html" class="tab-link" aria-label="About">
-            <img src="assets/icons/sparkles.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_about">About</span>
-        </a>
-        <a href="connect.html" class="tab-link" aria-label="Connect">
-            <img src="assets/icons/mail.svg" alt="" class="tab-icon">
-            <span class="tab-label" data-i18n="nav_connect">Connect</span>
-        </a>
-    </nav>
 
 </body>
 </html>
