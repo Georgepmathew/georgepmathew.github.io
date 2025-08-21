@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Engineer GPM Portfolio --- EXECUTIVE BRIEFING v7.0 (FINAL)
+   Engineer GPM Portfolio --- EXECUTIVE MANIFESTO v8.0 (FINAL)
    --- [ style.css ] ---
    - Core Styles & Variables (NEW Blue Gradient Palette)
    - Layout & Global Components (Header, Footer, Modern Cards)
-   - NEW "Executive Briefing" About Page
-   - NEW "Story Conduit" Homepage Timeline
+   - NEW "Executive Manifesto" About Page with Fluid Dividers
+   - NEW "Living Blueprint" Homepage Timeline with Evolving Canvas
    - Animations & Responsive Design
    ========================================================================== */
 
@@ -21,6 +21,7 @@
   --accent-gradient: linear-gradient(90deg, #3B82F6 0%, #2563EB 100%);
   --accent-primary: #2563EB; /* A solid blue from the gradient */
   --accent-light: #EFF6FF;
+  --vision-bg: #111827; /* Near-black for Vision section */
   --about-name-gradient: linear-gradient(90deg, #3B82F6 0%, #1D4ED8 100%);
   
   /* Typography */
@@ -43,6 +44,7 @@ html[data-theme="german"] {
   --accent-primary: #12372A; /* Forest Green */
   --border-color: #DDE2DD;
   --accent-gradient: linear-gradient(90deg, #166534 0%, #14532D 100%);
+  --vision-bg: #0B2F23;
   --about-name-gradient: linear-gradient(120deg, #12372A 0%, #4B6B58 100%);
 }
 
@@ -108,7 +110,7 @@ html[data-theme="german"] .lang-toggle-btn.active { color: var(--surface-color);
 /* -------------------------
    3. Footer
    ------------------------- */
-.site-footer { border-top: 1px solid var(--border-color); padding: 32px 0; margin-top: 80px; }
+.site-footer { border-top: 1px solid var(--border-color); padding: 32px 0; }
 .footer-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
 .footer-brand { font-weight: 500; color: var(--text-secondary); font-size: 14px; font-style: italic; }
 .footer-links { display: flex; gap: 24px; font-size: 14px; font-weight: 500; }
@@ -126,20 +128,27 @@ html[data-theme="german"] .lang-toggle-btn.active { color: var(--surface-color);
 .hero-image-wrapper { display: flex; justify-content: center; order: -1; }
 .hero-image { width: 100%; max-width: 250px; border-radius: 50%; border: 8px solid var(--surface-color); box-shadow: var(--shadow); }
 
-.story-timeline-section { padding: 80px 0; background: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 100%); position: relative; overflow: hidden; }
-html[data-theme="german"] .story-timeline-section { background: linear-gradient(180deg, #EBF5EE 0%, #D4E2D8 100%); }
+.story-timeline-section { padding: 80px 0; position: relative; overflow: hidden; }
+.evolving-canvas { position: absolute; inset: 0; z-index: -1; }
+.canvas-layer { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease-in-out; }
+#canvas-concrete { background-image: url('assets/textures/concrete.png'); background-size: cover; }
+#canvas-grid { background-image: url('assets/textures/grid.png'); background-repeat: repeat; }
+#canvas-molecular { background-image: url('assets/textures/molecular.png'); background-size: cover; }
 .story-timeline-section .section-header { margin-bottom: 80px; }
-.story-timeline-wrapper { position: relative; }
-.story-conduit-svg { position: absolute; top: 0; left: 0; z-index: 1; pointer-events: none; }
-#story-conduit-path { stroke: rgba(0,0,0,0.1); stroke-dasharray: 5, 5; }
-.story-scenes { position: relative; z-index: 2; }
-.story-scene { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; min-height: 500px; padding: 40px 0; }
-.story-scene:nth-child(even) .story-content { order: 2; }
+.story-path-wrapper { position: relative; }
+.story-path-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+#story-path { stroke: var(--accent-primary); stroke-dasharray: 10, 5; opacity: 0.3; }
+.story-nodes { position: relative; z-index: 2; }
+.story-node, .interstitial-node { padding: 60px 0; }
+.story-node { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+.story-node:nth-child(even) .story-content { order: 2; }
 .story-content.card { padding: 32px; backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0.7); }
-html[data-theme="german"] .story-content.card { background-color: rgba(255, 255, 255, 0.8); }
 .story-content h3 { font-size: 1.75rem; font-weight: 800; margin-bottom: 16px; color: var(--accent-primary); }
 .story-visual { position: relative; display: flex; justify-content: center; align-items: center; }
 .story-character { max-width: 80%; max-height: 400px; object-fit: contain; }
+.interstitial-node { text-align: center; padding: 80px 0; }
+.interstitial-node img { height: 40px; margin-bottom: 12px; opacity: 0.5; }
+.interstitial-node p { font-style: italic; color: var(--text-secondary); }
 
 /* -------------------------
    5. Profile Page
@@ -147,7 +156,8 @@ html[data-theme="german"] .story-content.card { background-color: rgba(255, 255,
 .profile-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
 .education-timeline { display: flex; flex-direction: column; gap: 24px; }
 .timeline-item { display: flex; gap: 20px; align-items: flex-start; }
-.timeline-icon { font-size: 20px; flex-shrink: 0; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--accent-light); color: var(--accent-primary); }
+.timeline-icon { font-size: 20px; flex-shrink: 0; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; color: white; }
+.gradient-icon { background: var(--accent-gradient); }
 .timeline-card, .experience-card { padding: 24px; flex-grow: 1; }
 .experience-card .tags { margin-top: 24px; }
 #experience { margin-top: 60px; }
@@ -168,31 +178,31 @@ html[data-theme="german"] .story-content.card { background-color: rgba(255, 255,
 .language-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* -------------------------
-   6. ABOUT PAGE (EXECUTIVE BRIEFING)
+   6. ABOUT PAGE (EXECUTIVE MANIFESTO)
    ------------------------- */
 .about-welcome-mat { padding: 80px 0; }
 .welcome-mat-layout { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
-.welcome-mat-content { text-align: center; }
 .welcome-mat-intro-text { font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; }
-.welcome-mat-title { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.2; margin-top: 8px; }
+.welcome-mat-title { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.2; margin-top: 8px; }
 .about-name-gradient { background: var(--about-name-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
-.welcome-mat-summary { font-size: 1.125rem; color: var(--text-secondary); max-width: 550px; margin: 24px auto 0; }
-.welcome-mat-socials { margin-top: 32px; }
-.welcome-mat-socials span { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
-.social-links { display: flex; justify-content: center; gap: 16px; }
-.social-links a { display: grid; place-items: center; width: 44px; height: 44px; background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 50%; }
-.social-links a:hover { background-color: var(--accent-light); border-color: var(--accent-primary); }
+.welcome-mat-summary { font-size: 1.25rem; color: var(--text-primary); margin-top: 24px; font-weight: 500; }
+.welcome-mat-secondary { font-size: 1rem; color: var(--text-secondary); margin-top: 16px; border-left: 3px solid var(--border-color); padding-left: 16px; }
 .welcome-mat-image-wrapper { position: relative; }
 .welcome-mat-image-bg { position: absolute; inset: 0; background: linear-gradient(45deg, var(--accent-light) 0%, #fff 70%); border-radius: 50%; filter: blur(40px); z-index: -1; }
 .welcome-mat-image { max-width: 100%; object-fit: contain; }
-
-.core-competencies { padding: 80px 0; background-color: var(--accent-light); }
-html[data-theme="german"] .core-competencies { background-color: #EBF5EE; }
-.competencies-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-.competency-card { padding: 32px; text-align: center; }
-.competency-icon { width: 48px; height: 48px; margin-bottom: 24px; }
-.competency-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; }
-.competency-card p { color: var(--text-secondary); }
+.shape-divider { overflow: hidden; position: relative; left: 0; width: 100%; line-height: 0; background-color: var(--vision-bg); }
+.shape-divider svg { position: relative; display: block; width: calc(100% + 1.3px); height: 80px; }
+.shape-divider .shape-fill { fill: var(--bg-color); }
+.shape-divider-bottom { transform: rotate(180deg); }
+.vision-section { padding: 80px 0; background-color: var(--vision-bg); }
+.vision-card { background-color: transparent; border: none; box-shadow: none; text-align: center; max-width: 800px; margin: 0 auto; }
+.vision-card h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 600; line-height: 1.4; color: var(--surface-color); font-style: italic; }
+.vision-card .text-accent { color: #7DD3FC; } /* Light blue for accents on dark bg */
+.personal-touch-section { padding: 80px 0; }
+.personal-touch-content { text-align: center; max-width: 700px; margin: 0 auto; }
+.personal-touch-text { font-size: 1.5rem; font-weight: 500; font-style: italic; line-height: 1.5; margin-bottom: 32px; }
+.personal-touch-text::before { content: '“'; }
+.personal-touch-text::after { content: '”'; }
 
 /* -------------------------
    7. Connect Page
@@ -226,13 +236,10 @@ html[data-theme="german"] .core-competencies { background-color: #EBF5EE; }
   .hero-cta { justify-content: flex-start; }
   .hero-image-wrapper { order: 1; }
   .hero-image { max-width: 380px; }
-  .story-scene { grid-template-columns: 1fr 1fr; gap: 60px; }
+  .story-node { grid-template-columns: 1fr 1fr; }
   .profile-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 60px; align-items: flex-start; }
   .profile-sidebar { position: sticky; top: calc(var(--header-height) + 24px); }
   .welcome-mat-layout { grid-template-columns: 1fr 1fr; }
   .welcome-mat-content { text-align: left; }
-  .welcome-mat-summary { margin: 24px 0 0; }
-  .welcome-mat-socials span, .social-links { justify-content: flex-start; }
-  .competencies-grid { grid-template-columns: repeat(3, 1fr); }
   .connect-page-layout { grid-template-columns: 1fr 1fr; }
 }
