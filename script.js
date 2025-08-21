@@ -1,10 +1,9 @@
 /* =-========================================================================
-   Engineer GPM Portfolio --- DIORAMA & CAROUSEL v6.0
+   Engineer GPM Portfolio --- EXECUTIVE BRIEFING v7.0 (FINAL)
    --- [ script.js ] ---
    - Handles FULL EN/DE translations and theme switching
    - Manages active navigation links
-   - Animates "Perspective Carousel" on About page
-   - Animates parallax "Diorama Timeline" on Homepage
+   - Animates "Story Conduit" on Homepage using GSAP
    ========================================================================== */
 
 (function () {
@@ -88,24 +87,17 @@
         lang5_name: "Hindi",
         
         // About Page
-        about_name_full: "I'm George P Mathew.",
-        about_intro_p: "I'm a civil engineer driven by a simple observation: the future of construction isn't just about bigger structures, but better materials. Scroll to see my journey.",
-        elevator1_title: "The Foundation",
-        about_p1_full: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.",
-        elevator2_title: "The Insight",
-        about_p2: "This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University.",
-        elevator3_title: "The Catalyst",
-        about_p3: "I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding AI to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.",
-        germany_heading: "A Deliberate Pivot to Germany",
-        germany_intro: "My on-site experience revealed the critical need for material innovation, leading me directly to Germany—the European leader in engineering research. This is the epicenter of the future I want to help build.",
-        germany_col1_title: "Why Germany?",
-        germany_item1_title: "Engineering & Innovation Leadership",
-        germany_item1_desc: "Home to industry giants and a culture of precision, Germany is where theoretical knowledge meets world-class application. It's the ideal environment to develop my expertise.",
-        germany_col2_title: "Why RWTH Aachen?",
-        germany_item4_title: "World-Class University",
-        germany_item4_desc: "RWTH Aachen's global reputation in Materials Engineering ensures an education at the forefront of the field and opens doors to global opportunities.",
-        germany_bigger_picture_title: "The Bigger Picture",
-        germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.",
+        welcome_intro: "WELCOME TO MY WORLD",
+        welcome_title: "Hi, I'm George P Mathew, a Civil Engineer & Materials Innovator.",
+        welcome_summary: "I solve real-world construction challenges by focusing on their core: the materials. My journey from on-site engineering to advanced materials science is driven by a mission to build a more sustainable and durable future.",
+        focus_subtitle: "FEATURES",
+        focus_title: "What I Do",
+        focus1_title: "Civil Engineering Foundation",
+        focus1_desc: "My on-site experience in precast erection and foundation work provides a deep understanding of real-world construction challenges and material integrity.",
+        focus2_title: "Materials Science Innovation",
+        focus2_desc: "My future is dedicated to innovating the very materials we use, driven by my upcoming M.Sc. at the world-renowned RWTH Aachen University.",
+        focus3_title: "AI-Driven Problem Solving",
+        focus3_desc: "I treat every challenge like an engineering problem, using modern tools like AI to design and build efficient solutions—this website is a prime example.",
 
         // Connect Page
         social_brand_heading: "Follow My Journey",
@@ -186,24 +178,17 @@
         lang3_name: "Deutsch",
         lang4_name: "Tamil",
         lang5_name: "Hindi",
-        about_name_full: "Ich bin George P Mathew.",
-        about_intro_p: "Ich bin Bauingenieur, angetrieben von einer einfachen Beobachtung: Die Zukunft des Bauens liegt nicht nur in größeren Strukturen, sondern in besseren Materialien. Scrollen Sie, um meine Reise zu sehen.",
-        elevator1_title: "Das Fundament",
-        about_p1_full: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete. Dies war nicht nur ein Job; es war ein Labor, in dem ich die kritische Verbindung zwischen Materialqualität und Projekterfolg erlebte.",
-        elevator2_title: "Die Erkenntnis",
-        about_p2: "Diese Erfahrung führte mich zu einem klaren Schluss: Um bessere, langlebigere Strukturen zu bauen, müssen wir zuerst die Materialien selbst innovieren. Diese Erkenntnis ist die treibende Kraft für mein Masterstudium in Werkstofftechnik an der weltberühmten RWTH Aachen.",
-        elevator3_title: "Der Katalysator",
-        about_p3: "Ich zeichne mich auch durch meinen Einfallsreichtum aus. Diese Website ist der Beweis. Ohne Programmiererfahrung behandelte ich ihre Erstellung wie ein Ingenieurproblem und leitete eine KI an, den Code zu generieren. Das ist die zukunftsorientierte Denkweise, die ich in jede Herausforderung einbringe.",
-        germany_heading: "Ein bewusster Schwenk nach Deutschland",
-        germany_intro: "Meine Praxiserfahrung hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung. Dies ist das Epizentrum der Zukunft, die ich mitgestalten möchte.",
-        germany_col1_title: "Warum Deutschland?",
-        germany_item1_title: "Führung in Ingenieurwesen & Innovation",
-        germany_item1_desc: "Als Heimat von Branchenriesen und einer Kultur der Präzision verbindet Deutschland theoretisches Wissen mit erstklassiger Anwendung. Es ist das ideale Umfeld, um meine Expertise zu entwickeln.",
-        germany_col2_title: "Warum RWTH Aachen?",
-        germany_item4_title: "Weltklasse-Universität",
-        germany_item4_desc: "Der weltweite Ruf der RWTH Aachen in der Werkstofftechnik sichert eine Ausbildung an der Spitze des Fachgebiets und öffnet globale Möglichkeiten.",
-        germany_bigger_picture_title: "Das große Ganze",
-        germany_bigger_picture_desc: "Dies ist nicht nur ein Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Bildung bin ich in der Lage, die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe.",
+        welcome_intro: "WILLKOMMEN IN MEINER WELT",
+        welcome_title: "Hallo, ich bin George P Mathew, ein Bauingenieur & Werkstoff-Innovator.",
+        welcome_summary: "Ich löse reale Bauherausforderungen, indem ich mich auf ihren Kern konzentriere: die Materialien. Meine Reise vom Baustelleningenieur zur fortgeschrittenen Werkstoffwissenschaft ist von der Mission angetrieben, eine nachhaltigere und langlebigere Zukunft zu bauen.",
+        focus_subtitle: "MERKMALE",
+        focus_title: "Was ich tue",
+        focus1_title: "Bauingenieur-Fundament",
+        focus1_desc: "Meine praktische Erfahrung in der Fertigteilmontage und bei Fundamentarbeiten ermöglicht ein tiefes Verständnis für reale Bauherausforderungen und Materialintegrität.",
+        focus2_title: "Werkstoff-Innovation",
+        focus2_desc: "Meine Zukunft widme ich der Innovation der Materialien, die wir verwenden, angetrieben durch mein bevorstehendes M.Sc. an der weltberühmten RWTH Aachen.",
+        focus3_title: "KI-gestützte Problemlösung",
+        focus3_desc: "Ich behandle jede Herausforderung wie ein Ingenieurproblem und nutze moderne Werkzeuge wie KI, um effiziente Lösungen zu entwerfen – diese Website ist ein Paradebeispiel.",
         social_brand_heading: "Folge meiner Reise",
         contact_pro_heading: "Für berufliche Anfragen",
         social_brand_insta_title: "Instagram (@engineergpm)",
@@ -218,7 +203,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v11_final';
+  const LANG_KEY = 'gpm_lang_v12_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -227,7 +212,12 @@
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) {
-        el.textContent = dict[key];
+        // Use innerHTML for text with spans
+        if (key === 'welcome_title') {
+            el.innerHTML = dict[key];
+        } else {
+            el.textContent = dict[key];
+        }
       }
     });
     document.documentElement.setAttribute('lang', code);
@@ -273,115 +263,58 @@
     });
   }
 
-  function initDioramaTimeline() {
-    if (typeof gsap === 'undefined') return;
-    const scenes = gsap.utils.toArray('.diorama-scene');
-    scenes.forEach(scene => {
-        const bg = scene.querySelector('.diorama-bg-layer');
-        const char = scene.querySelector('.diorama-character');
-        gsap.to([bg, char], {
-            yPercent: -10,
-            ease: "none",
-            scrollTrigger: {
-                trigger: scene,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-        gsap.to(char, {
-            yPercent: -20, // Character moves faster for parallax
-            ease: "none",
-            scrollTrigger: {
-                trigger: scene,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    });
-  }
+  function initStoryConduit() {
+      const path = document.querySelector('#story-conduit-path');
+      if (!path) return;
 
-  function initPerspectiveCarousel() {
-    const carouselSection = document.querySelector('.carousel-section');
-    if (!carouselSection) return;
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        console.error('GSAP and/or ScrollTrigger not loaded. Carousel will not work.');
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.error('GSAP and/or ScrollTrigger not loaded. Story Conduit will not work.');
         return;
-    }
+      }
+      
+      const pathLength = path.getTotalLength();
+      
+      gsap.set(path, {
+          strokeDasharray: pathLength,
+          strokeDashoffset: pathLength,
+          autoAlpha: 1
+      });
 
-    const cards = gsap.utils.toArray('.carousel-card-wrapper');
-    const numCards = cards.length;
-    
-    // Create a horizontal scroll animation using GSAP
-    let scrollTween = gsap.to(cards, {
-        xPercent: -100 * (numCards - 1),
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".carousel-section",
-            pin: true,
-            scrub: 0.5,
-            snap: 1 / (numCards - 1),
-            start: "top top",
-            end: () => "+=" + (carouselSection.offsetWidth * (numCards - 1))
-        }
-    });
+      ScrollTrigger.create({
+          trigger: ".story-timeline-section",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          onUpdate: self => {
+              const progress = self.progress;
+              const offset = pathLength * (1 - progress);
+              path.style.strokeDashoffset = offset;
+          },
+      });
 
-    // Animate cards into and out of view with a perspective effect
-    cards.forEach((card, i) => {
-        gsap.set(card, {
-            scale: 1,
-            autoAlpha: 1,
-            xPercent: 0
-        });
-
-        const startPos = card.offsetLeft;
-        const width = card.offsetWidth;
-
-        gsap.to(card, {
-            scale: 0.9,
-            autoAlpha: 0.7,
+      // Parallax for characters
+      const scenes = gsap.utils.toArray('.story-scene');
+      scenes.forEach(scene => {
+        const char = scene.querySelector('.story-character');
+        gsap.to(char, {
+            yPercent: -15,
+            ease: "none",
             scrollTrigger: {
-                trigger: card,
-                start: 'center center-=' + (width * 0.55),
-                end: 'center center-=' + (width * 0.45),
-                scrub: true,
-                containerAnimation: scrollTween,
+                trigger: scene,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
             }
         });
-
-        gsap.to(card, {
-            scale: 1,
-            autoAlpha: 1,
-            scrollTrigger: {
-                trigger: card,
-                start: 'center center-=' + (width * 0.45),
-                end: 'center center+=' + (width * 0.45),
-                scrub: true,
-                containerAnimation: scrollTween,
-            }
-        });
-        
-        gsap.to(card, {
-            scale: 0.9,
-            autoAlpha: 0.7,
-            scrollTrigger: {
-                trigger: card,
-                start: 'center center+=' + (width * 0.45),
-                end: 'center center+=' + (width * 0.55),
-                scrub: true,
-                containerAnimation: scrollTween,
-            }
-        });
-    });
+      });
   }
+
 
   function init() {
     applyTranslations(getSavedLang());
     initLangToggle();
     markActiveNav();
-    initDioramaTimeline();
-    initPerspectiveCarousel();
+    initStoryConduit();
   }
 
   if (document.readyState === 'loading') {
@@ -389,4 +322,5 @@
   } else {
     init();
   }
+
 })();
