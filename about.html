@@ -16,11 +16,6 @@
     
     <!-- Defer loading of non-critical CSS/JS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- GSAP for advanced animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
-    
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -49,67 +44,57 @@
 
     <!-- ======================== Main Content ======================== -->
     <main class="about-page-main">
-        <!-- Chapter 1: The Hook -->
-        <section class="about-hook">
+        <!-- Part 1: The Welcome Mat -->
+        <section class="about-welcome-mat">
             <div class="container">
-                <h1 class="about-title" data-i18n="about_name_full">I'm George P Mathew.</h1>
-                <p class="about-subtitle" data-i18n="about_intro_p">I'm a civil engineer driven by a simple observation: the future of construction isn't just about bigger structures, but better materials. Scroll to see my journey.</p>
-            </div>
-        </section>
-
-        <!-- Chapter 2: The Perspective Carousel -->
-        <section class="carousel-section">
-            <div class="carousel-background">
-                <!-- Context Wings will be injected here by JS -->
-            </div>
-            <div class="perspective-carousel">
-                <div class="carousel-card-wrapper">
-                    <div class="carousel-card card">
-                        <h3 data-i18n="elevator1_title">The Foundation</h3>
-                        <p data-i18n="about_p1_full">My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.</p>
+                <div class="welcome-mat-layout">
+                    <div class="welcome-mat-content">
+                        <span class="welcome-mat-intro-text" data-i18n="welcome_intro">WELCOME TO MY WORLD</span>
+                        <h1 class="welcome-mat-title" data-i18n="welcome_title">Hi, I'm George P Mathew, a Civil Engineer & <span class="about-name-gradient">Materials Innovator.</span></h1>
+                        <p class="welcome-mat-summary" data-i18n="welcome_summary">I solve real-world construction challenges by focusing on their core: the materials. My journey from on-site engineering to advanced materials science is driven by a mission to build a more sustainable and durable future.</p>
+                        <div class="welcome-mat-socials">
+                            <span>FIND WITH ME</span>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/georgepmathew/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <img src="assets/icons/linkedin-simple.svg" alt="LinkedIn">
+                                </a>
+                                <a href="https://www.youtube.com/@EngineerGPM" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                    <img src="assets/icons/youtube-simple.svg" alt="YouTube">
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card-wrapper">
-                    <div class="carousel-card card">
-                        <h3 data-i18n="elevator2_title">The Insight</h3>
-                        <p data-i18n="about_p2">This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University.</p>
-                    </div>
-                </div>
-                <div class="carousel-card-wrapper">
-                    <div class="carousel-card card">
-                        <h3 data-i18n="elevator3_title">The Catalyst</h3>
-                        <p data-i18n="about_p3">I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding AI to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.</p>
+                    <div class="welcome-mat-image-wrapper">
+                        <div class="welcome-mat-image-bg"></div>
+                        <img src="assets/profile-closeup.png" alt="A close-up portrait of George P Mathew" class="welcome-mat-image">
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Chapter 3 & 4: The Vision & Conclusion -->
-        <section class="about-conclusion-section">
+
+        <!-- Part 2: Core Competencies -->
+        <section class="core-competencies">
             <div class="container">
-                <header class="page-header">
-                    <h2 class="section-title-large" data-i18n="germany_heading">A Deliberate Pivot to Germany</h2>
-                    <p class="page-subtitle" data-i18n="germany_intro">My on-site experience revealed the critical need for material innovation, leading me directly to Germany—the European leader in engineering research. This is the epicenter of the future I want to help build.</p>
+                <header class="section-header">
+                     <span class="section-subtitle" data-i18n="focus_subtitle">FEATURES</span>
+                    <h2 class="section-title" data-i18n="focus_title">What I Do</h2>
                 </header>
-                <div class="manifesto-grid">
-                    <div class="manifesto-column card">
-                        <h3 data-i18n="germany_col1_title">Why Germany?</h3>
-                        <div class="manifesto-item">
-                            <h4 data-i18n="germany_item1_title">Engineering & Innovation Leadership</h4>
-                            <p data-i18n="germany_item1_desc">Home to industry giants and a culture of precision, Germany is where theoretical knowledge meets world-class application. It's the ideal environment to develop my expertise.</p>
-                        </div>
+                <div class="competencies-grid">
+                    <div class="competency-card card">
+                        <img src="assets/icons/engineering-accent.svg" class="competency-icon" alt="">
+                        <h3 data-i18n="focus1_title">Civil Engineering Foundation</h3>
+                        <p data-i18n="focus1_desc">My on-site experience in precast erection and foundation work provides a deep understanding of real-world construction challenges and material integrity.</p>
                     </div>
-                    <div class="manifesto-column card">
-                        <h3 data-i18n="germany_col2_title">Why RWTH Aachen?</h3>
-                        <div class="manifesto-item">
-                            <h4 data-i18n="germany_item4_title">World-Class University</h4>
-                            <p data-i18n="germany_item4_desc">RWTH Aachen's global reputation in Materials Engineering ensures an education at the forefront of the field and opens doors to global opportunities.</p>
-                        </div>
+                    <div class="competency-card card">
+                        <img src="assets/icons/atom-accent.svg" class="competency-icon" alt="">
+                        <h3 data-i18n="focus2_title">Materials Science Innovation</h3>
+                        <p data-i18n="focus2_desc">My future is dedicated to innovating the very materials we use, driven by my upcoming M.Sc. at the world-renowned RWTH Aachen University.</p>
                     </div>
-                </div>
-                <div class="bigger-picture-box card">
-                    <h3 data-i18n="germany_bigger_picture_title">The Bigger Picture</h3>
-                    <p data-i18n="germany_bigger_picture_desc">This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.</p>
+                    <div class="competency-card card">
+                        <img src="assets/icons/ai-accent.svg" class="competency-icon" alt="">
+                        <h3 data-i18n="focus3_title">AI-Driven Problem Solving</h3>
+                        <p data-i18n="focus3_desc">I treat every challenge like an engineering problem, using modern tools like AI to design and build efficient solutions—this website is a prime example.</p>
+                    </div>
                 </div>
             </div>
         </section>
