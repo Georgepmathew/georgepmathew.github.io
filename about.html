@@ -49,60 +49,83 @@
 
     <!-- ======================== Main Content ======================== -->
     <main class="about-page-main">
-        <!-- Chapter 1: The Hook -->
-        <section class="about-chapter about-hook">
+        <!-- Chapter 1: The Welcome Mat -->
+        <section class="about-welcome-mat">
             <div class="container">
-                <div class="about-layout">
-                    <div class="about-content">
-                        <h1 class="about-title">
-                            <span data-i18n="about_intro">I'm</span>
-                            <span class="about-name-gradient">
-                                <span data-i18n="about_name_full">George P Mathew</span>.
-                            </span>
-                        </h1>
+                <div class="welcome-mat-layout">
+                    <div class="welcome-mat-content card">
+                        <h1 class="about-name-gradient" data-i18n="about_name_full">George P Mathew.</h1>
+                        <p class="welcome-mat-intro" data-i18n="about_p1_revised">My career began on construction sites, where I witnessed the critical link between <span class="text-accent">material quality</span> and project success. This insight is the driving force behind my transition to <span class="text-accent">Materials Engineering</span>.</p>
+                        <div class="welcome-mat-cta">
+                            <a href="#elevator-journey" class="btn btn-primary">Discover My Journey</a>
+                        </div>
+                        <div class="welcome-mat-pills">
+                            <div class="pill">Civil Engineering</div>
+                            <div class="pill">Materials Science</div>
+                            <div class="pill">AI-Driven Solutions</div>
+                        </div>
                     </div>
-                    <div class="about-image-column">
-                        <div class="about-image-container" id="interactive-image">
-                            <img src="assets/SG SITE.jpg" alt="George P Mathew at a construction site in a safety vest" class="about-image">
+                    <div class="welcome-mat-image-wrapper">
+                        <img src="assets/profile-closeup.png" alt="A close-up portrait of George P Mathew" class="welcome-mat-image">
+                        <div class="floating-insight card" data-i18n="floating_insight">
+                            <img src="assets/icons/atom-accent.svg" alt="Atom Icon">
+                            The future of construction is in the materials.
                         </div>
                     </div>
                 </div>
-                <div class="scroll-prompt">Scroll to begin the journey ↓</div>
             </div>
         </section>
 
-        <!-- Chapter 2: The Horizontal Journey -->
-        <section class="about-chapter horizontal-journey-section">
-            <div class="horizontal-journey-container">
-                <div class="journey-slide">
-                    <div class="slide-content card">
-                        <h3>The Foundation</h3>
-                        <p data-i18n="about_p1">My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.</p>
+        <!-- Fluid Shape Divider -->
+        <div class="shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- Chapter 2: The Focus Elevator -->
+        <section id="elevator-journey" class="elevator-section">
+            <div class="elevator-progress">
+                <div class="progress-node"></div>
+                <div class="progress-node"></div>
+                <div class="progress-node"></div>
+            </div>
+            <div class="elevator-wrapper">
+                <div class="elevator-card-container">
+                    <div class="elevator-card card">
+                        <h3 data-i18n="elevator1_title">The Foundation</h3>
+                        <p data-i18n="about_p1_full">My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.</p>
                     </div>
                 </div>
-                <div class="journey-slide">
-                    <div class="slide-content card">
-                        <h3>The Insight</h3>
-                        <p data-i18n="about_p2">This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University.</p>
+                <div class="elevator-card-container">
+                    <div class="elevator-card card">
+                        <h3 data-i18n="elevator2_title">The Insight</h3>
+                        <p data-i18n="about_p2">This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first <span class="text-accent">innovate the materials</span> themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned <span class="text-accent">RWTH Aachen University</span>.</p>
                     </div>
                 </div>
-                <div class="journey-slide">
-                    <div class="slide-content card">
-                        <h3>The Catalyst</h3>
-                        <p data-i18n="about_p3">I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding AI to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.</p>
+                <div class="elevator-card-container">
+                    <div class="elevator-card card">
+                        <h3 data-i18n="elevator3_title">The Catalyst</h3>
+                        <p data-i18n="about_p3">I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding <span class="text-accent">AI</span> to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.</p>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Fluid Shape Divider (Reversed) -->
+        <div class="shape-divider shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
 
-        <!-- Chapter 3: The Vision -->
-        <section class="about-chapter about-vision">
+        <!-- Chapter 3 & 4: The Vision & Conclusion -->
+        <section class="about-conclusion-section">
             <div class="container">
                 <header class="page-header">
                     <h2 class="page-title" data-i18n="germany_heading">A Deliberate Pivot to Germany</h2>
                     <p class="page-subtitle" data-i18n="germany_intro">My on-site experience revealed the critical need for material innovation, leading me directly to Germany—the European leader in engineering research. This is the epicenter of the future I want to help build.</p>
                 </header>
-        
                 <div class="manifesto-grid">
                     <div class="manifesto-column card">
                         <h3 data-i18n="germany_col1_title">Why Germany?</h3>
@@ -110,43 +133,20 @@
                             <h4 data-i18n="germany_item1_title">Engineering & Innovation Leadership</h4>
                             <p data-i18n="germany_item1_desc">Home to industry giants and a culture of precision, Germany is where theoretical knowledge meets world-class application. It's the ideal environment to develop my expertise.</p>
                         </div>
-                        <div class="manifesto-item">
-                            <h4 data-i18n="germany_item2_title">Industry 4.0 & Research Ecosystem</h4>
-                            <p data-i18n="germany_item2_desc">The collaborative ecosystem between academia and industry is unmatched, which is crucial for bridging my construction background with advanced materials.</p>
-                        </div>
-                        <div class="manifesto-item">
-                            <h4 data-i18n="germany_item3_title">Leading Construction & Materials Industry</h4>
-                            <p data-i18n="germany_item3_desc">Renowned for sustainability and precision, the German construction and materials industries provide the perfect landscape to contribute to meaningful advancements.</p>
-                        </div>
                     </div>
-        
                     <div class="manifesto-column card">
                         <h3 data-i18n="germany_col2_title">Why RWTH Aachen?</h3>
                         <div class="manifesto-item">
                             <h4 data-i18n="germany_item4_title">World-Class University</h4>
                             <p data-i18n="germany_item4_desc">RWTH Aachen's global reputation in Materials Engineering ensures an education at the forefront of the field and opens doors to global opportunities.</p>
                         </div>
-                        <div class="manifesto-item">
-                            <h4 data-i18n="germany_item5_title">Perfect Program & Industry Integration</h4>
-                            <p data-i18n="germany_item5_desc">The M.Sc. program is perfectly tailored for my background, and the university's strong industry connections provide opportunities to work on real-world challenges.</p>
-                        </div>
-                        <div class="manifesto-item">
-                            <h4 data-i18n="germany_item6_title">Strategic Career Positioning</h4>
-                            <p data-i18n="germany_item6_desc">This choice positions me at the unique intersection of construction knowledge, advanced materials science, and German engineering excellence.</p>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Chapter 4: The Conclusion -->
-        <section class="about-chapter about-conclusion">
-             <div class="container">
                 <div class="bigger-picture-box card">
                     <h3 data-i18n="germany_bigger_picture_title">The Bigger Picture</h3>
                     <p data-i18n="germany_bigger_picture_desc">This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.</p>
                 </div>
-             </div>
+            </div>
         </section>
     </main>
 
