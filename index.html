@@ -11,7 +11,7 @@
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     
     <!-- Defer loading of non-critical CSS/JS -->
@@ -54,11 +54,6 @@
                         <a href="about.html" class="btn btn-primary" data-i18n="btn_story">My Full Story</a>
                         <a href="profile.html" class="btn btn-secondary" data-i18n="nav_profile">View My Profile</a>
                     </div>
-                    <div class="hero-pills">
-                        <div class="pill" data-i18n="pill1">+100% total revenue (Best Trading)</div>
-                        <div class="pill" data-i18n="pill2">Site supervision — pile foundations, precast erection</div>
-                        <div class="pill" data-i18n="pill3">QA / QC experience on precast components</div>
-                    </div>
                 </div>
                 <div class="hero-image-wrapper">
                     <img src="assets/profile-main.png" alt="A professional portrait of George P Mathew" class="hero-image">
@@ -66,58 +61,62 @@
             </div>
         </section>
 
-        <!-- Vertical Storyline Section -->
-        <section id="journey" class="timeline-experience">
-            <div class="neural-canvas"></div>
-            <div class="container timeline-container">
+        <!-- Diorama Timeline Section -->
+        <section class="diorama-timeline-section">
+            <div class="diorama-background">
+                <!-- Background elements like data clouds will be handled by CSS/JS -->
+            </div>
+            <div class="container">
                 <header class="section-header">
                     <h2 class="section-title" data-i18n="journey_title">An Evolving Engineering Journey</h2>
                 </header>
                 
-                <div class="timeline-wrapper">
-                    <div class="timeline-conduit"></div>
-                    
-                    <!-- Milestone 1: Civil Engineer -->
-                    <div class="timeline-milestone">
-                        <div class="milestone-icon-wrapper">
-                            <div class="milestone-icon"><img src="assets/icons/engineering.svg" alt="Engineering Icon"></div>
+                <div class="diorama-scenes">
+                    <!-- Scene 1: Civil Engineer -->
+                    <div class="diorama-scene">
+                        <div class="diorama-content card">
+                            <h3 data-i18n="journey1_title">Civil Engineer</h3>
+                            <p data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
                         </div>
-                        <div class="milestone-content">
-                            <h3 class="milestone-title" data-i18n="journey1_title">Civil Engineer</h3>
-                            <p class="milestone-desc" data-i18n="journey1_desc_revised">My career began on-site, managing precast component erection and supervising foundation work. This hands-on experience provided a deep understanding of real-world construction challenges and the critical role of material integrity.</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 2: Entrepreneur -->
-                    <div class="timeline-milestone">
-                        <div class="milestone-icon-wrapper">
-                            <div class="milestone-icon"><img src="assets/icons/graph.svg" alt="Entrepreneurship Icon"></div>
-                        </div>
-                        <div class="milestone-content">
-                            <h3 class="milestone-title" data-i18n="journey2_title">Entrepreneur</h3>
-                            <p class="milestone-desc" data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
+                        <div class="diorama-visual">
+                            <img src="assets/diorama/scene1-bg.png" class="diorama-bg-layer" alt="">
+                            <img src="assets/diorama/character-civil.png" class="diorama-character" alt="Illustration of George as a Civil Engineer">
                         </div>
                     </div>
 
-                    <!-- Milestone 3: Content Creator -->
-                    <div class="timeline-milestone">
-                        <div class="milestone-icon-wrapper">
-                            <div class="milestone-icon"><img src="assets/icons/idea.svg" alt="Content Creation Icon"></div>
+                    <!-- Scene 2: Entrepreneur -->
+                    <div class="diorama-scene">
+                        <div class="diorama-content card">
+                            <h3 data-i18n="journey2_title">Entrepreneur</h3>
+                            <p data-i18n="journey2_desc_revised">At my family's business, I expanded our offerings from hardware sales to include painting services. This initiative diversified our revenue, increased profits, and taught me invaluable lessons in business development and customer relations.</p>
                         </div>
-                        <div class="milestone-content">
-                            <h3 class="milestone-title" data-i18n="journey3_title">Content Creator</h3>
-                            <p class="milestone-desc" data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
+                        <div class="diorama-visual">
+                             <img src="assets/diorama/scene2-bg.png" class="diorama-bg-layer" alt="">
+                            <img src="assets/diorama/character-entrepreneur.png" class="diorama-character" alt="Illustration of George as an Entrepreneur">
                         </div>
                     </div>
 
-                    <!-- Milestone 4: Materials Engineer -->
-                    <div class="timeline-milestone">
-                        <div class="milestone-icon-wrapper">
-                            <div class="milestone-icon"><img src="assets/icons/atom.svg" alt="Materials Science Icon"></div>
+                    <!-- Scene 3: Content Creator -->
+                    <div class="diorama-scene">
+                        <div class="diorama-content card">
+                            <h3 data-i18n="journey3_title">Content Creator</h3>
+                            <p data-i18n="journey3_desc_revised">As 'Engineer GPM,' I share my expertise on complex engineering topics, including practical use cases for LLMs in the field. This platform hones my ability to communicate technical knowledge clearly and effectively.</p>
                         </div>
-                        <div class="milestone-content">
-                            <h3 class="milestone-title" data-i18n="journey4_title">Materials Engineer</h3>
-                            <p class="milestone-desc" data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
+                        <div class="diorama-visual">
+                             <img src="assets/diorama/scene3-bg.png" class="diorama-bg-layer" alt="">
+                            <img src="assets/diorama/character-creator.png" class="diorama-character" alt="Illustration of George as a Content Creator">
+                        </div>
+                    </div>
+
+                    <!-- Scene 4: Materials Engineer -->
+                    <div class="diorama-scene">
+                        <div class="diorama-content card">
+                            <h3 data-i18n="journey4_title">Materials Engineer</h3>
+                            <p data-i18n="journey4_desc_revised">My journey converges on a single insight: the future of construction is in materials. My upcoming M.Sc. at RWTH Aachen is a deliberate step to be at the forefront of innovating the very materials we use to build a sustainable future.</p>
+                        </div>
+                        <div class="diorama-visual">
+                             <img src="assets/diorama/scene4-bg.png" class="diorama-bg-layer" alt="">
+                            <img src="assets/diorama/character-materials.png" class="diorama-character" alt="Illustration of George as a Materials Engineer">
                         </div>
                     </div>
                 </div>
