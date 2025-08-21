@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Engineer GPM Portfolio --- DIORAMA & CAROUSEL v6.0
+   Engineer GPM Portfolio --- EXECUTIVE BRIEFING v7.0 (FINAL)
    --- [ style.css ] ---
-   - Core Styles & Variables (Modern UI Palette)
+   - Core Styles & Variables (NEW Blue Gradient Palette)
    - Layout & Global Components (Header, Footer, Modern Cards)
-   - NEW "Perspective Carousel" About Page
-   - NEW "Animated Diorama" Homepage Timeline
+   - NEW "Executive Briefing" About Page
+   - NEW "Story Conduit" Homepage Timeline
    - Animations & Responsive Design
    ========================================================================== */
 
@@ -76,6 +76,7 @@ body {
 .pill { display: inline-block; padding: 6px 14px; background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 99px; font-size: 14px; font-weight: 500; color: var(--text-secondary); }
 .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
 .section-title { font-size: 2.5rem; font-weight: 800; }
+.section-subtitle { font-size: 0.875rem; font-weight: 600; color: var(--accent-primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
 .section-title-large { font-size: 2.25rem; font-weight: 800; margin-bottom: 32px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; }
 .section-title-medium { font-size: 1.75rem; font-weight: 800; margin-bottom: 24px; text-align: center; }
 
@@ -125,16 +126,20 @@ html[data-theme="german"] .lang-toggle-btn.active { color: var(--surface-color);
 .hero-image-wrapper { display: flex; justify-content: center; order: -1; }
 .hero-image { width: 100%; max-width: 250px; border-radius: 50%; border: 8px solid var(--surface-color); box-shadow: var(--shadow); }
 
-.diorama-timeline-section { padding: 80px 0; background: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 100%); position: relative; overflow: hidden; }
-.diorama-timeline-section .section-header { margin-bottom: 80px; }
-.diorama-scenes { display: flex; flex-direction: column; gap: 120px; }
-.diorama-scene { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
-.diorama-scene:nth-child(even) .diorama-content { order: 2; }
-.diorama-content h3 { font-size: 1.75rem; font-weight: 800; margin-bottom: 16px; }
-.diorama-visual { position: relative; min-height: 300px; }
-.diorama-bg-layer, .diorama-character { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 100%; transition: transform 0.3s ease-out; }
-.diorama-bg-layer { width: 100%; }
-.diorama-character { width: 60%; }
+.story-timeline-section { padding: 80px 0; background: linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 100%); position: relative; overflow: hidden; }
+html[data-theme="german"] .story-timeline-section { background: linear-gradient(180deg, #EBF5EE 0%, #D4E2D8 100%); }
+.story-timeline-section .section-header { margin-bottom: 80px; }
+.story-timeline-wrapper { position: relative; }
+.story-conduit-svg { position: absolute; top: 0; left: 0; z-index: 1; pointer-events: none; }
+#story-conduit-path { stroke: rgba(0,0,0,0.1); stroke-dasharray: 5, 5; }
+.story-scenes { position: relative; z-index: 2; }
+.story-scene { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; min-height: 500px; padding: 40px 0; }
+.story-scene:nth-child(even) .story-content { order: 2; }
+.story-content.card { padding: 32px; backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0.7); }
+html[data-theme="german"] .story-content.card { background-color: rgba(255, 255, 255, 0.8); }
+.story-content h3 { font-size: 1.75rem; font-weight: 800; margin-bottom: 16px; color: var(--accent-primary); }
+.story-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+.story-character { max-width: 80%; max-height: 400px; object-fit: contain; }
 
 /* -------------------------
    5. Profile Page
@@ -163,29 +168,31 @@ html[data-theme="german"] .lang-toggle-btn.active { color: var(--surface-color);
 .language-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* -------------------------
-   6. ABOUT PAGE (PERSPECTIVE CAROUSEL)
+   6. ABOUT PAGE (EXECUTIVE BRIEFING)
    ------------------------- */
-.about-hook { padding: 80px 0; text-align: center; }
-.about-title { background: var(--about-name-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1.1; }
-.about-subtitle { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 24px auto 0; }
-.carousel-section { height: 100vh; width: 100vw; position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; background-color: var(--accent-primary); }
-.perspective-carousel { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: flex-start; align-items: center; }
-.carousel-card-wrapper { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; flex-shrink: 0; padding: 40px; }
-.carousel-card { padding: 40px; max-width: 600px; width: 100%; text-align: center; }
-.carousel-card h3 { font-size: 2rem; margin-bottom: 16px; font-weight: 800; }
-.carousel-card p { font-size: 1.1rem; color: var(--text-secondary); }
-.carousel-background { position: absolute; inset: 0; z-index: -1; } /* For context wings */
+.about-welcome-mat { padding: 80px 0; }
+.welcome-mat-layout { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
+.welcome-mat-content { text-align: center; }
+.welcome-mat-intro-text { font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; }
+.welcome-mat-title { font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.2; margin-top: 8px; }
+.about-name-gradient { background: var(--about-name-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
+.welcome-mat-summary { font-size: 1.125rem; color: var(--text-secondary); max-width: 550px; margin: 24px auto 0; }
+.welcome-mat-socials { margin-top: 32px; }
+.welcome-mat-socials span { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.social-links { display: flex; justify-content: center; gap: 16px; }
+.social-links a { display: grid; place-items: center; width: 44px; height: 44px; background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 50%; }
+.social-links a:hover { background-color: var(--accent-light); border-color: var(--accent-primary); }
+.welcome-mat-image-wrapper { position: relative; }
+.welcome-mat-image-bg { position: absolute; inset: 0; background: linear-gradient(45deg, var(--accent-light) 0%, #fff 70%); border-radius: 50%; filter: blur(40px); z-index: -1; }
+.welcome-mat-image { max-width: 100%; object-fit: contain; }
 
-.about-conclusion-section { padding: 80px 0; }
-.manifesto-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-.manifesto-column { padding: 32px; }
-.manifesto-column h3, .bigger-picture-box h3 { font-size: 1.5rem; font-weight: 800; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 24px; }
-.bigger-picture-box h3 { border: none; padding: 0; color: var(--accent-primary); }
-.manifesto-item:not(:last-child) { margin-bottom: 24px; }
-.manifesto-item h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-.manifesto-item p { color: var(--text-secondary); }
-.bigger-picture-box { padding: 40px; text-align: center; margin-top: 24px; }
-.bigger-picture-box p { color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+.core-competencies { padding: 80px 0; background-color: var(--accent-light); }
+html[data-theme="german"] .core-competencies { background-color: #EBF5EE; }
+.competencies-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.competency-card { padding: 32px; text-align: center; }
+.competency-icon { width: 48px; height: 48px; margin-bottom: 24px; }
+.competency-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; }
+.competency-card p { color: var(--text-secondary); }
 
 /* -------------------------
    7. Connect Page
@@ -219,9 +226,13 @@ html[data-theme="german"] .lang-toggle-btn.active { color: var(--surface-color);
   .hero-cta { justify-content: flex-start; }
   .hero-image-wrapper { order: 1; }
   .hero-image { max-width: 380px; }
-  .diorama-scene { grid-template-columns: 1fr 1fr; }
+  .story-scene { grid-template-columns: 1fr 1fr; gap: 60px; }
   .profile-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 60px; align-items: flex-start; }
   .profile-sidebar { position: sticky; top: calc(var(--header-height) + 24px); }
-  .manifesto-grid { grid-template-columns: 1fr 1fr; }
+  .welcome-mat-layout { grid-template-columns: 1fr 1fr; }
+  .welcome-mat-content { text-align: left; }
+  .welcome-mat-summary { margin: 24px 0 0; }
+  .welcome-mat-socials span, .social-links { justify-content: flex-start; }
+  .competencies-grid { grid-template-columns: repeat(3, 1fr); }
   .connect-page-layout { grid-template-columns: 1fr 1fr; }
 }
