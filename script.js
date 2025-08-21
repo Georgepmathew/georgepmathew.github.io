@@ -1,11 +1,10 @@
 /* =-========================================================================
-   Engineer GPM Portfolio --- DIGITAL PRODUCT OVERHAUL v4.0
+   Engineer GPM Portfolio --- DIGITAL PRODUCT OVERHAUL v5.0
    --- [ script.js ] ---
    - Handles FULL EN/DE translations and theme switching
    - Manages active navigation links
    - Animates immersive homepage timeline
-   - Creates 3D tilt effect for images
-   - Powers the GSAP Horizontal Journey on About page
+   - Powers the GSAP "Focus Elevator" on About page
    ========================================================================== */
 
 (function () {
@@ -92,35 +91,29 @@
         lang5_name: "Hindi",
         
         // About Page (Genesis)
-        about_intro: "I'm",
-        about_name_full: "George P Mathew",
-        about_p1: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.",
+        about_name_full: "George P Mathew.",
+        about_p1_revised: "My career began on construction sites, where I witnessed the critical link between material quality and project success. This insight is the driving force behind my transition to Materials Engineering.",
+        floating_insight: "The future of construction is in the materials.",
+        elevator1_title: "The Foundation",
+        about_p1_full: "My career began on construction sites in India, where I managed the erection of precast components and supervised foundation work. This wasn't just a job; it was a real-world laboratory where I witnessed the critical link between material quality and project success.",
+        elevator2_title: "The Insight",
         about_p2: "This on-site experience led me to a clear conclusion: to build better, more durable structures, we must first innovate the materials themselves. This realization is the driving force behind my decision to pursue a Master's in Materials Engineering at the world-renowned RWTH Aachen University.",
+        elevator3_title: "The Catalyst",
         about_p3: "I am also defined by my resourcefulness. This website is my proof. With zero prior coding experience, I treated its creation as an engineering problem, guiding AI to generate the code, structure the design, and build the features you see now. It's the forward-thinking mindset I bring to every challenge.",
         germany_heading: "A Deliberate Pivot to Germany",
         germany_intro: "My on-site experience revealed the critical need for material innovation, leading me directly to Germany—the European leader in engineering research. This is the epicenter of the future I want to help build.",
         germany_col1_title: "Why Germany?",
         germany_item1_title: "Engineering & Innovation Leadership",
         germany_item1_desc: "Home to industry giants and a culture of precision, Germany is where theoretical knowledge meets world-class application. It's the ideal environment to develop my expertise.",
-        germany_item2_title: "Industry 4.0 & Research Ecosystem",
-        germany_item2_desc: "The collaborative ecosystem between academia and industry is unmatched, which is crucial for bridging my construction background with advanced materials.",
-        germany_item3_title: "Leading Construction & Materials Industry",
-        germany_item3_desc: "Renowned for sustainability and precision, the German construction and materials industries provide the perfect landscape to contribute to meaningful advancements.",
         germany_col2_title: "Why RWTH Aachen?",
         germany_item4_title: "World-Class University",
         germany_item4_desc: "RWTH Aachen's global reputation in Materials Engineering ensures an education at the forefront of the field and opens doors to global opportunities.",
-        germany_item5_title: "Perfect Program & Industry Integration",
-        germany_item5_desc: "The M.Sc. program is perfectly tailored for my background, and the university's strong industry connections provide opportunities to work on real-world challenges.",
-        germany_item6_title: "Strategic Career Positioning",
-        germany_item6_desc: "This choice positions me at the unique intersection of construction knowledge, advanced materials science, and German engineering excellence.",
         germany_bigger_picture_title: "The Bigger Picture",
         germany_bigger_picture_desc: "This isn't just about a degree; it's a strategic move to be an active contributor at a global inflection point for construction and materials. With my hands-on experience and access to a world-class education, I am positioned to help solve the real-world challenges I've witnessed on construction sites.",
 
         // Connect Page
         social_brand_heading: "Follow My Journey",
         contact_pro_heading: "For Professional Inquiries",
-        social_youtube_title: "YouTube",
-        social_youtube_desc: "Engineering videos & tutorials",
         social_brand_insta_title: "Instagram (@engineergpm)",
         social_brand_insta_desc: "Content & updates for Engineer GPM",
         social_insta_title: "Instagram (@georgepmathew)",
@@ -135,14 +128,10 @@
         // General
         brand_name: "George P Mathew",
         brand_sub: "Ingenieur GPM",
-
-        // Navigation
         nav_home: "Start",
         nav_profile: "Profil",
         nav_about: "Über mich",
         nav_connect: "Kontakt",
-
-        // Homepage
         hero_title: "Bauingenieur & Zukünftiger Werkstoff-Innovator",
         hero_subtitle: "Meine Praxiserfahrung hat mir gezeigt, dass die größten Herausforderungen im Bau oft materialbedingt sind. Diese Erkenntnis treibt meinen Wechsel zur Werkstofftechnik in Deutschland an, wo ich die Art, wie wir bauen, innovieren möchte.",
         btn_story: "Meine Geschichte",
@@ -158,8 +147,6 @@
         journey3_desc_revised: "Als 'Ingenieur GPM' teile ich mein Fachwissen zu komplexen Ingenieurthemen, einschließlich praktischer Anwendungsfälle für LLMs im Fachbereich. Diese Plattform schärft meine Fähigkeit, technisches Wissen klar und effektiv zu vermitteln.",
         journey4_title: "Werkstoffingenieur",
         journey4_desc_revised: "Meine Reise mündet in einer einzigen Erkenntnis: Die Zukunft des Bauens liegt in den Materialien. Mein bevorstehender M.Sc. an der RWTH Aachen ist ein bewusster Schritt, um an der Spitze der Innovation nachhaltiger Baumaterialien zu stehen.",
-
-        // Profile Page
         edu_heading: "Bildung",
         edu1_degree: "M.Sc. Werkstofftechnik",
         edu1_school: "RWTH Aachen University, Deutschland",
@@ -206,37 +193,27 @@
         lang3_name: "Deutsch",
         lang4_name: "Tamil",
         lang5_name: "Hindi",
-
-        // About Page (Genesis)
-        about_intro: "Ich bin",
-        about_name_full: "George P Mathew",
-        about_p1: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete. Dies war nicht nur ein Job; es war ein Labor, in dem ich die kritische Verbindung zwischen Materialqualität und Projekterfolg erlebte.",
+        about_name_full: "George P Mathew.",
+        about_p1_revised: "Meine Karriere begann auf Baustellen, wo ich die entscheidende Verbindung zwischen Materialqualität und Projekterfolg erlebte. Diese Erkenntnis ist die treibende Kraft für meinen Wechsel zur Werkstofftechnik.",
+        floating_insight: "Die Zukunft des Bauens liegt in den Materialien.",
+        elevator1_title: "Das Fundament",
+        about_p1_full: "Meine Karriere begann auf Baustellen in Indien, wo ich die Montage von Fertigteilen leitete. Dies war nicht nur ein Job; es war ein Labor, in dem ich die kritische Verbindung zwischen Materialqualität und Projekterfolg erlebte.",
+        elevator2_title: "Die Erkenntnis",
         about_p2: "Diese Erfahrung führte mich zu einem klaren Schluss: Um bessere, langlebigere Strukturen zu bauen, müssen wir zuerst die Materialien selbst innovieren. Diese Erkenntnis ist die treibende Kraft für mein Masterstudium in Werkstofftechnik an der weltberühmten RWTH Aachen.",
+        elevator3_title: "Der Katalysator",
         about_p3: "Ich zeichne mich auch durch meinen Einfallsreichtum aus. Diese Website ist der Beweis. Ohne Programmiererfahrung behandelte ich ihre Erstellung wie ein Ingenieurproblem und leitete eine KI an, den Code zu generieren. Das ist die zukunftsorientierte Denkweise, die ich in jede Herausforderung einbringe.",
         germany_heading: "Ein bewusster Schwenk nach Deutschland",
         germany_intro: "Meine Praxiserfahrung hat den dringenden Bedarf an Materialinnovationen offenbart, was mich direkt nach Deutschland führte – dem europäischen Marktführer in Ingenieurforschung. Dies ist das Epizentrum der Zukunft, die ich mitgestalten möchte.",
         germany_col1_title: "Warum Deutschland?",
         germany_item1_title: "Führung in Ingenieurwesen & Innovation",
         germany_item1_desc: "Als Heimat von Branchenriesen und einer Kultur der Präzision verbindet Deutschland theoretisches Wissen mit erstklassiger Anwendung. Es ist das ideale Umfeld, um meine Expertise zu entwickeln.",
-        germany_item2_title: "Industrie 4.0 & Forschungsökosystem",
-        germany_item2_desc: "Das kollaborative Ökosystem zwischen Wissenschaft und Industrie ist unübertroffen und entscheidend, um meine Bauerfahrung mit modernen Werkstoffen zu verbinden.",
-        germany_item3_title: "Führende Bau- & Werkstoffindustrie",
-        germany_item3_desc: "Bekannt für Nachhaltigkeit und Präzision, bieten die deutsche Bau- und Werkstoffindustrie die perfekte Landschaft, um zu bedeutenden Fortschritten beizutragen.",
         germany_col2_title: "Warum RWTH Aachen?",
         germany_item4_title: "Weltklasse-Universität",
         germany_item4_desc: "Der weltweite Ruf der RWTH Aachen in der Werkstofftechnik sichert eine Ausbildung an der Spitze des Fachgebiets und öffnet globale Möglichkeiten.",
-        germany_item5_title: "Perfektes Programm & Industrieintegration",
-        germany_item5_desc: "Der M.Sc.-Studiengang ist perfekt auf meinen Hintergrund zugeschnitten, und die starken Industrieverbindungen der Universität bieten Chancen, an realen Herausforderungen zu arbeiten.",
-        germany_item6_title: "Strategische Karrierepositionierung",
-        germany_item6_desc: "Diese Wahl positioniert mich an der einzigartigen Schnittstelle von Bauwissen, moderner Werkstoffkunde und deutscher Ingenieurskunst.",
         germany_bigger_picture_title: "Das große Ganze",
         germany_bigger_picture_desc: "Dies ist nicht nur ein Abschluss; es ist ein strategischer Schritt, um an einem globalen Wendepunkt für Bau und Werkstoffe aktiv mitzuwirken. Mit meiner Praxiserfahrung und dem Zugang zu erstklassiger Bildung bin ich in der Lage, die realen Herausforderungen zu lösen, die ich auf Baustellen erlebt habe.",
-
-        // Connect Page
         social_brand_heading: "Folge meiner Reise",
         contact_pro_heading: "Für berufliche Anfragen",
-        social_youtube_title: "YouTube",
-        social_youtube_desc: "Ingenieurvideos & Tutorials",
         social_brand_insta_title: "Instagram (@engineergpm)",
         social_brand_insta_desc: "Inhalte & Updates für Ingenieur GPM",
         social_insta_title: "Instagram (@georgepmathew)",
@@ -249,7 +226,7 @@
     }
   };
 
-  const LANG_KEY = 'gpm_lang_v9_final';
+  const LANG_KEY = 'gpm_lang_v10_final';
   const getSavedLang = () => localStorage.getItem(LANG_KEY) || 'en';
   const saveLang = (code) => localStorage.setItem(LANG_KEY, code);
 
@@ -300,15 +277,11 @@
     setButtonState(getSavedLang());
   }
 
-  /* =========================
-     2. Active Navigation
-     ========================= */
   function markActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
     document.querySelectorAll('.main-nav .nav-link, .mobile-tab-bar .tab-link').forEach(link => {
       const linkPage = link.getAttribute('href');
-      link.classList.remove('active', 'active-gradient');
+      link.classList.remove('active');
       link.removeAttribute('aria-current');
       if (linkPage === currentPage) {
         link.classList.add('active');
@@ -317,9 +290,6 @@
     });
   }
 
-  /* =====================================
-     3. Homepage Timeline Animation
-     ===================================== */
   function initTimelineObserver() {
     const timeline = document.querySelector('.timeline-experience');
     if (!timeline) return;
@@ -349,76 +319,47 @@
     }, { passive: true });
   }
 
-  /* ===================================
-     4. About Page Interactive Image
-     =================================== */
-  function initInteractiveImage() {
-    const imageContainer = document.getElementById('interactive-image');
-    if (!imageContainer) return;
-
-    imageContainer.addEventListener('mousemove', (e) => {
-        const rect = imageContainer.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-        
-        imageContainer.style.transition = 'transform 0.1s linear';
-        imageContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    });
-
-    imageContainer.addEventListener('mouseleave', () => {
-        imageContainer.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-        imageContainer.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
-  }
-
-  /* ===================================
-     5. About Page Horizontal Journey
-     =================================== */
-  function initHorizontalJourney() {
-    const journeySection = document.querySelector('.horizontal-journey-section');
-    if (!journeySection) return;
+  function initFocusElevator() {
+    const elevatorSection = document.querySelector('.elevator-section');
+    if (!elevatorSection) return;
 
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        console.error('GSAP and/or ScrollTrigger not loaded. Horizontal scroll will not work.');
+        console.error('GSAP and/or ScrollTrigger not loaded. Elevator will not work.');
         return;
     }
 
-    const container = journeySection.querySelector('.horizontal-journey-container');
-    
-    // Use GSAP's media query utility to only run this on desktop
-    ScrollTrigger.matchMedia({
-        "(min-width: 769px)": function() {
-            gsap.to(container, {
-                x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: journeySection,
-                    start: "top top",
-                    end: () => "+=" + (container.scrollWidth - document.documentElement.clientWidth),
-                    scrub: true,
-                    pin: true,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1
-                }
-            });
-        }
+    const cards = gsap.utils.toArray('.elevator-card-container');
+    const progressNodes = gsap.utils.toArray('.progress-node');
+
+    gsap.set('.elevator-wrapper', { height: (cards.length * 100) + 'vh' });
+
+    cards.forEach((card, i) => {
+        gsap.to(card.querySelector('.elevator-card'), {
+            scrollTrigger: {
+                trigger: card,
+                start: "top top",
+                end: "bottom top",
+                pin: true,
+                pinSpacing: false,
+                scrub: true,
+                onEnter: () => progressNodes[i]?.classList.add('active'),
+                onLeave: () => progressNodes[i]?.classList.remove('active'),
+                onEnterBack: () => progressNodes[i]?.classList.add('active'),
+                onLeaveBack: () => progressNodes[i]?.classList.remove('active'),
+            },
+            autoAlpha: 1,
+            scale: 1,
+            ease: 'power1.inOut'
+        });
     });
   }
 
-  /* =========================
-     6. Initialization
-     ========================= */
   function init() {
     applyTranslations(getSavedLang());
     initLangToggle();
     markActiveNav();
     initTimelineObserver();
-    initInteractiveImage();
-    initHorizontalJourney();
+    initFocusElevator();
   }
 
   if (document.readyState === 'loading') {
